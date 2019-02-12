@@ -3,8 +3,6 @@ package hosts
 import (
 	"bufio"
 	"os"
-	"sort"
-	"strings"
 )
 
 // ------------------------------------------------------------
@@ -44,7 +42,6 @@ func (inv *Inventory) parse() error {
 	return nil
 }
 
-// TODO: extract a parsing struct
 func parseInvFile(path string) ([]HostRecord, error) {
 	invFile, err := os.Open(path)
 	if err != nil {
@@ -61,39 +58,22 @@ func parseInvFile(path string) ([]HostRecord, error) {
 	var current *HostRecord
 	scanner := bufio.NewScanner(invFile)
 	for scanner.Scan() {
-		line := scanner.Text()
-		isBlank := "" == strings.TrimSpace(line)
-		isRecordStart := IsRecordStartLine(line)
-		if isBlank || isRecordStart {
-			if current != nil {
-				sort.Strings(current.CNAMEs)
-				recs = append(recs, *current)
-				current = nil
-			}
-		}
-		if isBlank {
-			continue
-		}
-		if isRecordStart {
-			current, err = NewHostRecord(line)
-			if err != nil {
-				return nil, err
-			}
-			continue
-		}
-		isFqdn := IsFQDNLine(line)
-		if isFqdn {
-			err = current.AddFQDN(line)
-			if err != nil {
-				return nil, err
-			}
-			continue
-		}
-		_, err = current.MaybeAddCname(line)
+		hr, err := current.ParseLine(scanner.Text())
 		if err != nil {
 			return nil, err
 		}
+		if hr != current {
+			if current != nil {
+				recs = append(recs, *current)
+			}
+			current = hr
+		}
 	}
+	// TODO: find a way not to repeat this
+	if current != nil {
+		recs = append(recs, *current)
+	}
+
 	if err = scanner.Err(); err != nil {
 		return nil, err
 	}
