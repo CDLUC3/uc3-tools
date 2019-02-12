@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/dmolesUC3/mrt-system-info/internal/hosts"
+	"github.com/dmolesUC3/uc3-system-info/internal/hosts"
 	"github.com/spf13/cobra"
 )
 

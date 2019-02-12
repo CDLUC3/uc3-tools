@@ -1,7 +1,7 @@
 package tests
 
 import (
-	. "github.com/dmolesUC3/mrt-system-info/internal/hosts"
+	. "github.com/dmolesUC3/uc3-system-info/internal/hosts"
 	. "gopkg.in/check.v1"
 )
 

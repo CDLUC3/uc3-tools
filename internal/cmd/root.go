@@ -7,8 +7,8 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use: "mrt-system-info",
-	Short: "mrt-system-info: a tool for gathering Merritt system information",
+	Use: "uc3-system-info",
+	Short: "uc3-system-info: a tool for gathering Merritt system information",
 }
 
 func Execute() {
