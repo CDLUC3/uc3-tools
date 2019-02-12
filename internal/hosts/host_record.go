@@ -20,10 +20,45 @@ type HostRecord struct {
 	CNAMEs      []string
 }
 
-func NewHostRecord(recordStartLine string) (*HostRecord, error) {
-	if !IsRecordStartLine(recordStartLine) {
-		return nil, fmt.Errorf("not a record start line: %#v", recordStartLine)
+func (hr *HostRecord) ParseLine(line string) (*HostRecord, error) {
+	if "" == strings.TrimSpace(line) {
+		return hr, nil
 	}
+	if hr.isRecordStart(line) {
+		return hr.newHostRecord(line)
+	}
+	if hr == nil {
+		return nil, fmt.Errorf("can't parse %#v into nil record", line)
+	}
+	if hr.isFQDN(line) {
+		err := hr.addFQDN(line)
+		return hr, err
+	}
+	err := hr.maybeAddCname(line)
+	return hr, err
+}
+
+func (hr *HostRecord) addFQDN(fqdnLine string) error {
+	if hr == nil {
+		return fmt.Errorf("can't add FQDN from %#v to nil record", fqdnLine)
+	}
+	hr.FQDN = strings.TrimPrefix(fqdnLine, fqdnPrefix)
+	return nil
+}
+
+func (hr *HostRecord) maybeAddCname(line string) error {
+	cnameMatch := cnameRe.FindStringSubmatch(line)
+	if cnameMatch == nil {
+		return nil
+	}
+	if hr == nil {
+		return fmt.Errorf("can't add CNAME from %#v to nil record", line)
+	}
+	hr.CNAMEs = append(hr.CNAMEs, cnameMatch[1])
+	return nil
+}
+
+func (hr *HostRecord) newHostRecord(recordStartLine string) (*HostRecord, error) {
 	fields := strings.Split(recordStartLine, ",")
 	if len(fields) != 4 {
 		return nil, fmt.Errorf("can't parse record start %#v; expected 4 fields, got %d", recordStartLine, len(fields))
@@ -37,52 +72,11 @@ func NewHostRecord(recordStartLine string) (*HostRecord, error) {
 	return &rec, nil
 }
 
-func (hr *HostRecord) ParseLine(line string) (*HostRecord, error) {
-	if "" == strings.TrimSpace(line) {
-		return hr, nil
-	}
-	if IsRecordStartLine(line) {
-		return NewHostRecord(line)
-	}
-	if hr == nil {
-		return nil, fmt.Errorf("can't parse %#v into nil record", line)
-	}
-	if IsFQDNLine(line) {
-		err := hr.AddFQDN(line)
-		return hr, err
-	}
-	err := hr.MaybeAddCname(line)
-	return hr, err
-}
-
-func (hr *HostRecord) AddFQDN(fqdnLine string) error {
-	if hr == nil {
-		return fmt.Errorf("can't add FQDN from %#v to nil record", fqdnLine)
-	}
-	if !IsFQDNLine(fqdnLine) {
-		return fmt.Errorf("not a FQDN line: %#v", fqdnLine)
-	}
-	hr.FQDN = strings.TrimPrefix(fqdnLine, fqdnPrefix)
-	return nil
-}
-
-func (hr *HostRecord) MaybeAddCname(line string) (error) {
-	cnameMatch := cnameRe.FindStringSubmatch(line)
-	if cnameMatch == nil {
-		return nil
-	}
-	if hr == nil {
-		return fmt.Errorf("can't add CNAME from %#v to nil record", line)
-	}
-	hr.CNAMEs = append(hr.CNAMEs, cnameMatch[1])
-	return nil
-}
-
-func IsRecordStartLine(line string) bool {
+func (hr *HostRecord) isRecordStart(line string) bool {
 	return strings.HasPrefix(line, recordStartPrefix)
 }
 
-func IsFQDNLine(line string) bool {
+func (hr *HostRecord) isFQDN(line string) bool {
 	return strings.HasPrefix(line, fqdnPrefix)
 }
 

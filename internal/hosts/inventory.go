@@ -3,6 +3,7 @@ package hosts
 import (
 	"bufio"
 	"os"
+	"sort"
 )
 
 // ------------------------------------------------------------
@@ -30,6 +31,7 @@ func (inv *Inventory) Hosts() ([]HostRecord, error) {
 		if err != nil {
 			return nil, err
 		}
+		sort.Sort(BySvcEnvNameAndFQDN(hosts))
 		inv.hosts = hosts
 	}
 	return inv.hosts, nil
@@ -69,7 +71,7 @@ func parseInvFile(path string) ([]HostRecord, error) {
 			current = hr
 		}
 	}
-	// TODO: find a way not to repeat this
+	// TODO: find a way not to repeat this (use last slice element?)
 	if current != nil {
 		recs = append(recs, *current)
 	}
