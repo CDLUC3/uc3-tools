@@ -7,11 +7,16 @@ import (
 
 func init() {
 	cmd := &cobra.Command {
-		Use: "hosts",
+		Use: "hosts <FILE>",
 		Short: "list UC3 hosts",
 		Args:          cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return hosts.NewInventory(args[0]).Print()
+			inv, err := hosts.NewInventory(args[0])
+			if err != nil {
+				return err
+			}
+			inv.Print()
+			return nil
 		},
 	}
 

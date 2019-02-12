@@ -20,6 +20,20 @@ type HostRecord struct {
 	CNAMEs      []string
 }
 
+func (hr *HostRecord) ToDelimitedString(fieldSep, cnameSep string) string {
+	if hr == nil {
+		return ""
+	}
+	fields := []string {
+		hr.Service,
+		hr.Name,
+		hr.FQDN,
+		hr.Environment,
+		strings.Join(hr.CNAMEs, cnameSep),
+	}
+	return strings.Join(fields, fieldSep)
+}
+
 func (hr *HostRecord) ParseLine(line string) (*HostRecord, error) {
 	if "" == strings.TrimSpace(line) {
 		return hr, nil

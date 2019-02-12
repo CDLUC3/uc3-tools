@@ -2,6 +2,7 @@ package hosts
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"sort"
 )
@@ -10,31 +11,25 @@ import (
 // Inventory
 
 type Inventory struct {
-	invPath string
-	hosts []HostRecord
+	Hosts   []HostRecord
 }
 
-func NewInventory(invPath string) *Inventory {
-	return &Inventory{invPath: invPath}
+func NewInventory(invPath string) (*Inventory, error) {
+	hosts, err := parseInvFile(invPath)
+	if err != nil {
+		return nil, err
+	}
+	sort.Sort(BySvcEnvNameAndFQDN(hosts))
+	return &Inventory{Hosts: hosts}, nil
 }
 
 // ------------------------------
 // Exported functions
 
-func (inv *Inventory) Print() error {
-	return nil
-}
-
-func (inv *Inventory) Hosts() ([]HostRecord, error) {
-	if inv.hosts == nil {
-		hosts, err := parseInvFile(inv.invPath)
-		if err != nil {
-			return nil, err
-		}
-		sort.Sort(BySvcEnvNameAndFQDN(hosts))
-		inv.hosts = hosts
+func (inv *Inventory) Print() {
+	for _, h := range inv.Hosts {
+		fmt.Println(h.ToDelimitedString("\t", ", "))
 	}
-	return inv.hosts, nil
 }
 
 // ------------------------------
@@ -82,4 +77,3 @@ func parseInvFile(path string) ([]HostRecord, error) {
 
 	return recs, nil
 }
-
