@@ -3,6 +3,9 @@
 # github-markdown-preview previews
 *.md.html
 
+# default compiled binaries
+mrt-system-info*
+
 #### Generated ignores ####
 
 #### joe made this: http://goel.io/joe
