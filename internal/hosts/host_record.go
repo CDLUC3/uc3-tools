@@ -3,6 +3,7 @@ package hosts
 import (
 	"fmt"
 	"regexp"
+	"sort"
 	"strings"
 )
 
@@ -69,6 +70,7 @@ func (hr *HostRecord) maybeAddCname(line string) error {
 		return fmt.Errorf("can't add CNAME from %#v to nil record", line)
 	}
 	hr.CNAMEs = append(hr.CNAMEs, cnameMatch[1])
+	sort.Strings(hr.CNAMEs)
 	return nil
 }
 
@@ -77,7 +79,7 @@ func (hr *HostRecord) newHostRecord(recordStartLine string) (*HostRecord, error)
 	if len(fields) != 4 {
 		return nil, fmt.Errorf("can't parse record start %#v; expected 4 fields, got %d", recordStartLine, len(fields))
 	}
-	env, svc, name := fields[0], fields[1], fields[2]
+	env, svc, name := fields[1], fields[2], fields[3]
 	rec := HostRecord{
 		Environment: env,
 		Service:     svc,
