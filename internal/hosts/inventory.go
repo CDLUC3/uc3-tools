@@ -3,6 +3,7 @@ package hosts
 import (
 	"bufio"
 	"fmt"
+	"github.com/dmolesUC3/uc3-system-info/internal/outputfmt"
 	"os"
 	"sort"
 )
@@ -11,7 +12,7 @@ import (
 // Inventory
 
 type Inventory struct {
-	Hosts   []HostRecord
+	Hosts []HostRecord
 }
 
 func NewInventory(invPath string) (*Inventory, error) {
@@ -26,9 +27,16 @@ func NewInventory(invPath string) (*Inventory, error) {
 // ------------------------------
 // Exported functions
 
-func (inv *Inventory) Print() {
+func (inv *Inventory) Print(format outputfmt.Format) {
 	for _, h := range inv.Hosts {
-		fmt.Println(h.ToDelimitedString("\t", ", "))
+		fmt.Printf("%v%v%v\n",
+			format.Prefix(),
+			// TODO: align columns in markdown format
+			h.ToDelimitedString(
+				format.FieldSeparator(), format.InnerSeparator(),
+			),
+			format.Suffix(),
+		)
 	}
 }
 
