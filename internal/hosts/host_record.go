@@ -15,9 +15,10 @@ var cnameRe = regexp.MustCompile(cnamePattern)
 
 type HostRecord struct {
 	Service     string
+	Environment string
+	Subsystem   string
 	Name        string
 	FQDN        string
-	Environment string
 	CNAMEs      []string
 }
 
@@ -25,11 +26,12 @@ func (hr *HostRecord) ToDelimitedString(fieldSep, cnameSep string) string {
 	if hr == nil {
 		return ""
 	}
-	fields := []string {
+	fields := []string{
 		hr.Service,
+		hr.Environment,
+		hr.Subsystem,
 		hr.Name,
 		hr.FQDN,
-		hr.Environment,
 		strings.Join(hr.CNAMEs, cnameSep),
 	}
 	return strings.Join(fields, fieldSep)
@@ -84,6 +86,7 @@ func (hr *HostRecord) newHostRecord(recordStartLine string) (*HostRecord, error)
 		Environment: env,
 		Service:     svc,
 		Name:        name,
+		Subsystem:   extractSubsystem(name, svc, env),
 	}
 	return &rec, nil
 }
@@ -96,3 +99,14 @@ func (hr *HostRecord) isFQDN(line string) bool {
 	return strings.HasPrefix(line, fqdnPrefix)
 }
 
+var zoneRe = regexp.MustCompile("2[a-c]")
+var numericRe = regexp.MustCompile("[0-9]+")
+
+func extractSubsystem(name string, svc string, env string) string {
+	sub := strings.Replace(name, "uc3-", "", -1)
+	sub = strings.Replace(sub, svc, "", -1)
+	sub = strings.Replace(sub, env, "", -1)
+	sub = strings.Replace(sub, "-", "", -1)
+	sub = zoneRe.ReplaceAllString(sub, "")
+	return numericRe.ReplaceAllString(sub, "")
+}

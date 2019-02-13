@@ -6,6 +6,7 @@ import (
 	"github.com/dmolesUC3/uc3-system-info/internal/outputfmt"
 	"os"
 	"sort"
+	"time"
 )
 
 // ------------------------------------------------------------
@@ -20,14 +21,25 @@ func NewInventory(invPath string) (*Inventory, error) {
 	if err != nil {
 		return nil, err
 	}
-	sort.Sort(BySvcEnvNameAndFQDN(hosts))
+	sort.Sort(ByServiceAndEnvironment(hosts))
 	return &Inventory{Hosts: hosts}, nil
 }
 
 // ------------------------------
 // Exported functions
 
-func (inv *Inventory) Print(format outputfmt.Format) {
+func (inv *Inventory) Print(format outputfmt.Format, header bool, footer bool) {
+	if header {
+		fmt.Print(format.FormatHeader([]string{
+			"Service",
+			"Environment",
+			"Subsystem",
+			"Name",
+			"FQDN",
+			"CNAMEs",
+		}))
+	}
+
 	for _, h := range inv.Hosts {
 		fmt.Printf("%v%v%v\n",
 			format.Prefix(),
@@ -37,6 +49,10 @@ func (inv *Inventory) Print(format outputfmt.Format) {
 			),
 			format.Suffix(),
 		)
+	}
+
+	if footer {
+		fmt.Printf("\nGenerated %v\n", time.Now().Format(time.RFC3339))
 	}
 }
 

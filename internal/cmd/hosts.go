@@ -10,6 +10,8 @@ import (
 
 type Hosts struct {
 	formatStr string
+	header    bool
+	footer bool
 }
 
 func (h *Hosts) PrintHosts(invPath string) error {
@@ -21,7 +23,7 @@ func (h *Hosts) PrintHosts(invPath string) error {
 	if err != nil {
 		return err
 	}
-	inv.Print(format)
+	inv.Print(format, h.header, h.footer)
 	return nil
 }
 
@@ -37,5 +39,7 @@ func init() {
 	}
 	formatFlagUsage := fmt.Sprintf("output format (%v)", strings.Join(outputfmt.StandardFormats(), ", "))
 	cmd.Flags().StringVarP(&h.formatStr, "format", "f", outputfmt.Default.Name(), formatFlagUsage)
+	cmd.Flags().BoolVar(&h.header, "header", false, "include header")
+	cmd.Flags().BoolVar(&h.footer, "footer", false, "include footer")
 	rootCmd.AddCommand(cmd)
 }

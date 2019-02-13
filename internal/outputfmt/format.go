@@ -11,6 +11,7 @@ type Format interface {
 	InnerSeparator() string
 	Prefix() string
 	Suffix() string
+	FormatHeader(header []string) string
 }
 
 func ToFormat(name string) (Format, error) {
@@ -64,7 +65,7 @@ func (f standardFormat) InnerSeparator() string {
 	case CSV:
 		return ";"
 	case Markdown:
-		return " "
+		return "<br/>"
 	default:
 		return ""
 	}
@@ -91,4 +92,24 @@ func (f standardFormat) Name() string {
 		}
 	}
 	return ""
+}
+
+func (f standardFormat) FormatHeader(header []string) string {
+	headerLine := strings.Join(header, f.FieldSeparator())
+	headerLine = fmt.Sprintf("%v%v%v\n", f.Prefix(), headerLine, f.Suffix())
+	if f == Markdown {
+		var sb strings.Builder
+		sb.WriteString(headerLine)
+		sb.WriteString(f.Prefix())
+		for i := 0; i < len(header); i++ {
+			sb.WriteString(":---")
+			if i + 1 < len(header) {
+				sb.WriteString(f.FieldSeparator())
+			}
+		}
+		sb.WriteString(f.Suffix())
+		sb.WriteString("\n")
+		return sb.String()
+	}
+	return headerLine
 }
