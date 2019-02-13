@@ -12,6 +12,7 @@ type Hosts struct {
 	formatStr string
 	header    bool
 	footer bool
+	service string
 }
 
 func (h *Hosts) PrintHosts(invPath string) error {
@@ -23,7 +24,7 @@ func (h *Hosts) PrintHosts(invPath string) error {
 	if err != nil {
 		return err
 	}
-	inv.Print(format, h.header, h.footer)
+	inv.Print(format, h.header, h.footer, h.service)
 	return nil
 }
 
@@ -41,5 +42,6 @@ func init() {
 	cmd.Flags().StringVarP(&h.formatStr, "format", "f", outputfmt.Default.Name(), formatFlagUsage)
 	cmd.Flags().BoolVar(&h.header, "header", false, "include header")
 	cmd.Flags().BoolVar(&h.footer, "footer", false, "include footer")
+	cmd.Flags().StringVarP(&h.service, "service", "s", "", "filter to specified service")
 	rootCmd.AddCommand(cmd)
 }

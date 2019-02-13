@@ -28,24 +28,40 @@ func NewInventory(invPath string) (*Inventory, error) {
 // ------------------------------
 // Exported functions
 
-func (inv *Inventory) Print(format outputfmt.Format, header bool, footer bool) {
+func (inv *Inventory) Print(format outputfmt.Format, header bool, footer bool, service string) {
+	hideService := service != ""
+
 	if header {
-		fmt.Print(format.FormatHeader([]string{
+		headerFields := []string{
 			"Service",
 			"Environment",
 			"Subsystem",
 			"Name",
 			"FQDN",
 			"CNAMEs",
-		}))
+		}
+		if hideService {
+			headerFields = headerFields[1:]
+		}
+		fmt.Print(format.FormatHeader(headerFields))
 	}
 
+	// TODO: "pretty" TSV:
+	//   - 1 line per CNAME
+	//   - don't repeat left columns
+
 	for _, h := range inv.Hosts {
+		if hideService && h.Service != service {
+			continue
+		}
+		// TODO: move this to format type, somehow
 		fmt.Printf("%v%v%v\n",
 			format.Prefix(),
 			// TODO: align columns in markdown format
 			h.ToDelimitedString(
-				format.FieldSeparator(), format.InnerSeparator(),
+				format.FieldSeparator(),
+				format.InnerSeparator(),
+				hideService,
 			),
 			format.Suffix(),
 		)

@@ -22,7 +22,7 @@ type HostRecord struct {
 	CNAMEs      []string
 }
 
-func (hr *HostRecord) ToDelimitedString(fieldSep, cnameSep string) string {
+func (hr *HostRecord) ToDelimitedString(fieldSep, cnameSep string, hideService bool) string {
 	if hr == nil {
 		return ""
 	}
@@ -33,6 +33,9 @@ func (hr *HostRecord) ToDelimitedString(fieldSep, cnameSep string) string {
 		hr.Name,
 		hr.FQDN,
 		strings.Join(hr.CNAMEs, cnameSep),
+	}
+	if hideService {
+		fields = fields[1:]
 	}
 	return strings.Join(fields, fieldSep)
 }
