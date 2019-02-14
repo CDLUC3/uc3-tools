@@ -32,16 +32,19 @@ func init() {
 	var h Hosts
 	cmd := &cobra.Command{
 		Use:   "hosts <FILE>",
-		Short: "list UC3 hosts",
+		Short: "List UC3 hosts",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return h.PrintHosts(args[0])
 		},
 	}
+	cmdFlags := cmd.Flags()
+	cmdFlags.SortFlags = false
+
 	formatFlagUsage := fmt.Sprintf("output format (%v)", strings.Join(outputfmt.StandardFormats(), ", "))
-	cmd.Flags().StringVarP(&h.formatStr, "format", "f", outputfmt.Default.Name(), formatFlagUsage)
-	cmd.Flags().BoolVar(&h.header, "header", false, "include header")
-	cmd.Flags().BoolVar(&h.footer, "footer", false, "include footer")
-	cmd.Flags().StringVarP(&h.service, "service", "s", "", "filter to specified service")
+	cmdFlags.StringVarP(&h.formatStr, "format", "f", outputfmt.Default.Name(), formatFlagUsage)
+	cmdFlags.StringVarP(&h.service, "service", "s", "", "filter to specified service")
+	cmdFlags.BoolVar(&h.header, "header", false, "include header")
+	cmdFlags.BoolVar(&h.footer, "footer", false, "include footer")
 	rootCmd.AddCommand(cmd)
 }
