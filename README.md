@@ -2,6 +2,8 @@
 
 A tool for generating UC3 system info reports.
 
+Subcommands:
+
 - [`cloud`](#cloud): List Merritt cloud storage services
 - [`hosts`](#hosts): List UC3 hosts (all, or by service)
 - [`nodes`](#nodes): List Merritt storage nodes
