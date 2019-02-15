@@ -1,13 +1,21 @@
-package storagenodes
+package storage
 
 import (
 	"errors"
+	"fmt"
 	props "github.com/magiconair/properties"
 )
 
 type CloudCredentials struct {
 	Key    string
 	Secret string
+}
+
+func (c *CloudCredentials) String() string {
+	if c == nil {
+		return "<none>"
+	}
+	return fmt.Sprintf("%v:%v", c.Key, c.Secret)
 }
 
 func LoadCredentials(svcProps *props.Properties) (*CloudCredentials, error) {

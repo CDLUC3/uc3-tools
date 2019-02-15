@@ -1,7 +1,8 @@
-package storagenodes
+package storage
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/uc3-system-info/internal/output"
 	props "github.com/magiconair/properties"
 	"net/url"
 	"strings"
@@ -12,7 +13,15 @@ type CloudService struct {
 	ServiceType ServiceType
 	AccessMode  string
 	Endpoint    string
-	Credentials CloudCredentials
+	Credentials *CloudCredentials
+}
+
+func (c *CloudService) Sprint(format output.Format) string {
+	if c == nil {
+		return "<nil>"
+	}
+	str, _ := format.Sprint(c.Name, c.ServiceType, c.AccessMode, c.Endpoint, c.Credentials)
+	return str
 }
 
 func LoadCloudService(name, svcPropsPath string) (*CloudService, error) {
@@ -36,12 +45,19 @@ func LoadCloudService(name, svcPropsPath string) (*CloudService, error) {
 		return nil, err
 	}
 
+	var endpointStr string
+	if endpoint == nil {
+		endpointStr = "<nil>"
+	} else {
+		endpointStr = endpoint.String()
+	}
+
 	node := CloudService{
 		Name:        name,
 		ServiceType: *serviceType,
 		AccessMode:  svcProps.GetString("accessMode", "on-line"),
-		Endpoint:    endpoint.String(),
-		Credentials: *credentials,
+		Endpoint:    endpointStr,
+		Credentials: credentials,
 	}
 	return &node, nil
 }

@@ -30,8 +30,9 @@ func (h *Hosts) PrintInventory(invPath string) error {
 func init() {
 	var h Hosts
 	cmd := &cobra.Command{
-		Use:   "hosts <FILE>",
+		Use:   "hosts <inventory file>",
 		Short: "List UC3 hosts",
+		Long: "List UC3 hosts from inventory file",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return h.PrintInventory(args[0])
