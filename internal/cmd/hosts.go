@@ -15,7 +15,7 @@ type Hosts struct {
 	service string
 }
 
-func (h *Hosts) PrintHosts(invPath string) error {
+func (h *Hosts) PrintInventory(invPath string) error {
 	format, err := output.ToFormat(h.formatStr)
 	if err != nil {
 		return err
@@ -24,8 +24,7 @@ func (h *Hosts) PrintHosts(invPath string) error {
 	if err != nil {
 		return err
 	}
-	inv.Print(format, h.header, h.footer, h.service)
-	return nil
+	return inv.Print(format, h.header, h.footer, h.service)
 }
 
 func init() {
@@ -35,7 +34,7 @@ func init() {
 		Short: "List UC3 hosts",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return h.PrintHosts(args[0])
+			return h.PrintInventory(args[0])
 		},
 	}
 	cmdFlags := cmd.Flags()

@@ -2,6 +2,8 @@ package output
 
 import (
 	"fmt"
+	"reflect"
+	"strconv"
 	"strings"
 )
 
@@ -11,7 +13,8 @@ type Format interface {
 	InnerSeparator() string
 	Prefix() string
 	Suffix() string
-	FormatHeader(header []string) string
+	SprintHeader(header []string) string
+	Sprint(fields ...interface{}) (string, error)
 }
 
 func ToFormat(name string) (Format, error) {
@@ -94,7 +97,7 @@ func (f standardFormat) Name() string {
 	return ""
 }
 
-func (f standardFormat) FormatHeader(header []string) string {
+func (f standardFormat) SprintHeader(header []string) string {
 	headerLine := strings.Join(header, f.FieldSeparator())
 	headerLine = fmt.Sprintf("%v%v%v\n", f.Prefix(), headerLine, f.Suffix())
 	if f == Markdown {
@@ -103,7 +106,7 @@ func (f standardFormat) FormatHeader(header []string) string {
 		sb.WriteString(f.Prefix())
 		for i := 0; i < len(header); i++ {
 			sb.WriteString(":---")
-			if i + 1 < len(header) {
+			if i+1 < len(header) {
 				sb.WriteString(f.FieldSeparator())
 			}
 		}
@@ -112,4 +115,33 @@ func (f standardFormat) FormatHeader(header []string) string {
 		return sb.String()
 	}
 	return headerLine
+}
+
+func (f standardFormat) Sprint(fields ...interface{}) (string, error) {
+	var sb strings.Builder
+	sb.WriteString(f.Prefix())
+	for i, field := range fields {
+		switch v := field.(type) {
+		case string:
+			sb.WriteString(v)
+		case int64:
+			sb.WriteString(strconv.FormatInt(v, 10))
+		case fmt.Stringer:
+			sb.WriteString(v.String())
+		case []string:
+			for j, sf := range v {
+				sb.WriteString(sf)
+				if j+1 < len(v) {
+					sb.WriteString(f.InnerSeparator())
+				}
+			}
+		default:
+			return "", fmt.Errorf("don't know how to format %v %#v", reflect.TypeOf(field), field)
+		}
+		if i+1 < len(fields) {
+			sb.WriteString(f.FieldSeparator())
+		}
+	}
+	sb.WriteString(f.Suffix())
+	return sb.String(), nil
 }

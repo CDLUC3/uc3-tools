@@ -2,6 +2,7 @@ package hosts
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/uc3-system-info/internal/output"
 	"regexp"
 	"sort"
 	"strings"
@@ -22,22 +23,22 @@ type HostRecord struct {
 	CNAMEs      []string
 }
 
-func (hr *HostRecord) ToDelimitedString(fieldSep, cnameSep string, hideService bool) string {
+func (hr *HostRecord) Sprint(format output.Format, hideService bool) (string, error) {
 	if hr == nil {
-		return ""
+		return "", nil
 	}
-	fields := []string{
+	fields := []interface{}{
 		hr.Service,
 		hr.Environment,
 		hr.Subsystem,
 		hr.Name,
 		hr.FQDN,
-		strings.Join(hr.CNAMEs, cnameSep),
+		hr.CNAMEs,
 	}
 	if hideService {
 		fields = fields[1:]
 	}
-	return strings.Join(fields, fieldSep)
+	return format.Sprint(fields...)
 }
 
 func (hr *HostRecord) ParseLine(line string) (*HostRecord, error) {

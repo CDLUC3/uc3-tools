@@ -28,7 +28,7 @@ func NewInventory(invPath string) (*Inventory, error) {
 // ------------------------------
 // Exported functions
 
-func (inv *Inventory) Print(format output.Format, header bool, footer bool, service string) {
+func (inv *Inventory) Print(format output.Format, header bool, footer bool, service string) error {
 	hideService := service != ""
 
 	if header {
@@ -43,7 +43,7 @@ func (inv *Inventory) Print(format output.Format, header bool, footer bool, serv
 		if hideService {
 			headerFields = headerFields[1:]
 		}
-		fmt.Print(format.FormatHeader(headerFields))
+		fmt.Print(format.SprintHeader(headerFields))
 	}
 
 	// TODO: "pretty" TSV:
@@ -54,22 +54,18 @@ func (inv *Inventory) Print(format output.Format, header bool, footer bool, serv
 		if hideService && h.Service != service {
 			continue
 		}
-		// TODO: move this to format type, somehow
-		fmt.Printf("%v%v%v\n",
-			format.Prefix(),
-			// TODO: align columns in markdown format
-			h.ToDelimitedString(
-				format.FieldSeparator(),
-				format.InnerSeparator(),
-				hideService,
-			),
-			format.Suffix(),
-		)
+		line, err := h.Sprint(format, hideService)
+		if err != nil {
+			return err
+		}
+		fmt.Println(line)
 	}
 
 	if footer {
 		fmt.Printf("\nGenerated %v\n", time.Now().Format(time.RFC3339))
 	}
+
+	return nil
 }
 
 // ------------------------------
