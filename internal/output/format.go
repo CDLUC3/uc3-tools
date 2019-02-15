@@ -13,7 +13,8 @@ type Format interface {
 	InnerSeparator() string
 	Prefix() string
 	Suffix() string
-	SprintHeader(header []string) string
+	SprintTitle(title string) string
+	SprintHeader(headerFields ...string) string
 	Sprint(fields ...interface{}) (string, error)
 }
 
@@ -97,24 +98,37 @@ func (f standardFormat) Name() string {
 	return ""
 }
 
-func (f standardFormat) SprintHeader(header []string) string {
-	headerLine := strings.Join(header, f.FieldSeparator())
-	headerLine = fmt.Sprintf("%v%v%v\n", f.Prefix(), headerLine, f.Suffix())
+func (f standardFormat) SprintTitle(title string) string {
 	if f == Markdown {
-		var sb strings.Builder
-		sb.WriteString(headerLine)
+		return fmt.Sprintf("## %v\n", title)
+	}
+	return title + "\n"
+}
+
+func (f standardFormat) SprintHeader(headerFields ...string) string {
+	var sb strings.Builder
+	sb.WriteString(f.Prefix())
+	for i, hf := range headerFields {
+		sb.WriteString(hf)
+		if i+1 < len(headerFields) {
+			sb.WriteString(f.FieldSeparator())
+		}
+	}
+	sb.WriteString(f.Suffix())
+	sb.WriteString("\n")
+
+	if f == Markdown {
 		sb.WriteString(f.Prefix())
-		for i := 0; i < len(header); i++ {
+		for i := 0; i < len(headerFields); i++ {
 			sb.WriteString(":---")
-			if i+1 < len(header) {
+			if i+1 < len(headerFields) {
 				sb.WriteString(f.FieldSeparator())
 			}
 		}
 		sb.WriteString(f.Suffix())
 		sb.WriteString("\n")
-		return sb.String()
 	}
-	return headerLine
+	return sb.String()
 }
 
 func (f standardFormat) Sprint(fields ...interface{}) (string, error) {

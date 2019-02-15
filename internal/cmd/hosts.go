@@ -8,15 +8,15 @@ import (
 	"strings"
 )
 
-type Hosts struct {
+type HostFlags struct {
 	formatStr string
 	header    bool
 	footer bool
 	service string
 }
 
-func (h *Hosts) PrintInventory(invPath string) error {
-	format, err := output.ToFormat(h.formatStr)
+func (f *HostFlags) PrintInventory(invPath string) error {
+	format, err := output.ToFormat(f.formatStr)
 	if err != nil {
 		return err
 	}
@@ -24,11 +24,11 @@ func (h *Hosts) PrintInventory(invPath string) error {
 	if err != nil {
 		return err
 	}
-	return inv.Print(format, h.header, h.footer, h.service)
+	return inv.Print(format, f.header, f.footer, f.service)
 }
 
 func init() {
-	var h Hosts
+	var h HostFlags
 	cmd := &cobra.Command{
 		Use:   "hosts <inventory file>",
 		Short: "List UC3 hosts",

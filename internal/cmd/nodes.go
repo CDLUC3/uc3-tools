@@ -7,16 +7,17 @@ import (
 	"github.com/spf13/cobra"
 	"path/filepath"
 	"strings"
+	"time"
 )
 
-type Nodes struct {
+type NodeFlags struct {
 	formatStr string
 	header    bool
 	footer    bool
 }
 
-func (n *Nodes) PrintNodes(mrtConfPath string) error {
-	format, err := output.ToFormat(n.formatStr)
+func (f *NodeFlags) PrintNodes(mrtConfPath string) error {
+	format, err := output.ToFormat(f.formatStr)
 	if err != nil {
 		return err
 	}
@@ -31,21 +32,27 @@ func (n *Nodes) PrintNodes(mrtConfPath string) error {
 		return err
 	}
 
-	for i, ns := range nodeSets {
-		propsFile := filepath.Base(ns.PropsPath)
-		fmt.Println(propsFile)
-		for _, n := range ns.Nodes() {
-			fmt.Println(n.Sprint(format))
+	for i, nodeSet := range nodeSets {
+		fmt.Println(format.SprintTitle(filepath.Base(nodeSet.PropsPath)))
+		if f.header {
+			fmt.Print(format.SprintHeader("Node number", "Service", "Container"))
+		}
+		for _, node := range nodeSet.Nodes() {
+			fmt.Println(node.Sprint(format))
 		}
 		if i + 1 < len(nodeSets) {
 			fmt.Println()
 		}
 	}
+
+	if f.footer {
+		fmt.Printf("\nGenerated %v\n", time.Now().Format(time.RFC3339))
+	}
 	return nil
 }
 
 func init() {
-	var n Nodes
+	var n NodeFlags
 
 	cmd := &cobra.Command{
 		Use:   "nodes <path to mrt-conf-prv>",

@@ -43,7 +43,7 @@ func (inv *Inventory) Print(format output.Format, header bool, footer bool, serv
 		if hideService {
 			headerFields = headerFields[1:]
 		}
-		fmt.Print(format.SprintHeader(headerFields))
+		fmt.Print(format.SprintHeader(headerFields...))
 	}
 
 	// TODO: "pretty" TSV:
