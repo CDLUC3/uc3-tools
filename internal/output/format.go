@@ -100,7 +100,7 @@ func (f standardFormat) Name() string {
 
 func (f standardFormat) SprintTitle(title string) string {
 	if f == Markdown {
-		return fmt.Sprintf("## %v\n", title)
+		return fmt.Sprintf("### %v\n", title)
 	}
 	return title + "\n"
 }
