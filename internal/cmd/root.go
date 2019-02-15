@@ -19,7 +19,7 @@ func Root() *cobra.Command {
 	if rootCmd == nil {
 		rc :=  &cobra.Command{
 			Use: "uc3-system-info",
-			Short: "uc3-system-info: a tool for gathering Merritt system information",
+			Short: "uc3-system-info: a tool for generating UC3 system info reports",
 		}
 		rc.Flags().SortFlags = false // TODO: figure out why this isn't respected
 		rootCmd = rc

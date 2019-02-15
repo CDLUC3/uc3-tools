@@ -53,7 +53,7 @@ func init() {
 
 	cmd := &cobra.Command{
 		Use:   "nodes <path to mrt-conf-prv>",
-		Short: "List storage nodes",
+		Short: "List Merritt storage nodes",
 		Long: "List storage nodes defined in mrt-conf-prv",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {

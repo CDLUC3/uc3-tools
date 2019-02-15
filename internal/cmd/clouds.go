@@ -72,7 +72,7 @@ func init() {
 
 	cmd := &cobra.Command{
 		Use:   "clouds <path to mrt-conf-prv>",
-		Short: "List cloud storage services",
+		Short: "List Merritt cloud storage services",
 		Long: "List cloud storage services defined in mrt-conf-prv",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {

@@ -18,7 +18,7 @@ func (f *Flags) AddTo(cmdFlags *pflag.FlagSet) {
 
 	formatFlagUsage := fmt.Sprintf("output format (%v)", strings.Join(output.StandardFormats(), ", "))
 	cmdFlags.StringVarP(&f.FormatStr, "format", "f", output.Default.Name(), formatFlagUsage)
-	cmdFlags.BoolVar(&f.Header, "header", false, "include Header")
-	cmdFlags.BoolVar(&f.Footer, "footer", false, "include Footer")
+	cmdFlags.BoolVar(&f.Header, "header", false, "include header")
+	cmdFlags.BoolVar(&f.Footer, "footer", false, "include footer")
 }
 
