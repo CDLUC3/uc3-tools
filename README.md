@@ -72,3 +72,36 @@ Examples:
   ```
 
   (etc.)
+
+
+## Building
+
+The `uc3-system-info` project can be built and installed simply with `go
+build` and `go install`, but it also supports [Mage](https://magefile.org).
+
+To install the latest version of Mage:
+
+1. visit their [releases page](https://github.com/magefile/mage/releases),
+   download the appropriate binary, and place it in your `$PATH`, or
+2. from _outside_ this project directory (`go get` behaves differently when
+   run in the context of a module project), execute the following:
+
+   ```
+   go get -u -d github.com/magefile/mage \
+   && cd $GOPATH/src/github.com/magefile/mage \
+   && go run bootstrap.go
+   ```
+
+#### Mage tasks:
+
+| Tasks        | Purpose                                                          |
+| :---         | :---                                                             |
+| `build`      | builds a binary for the current platform                         |
+| `buildAll`   | builds a binary for each target platform                         |
+| `buildLinux` | builds a linux-amd64 binary (the most common cross-compile case) |
+| `clean`      | removes compiled binaries from the current working directory     |
+| `install`    | installs in $GOPATH/bin                                          |
+| `platforms`  | lists target platforms for buildAll                              |
+
+Note that `mage build` is a thin wrapper around `go build` and supports the
+same environment variables, e.g. `$GOOS` and `$GOARCH`.
