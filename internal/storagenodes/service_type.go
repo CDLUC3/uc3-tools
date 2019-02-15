@@ -1,4 +1,4 @@
-package storage
+package storagenodes
 
 import (
 	"fmt"
@@ -8,9 +8,10 @@ import (
 type ServiceType int
 
 const (
-	s3 ServiceType = iota
+	unknown ServiceType = iota
+	s3
 	swift
-	unknown
+	cloudhost
 )
 
 func LoadServiceType(nodeProps *props.Properties) (*ServiceType, error) {
@@ -28,6 +29,9 @@ func ParseServiceType(serviceTypeStr string) (ServiceType, error) {
 	}
 	if "swift" == serviceTypeStr {
 		return swift, nil
+	}
+	if "cloudhost" == serviceTypeStr {
+		return cloudhost, nil
 	}
 	return unknown, fmt.Errorf("can't parse service type %#v", serviceTypeStr)
 }

@@ -1,4 +1,4 @@
-package storage
+package storagenodes
 
 import (
 	"fmt"
@@ -7,47 +7,49 @@ import (
 	"strings"
 )
 
-type AccessNode struct {
+type CloudService struct {
+	Name        string
 	ServiceType ServiceType
 	AccessMode  string
-	Endpoint    *url.URL
-	Credentials *CloudCredentials
+	Endpoint    string
+	Credentials CloudCredentials
 }
 
-func LoadAccessNode(nodePropsPath string) (*AccessNode, error) {
-	nodeProps, err := props.LoadFile(nodePropsPath, props.ISO_8859_1)
+func LoadCloudService(name, svcPropsPath string) (*CloudService, error) {
+	svcProps, err := props.LoadFile(svcPropsPath, props.ISO_8859_1)
 	if err != nil {
 		return nil, err
 	}
 
-	serviceType, err := LoadServiceType(nodeProps)
+	serviceType, err := LoadServiceType(svcProps)
 	if err != nil {
 		return nil, err
 	}
 
-	endpoint, err := LoadEndpoint(nodeProps)
+	endpoint, err := LoadEndpoint(svcProps)
 	if err != nil {
 		return nil, err
 	}
 
-	credentials, err := LoadCredentials(nodeProps)
+	credentials, err := LoadCredentials(svcProps)
 	if err != nil {
 		return nil, err
 	}
 
-	node := AccessNode{
+	node := CloudService{
+		Name:        name,
 		ServiceType: *serviceType,
-		AccessMode:  nodeProps.GetString("accessMode", "on-line"),
-		Endpoint: endpoint,
-		Credentials: credentials,
+		AccessMode:  svcProps.GetString("accessMode", "on-line"),
+		Endpoint:    endpoint.String(),
+		Credentials: *credentials,
 	}
 	return &node, nil
 }
 
-func LoadEndpoint(nodeProps *props.Properties) (*url.URL, error) {
-	endpointStr := nodeProps.GetString("host", "")
+func LoadEndpoint(svcProps *props.Properties) (*url.URL, error) {
+	endpointStr := svcProps.GetString("host", "")
 	if endpointStr == "" {
-		endpointStr = nodeProps.GetString("endPoint", "")
+		endpointStr = svcProps.GetString("endPoint", "")
 	}
 	return toAbsoluteUrl(endpointStr)
 }

@@ -1,4 +1,4 @@
-package storage
+package storagenodes
 
 import (
 	"errors"
@@ -10,14 +10,14 @@ type CloudCredentials struct {
 	Secret string
 }
 
-func LoadCredentials(nodeProps *props.Properties) (*CloudCredentials, error) {
-	key := nodeProps.GetString("accessKey", "")
+func LoadCredentials(svcProps *props.Properties) (*CloudCredentials, error) {
+	key := svcProps.GetString("accessKey", "")
 	if key == "" {
-		key = nodeProps.GetString("access_key", "")
+		key = svcProps.GetString("access_key", "")
 	}
-	secret := nodeProps.GetString("secretKey", "")
+	secret := svcProps.GetString("secretKey", "")
 	if secret == "" {
-		secret = nodeProps.GetString("secret_key", "")
+		secret = svcProps.GetString("secret_key", "")
 	}
 
 	if key == "" {
