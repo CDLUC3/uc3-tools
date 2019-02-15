@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/dmolesUC3/uc3-system-info/internal/outputfmt"
+	"github.com/dmolesUC3/uc3-system-info/internal/output"
 	"github.com/dmolesUC3/uc3-system-info/internal/hosts"
 	"github.com/spf13/cobra"
 	"strings"
@@ -16,7 +16,7 @@ type Hosts struct {
 }
 
 func (h *Hosts) PrintHosts(invPath string) error {
-	format, err := outputfmt.ToFormat(h.formatStr)
+	format, err := output.ToFormat(h.formatStr)
 	if err != nil {
 		return err
 	}
@@ -41,8 +41,8 @@ func init() {
 	cmdFlags := cmd.Flags()
 	cmdFlags.SortFlags = false
 
-	formatFlagUsage := fmt.Sprintf("output format (%v)", strings.Join(outputfmt.StandardFormats(), ", "))
-	cmdFlags.StringVarP(&h.formatStr, "format", "f", outputfmt.Default.Name(), formatFlagUsage)
+	formatFlagUsage := fmt.Sprintf("output format (%v)", strings.Join(output.StandardFormats(), ", "))
+	cmdFlags.StringVarP(&h.formatStr, "format", "f", output.Default.Name(), formatFlagUsage)
 	cmdFlags.StringVarP(&h.service, "service", "s", "", "filter to specified service")
 	cmdFlags.BoolVar(&h.header, "header", false, "include header")
 	cmdFlags.BoolVar(&h.footer, "footer", false, "include footer")

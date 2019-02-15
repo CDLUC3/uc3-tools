@@ -14,6 +14,29 @@ type NodeSet struct {
 	nodes    map[int64]*Node
 }
 
+func LoadAllNodes(propsDir string) (*NodeSet, error) {
+	propsPaths, err := filepath.Glob(filepath.Join(propsDir, "nodes-*.properties"))
+	if err != nil {
+		return nil, err
+	}
+	if len(propsPaths) == 0 {
+		return nil, fmt.Errorf("no nodes-*.properties files found in %v", propsDir)
+	}
+
+	ns := &NodeSet{propsDir: propsDir}
+	for _, propsPath := range propsPaths {
+		ns2, err := LoadNodes(propsPath)
+		if err != nil {
+			return nil, err
+		}
+		ns, err = Concat(ns, ns2)
+		if err != nil {
+			return nil, err
+		}
+	}
+	return ns, nil
+}
+
 func LoadNodes(propsPath string) (*NodeSet, error) {
 	nodeProps, err := props.LoadFile(propsPath, props.ISO_8859_1)
 	if err != nil {

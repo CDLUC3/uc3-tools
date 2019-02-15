@@ -1,4 +1,4 @@
-package outputfmt
+package output
 
 import (
 	"fmt"

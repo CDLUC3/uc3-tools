@@ -3,7 +3,7 @@ package hosts
 import (
 	"bufio"
 	"fmt"
-	"github.com/dmolesUC3/uc3-system-info/internal/outputfmt"
+	"github.com/dmolesUC3/uc3-system-info/internal/output"
 	"os"
 	"sort"
 	"time"
@@ -28,7 +28,7 @@ func NewInventory(invPath string) (*Inventory, error) {
 // ------------------------------
 // Exported functions
 
-func (inv *Inventory) Print(format outputfmt.Format, header bool, footer bool, service string) {
+func (inv *Inventory) Print(format output.Format, header bool, footer bool, service string) {
 	hideService := service != ""
 
 	if header {
