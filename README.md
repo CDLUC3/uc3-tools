@@ -67,18 +67,18 @@ uc3-sytem-info clouds ~/Work/mrt-conf-prv --format md --header --footer
 
 Outputs:
 
-| Name | Service type | Access mode | Endpoint | Key | Secret |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| aws-near | s3 | near-line |  |  |  |
-| aws-rr | s3 | on-line |  |  |  |
-| aws-std | s3 | on-line |  |  |  |
-| ch-unm-dev | cloudhost | on-line |  |  |  |
-| ch-unm-prd | cloudhost | on-line |  |  |  |
-| minio-sdsc | s3 | on-line | https://cdl.qs3.sdsc.edu:443 | •••••••• | •••••••• |
-| sdsc | swift | on-line | https://cloud.sdsc.edu:443 | •••••••• | •••••••• |
-| ucla-dev | pairtree | on-line |  |  |  |
-| ucla-prod | pairtree | on-line |  |  |  |
-| ucla-stg | pairtree | on-line |  |  |  |
+> | Name | Service type | Access mode | Endpoint | Key | Secret |
+> | :--- | :--- | :--- | :--- | :--- | :--- |
+> | aws-near | s3 | near-line |  |  |  |
+> | aws-rr | s3 | on-line |  |  |  |
+> | aws-std | s3 | on-line |  |  |  |
+> | ch-unm-dev | cloudhost | on-line |  |  |  |
+> | ch-unm-prd | cloudhost | on-line |  |  |  |
+> | minio-sdsc | s3 | on-line | https://cdl.qs3.sdsc.edu:443 | •••••••• | •••••••• |
+> | sdsc | swift | on-line | https://cloud.sdsc.edu:443 | •••••••• | •••••••• |
+> | ucla-dev | pairtree | on-line |  |  |  |
+> | ucla-prod | pairtree | on-line |  |  |  |
+> | ucla-stg | pairtree | on-line |  |  |  |
 
 Generated 2019-02-15T14:14:52-08:00
 
