@@ -27,8 +27,8 @@ func init() {
 	f := HostFlags{}
 	cmd := &cobra.Command{
 		Use:   "hosts <inventory file>",
-		Short: "List UC3 hosts",
-		Long: "List UC3 hosts from inventory file",
+		Short: "List UC3 hosts (all, or by service)",
+		Long: "List UC3 hosts (all, or by service) from inventory file",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return f.PrintInventory(args[0])

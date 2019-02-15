@@ -2,22 +2,23 @@
 
 A tool for generating UC3 system info reports.
 
-- [`cloud` command](#cloud-command)
-- [`hosts` command](#hosts-command)
-- [`nodes` command](#nodes-command)
+- [`cloud`](#cloud): List Merritt cloud storage services
+- [`hosts`](#hosts): List UC3 hosts (all, or by service)
+- [`nodes`](#nodes): List Merritt storage nodes
 - [Building](#building)
 
 ---
 
-## `cloud` command
+## `cloud`
 
 List Merritt cloud storage services.
 
-> #### ⚠️ Note:
+> ### ⚠️ Note:
 >
 > The output from this command includes access keys and passwords for cloud storage services.
-> Be careful where you copy or paste it! In the examples below, the keys and passwords are
-> replaced with “••••••••”.
+> **Be careful where you copy or paste it!**
+>
+> In the examples below, the keys and passwords are replaced with “••••••••”.
 
 ### Input
 
@@ -85,7 +86,7 @@ Generated 2019-02-15T14:14:52-08:00
 
 ---
 
-## `hosts` command
+## `hosts`
 
 List UC3 hosts.
 
@@ -164,7 +165,7 @@ stg,,uc3-dash2-stg,uc3-dash2-stg.cdlib.org,dash-stg.cdlib.org;dash-ucla-stg.cdli
 
 ---
 
-## `nodes` command
+## `nodes`
 
 ### Input
 
