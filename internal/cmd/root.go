@@ -6,15 +6,24 @@ import (
 	"os"
 )
 
-var rootCmd = &cobra.Command{
-	Use: "uc3-system-info",
-	Short: "uc3-system-info: a tool for gathering Merritt system information",
-}
+var rootCmd *cobra.Command
 
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+}
+
+func Root() *cobra.Command {
+	if rootCmd == nil {
+		rc :=  &cobra.Command{
+			Use: "uc3-system-info",
+			Short: "uc3-system-info: a tool for gathering Merritt system information",
+		}
+		rc.Flags().SortFlags = false // TODO: figure out why this isn't respected
+		rootCmd = rc
+	}
+	return rootCmd
 }
 

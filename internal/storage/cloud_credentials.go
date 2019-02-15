@@ -13,7 +13,7 @@ type CloudCredentials struct {
 
 func (c *CloudCredentials) String() string {
 	if c == nil {
-		return "<none>"
+		return ""
 	}
 	return fmt.Sprintf("%v:%v", c.Key, c.Secret)
 }

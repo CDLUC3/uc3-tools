@@ -3,26 +3,23 @@ package cmd
 import (
 	"fmt"
 	"github.com/dmolesUC3/uc3-system-info/internal/output"
-	"github.com/dmolesUC3/uc3-system-info/internal/storage"
+	. "github.com/dmolesUC3/uc3-system-info/internal/storage"
 	"github.com/spf13/cobra"
 	"path/filepath"
-	"strings"
 	"time"
 )
 
 type NodeFlags struct {
-	formatStr string
-	header    bool
-	footer    bool
+	Flags
 }
 
 func (f *NodeFlags) PrintNodes(mrtConfPath string) error {
-	format, err := output.ToFormat(f.formatStr)
+	format, err := output.ToFormat(f.FormatStr)
 	if err != nil {
 		return err
 	}
 
-	mrtConf, err := storage.NewMrtConf(mrtConfPath)
+	mrtConf, err := NewMrtConf(mrtConfPath)
 	if err != nil {
 		return err
 	}
@@ -34,7 +31,7 @@ func (f *NodeFlags) PrintNodes(mrtConfPath string) error {
 
 	for i, nodeSet := range nodeSets {
 		fmt.Println(format.SprintTitle(filepath.Base(nodeSet.PropsPath)))
-		if f.header {
+		if f.Header {
 			fmt.Print(format.SprintHeader("Node number", "Service", "Container"))
 		}
 		for _, node := range nodeSet.Nodes() {
@@ -45,14 +42,14 @@ func (f *NodeFlags) PrintNodes(mrtConfPath string) error {
 		}
 	}
 
-	if f.footer {
+	if f.Footer {
 		fmt.Printf("\nGenerated %v\n", time.Now().Format(time.RFC3339))
 	}
 	return nil
 }
 
 func init() {
-	var n NodeFlags
+	f := NodeFlags{}
 
 	cmd := &cobra.Command{
 		Use:   "nodes <path to mrt-conf-prv>",
@@ -60,15 +57,10 @@ func init() {
 		Long: "List storage nodes defined in mrt-conf-prv",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return n.PrintNodes(args[0])
+			return f.PrintNodes(args[0])
 		},
 	}
 	cmdFlags := cmd.Flags()
-	cmdFlags.SortFlags = false
-
-	formatFlagUsage := fmt.Sprintf("output format (%v)", strings.Join(output.StandardFormats(), ", "))
-	cmdFlags.StringVarP(&n.formatStr, "format", "f", output.Default.Name(), formatFlagUsage)
-	cmdFlags.BoolVar(&n.header, "header", false, "include header")
-	cmdFlags.BoolVar(&n.footer, "footer", false, "include footer")
-	rootCmd.AddCommand(cmd)
+	f.AddTo(cmdFlags)
+	Root().AddCommand(cmd)
 }

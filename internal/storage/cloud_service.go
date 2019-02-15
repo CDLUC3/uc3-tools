@@ -18,10 +18,26 @@ type CloudService struct {
 
 func (c *CloudService) Sprint(format output.Format) string {
 	if c == nil {
-		return "<nil>"
+		return ""
 	}
-	str, _ := format.Sprint(c.Name, c.ServiceType, c.AccessMode, c.Endpoint, c.Credentials)
+	str, _ := format.Sprint(c.Name, c.ServiceType, c.AccessMode, c.Endpoint, c.Key(), c.Secret())
 	return str
+}
+
+func (c *CloudService) Key() string {
+	creds := c.Credentials
+	if creds == nil {
+		return ""
+	}
+	return creds.Key
+}
+
+func (c *CloudService) Secret() string {
+	creds := c.Credentials
+	if creds == nil {
+		return ""
+	}
+	return creds.Secret
 }
 
 func LoadCloudService(name, svcPropsPath string) (*CloudService, error) {
@@ -47,7 +63,7 @@ func LoadCloudService(name, svcPropsPath string) (*CloudService, error) {
 
 	var endpointStr string
 	if endpoint == nil {
-		endpointStr = "<nil>"
+		endpointStr = ""
 	} else {
 		endpointStr = endpoint.String()
 	}

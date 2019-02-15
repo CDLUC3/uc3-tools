@@ -11,7 +11,7 @@ type Node struct {
 func (n *Node) Sprint(format output.Format) string {
 	var svcName string
 	if n.Service == nil {
-		svcName = "<nil>"
+		svcName = ""
 	} else {
 		svcName = n.Service.Name
 	}
