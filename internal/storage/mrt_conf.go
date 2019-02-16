@@ -20,6 +20,34 @@ func NewMrtConf(rootPath string) (*MrtConf, error) {
 	return &conf, nil
 }
 
+func (mc *MrtConf) GetNode(env, svc string, number int64) (*Node, error) {
+	nodeSet, err := mc.GetNodeSet(env, svc)
+	if err != nil {
+		return nil, err
+	}
+	if node, ok := nodeSet.NodesByNumber()[number]; ok {
+		return node, nil
+	}
+	return nil, fmt.Errorf("node number %d not found in node properties %v", number, nodeSet.PropsFilename())
+}
+
+func (mc *MrtConf) GetNodeSet(env, svc string) (*NodeSet, error) {
+	nodeSets, err := mc.NodeSets()
+	if err != nil {
+		return nil, err
+	}
+
+	propsFile := fmt.Sprintf("nodes-%v-%v.properties", env, svc)
+	for _, nodeSet := range nodeSets {
+		if propsFile == nodeSet.PropsFilename() {
+			return nodeSet, nil
+		}
+	}
+	propsPath := filepath.Join(mc.nodePropsDir(), propsFile)
+	return nil, fmt.Errorf("no matching props file %v found for environment %#v, service %#v", propsPath, env, svc)
+}
+
+
 func (mc *MrtConf) NodeSets() ([]*NodeSet, error) {
 	if mc.nodeSets == nil {
 		nodeSet, err := LoadAllNodes(mc.nodePropsDir())

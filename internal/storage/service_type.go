@@ -1,8 +1,10 @@
 package storage
 
 import (
+	"crypto/md5"
 	"fmt"
 	props "github.com/magiconair/properties"
+	"strings"
 )
 
 type ServiceType int
@@ -28,6 +30,16 @@ func (s ServiceType) String() string {
 	default:
 		return "unknown"
 	}
+}
+
+func (s ServiceType) ContainerFor(containerBase, ark string) string {
+	if s == swift && strings.HasSuffix(containerBase, "__"){
+		hash := md5.New()
+		hash.Write(([]byte)(ark))
+		resultStr := fmt.Sprintf("%x", hash.Sum(nil))
+		return containerBase + resultStr[0:3]
+	}
+	return containerBase
 }
 
 func LoadServiceType(nodeProps *props.Properties) (*ServiceType, error) {

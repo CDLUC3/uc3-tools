@@ -1,6 +1,9 @@
 package storage
 
-import "github.com/dmolesUC3/uc3-system-info/internal/output"
+import (
+	"fmt"
+	"github.com/dmolesUC3/uc3-system-info/internal/output"
+)
 
 type Node struct {
 	NodeNumber int64
@@ -17,4 +20,12 @@ func (n *Node) Sprint(format output.Format) string {
 	}
 	str, _ := format.Sprint(n.NodeNumber, svcName, n.Container)
 	return str
+}
+
+func (n *Node) ContainerFor(ark string) (string, error) {
+	if n.Service == nil {
+		return "", fmt.Errorf("no cloud service defined for node %v", n.Sprint(output.CSV))
+	}
+	serviceType := n.Service.ServiceType
+	return serviceType.ContainerFor(n.Container, ark), nil
 }

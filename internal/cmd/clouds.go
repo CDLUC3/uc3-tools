@@ -20,12 +20,12 @@ func (f *CloudFlags) PrintServices(mrtConfPath string) error {
 		return err
 	}
 
-	mrtConf, err := NewMrtConf(mrtConfPath)
+	conf, err := NewMrtConf(mrtConfPath)
 	if err != nil {
 		return err
 	}
 
-	nodeSets, err := mrtConf.NodeSets()
+	nodeSets, err := conf.NodeSets()
 	if err != nil {
 		return err
 	}

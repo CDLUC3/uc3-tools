@@ -46,6 +46,10 @@ func (ns *NodeSet) NodesByNumber() map[int64]*Node {
 	return ns.nodesByNumber
 }
 
+func (ns *NodeSet) PropsFilename() string {
+	return filepath.Base(ns.PropsPath)
+}
+
 func LoadAllNodes(propsDir string) ([]*NodeSet, error) {
 	propsPaths, err := filepath.Glob(filepath.Join(propsDir, "nodes-*.properties"))
 	if err != nil {
