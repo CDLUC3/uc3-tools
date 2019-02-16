@@ -3,7 +3,6 @@ package storage
 import (
 	"fmt"
 	props "github.com/magiconair/properties"
-	"os"
 	"path/filepath"
 	"sort"
 	"strconv"
@@ -82,7 +81,8 @@ func LoadNodes(propsPath string) (*NodeSet, error) {
 		if v, ok := nodeProps.Get(k); ok {
 			node, err := ns.loadNode(k, v)
 			if err != nil {
-				_, _ = fmt.Fprintf(os.Stderr, "invalid node definition %v=%v in %v: %v\n", k, v, filepath.Base(propsPath), err.Error())
+				// TODO: verbose logging?
+				//_, _ = fmt.Fprintf(os.Stderr, "invalid node definition %v=%v in %v: %v\n", k, v, filepath.Base(propsPath), err.Error())
 				continue
 			}
 			nodeNum := node.NodeNumber
