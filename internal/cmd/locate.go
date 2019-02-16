@@ -41,6 +41,7 @@ func init() {
 	Root().AddCommand(cmd)
 }
 
+// TODO: pass conf as argument, path as flag?
 type LocateFlags struct {
 	ConfPath    string
 	Service     string
