@@ -1,9 +1,59 @@
 # uc3-system-info
 
-A tool for generating UC3 system info reports. Note that most of these commands
-(`hosts` excepted) require a local clone of the [mrt-conf-prv](github.com/cdlib/mrt-conf-prv/) private repository.
+A tool for generating UC3 system info reports. Note that most of these
+commands (`hosts` excepted) require a local clone of the
+[mrt-conf-prv](/cdlib/mrt-conf-prv/) private repository.
 
-## Subcommands
+## Table of contents
+
+- [Installation](#installation)
+   - [Building](#building)
+- [Usage](#usage)
+  - [clouds](#clouds): List Merritt cloud storage services
+  - [hosts](#hosts): List UC3 hosts (all, or by service)
+  - [locate](#locate): Locate Merritt objects or files in cloud storage
+  - [nodes](#nodes): List Merritt storage nodes
+
+## Installation
+
+If you just need to use the tool, you can download the latest binary from
+the [Releases tab](/dmolesUC3/uc3-system-info/releases).
+
+### Building
+
+The `uc3-system-info` project can be built and installed simply with `go
+build` and `go install`, but it also supports [Mage](https://magefile.org).
+
+To install the latest version of Mage:
+
+1. visit their [releases page](https://github.com/magefile/mage/releases),
+   download the appropriate binary, and place it in your `$PATH`, or
+2. from _outside_ this project directory (`go get` behaves differently when
+   run in the context of a module project), execute the following:
+
+   ```
+   go get -u -d github.com/magefile/mage \
+   && cd $GOPATH/src/github.com/magefile/mage \
+   && go run bootstrap.go
+   ```
+
+#### Mage tasks:
+
+| Tasks        | Purpose                                                          |
+| :---         | :---                                                             |
+| `build`      | builds a binary for the current platform                         |
+| `buildAll`   | builds a binary for each target platform                         |
+| `buildLinux` | builds a linux-amd64 binary (the most common cross-compile case) |
+| `clean`      | removes compiled binaries from the current working directory     |
+| `install`    | installs in $GOPATH/bin                                          |
+| `platforms`  | lists target platforms for buildAll                              |
+
+Note that `mage build` is a thin wrapper around `go build` and supports the
+same environment variables, e.g. `$GOOS` and `$GOARCH`.
+
+## Usage
+
+Subcommands:
 
 - [clouds](#clouds): List Merritt cloud storage services
 - [hosts](#hosts): List UC3 hosts (all, or by service)
@@ -344,34 +394,3 @@ Outputs:
 
 (etc.)
 
-## Building
-
-The `uc3-system-info` project can be built and installed simply with `go
-build` and `go install`, but it also supports [Mage](https://magefile.org).
-
-To install the latest version of Mage:
-
-1. visit their [releases page](https://github.com/magefile/mage/releases),
-   download the appropriate binary, and place it in your `$PATH`, or
-2. from _outside_ this project directory (`go get` behaves differently when
-   run in the context of a module project), execute the following:
-
-   ```
-   go get -u -d github.com/magefile/mage \
-   && cd $GOPATH/src/github.com/magefile/mage \
-   && go run bootstrap.go
-   ```
-
-### Mage tasks:
-
-| Tasks        | Purpose                                                          |
-| :---         | :---                                                             |
-| `build`      | builds a binary for the current platform                         |
-| `buildAll`   | builds a binary for each target platform                         |
-| `buildLinux` | builds a linux-amd64 binary (the most common cross-compile case) |
-| `clean`      | removes compiled binaries from the current working directory     |
-| `install`    | installs in $GOPATH/bin                                          |
-| `platforms`  | lists target platforms for buildAll                              |
-
-Note that `mage build` is a thin wrapper around `go build` and supports the
-same environment variables, e.g. `$GOOS` and `$GOARCH`.
