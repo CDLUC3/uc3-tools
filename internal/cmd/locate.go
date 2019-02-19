@@ -15,7 +15,9 @@ func init() {
 	// TODO: flags to generate AWS or S3 commands
 
 	examples := []string{
+		"uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 5001 -a ark:/b5072/fk2wq01k85",
 		"uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 5001 -a ark:/b5072/fk2wq01k85 -v 1 producer/20151-semestre.csv",
+		"uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -a ark:/99999/fk4kw5kc1z",
 		"uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -a ark:/99999/fk4kw5kc1z -v 1 producer/6GBZeroFile.txt",
 	}
 
@@ -27,13 +29,16 @@ func init() {
 
 	f := LocateFlags{}
 	cmd := &cobra.Command{
-		Use:     "locate <filepath>",
-		Short:   "Locate file in Merritt cloud storage",
+		Use:     "locate [filepath]",
+		Short:   "Locate object file in Merritt cloud storage",
 		Long:    strings.Join(longDesc, "\n"),
-		Args:    cobra.ExactArgs(1),
+		Args:    cobra.MaximumNArgs(1),
 		Example: strings.Join(examples, "\n"),
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return f.PrintLocation(args[0])
+			if len(args) > 0 {
+				return f.PrintFileLocation(args[0])
+			}
+			return f.PrintObjectLocation()
 		},
 	}
 	cmdFlags := cmd.Flags()
@@ -60,7 +65,42 @@ type LocateFlags struct {
 	Version int
 }
 
-func (f *LocateFlags) PrintLocation(filepath string) error {
+func (f *LocateFlags) PrintObjectLocation() error {
+	conf, err := NewMrtConf(f.ConfPath)
+	if err != nil {
+		return err
+	}
+
+	node, err := conf.GetNode(f.Environment, f.Service, f.NodeNumber)
+	if err != nil {
+		return err
+	}
+
+	svc := node.Service
+	if svc == nil {
+		return fmt.Errorf("unable to determine cloud service for node %d", f.NodeNumber)
+	}
+	serviceDesc := svc.Sprint(output.CSV)
+
+	container, err := node.ContainerFor(f.Ark)
+	if err != nil {
+		return err
+	}
+
+	cliExample, err := node.CLIExampleObject(f.Ark)
+	if err != nil {
+		return err
+	}
+
+	w := tabwriter.NewWriter(os.Stdout, 0, 8, 4, '\t', 0)
+	_, _ = fmt.Fprintf(w, "%v:\t%v\n", "Service", serviceDesc)
+	_, _ = fmt.Fprintf(w, "%v:\t%v\n", "Container", container)
+	_, _ = fmt.Fprintf(w, "%v:\t%v\n", "Example", cliExample)
+
+	return w.Flush()
+}
+
+func (f *LocateFlags) PrintFileLocation(filepath string) error {
 	conf, err := NewMrtConf(f.ConfPath)
 	if err != nil {
 		return err
@@ -83,7 +123,7 @@ func (f *LocateFlags) PrintLocation(filepath string) error {
 	}
 	key := node.KeyFor(f.Ark, f.Version, filepath)
 
-	cliExample, err := node.CLIExample(f.Ark, f.Version, filepath)
+	cliExample, err := node.CLIExampleFile(f.Ark, f.Version, filepath)
 	if err != nil {
 		return err
 	}

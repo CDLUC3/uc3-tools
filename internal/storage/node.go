@@ -36,7 +36,7 @@ func (n *Node) KeyFor(ark string, version int, filepath string) string {
 	return fmt.Sprintf("%v|%d|%v", ark, version, filepath)
 }
 
-func (n *Node) CLIExample(ark string, version int, filepath string) (string, error) {
+func (n *Node) CLIExampleFile(ark string, version int, filepath string) (string, error) {
 	service := n.Service
 	if service == nil {
 		return "", fmt.Errorf("no cloud service defined for node %v", n.Description())
@@ -47,7 +47,23 @@ func (n *Node) CLIExample(ark string, version int, filepath string) (string, err
 	}
 	key := n.KeyFor(ark, version, filepath)
 
-	example, err := service.ServiceType.CLIExample(service.Credentials, service.Endpoint, container, key)
+	example, err := service.ServiceType.CLIExampleFile(service.Credentials, service.Endpoint, container, key)
+	if err != nil {
+		return err.Error(), nil
+	}
+	return example, nil
+}
+
+func (n *Node) CLIExampleObject(ark string) (string, error) {
+	service := n.Service
+	if service == nil {
+		return "", fmt.Errorf("no cloud service defined for node %v", n.Description())
+	}
+	container, err := n.ContainerFor(ark)
+	if err != nil {
+		return "", err
+	}
+	example, err := service.ServiceType.CLIExampleObject(service.Credentials, service.Endpoint, container, ark)
 	if err != nil {
 		return err.Error(), nil
 	}
