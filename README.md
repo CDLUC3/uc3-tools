@@ -227,8 +227,9 @@ Note that files are stored only under the version in which they were
 originally uploaded and under any versions in which their content was
 changed.
 
-Note that for Swift storage, the container is suffixed with the first three
-digits of the MD5 sum of the object ARK.
+Note that for Swift containers ending in .__, the base container name
+must be suffixed with the first three digits of the MD5 sum of the object
+ARK to obtain the actual container.
 
 For objects in S3 and Swift, the `locate` command will print a sample command line
 for accessing the object, including credentials if available.
