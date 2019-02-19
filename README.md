@@ -217,6 +217,16 @@ object ARK, or locate a specific file in that object.
 (Note that this does not guarantee that the object exists, on that storage node,
 but only provides the information necessary to find it.)
 
+In general, the cloud storage key for a file is of the form
+
+```
+<ark>|<version>|<file>
+```
+
+Note that files are stored only under the version in which they were
+originally uploaded and under any versions in which their content was
+changed.
+
 Note that for Swift storage, the container is suffixed with the first three
 digits of the MD5 sum of the object ARK.
 
@@ -323,6 +333,13 @@ Note that while for an object the example command is `swift list`, for a single
 file it is `swift stat`.
 
 ### nodes
+
+List storage nodes defined in mrt-conf-prv.
+
+Note that for Swift storage, the container shown is only a base name; to get 
+the actual container for a specific object, this base must be suffixed with 
+the first three digits of the MD5 sum of the object ARK. The locate command
+can be used to determine the actual container for an object.
 
 #### Usage
 

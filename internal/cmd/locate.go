@@ -24,6 +24,14 @@ const (
 		(Note that this does not guarantee that the object exists, on that
 		storage node, but only provides the information necessary to find it.)
 
+		In general, the cloud storage key for a file is of the form
+		
+		  <ark>|<version>|<file>
+
+		Note that files are stored only under the version in which they were
+		originally uploaded and under any versions in which their content was
+		changed.
+
 		Note that for Swift storage, the container is suffixed with the first
 		three digits of the MD5 sum of the object ARK.
 
