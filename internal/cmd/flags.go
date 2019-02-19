@@ -15,10 +15,11 @@ type Flags struct {
 	Footer    bool
 }
 
+var formatFlagUsage = fmt.Sprintf("output format (%v)", strings.Join(output.StandardFormats(), ", "))
+
 func (f *Flags) AddTo(cmdFlags *pflag.FlagSet) {
 	cmdFlags.SortFlags = false
 
-	formatFlagUsage := fmt.Sprintf("output format (%v)", strings.Join(output.StandardFormats(), ", "))
 	cmdFlags.StringVarP(&f.ConfPath, "conf", "c", "", "path to mrt-conf-prv project (required)")
 	_ = cobra.MarkFlagRequired(cmdFlags, "conf")
 

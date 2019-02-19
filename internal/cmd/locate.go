@@ -11,18 +11,31 @@ import (
 
 const (
 	locateExamples = `
-		uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 5001 -a ark:/b5072/fk2wq01k85
-		uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 5001 -a ark:/b5072/fk2wq01k85 -v 1 producer/20151-semestre.csv
-		uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -a ark:/99999/fk4kw5kc1z
-		uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -a ark:/99999/fk4kw5kc1z -v 1 producer/6GBZeroFile.txt
+		uc3-system-info locate -c ~/Work/mrt-conf-prv -n 5001 -a ark:/b5060/d8rp4v
+		uc3-system-info locate -c ~/Work/mrt-conf-prv -n 5001 -a ark:/b5060/d8rp4v -v 1 producer/README.txt 
+		uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -s replic -a ark:/99999/fk4kw5kc1z
+		uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -s replic -a ark:/99999/fk4kw5kc1z -v 1 producer/6GBZeroFile.txt
 	`
 	
 	locateLongDesc = `
-		Locate an object in Merritt cloud storage based on the service, node number, and object ARK,
-		or locate a specific file in that object.
-		
-		Note that this does not guarantee that the object exists, on that storage node, but only 
-		provides the information necessary to find it.
+		Locates an object in Merritt cloud storage based on the service, node
+		number, and object ARK, or locate a specific file in that object.
+
+		(Note that this does not guarantee that the object exists, on that
+		storage node, but only provides the information necessary to find it.)
+
+		Note that for Swift storage, the container is suffixed with the first
+		three digits of the MD5 sum of the object ARK.
+
+		For objects in S3 and Swift, the locate command will print a sample
+		command line for accessing the object, including credentials if
+		available.
+				
+		On macOS, the example command for Swift storage will use the full path
+		/usr/local/bin/swift, in order to avoid collisions with the compiler
+		for the Swift programming language. If the OpenStack Swift CLI is
+		installed somehwere other than /usr/local/bin, the example command may
+		need to be modified.
 	`
 )
 
@@ -31,9 +44,9 @@ func init() {
 	cmd := &cobra.Command{
 		Use:     "locate [filepath]",
 		Short:   "Locate object or file in Merritt cloud storage",
-		Long:    untabify(locateLongDesc, "  "),
+		Long:    formatHelp(locateLongDesc, ""),
 		Args:    cobra.MaximumNArgs(1),
-		Example: untabify(locateExamples, "  "),
+		Example: formatHelp(locateExamples, "  "),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if len(args) > 0 {
 				return f.PrintFileLocation(args[0])

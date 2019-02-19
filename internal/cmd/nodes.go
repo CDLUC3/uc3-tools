@@ -49,13 +49,30 @@ func (f *NodeFlags) PrintNodes() error {
 	return nil
 }
 
+const (
+	nodesLongDesc = `
+		List storage nodes defined in mrt-conf-prv.
+
+		Note that for Swift storage, the container shown is only a base name; to get 
+		the actual container for a specific object, this base must be suffixed with 
+		the first three digits of the MD5 sum of the object ARK. The locate command
+		can be used to determine the actual container for an object.
+	`
+
+	nodesExamples = `
+		uc3-system-info nodes -c ~/Work/mrt-conf-prv
+		uc3-system-info nodes -c ~/Work/mrt-conf-prv --header --footer --format md
+	`
+)
+
 func init() {
 	f := NodeFlags{}
 
 	cmd := &cobra.Command{
 		Use:   "nodes",
 		Short: "List Merritt storage nodes",
-		Long:  "List storage nodes defined in mrt-conf-prv",
+		Long:  formatHelp(nodesLongDesc, ""),
+		Example: formatHelp(nodesExamples, "  "),
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return f.PrintNodes()

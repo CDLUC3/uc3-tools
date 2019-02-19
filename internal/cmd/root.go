@@ -5,6 +5,7 @@ import (
 	"github.com/spf13/cobra"
 	"os"
 	"regexp"
+	"strings"
 )
 
 var rootCmd *cobra.Command
@@ -28,7 +29,9 @@ func Root() *cobra.Command {
 	return rootCmd
 }
 
-func untabify(text string, indent string) string {
-	// TODO: support multi-level indent
-	return regexp.MustCompile(`(?m)^[\t ]+`).ReplaceAllString(text, indent)
+func formatHelp(text, indent string) string {
+	formattedText := regexp.MustCompile(`(?m)^[\t ]+`).ReplaceAllString(text, indent)
+	formattedText = strings.TrimPrefix(formattedText, "\n")
+	formattedText = strings.TrimSuffix(formattedText, "\n")
+	return formattedText
 }
