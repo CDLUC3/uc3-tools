@@ -13,13 +13,14 @@ type NodeFlags struct {
 	Flags
 }
 
-func (f *NodeFlags) PrintNodes(mrtConfPath string) error {
-	format, err := output.ToFormat(f.FormatStr)
+func (f *NodeFlags) PrintNodes() error {
+	mrtConfPath := f.ConfPath
+	mrtConf, err := NewMrtConf(mrtConfPath)
 	if err != nil {
 		return err
 	}
 
-	mrtConf, err := NewMrtConf(mrtConfPath)
+	format, err := output.ToFormat(f.FormatStr)
 	if err != nil {
 		return err
 	}
@@ -52,12 +53,12 @@ func init() {
 	f := NodeFlags{}
 
 	cmd := &cobra.Command{
-		Use:   "nodes <path to mrt-conf-prv>",
+		Use:   "nodes",
 		Short: "List Merritt storage nodes",
 		Long:  "List storage nodes defined in mrt-conf-prv",
-		Args:  cobra.ExactArgs(1),
+		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return f.PrintNodes(args[0])
+			return f.PrintNodes()
 		},
 	}
 	cmdFlags := cmd.Flags()

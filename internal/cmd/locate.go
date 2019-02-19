@@ -6,34 +6,34 @@ import (
 	. "github.com/dmolesUC3/uc3-system-info/internal/storage"
 	"github.com/spf13/cobra"
 	"os"
-	"strings"
 	"text/tabwriter"
 )
 
+const (
+	locateExamples = `
+		uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 5001 -a ark:/b5072/fk2wq01k85
+		uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 5001 -a ark:/b5072/fk2wq01k85 -v 1 producer/20151-semestre.csv
+		uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -a ark:/99999/fk4kw5kc1z
+		uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -a ark:/99999/fk4kw5kc1z -v 1 producer/6GBZeroFile.txt
+	`
+	
+	locateLongDesc = `
+		Locate an object in Merritt cloud storage based on the service, node number, and object ARK,
+		or locate a specific file in that object.
+		
+		Note that this does not guarantee that the object exists, on that storage node, but only 
+		provides the information necessary to find it.
+	`
+)
+
 func init() {
-
-	// TODO: flags to generate AWS or S3 commands
-
-	examples := []string{
-		"uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 5001 -a ark:/b5072/fk2wq01k85",
-		"uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 5001 -a ark:/b5072/fk2wq01k85 -v 1 producer/20151-semestre.csv",
-		"uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -a ark:/99999/fk4kw5kc1z",
-		"uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -a ark:/99999/fk4kw5kc1z -v 1 producer/6GBZeroFile.txt",
-	}
-
-	longDesc := []string {
-		"Locate a file in Merritt cloud storage based on the service, node number, and object ARK.",
-		"(Note that this does not guarantee that the file exists, but only provides the information",
-		"necessary to find it.)",
-	}
-
 	f := LocateFlags{}
 	cmd := &cobra.Command{
 		Use:     "locate [filepath]",
-		Short:   "Locate object file in Merritt cloud storage",
-		Long:    strings.Join(longDesc, "\n"),
+		Short:   "Locate object or file in Merritt cloud storage",
+		Long:    untabify(locateLongDesc, "  "),
 		Args:    cobra.MaximumNArgs(1),
-		Example: strings.Join(examples, "\n"),
+		Example: untabify(locateExamples, "  "),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if len(args) > 0 {
 				return f.PrintFileLocation(args[0])
@@ -43,7 +43,7 @@ func init() {
 	}
 	cmdFlags := cmd.Flags()
 	cmdFlags.SortFlags = false
-	cmdFlags.StringVarP(&f.ConfPath, "conf", "c", "", "path to mrt-conf-prv project")
+	cmdFlags.StringVarP(&f.ConfPath, "conf", "c", "", "path to mrt-conf-prv project (required)")
 	cmdFlags.StringVarP(&f.Service, "service", "s", "store", "service (store, replic, audit)")
 	cmdFlags.StringVarP(&f.Environment, "env", "e", "prd", "environment (dev, stg, prd)")
 	cmdFlags.Int64VarP(&f.NodeNumber, "node", "n", 0, "node number")

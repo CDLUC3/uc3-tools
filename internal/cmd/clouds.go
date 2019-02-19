@@ -14,13 +14,14 @@ type CloudFlags struct {
 	Flags
 }
 
-func (f *CloudFlags) PrintServices(mrtConfPath string) error {
-	format, err := output.ToFormat(f.FormatStr)
+func (f *CloudFlags) PrintServices() error {
+	mrtConfPath := f.ConfPath
+	conf, err := NewMrtConf(mrtConfPath)
 	if err != nil {
 		return err
 	}
 
-	conf, err := NewMrtConf(mrtConfPath)
+	format, err := output.ToFormat(f.FormatStr)
 	if err != nil {
 		return err
 	}
@@ -71,12 +72,12 @@ func init() {
 	f := CloudFlags{}
 
 	cmd := &cobra.Command{
-		Use:   "clouds <path to mrt-conf-prv>",
+		Use:   "clouds",
 		Short: "List Merritt cloud storage services",
 		Long: "List cloud storage services defined in mrt-conf-prv",
-		Args:  cobra.ExactArgs(1),
+		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return f.PrintServices(args[0])
+			return f.PrintServices()
 		},
 	}
 	cmdFlags := cmd.Flags()
