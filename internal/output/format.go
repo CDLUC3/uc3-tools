@@ -14,6 +14,7 @@ type Format interface {
 	Prefix() string
 	Suffix() string
 	SprintTitle(title string) string
+	SprintExample(example string) string
 	SprintHeader(headerFields ...string) string
 	Sprint(fields ...interface{}) (string, error)
 }
@@ -103,6 +104,13 @@ func (f standardFormat) SprintTitle(title string) string {
 		return fmt.Sprintf("### %v\n", title)
 	}
 	return title + "\n"
+}
+
+func (f standardFormat) SprintExample(example string) string {
+	if f == Markdown {
+		return fmt.Sprintf("`%v`", example)
+	}
+	return example
 }
 
 func (f standardFormat) SprintHeader(headerFields ...string) string {

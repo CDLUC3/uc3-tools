@@ -37,7 +37,7 @@ func (f *NodeFlags) PrintNodes(mrtConfPath string) error {
 		for _, node := range nodeSet.Nodes() {
 			fmt.Println(node.Sprint(format))
 		}
-		if i + 1 < len(nodeSets) {
+		if i+1 < len(nodeSets) {
 			fmt.Println()
 		}
 	}
@@ -54,7 +54,7 @@ func init() {
 	cmd := &cobra.Command{
 		Use:   "nodes <path to mrt-conf-prv>",
 		Short: "List Merritt storage nodes",
-		Long: "List storage nodes defined in mrt-conf-prv",
+		Long:  "List storage nodes defined in mrt-conf-prv",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return f.PrintNodes(args[0])

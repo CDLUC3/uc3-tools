@@ -16,6 +16,8 @@ const (
 	swift
 	cloudhost
 	pairtree
+
+	arkMd5Suffix = "<ark-md5-prefix>"
 )
 
 func (s ServiceType) String() string {
@@ -43,7 +45,14 @@ func (s ServiceType) ContainerFor(containerBase, ark string) string {
 	return containerBase
 }
 
-func (s ServiceType) CLIExample(credentials *CloudCredentials, endpoint, container, key string) string {
+func (s ServiceType) ContainerGeneric(containerBase string) string {
+	if s == swift && strings.HasSuffix(containerBase, "__") {
+		return containerBase + arkMd5Suffix
+	}
+	return containerBase
+}
+
+func (s ServiceType) CLIExample(credentials *CloudCredentials, endpoint, container, key string) (string, error) {
 	shellSafe := func(s string) string {
 		// single-quote the string for safety
 		return fmt.Sprintf("'%s'", strings.Replace(s, "'", "'\\''", -1))
@@ -62,25 +71,24 @@ func (s ServiceType) CLIExample(credentials *CloudCredentials, endpoint, contain
 		cmd = append(cmd, "s3", "ls")
 		s3Url := fmt.Sprintf("s3://%s/%s", container, key)
 		cmd = append(cmd, shellSafe(s3Url))
-		return strings.Join(cmd, " ")
+		return strings.Join(cmd, " "), nil
 	}
 	if s == swift {
 		var cmd []string
-		if credentials != nil {
-			cmd = append(cmd, fmt.Sprintf("ST_USER=%s", shellSafe(credentials.Key)))
-			cmd = append(cmd, fmt.Sprintf("ST_KEY=%s", shellSafe(credentials.Secret)))
-		}
-		cmd = append(cmd, fmt.Sprintf("ST_AUTH=%s", shellSafe(endpoint)))
 		swiftCmd := "swift"
 		if runtime.GOOS == "darwin" {
 			// on macOS, "swift" is likely /usr/bin/swift, the Swift compiler; this is
 			// our best guess at the default location of the OpenStack Swift CLI
 			swiftCmd = "/usr/local/bin/swift"
 		}
-		cmd = append(cmd, swiftCmd, "stat", shellSafe(container), shellSafe(key))
-		return strings.Join(cmd, " ")
+		cmd = append(cmd, swiftCmd)
+		if credentials != nil {
+			cmd = append(cmd, "-A", shellSafe(endpoint), "-U", shellSafe(credentials.Key), "-K", shellSafe(credentials.Secret))
+		}
+		cmd = append(cmd, "stat", shellSafe(container), shellSafe(key))
+		return strings.Join(cmd, " "), nil
 	}
-	return fmt.Sprintf("(command-line example not available for %s service)", s.String())
+	return "", fmt.Errorf("(command-line example not available for %s service)", s.String())
 }
 
 func LoadServiceType(nodeProps *props.Properties) (*ServiceType, error) {
