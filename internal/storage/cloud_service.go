@@ -51,7 +51,7 @@ func LoadCloudService(name, svcPropsPath string) (*CloudService, error) {
 		return nil, err
 	}
 
-	endpoint, err := LoadEndpoint(svcProps)
+	endpoint, err := LoadEndpoint(svcProps, serviceType)
 	if err != nil {
 		return nil, err
 	}
@@ -78,10 +78,14 @@ func LoadCloudService(name, svcPropsPath string) (*CloudService, error) {
 	return &node, nil
 }
 
-func LoadEndpoint(svcProps *props.Properties) (*url.URL, error) {
+func LoadEndpoint(svcProps *props.Properties, serviceType *ServiceType) (*url.URL, error) {
 	endpointStr := svcProps.GetString("host", "")
 	if endpointStr == "" {
 		endpointStr = svcProps.GetString("endPoint", "")
+	}
+	// TODO: move this to ServiceType
+	if serviceType != nil && *serviceType == swift {
+		endpointStr = fmt.Sprintf("%s/auth/v1.0", endpointStr)
 	}
 	return toAbsoluteUrl(endpointStr)
 }

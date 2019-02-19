@@ -4,6 +4,7 @@ import (
 	"crypto/md5"
 	"fmt"
 	props "github.com/magiconair/properties"
+	"runtime"
 	"strings"
 )
 
@@ -18,7 +19,7 @@ const (
 )
 
 func (s ServiceType) String() string {
-	switch (s) {
+	switch s {
 	case s3:
 		return "s3"
 	case swift:
@@ -33,13 +34,53 @@ func (s ServiceType) String() string {
 }
 
 func (s ServiceType) ContainerFor(containerBase, ark string) string {
-	if s == swift && strings.HasSuffix(containerBase, "__"){
+	if s == swift && strings.HasSuffix(containerBase, "__") {
 		hash := md5.New()
 		hash.Write(([]byte)(ark))
 		resultStr := fmt.Sprintf("%x", hash.Sum(nil))
 		return containerBase + resultStr[0:3]
 	}
 	return containerBase
+}
+
+func (s ServiceType) CLIExample(credentials *CloudCredentials, endpoint, container, key string) string {
+	shellSafe := func(s string) string {
+		// single-quote the string for safety
+		return fmt.Sprintf("'%s'", strings.Replace(s, "'", "'\\''", -1))
+	}
+
+	if s == s3 {
+		var cmd []string
+		if credentials != nil {
+			cmd = append(cmd, fmt.Sprintf("AWS_ACCESS_KEY_ID=%s", shellSafe(credentials.Key)))
+			cmd = append(cmd, fmt.Sprintf("AWS_SECRET_ACCESS_KEY=%s", shellSafe(credentials.Secret)))
+		}
+		cmd = append(cmd, "aws")
+		if endpoint != "" {
+			cmd = append(cmd, "--endpoint", shellSafe(endpoint))
+		}
+		cmd = append(cmd, "s3", "ls")
+		s3Url := fmt.Sprintf("s3://%s/%s", container, key)
+		cmd = append(cmd, shellSafe(s3Url))
+		return strings.Join(cmd, " ")
+	}
+	if s == swift {
+		var cmd []string
+		if credentials != nil {
+			cmd = append(cmd, fmt.Sprintf("ST_USER=%s", shellSafe(credentials.Key)))
+			cmd = append(cmd, fmt.Sprintf("ST_KEY=%s", shellSafe(credentials.Secret)))
+		}
+		cmd = append(cmd, fmt.Sprintf("ST_AUTH=%s", shellSafe(endpoint)))
+		swiftCmd := "swift"
+		if runtime.GOOS == "darwin" {
+			// on macOS, "swift" is likely /usr/bin/swift, the Swift compiler; this is
+			// our best guess at the default location of the OpenStack Swift CLI
+			swiftCmd = "/usr/local/bin/swift"
+		}
+		cmd = append(cmd, swiftCmd, "stat", shellSafe(container), shellSafe(key))
+		return strings.Join(cmd, " ")
+	}
+	return fmt.Sprintf("(command-line example not available for %s service)", s.String())
 }
 
 func LoadServiceType(nodeProps *props.Properties) (*ServiceType, error) {

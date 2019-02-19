@@ -14,16 +14,24 @@ func init() {
 
 	// TODO: flags to generate AWS or S3 commands
 
-	examples := []string {
-		"uc3-system-info locate producer/Prasad_ucla_0031D_15251.pdf -c ~/Work/mrt-conf-prv -n 9001 -a ark:/99999/fk4qz2hp2t -v 1",
+	examples := []string{
+		"uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -a ark:/99999/fk4qz2hp2t -v 1 producer/Prasad_ucla_0031D_15251.pdf",
+		"uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 9001 -a ark:/99999/fk4kw5kc1z -v 1 producer/6GBZeroFile.txt",
+		"uc3-system-info locate -c ~/Work/mrt-conf-prv -e stg -n 5001 -a ark:/b5072/fk2wq01k85 -v 1 producer/20151-semestre.csv",
+	}
+
+	longDesc := []string {
+		"Locate a file in Merritt cloud storage based on the service, node number, and object ARK.",
+		"(Note that this does not guarantee that the file exists, but only provides the information",
+		"necessary to find it.)",
 	}
 
 	f := LocateFlags{}
 	cmd := &cobra.Command{
-		Use:   "locate <filepath>",
-		Short: "Locate file in Merritt cloud storage",
-		Long:  "Locate a file in Merritt cloud storage based on the service, node number, and object ARK",
-		Args:  cobra.ExactArgs(1),
+		Use:     "locate <filepath>",
+		Short:   "Locate file in Merritt cloud storage",
+		Long:    strings.Join(longDesc, "\n"),
+		Args:    cobra.ExactArgs(1),
 		Example: strings.Join(examples, "\n"),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return f.PrintLocation(args[0])
@@ -68,27 +76,24 @@ func (f *LocateFlags) PrintLocation(filepath string) error {
 	if svc == nil {
 		return fmt.Errorf("unable to determine cloud service for node %d", f.NodeNumber)
 	}
+	serviceDesc := svc.Sprint(output.CSV)
 
 	container, err := node.ContainerFor(f.Ark)
 	if err != nil {
 		return err
 	}
+	key := node.KeyFor(f.Ark, f.Version, filepath)
 
-	key := fmt.Sprintf("%v|%d|%v", f.Ark, f.Version, filepath)
-
-	fields := map[string]string{
-		"Service":   svc.Sprint(output.CSV),
-		"Container": container,
-		"Key":       key,
+	cliExample, err := node.CLIExample(f.Ark, f.Version, filepath)
+	if err != nil {
+		return err
 	}
 
 	w := tabwriter.NewWriter(os.Stdout, 0, 8, 4, '\t', 0)
-	for k, v := range fields {
-		_, err = fmt.Fprintf(w, "%v:\t%v\n", k, v)
-		if err != nil {
-			return err
-		}
-	}
+	_, _ = fmt.Fprintf(w, "%v:\t%v\n", "Service", serviceDesc)
+	_, _ = fmt.Fprintf(w, "%v:\t%v\n", "Container", container)
+	_, _ = fmt.Fprintf(w, "%v:\t%v\n", "Key", key)
+	_, _ = fmt.Fprintf(w, "%v:\t%v\n", "Example", cliExample)
 
 	return w.Flush()
 }

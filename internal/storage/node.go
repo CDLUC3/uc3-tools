@@ -29,3 +29,21 @@ func (n *Node) ContainerFor(ark string) (string, error) {
 	serviceType := n.Service.ServiceType
 	return serviceType.ContainerFor(n.Container, ark), nil
 }
+
+func (n *Node) KeyFor(ark string, version int, filepath string) string {
+	return fmt.Sprintf("%v|%d|%v", ark, version, filepath)
+}
+
+func (n *Node) CLIExample(ark string, version int, filepath string) (string, error) {
+	service := n.Service
+	if service == nil {
+		return "", fmt.Errorf("no cloud service defined for node %v", n.Sprint(output.CSV))
+	}
+	container, err := n.ContainerFor(ark)
+	if err != nil {
+		return "", err
+	}
+	key := n.KeyFor(ark, version, filepath)
+
+	return service.ServiceType.CLIExample(service.Credentials, service.Endpoint, container, key), nil
+}
