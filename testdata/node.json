@@ -1,0 +1,186 @@
+{
+  "_class" : "hudson.model.Hudson",
+  "assignedLabels" : [
+    {
+      "name" : "master"
+    }
+  ],
+  "mode" : "NORMAL",
+  "nodeDescription" : "the master Jenkins node",
+  "nodeName" : "",
+  "numExecutors" : 2,
+  "description" : null,
+  "jobs" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "cdl-zk-queue",
+      "url" : "http://builds.cdlib.org/job/cdl-zk-queue/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "git-core2",
+      "url" : "http://builds.cdlib.org/job/git-core2/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "git-dataONE",
+      "url" : "http://builds.cdlib.org/job/git-dataONE/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "git-mrt-xoai",
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "git-mrt-zoo",
+      "url" : "http://builds.cdlib.org/job/git-mrt-zoo/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.model.FreeStyleProject",
+      "name" : "Merritt Development Submission (Full Stack Test)",
+      "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.model.FreeStyleProject",
+      "name" : "Merritt Production Submission (Full Stack Test)",
+      "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.model.FreeStyleProject",
+      "name" : "Merritt Stage Submission (Full Stack Test)",
+      "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-build-audit",
+      "url" : "http://builds.cdlib.org/job/mrt-build-audit/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-build-inv",
+      "url" : "http://builds.cdlib.org/job/mrt-build-inv/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-build-mysql",
+      "url" : "http://builds.cdlib.org/job/mrt-build-mysql/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-build-oai",
+      "url" : "http://builds.cdlib.org/job/mrt-build-oai/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-build-replic",
+      "url" : "http://builds.cdlib.org/job/mrt-build-replic/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-build-s3",
+      "url" : "http://builds.cdlib.org/job/mrt-build-s3/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-build-store",
+      "url" : "http://builds.cdlib.org/job/mrt-build-store/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-build-sword",
+      "url" : "http://builds.cdlib.org/job/mrt-build-sword/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-cloudhost-pub",
+      "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-ingest-dev",
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-ingest-stage",
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-jetty-cloudhost",
+      "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-s3-pub",
+      "url" : "http://builds.cdlib.org/job/mrt-s3-pub/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-store-pub",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "mrt-test",
+      "url" : "http://builds.cdlib.org/job/mrt-test/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "test-gittest",
+      "url" : "http://builds.cdlib.org/job/test-gittest/",
+      "color" : "blue"
+    }
+  ],
+  "overallLoad" : {
+    
+  },
+  "primaryView" : {
+    "_class" : "hudson.model.AllView",
+    "name" : "all",
+    "url" : "http://builds.cdlib.org/"
+  },
+  "quietingDown" : false,
+  "slaveAgentPort" : 0,
+  "unlabeledLoad" : {
+    "_class" : "jenkins.model.UnlabeledLoadStatistics"
+  },
+  "useCrumbs" : false,
+  "useSecurity" : false,
+  "views" : [
+    {
+      "_class" : "hudson.model.ListView",
+      "name" : "Merritt",
+      "url" : "http://builds.cdlib.org/view/Merritt/"
+    },
+    {
+      "_class" : "hudson.model.AllView",
+      "name" : "all",
+      "url" : "http://builds.cdlib.org/"
+    }
+  ]
+}
