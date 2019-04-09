@@ -5,41 +5,18 @@ import (
 )
 
 type Build struct {
-	Number int
-	URL string
-	Actions []BuildAction
-	MavenArtifacts MavenArtifacts
+	actions		// TODO: hide unexported types more effectively
+	artifacts	// TODO: hide unexported types more effectively
+
+	Number         int
+	URL            string
 
 	parsedUrl *url.URL
 }
 
+
 func (b *Build) ApiUrl() *url.URL {
 	return toApiUrl(b.url())
-}
-
-type BuildAction struct {
-	Class string `json:"_class"`
-	RemoteURLs []string
-	LastBuiltRevision *Revision
-}
-
-type Revision struct {
-	SHA1 string
-	Branches []Branch `json:"branch"`
-}
-
-type Branch struct {
-	SHA1 string
-	Name string
-}
-
-type MavenArtifacts struct {
-	ModuleRecords []ModuleRecord
-}
-
-type ModuleRecord struct {
-	MainArtifact *Artifact
-	POMArtifact *Artifact
 }
 
 type Artifact struct {
@@ -65,3 +42,43 @@ func (b *Build) url() *url.URL {
 	}
 	return b.parsedUrl
 }
+
+// ------------------------------------------------------------
+// SCM information
+
+type actions struct {
+	Actions        []buildAction
+}
+
+type buildAction struct {
+	Class string `json:"_class"`
+	RemoteURLs []string
+	LastBuiltRevision *revision
+}
+
+type revision struct {
+	SHA1     string
+	Branches []branch `json:"branch"`
+}
+
+type branch struct {
+	SHA1 string
+	Name string
+}
+
+// ------------------------------------------------------------
+// Maven artifact information
+
+type artifacts struct {
+	MavenArtifacts mavenArtifacts
+}
+
+type mavenArtifacts struct {
+	ModuleRecords []moduleRecord
+}
+
+type moduleRecord struct {
+	MainArtifact *Artifact
+	POMArtifact  *Artifact
+}
+
