@@ -4,6 +4,7 @@ import (
 	"net/url"
 )
 
+// TODO: use an interface; hide unmarshalling
 type Job struct {
 	Name                string
 	URL                 string

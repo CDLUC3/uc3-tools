@@ -4,6 +4,7 @@ import (
 	"net/url"
 )
 
+// TODO: use an interface; hide unmarshalling
 type Build struct {
 	actions		// TODO: hide unexported types more effectively
 	artifacts	// TODO: hide unexported types more effectively

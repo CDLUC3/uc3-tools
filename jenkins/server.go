@@ -49,6 +49,7 @@ func (s *jenkinsServer) Node() (*Node, error) {
 	}
 
 	for _, job := range s.node.Jobs {
+		// TODO: figure out how to make this lazy
 		err = job.load()
 		if err != nil {
 			break
