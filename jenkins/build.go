@@ -8,6 +8,7 @@ type Build struct {
 	Number int
 	URL string
 	Actions []BuildAction
+	MavenArtifacts MavenArtifacts
 
 	parsedUrl *url.URL
 }
@@ -30,6 +31,25 @@ type Revision struct {
 type Branch struct {
 	SHA1 string
 	Name string
+}
+
+type MavenArtifacts struct {
+	ModuleRecords []ModuleRecord
+}
+
+type ModuleRecord struct {
+	MainArtifact *Artifact
+	POMArtifact *Artifact
+}
+
+type Artifact struct {
+	GroupId string
+	ArtifactId string
+	Md5Sum string
+	Type string
+	Version string
+	CanonicalName string
+	FileName string
 }
 
 // ------------------------------------------------------------

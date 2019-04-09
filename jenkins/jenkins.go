@@ -17,8 +17,8 @@ func urlMustParse(urlStr string) *url.URL {
 	return u
 }
 
-var apiUrlRelative = urlMustParse("api/json?pretty=true")
-var apiUrlRegexp = regexp.MustCompile("/api/json(\\?pretty=true)?$")
+var apiUrlRelative = urlMustParse("api/json?depth=1&pretty=true")
+var apiUrlRegexp = regexp.MustCompile("/api/json(\\?.+)?$")
 
 func toApiUrl(u *url.URL) *url.URL {
 	if apiUrlRegexp.MatchString(u.Path) {
