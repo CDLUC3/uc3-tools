@@ -7,7 +7,7 @@ import (
 type Job struct {
 	Name                string
 	URL                 string
-	LastSuccessfulBuild Build
+	LastSuccessfulBuild *Build
 
 	parsedUrl *url.URL
 }
@@ -28,4 +28,15 @@ func (j *Job) url() *url.URL {
 		j.parsedUrl = u
 	}
 	return j.parsedUrl
+}
+
+func (j *Job) load() error {
+	err := unmarshal(j.ApiUrl(), j)
+	if err != nil {
+		build := j.LastSuccessfulBuild
+		if build != nil {
+			err = build.load()
+		}
+	}
+	return err
 }

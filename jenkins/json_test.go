@@ -26,6 +26,8 @@ func (s *JsonSuite) TestParseJob(c *C) {
 	err := json.Unmarshal(data, &job)
 	c.Assert(err, IsNil)
 
+	c.Assert(job.URL, Equals, "http://builds.cdlib.org/job/mrt-store-pub/")
+
 	build := job.LastSuccessfulBuild
 	c.Assert(build.Number, Equals, 93)
 

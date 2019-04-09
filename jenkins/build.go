@@ -43,6 +43,10 @@ func (b *Build) url() *url.URL {
 	return b.parsedUrl
 }
 
+func (b *Build) load() error {
+	return unmarshal(b.ApiUrl(), b)
+}
+
 // ------------------------------------------------------------
 // SCM information
 
