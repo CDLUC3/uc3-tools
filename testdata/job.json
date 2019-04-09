@@ -1,0 +1,199 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "value" : "dev"
+          },
+          "description" : "home-dpr2 - have the /dpr2/mrtHomes/store architecture.\nhome-dpr2store - have the /dpr2store/mrtHomes/store architecture.",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "audit",
+            "test"
+          ]
+        }
+      ]
+    },
+    {
+      
+    },
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+    }
+  ],
+  "description" : "Build Merritt store-store-pub war using the default code branch.\r\n",
+  "displayName" : "mrt-store-pub",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-store-pub",
+  "fullName" : "mrt-store-pub",
+  "name" : "mrt-store-pub",
+  "url" : "http://builds.cdlib.org/job/mrt-store-pub/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 93,
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 92,
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/92/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 91,
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/91/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 90,
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/90/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 89,
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/89/"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 89,
+    "url" : "http://builds.cdlib.org/job/mrt-store-pub/89/"
+  },
+  "healthReport" : [
+    {
+      "description" : "Test Result: 0 tests failing out of a total of 3 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    },
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 93,
+    "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 93,
+    "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 93,
+    "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 93,
+    "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 94,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "home-dpr2 - have the /dpr2/mrtHomes/store architecture.\nhome-dpr2store - have the /dpr2store/mrtHomes/store architecture.",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "audit",
+            "test"
+          ]
+        }
+      ]
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM"
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "name" : "org.cdlib.mrt:mrt-pubstore",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-pubstore/",
+      "color" : "notbuilt",
+      "displayName" : "UC3-mrtPubStore"
+    },
+    {
+      "name" : "org.cdlib.mrt:mrt-pubstoresrc",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-pubstoresrc/",
+      "color" : "notbuilt",
+      "displayName" : "UC3-mrtPubStoreSrc"
+    },
+    {
+      "name" : "org.cdlib.mrt:mrt-pubstorewar",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-pubstorewar/",
+      "color" : "notbuilt",
+      "displayName" : "UC3-mrtPubStoreWar"
+    },
+    {
+      "name" : "org.cdlib.mrt:mrt-storepub",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/",
+      "color" : "blue",
+      "displayName" : "UC3-mrtStorePub"
+    },
+    {
+      "name" : "org.cdlib.mrt:mrt-storepub-src",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/",
+      "color" : "blue",
+      "displayName" : "UC3-mrtStorePub-src"
+    },
+    {
+      "name" : "org.cdlib.mrt:mrt-storewar",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/",
+      "color" : "blue",
+      "displayName" : "UC3-mrtStorePub-war"
+    }
+  ]
+}

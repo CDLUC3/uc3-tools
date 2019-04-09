@@ -1,0 +1,47 @@
+package jenkins
+
+import (
+	"net/url"
+)
+
+type Build struct {
+	Number int
+	URL string
+	Actions []BuildAction
+
+	parsedUrl *url.URL
+}
+
+func (b *Build) ApiUrl() *url.URL {
+	return toApiUrl(b.url())
+}
+
+type BuildAction struct {
+	Class string `json:"_class"`
+	RemoteURLs []string
+	LastBuiltRevision *Revision
+}
+
+type Revision struct {
+	SHA1 string
+	Branches []Branch `json:"branch"`
+}
+
+type Branch struct {
+	SHA1 string
+	Name string
+}
+
+// ------------------------------------------------------------
+// Unexported symbols
+
+func (b *Build) url() *url.URL {
+	if b.parsedUrl == nil {
+		u, err := url.Parse(b.URL)
+		if err != nil {
+			panic(err)
+		}
+		b.parsedUrl = u
+	}
+	return b.parsedUrl
+}

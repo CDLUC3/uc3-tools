@@ -5,9 +5,6 @@ import (
 	"net/url"
 )
 
-// ------------------------------------------------------------
-// Exported symbols
-
 // Server represents a Jenkins server
 type Server interface {
 }
@@ -34,12 +31,10 @@ func ServerFromUrl(urlStr string) (Server, error) {
 // ------------------------------------------------------------
 // Unexported symbols
 
-var apiRootRelative, _ = url.Parse("api/json")
-
 type server struct {
 	serverUrl *url.URL
 }
 
 func (s *server) apiRoot() *url.URL {
-	return s.serverUrl.ResolveReference(apiRootRelative)
+	return toApiUrl(s.serverUrl)
 }
