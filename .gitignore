@@ -4,8 +4,8 @@
 *.md.html
 
 # default compiled binaries
-uc3-system-info
-uc3-system-info-*
+mrt-build-info
+mrt-build-info-*
 
 #### Generated ignores ####
 
