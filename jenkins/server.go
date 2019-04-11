@@ -2,13 +2,12 @@ package jenkins
 
 import (
 	"fmt"
-	"net/http"
 	"net/url"
 )
 
 // JenkinsServer represents a Jenkins server
 type JenkinsServer interface {
-	Node() (*Node, error)
+	Node() (Node, error)
 }
 
 func DefaultServer() JenkinsServer {
@@ -16,6 +15,7 @@ func DefaultServer() JenkinsServer {
 	if err == nil {
 		return server
 	}
+	// should never happen
 	panic(err)
 }
 
@@ -25,41 +25,29 @@ func ServerFromUrl(urlStr string) (JenkinsServer, error) {
 		return nil, err
 	}
 	if !u.IsAbs() {
-		return nil, fmt.Errorf("jenkinsServer URL '%v' is not absolute", urlStr)
+		return nil, fmt.Errorf("server URL '%v' is not absolute", urlStr)
 	}
-	return &jenkinsServer{serverUrl: u}, nil
+	if !isApiUrl(u) {
+		u = toApiUrl(u)
+	}
+	return &jenkinsServer{apiRoot: u}, nil
 }
 
 // ------------------------------------------------------------
 // Unexported symbols
 
 type jenkinsServer struct {
-	serverUrl *url.URL
-	client *http.Client
-	node *Node
+	apiRoot *url.URL
+	node    Node
 }
 
-func (s *jenkinsServer) Node() (*Node, error) {
+func (s *jenkinsServer) Node() (Node, error) {
 	if s.node == nil {
-		s.node = &Node{}
-	}
-	err := unmarshal(s.apiRoot(), s.node)
-	if err != nil {
-		return nil, err
-	}
-
-	for _, job := range s.node.Jobs {
-		// TODO: figure out how to make this lazy
-		err = job.load()
-		if err != nil {
-			break
+		var n Node = &node{}
+		if err := unmarshal(s.apiRoot, n); err != nil {
+			return nil, err
 		}
+		s.node = n
 	}
-
-	return s.node, err
+	return s.node, nil
 }
-
-func (s *jenkinsServer) apiRoot() *url.URL {
-	return toApiUrl(s.serverUrl)
-}
-

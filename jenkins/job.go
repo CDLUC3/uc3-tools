@@ -4,40 +4,47 @@ import (
 	"net/url"
 )
 
-// TODO: use an interface; hide unmarshalling
-type Job struct {
-	Name                string
-	URL                 string
-	LastSuccessfulBuild *Build
+// ------------------------------------------------------------
+// Job
 
-	parsedUrl *url.URL
-}
-
-func (j *Job) ApiUrl() *url.URL {
-	return toApiUrl(j.url())
+type Job interface {
+	Name() string
+	LastSuccess() (Build, error)
 }
 
 // ------------------------------------------------------------
 // Unexported symbols
 
-func (j *Job) url() *url.URL {
-	if j.parsedUrl == nil {
+type job struct {
+	JobName             string `json:"name"`
+	URL                 string
+	LastSuccessfulBuild *build
+
+	apiUrl *url.URL
+}
+
+func (j *job) Name() string {
+	return j.JobName
+}
+
+func (j *job) LastSuccess() (Build, error) {
+	if j.LastSuccessfulBuild == nil {
+		if err := j.load(); err != nil {
+			return nil, err
+		}
+	}
+	return j.LastSuccessfulBuild, nil
+}
+
+func (j *job) load() error {
+	if j.apiUrl == nil {
 		u, err := url.Parse(j.URL)
 		if err != nil {
 			panic(err)
 		}
-		j.parsedUrl = u
+		j.apiUrl = toApiUrl(u)
 	}
-	return j.parsedUrl
+	return unmarshal(j.apiUrl, j)
 }
 
-func (j *Job) load() error {
-	err := unmarshal(j.ApiUrl(), j)
-	if err != nil {
-		build := j.LastSuccessfulBuild
-		if build != nil {
-			err = build.load()
-		}
-	}
-	return err
-}
+

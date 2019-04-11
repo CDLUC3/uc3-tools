@@ -11,13 +11,8 @@ import (
 	"time"
 )
 
-// ------------------------------------------------------------
-// Unexported symbols
-
 var inTest = false
-
 var client *http.Client
-
 var apiUrlRelative = urlMustParse("api/json?depth=1&pretty=true")
 var apiUrlRegexp = regexp.MustCompile("/api/json(\\?.+)?$")
 
@@ -57,9 +52,14 @@ func urlMustParse(urlStr string) *url.URL {
 	return u
 }
 
+func isApiUrl(u *url.URL) bool {
+	return apiUrlRegexp.MatchString(u.Path)
+}
+
 func toApiUrl(u *url.URL) *url.URL {
-	if apiUrlRegexp.MatchString(u.Path) {
+	if isApiUrl(u) {
 		panic(fmt.Errorf("url '%v' is already an API URL", u))
 	}
 	return u.ResolveReference(apiUrlRelative)
 }
+
