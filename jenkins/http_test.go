@@ -27,6 +27,8 @@ var data = map[string]string{
 	"/job/mrt-store-pub/93/api/json": "testdata/build.json",
 }
 
+// HandleRequest is a hack to rewrite the test data to replace real URLs with
+// URLs from the local httptest.Server
 func (s *HttpSuite) HandleRequest(w http.ResponseWriter, r *http.Request) {
 	if file, ok := data[r.URL.Path]; ok {
 		body, err := ioutil.ReadFile(file)
@@ -46,6 +48,8 @@ func (s *HttpSuite) HandleRequest(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(500)
 }
 
+// SetUpTest sets up the local httptest.Server -- note that it can't be for the whole
+// suite since httptest.Server is designed to only live for one testing.T test
 func (s *HttpSuite) SetUpTest(c *C) {
 	s.server = httptest.NewServer(http.HandlerFunc(s.HandleRequest))
 	s.serverUrl = urlMustParse(s.server.URL)
@@ -61,10 +65,8 @@ func (s *HttpSuite) SetUpTest(c *C) {
 // Tests
 
 func (s *HttpSuite) TestNode(c *C) {
-	node, err := s.jenkins.Node()
+	jobs, err := s.jenkins.Jobs()
 	c.Assert(err, IsNil)
-	c.Assert(node, NotNil)
-	jobs := node.Jobs()
 	c.Assert(len(jobs), Equals, 24)
 
 	expectedNames := []string{

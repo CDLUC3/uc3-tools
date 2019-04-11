@@ -7,7 +7,7 @@ import (
 
 // JenkinsServer represents a Jenkins server
 type JenkinsServer interface {
-	Node() (Node, error)
+	Jobs() ([]Job, error)
 }
 
 func DefaultServer() JenkinsServer {
@@ -41,7 +41,7 @@ type jenkinsServer struct {
 	node    Node
 }
 
-func (s *jenkinsServer) Node() (Node, error) {
+func (s *jenkinsServer) Jobs() ([]Job, error) {
 	if s.node == nil {
 		var n Node = &node{}
 		if err := unmarshal(s.apiRoot, n); err != nil {
@@ -49,5 +49,5 @@ func (s *jenkinsServer) Node() (Node, error) {
 		}
 		s.node = n
 	}
-	return s.node, nil
+	return s.node.Jobs(), nil
 }

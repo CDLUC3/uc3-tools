@@ -33,6 +33,7 @@ type build struct {
 	URL            string
 	Actions        []buildAction
 	MavenArtifacts *mavenArtifacts
+	FullDisplayName string
 
 	apiUrl    *url.URL
 	artifacts []Artifact
@@ -49,7 +50,7 @@ func (b *build) SCMUrl() (string, error) {
 		return "", err
 	}
 	if len(bd.RemoteURLs) != 1 {
-		return "", fmt.Errorf("can't determine remote URL for build %v: expected 1 remote URL, found %d", b.URL, len(bd.RemoteURLs))
+		return "", fmt.Errorf("can't determine remote URL for %v: expected 1 remote URL, found %d", b.FullDisplayName, len(bd.RemoteURLs))
 	}
 	return bd.RemoteURLs[0], nil
 }
@@ -61,7 +62,7 @@ func (b *build) SHA1() (string, error) {
 	}
 	rev := bd.LastBuiltRevision
 	if rev == nil {
-		return "", fmt.Errorf("can't revision for build %v", b.URL)
+		return "", fmt.Errorf("can't revision for %v", b.FullDisplayName)
 	}
 	return rev.SHA1, nil
 }
@@ -73,12 +74,16 @@ func (b *build) Artifacts() ([]Artifact, error) {
 				return nil, err
 			}
 		}
-		moduleRecords := b.MavenArtifacts.ModuleRecords
-		artifacts := make([]Artifact, len(moduleRecords))
-		for i, r := range moduleRecords {
-			artifacts[i] = r.MainArtifact
+		if b.MavenArtifacts == nil {
+			b.artifacts = make([]Artifact, 0)
+		} else {
+			moduleRecords := b.MavenArtifacts.ModuleRecords
+			artifacts := make([]Artifact, len(moduleRecords))
+			for i, r := range moduleRecords {
+				artifacts[i] = r.MainArtifact
+			}
+			b.artifacts = artifacts
 		}
-		b.artifacts = artifacts
 	}
 	return b.artifacts, nil
 }
@@ -97,7 +102,7 @@ func (b *build) buildData() (*buildAction, error) {
 			}
 		}
 		if b.buildDataAction == nil {
-			return nil, fmt.Errorf("%v action not found", buildDataClass)
+			return nil, fmt.Errorf("%v action not found in %v (%v)", buildDataClass, b.FullDisplayName, b.apiUrl)
 		}
 	}
 	return b.buildDataAction, nil
