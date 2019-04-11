@@ -1,4 +1,4 @@
-module github.com/dmolesUC3/mrt-mvn-info
+module github.com/dmolesUC3/mrt-build-info
 
 go 1.12
 
