@@ -32,6 +32,7 @@ func init() {
 	cmd.Flags().BoolVarP(&jobs.logErrors, "log-errors", "l", false, "log non-fatal errors to stderr")
 	cmd.Flags().BoolVarP(&jobs.repo, "repositories", "r", false, "list repositories")
 	cmd.Flags().BoolVarP(&jobs.verbose, "verbose", "v", false, "verbose output")
+	cmd.Flags().StringVarP(&jobs.job, "job", "j", "", "show info only for specified job")
 
 	rootCmd.AddCommand(cmd)
 }
@@ -42,6 +43,7 @@ type jobs struct {
 	logErrors bool
 	repo      bool
 	verbose   bool
+	job       string
 }
 
 func (j *jobs) nameOnly() bool {
@@ -74,6 +76,9 @@ func (j *jobs) List(server jenkins.JenkinsServer) error {
 	}
 
 	for _, job := range jobs {
+		if j.job != "" && j.job != job.Name() {
+			continue
+		}
 		if err := j.printJob(job); err != nil {
 			return err
 		}
