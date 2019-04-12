@@ -3,6 +3,7 @@ package jenkins
 import (
 	"fmt"
 	"net/url"
+	"regexp"
 )
 
 // ------------------------------------------------------------
@@ -13,6 +14,7 @@ type Build interface {
 	SCMUrl() (string, error)
 	SHA1() (string, error)
 	Artifacts() ([]Artifact, error)
+	Repo() (string, error)
 }
 
 type Artifact interface {
@@ -27,6 +29,7 @@ type Artifact interface {
 // Unexported symbols
 
 const buildDataClass = "hudson.plugins.git.util.BuildData"
+var repoRe = regexp.MustCompile("/(.+)\\.git")
 
 type build struct {
 	Number         int
@@ -54,6 +57,23 @@ func (b *build) SCMUrl() (string, error) {
 	}
 	return bd.RemoteURLs[0], nil
 }
+
+
+func (b *build) Repo() (string, error) {
+	scm, err := b.SCMUrl()
+	if err != nil {
+		return "", err
+	}
+	u, err := url.Parse(scm)
+	if err != nil {
+		return "", err
+	}
+	if !repoRe.MatchString(u.Path) {
+		return "", fmt.Errorf("SCM URL %#v for %v does not appear to be a Git URL", u, b.FullDisplayName)
+	}
+	return repoRe.FindStringSubmatch(u.Path)[1], nil
+}
+
 
 func (b *build) SHA1() (string, error) {
 	bd, err := b.buildData()

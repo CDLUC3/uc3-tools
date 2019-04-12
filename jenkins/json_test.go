@@ -101,3 +101,20 @@ func (s *JsonSuite) TestParseBuild(c *C) {
 		c.Check(a.File(), Equals, expectedFile)
 	}
 }
+
+func (s JsonSuite) TestBuildRepo(c *C) {
+	expectedByFile := map[string]string {
+		"testdata/build.json": "CDLUC3/mrt-store",
+		"testdata/build-private.json": "cdlib/mrt-conf-prv",
+	}
+	for file, expected := range expectedByFile {
+		data, _ := ioutil.ReadFile(file)
+		var build Build = &build{}
+		err := json.Unmarshal(data, build)
+		c.Assert(err, IsNil)
+		repo, err := build.Repo()
+		c.Assert(err, IsNil)
+		c.Assert(repo, Equals, expected)
+	}
+}
+
