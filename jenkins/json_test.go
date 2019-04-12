@@ -5,6 +5,7 @@ import (
 	"fmt"
 	. "gopkg.in/check.v1"
 	"io/ioutil"
+	"regexp"
 )
 
 var _ = Suite(&JsonSuite{})
@@ -102,19 +103,25 @@ func (s *JsonSuite) TestParseBuild(c *C) {
 	}
 }
 
-func (s JsonSuite) TestBuildRepo(c *C) {
-	expectedByFile := map[string]string {
-		"testdata/build.json": "CDLUC3/mrt-store",
-		"testdata/build-private.json": "cdlib/mrt-conf-prv",
+func (s JsonSuite) TestBuildCommit(c *C) {
+	re := regexp.MustCompile("([^/]+)/([^@]+)@([a-f0-9]+)")
+	repoByFile := map[string]string {
+		"testdata/build.json": "CDLUC3/mrt-store@af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+		"testdata/build-private.json": "cdlib/mrt-conf-prv@691770b9182d3870c85aba8ca776c0a3e85aa57e",
 	}
-	for file, expected := range expectedByFile {
+	for file, expected := range repoByFile {
 		data, _ := ioutil.ReadFile(file)
 		var build Build = &build{}
 		err := json.Unmarshal(data, build)
 		c.Assert(err, IsNil)
-		repo, err := build.Repo()
+
+		owner, repo, sha1, err := build.Commit()
 		c.Assert(err, IsNil)
-		c.Assert(repo, Equals, expected)
+
+		matches := re.FindStringSubmatch(expected)
+		c.Assert(owner, Equals, matches[1])
+		c.Assert(repo, Equals, matches[2])
+		c.Assert(sha1, Equals, matches[3])
 	}
 }
 

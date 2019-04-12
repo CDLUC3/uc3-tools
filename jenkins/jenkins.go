@@ -3,6 +3,7 @@ package jenkins
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/misc"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -13,7 +14,7 @@ import (
 
 var inTest = false
 var client *http.Client
-var apiUrlRelative = urlMustParse("api/json?depth=1&pretty=true")
+var apiUrlRelative = misc.UrlMustParse("api/json?depth=1&pretty=true")
 var apiUrlRegexp = regexp.MustCompile("/api/json(\\?.+)?$")
 
 func getBody(u *url.URL) ([]byte, error) {
@@ -42,14 +43,6 @@ func unmarshal(u *url.URL, target interface{}) (err error) {
 		err = json.Unmarshal(body, target)
 	}
 	return
-}
-
-func urlMustParse(urlStr string) *url.URL {
-	u, err := url.Parse(urlStr)
-	if err != nil {
-		panic(err)
-	}
-	return u
 }
 
 func isApiUrl(u *url.URL) bool {
