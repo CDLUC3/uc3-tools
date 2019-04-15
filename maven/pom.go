@@ -7,6 +7,7 @@ import (
 )
 
 type Pom interface {
+	Artifact() (Artifact, error)
 	Path() string
 	Repository() git.Repository
 }
@@ -39,7 +40,7 @@ func (p *pom) document() (*etree.Document, error) {
 	return p.doc, nil
 }
 
-func (p *pom) artifact() (Artifact, error) {
+func (p *pom) Artifact() (Artifact, error) {
 	doc, err := p.document()
 	if err != nil {
 		return nil, err

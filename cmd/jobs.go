@@ -33,6 +33,7 @@ func init() {
 	cmd.Flags().BoolVarP(&jobs.repo, "repositories", "r", false, "list repositories")
 	cmd.Flags().BoolVarP(&jobs.verbose, "verbose", "v", false, "verbose output")
 	cmd.Flags().StringVarP(&jobs.job, "job", "j", "", "show info only for specified job")
+	cmd.Flags().BoolVarP(&jobs.fullSHA, "full-sha", "f", false, "don't abbreviate SHA hashes in URLs")
 
 	rootCmd.AddCommand(cmd)
 }
@@ -40,6 +41,7 @@ func init() {
 type jobs struct {
 	artifacts bool
 	build     bool
+	fullSHA   bool
 	logErrors bool
 	repo      bool
 	verbose   bool
@@ -122,6 +124,9 @@ func (j *jobs) printJob(job jenkins.Job) error {
 				}
 				fields = append(fields, "")
 			} else {
+				if !j.fullSHA {
+					sha1 = sha1[0:12]
+				}
 				fields = append(fields, sha1)
 			}
 		}
@@ -137,11 +142,7 @@ func (j *jobs) printJob(job jenkins.Job) error {
 		} else {
 			var allArtifactInfo []string
 			for _, a := range artifacts {
-				artifactInfo := fmt.Sprintf("%v:%v:%v", a.GroupId(), a.ArtifactId(), a.Version())
-				if j.verbose {
-					artifactInfo = fmt.Sprintf("%v (%v)", artifactInfo, a.Packaging())
-				}
-				allArtifactInfo = append(allArtifactInfo, artifactInfo)
+				allArtifactInfo = append(allArtifactInfo, a.String())
 			}
 			fields = append(fields, strings.Join(allArtifactInfo, ", "))
 		}

@@ -12,8 +12,11 @@ import (
 )
 
 type Repository interface {
+	fmt.Stringer
+	Owner() string
 	Name() string
 	URL() *url.URL
+	SHA1() string
 	Find(pattern string, entryType EntryType) ([]Entry, error)
 }
 
@@ -30,6 +33,18 @@ type repository struct {
 	ctx          context.Context
 	httpClient   *http.Client
 	githubClient *github.Client
+}
+
+func (r *repository) SHA1() string {
+	return r.sha1
+}
+
+func (r *repository) String() string {
+	return fmt.Sprintf("%v/%v", r.owner, r.repo)
+}
+
+func (r *repository) Owner() string {
+	return r.owner
 }
 
 func (r *repository) Name() string {
@@ -74,10 +89,6 @@ func (r *repository) Find(pattern string, entryType EntryType) ([]Entry, error) 
 	}
 
 	return entries, nil
-}
-
-func (r *repository) NewEntry(path, sha1 string, eType EntryType, size int, u *url.URL) Entry {
-	return &entry{path: path, sha1: sha1, eType: eType, size: size, url: u, repository: r}
 }
 
 func (r *repository) Context() context.Context {

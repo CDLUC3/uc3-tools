@@ -1,6 +1,7 @@
 package jenkins
 
 import (
+	"fmt"
 	"net/url"
 )
 
@@ -31,6 +32,9 @@ func (j *job) LastSuccess() (Build, error) {
 	if j.LastSuccessfulBuild == nil {
 		if err := j.load(); err != nil {
 			return nil, err
+		}
+		if j.LastSuccessfulBuild == nil {
+			return nil, fmt.Errorf("no successful build for job %#v", j.JobName)
 		}
 	}
 	return j.LastSuccessfulBuild, nil

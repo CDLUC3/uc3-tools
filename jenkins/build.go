@@ -77,7 +77,7 @@ func (b *build) SHA1() (string, error) {
 	}
 	rev := bd.LastBuiltRevision
 	if rev == nil {
-		return "", fmt.Errorf("can't revision for %v", b.FullDisplayName)
+		return "", fmt.Errorf("can't find revision for %v", b.FullDisplayName)
 	}
 	return rev.SHA1, nil
 }
@@ -161,6 +161,10 @@ type artifact struct {
 	ArtifactId_ string `json:"artifactId"`
 	Type        string `json:"type"`
 	Version_    string `json:"version"`
+}
+
+func (a *artifact) String() string {
+	return fmt.Sprintf("%v:%v:%v (%v)", a.GroupId(), a.ArtifactId(), a.Version(), a.Packaging())
 }
 
 func (a *artifact) GroupId() string {

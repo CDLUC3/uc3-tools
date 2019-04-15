@@ -2,6 +2,7 @@ package git
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/misc"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -12,8 +13,24 @@ const contentTypeRaw = "application/vnd.github.VERSION.raw"
 
 type Entry interface {
 	Repository() Repository
+	SHA1() string
 	Path() string
 	GetContent() ([]byte, error)
+	URL() *url.URL
+}
+
+func WebUrlForEntry(e Entry, fullSHA bool) *url.URL {
+	repo := e.Repository()
+	sha1 := repo.SHA1()
+	if !fullSHA {
+		sha1 = sha1[0:12]
+	}
+	u := fmt.Sprintf("http://github.com/%v/%v/blob/%v/%v", repo.Owner(), repo.Name(), sha1, e.Path())
+	return misc.UrlMustParse(u)
+}
+
+func (r *repository) NewEntry(path, sha1 string, eType EntryType, size int, u *url.URL) Entry {
+	return &entry{path: path, sha1: sha1, eType: eType, size: size, url: u, repository: r}
 }
 
 type entry struct {
@@ -29,8 +46,16 @@ func (e *entry) Repository() Repository {
 	return e.repository
 }
 
+func (e *entry) SHA1() string {
+	return e.sha1
+}
+
 func (e *entry) Path() string {
 	return e.path
+}
+
+func (e *entry) URL() *url.URL {
+	return e.url
 }
 
 func (e *entry) GetContent() ([]byte, error) {

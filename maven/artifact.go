@@ -6,6 +6,7 @@ import (
 )
 
 type Artifact interface {
+	fmt.Stringer
 	GroupId() string
 	ArtifactId() string
 	Packaging() string
@@ -39,6 +40,10 @@ type artifact struct {
 	version    string
 }
 
+func (a *artifact) String() string {
+	return fmt.Sprintf("%v:%v:%v (%v)", a.GroupId(), a.ArtifactId(), a.Version(), a.Packaging())
+}
+
 func artifactFrom(elem *etree.Element) (*artifact, error) {
 	fields := []string{"groupId", "artifactId", "packaging", "version"}
 	values := map[string]string{}
@@ -61,6 +66,8 @@ func artifactFrom(elem *etree.Element) (*artifact, error) {
 	}
 	return &a, nil
 }
+
+
 
 func (a *artifact) GroupId() string {
 	return a.groupId
