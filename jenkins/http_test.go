@@ -131,15 +131,12 @@ func (s *HttpSuite) TestNode(c *C) {
 	expectedTypes := []string{"pom", "jar", "war"}
 
 	for i, a := range artifacts {
-		c.Check(a.Group(), Equals, "org.cdlib.mrt")
+		c.Check(a.GroupId(), Equals, "org.cdlib.mrt")
 		c.Check(a.Version(), Equals, "1.0-SNAPSHOT")
 
 		artifact := expectedArtifacts[i]
 		_type := expectedTypes[i]
-		c.Check(a.Artifact(), Equals, artifact)
-		c.Check(a.Type(), Equals, _type)
-
-		expectedFile := fmt.Sprintf("%v-1.0-SNAPSHOT.%v", artifact, _type)
-		c.Check(a.File(), Equals, expectedFile)
+		c.Check(a.ArtifactId(), Equals, artifact)
+		c.Check(a.Packaging(), Equals, _type)
 	}
 }

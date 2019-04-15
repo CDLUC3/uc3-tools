@@ -3,6 +3,7 @@ package git
 import (
 	"context"
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/misc"
 	"github.com/google/go-github/github"
 	"golang.org/x/oauth2"
 	"net/http"
@@ -11,6 +12,8 @@ import (
 )
 
 type Repository interface {
+	Name() string
+	URL() *url.URL
 	Find(pattern string, entryType EntryType) ([]Entry, error)
 }
 
@@ -27,6 +30,15 @@ type repository struct {
 	ctx          context.Context
 	httpClient   *http.Client
 	githubClient *github.Client
+}
+
+func (r *repository) Name() string {
+	return r.repo
+}
+
+func (r *repository) URL() *url.URL {
+	urlStr := fmt.Sprintf("http://github.com/%v/%v", r.owner, r.repo)
+	return misc.UrlMustParse(urlStr)
 }
 
 func (r *repository) Find(pattern string, entryType EntryType) ([]Entry, error) {

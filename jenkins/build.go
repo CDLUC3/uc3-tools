@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/url"
 	"regexp"
+	"github.com/dmolesUC3/mrt-build-info/maven"
 )
 
 // ------------------------------------------------------------
@@ -13,16 +14,8 @@ type Build interface {
 	BuildNumber() int
 	SCMUrl() (string, error)
 	SHA1() (string, error)
-	Artifacts() ([]Artifact, error)
+	Artifacts() ([]maven.Artifact, error)
 	Commit() (owner, repo, sha1 string, err error)
-}
-
-type Artifact interface {
-	Group() string
-	Artifact() string
-	Type() string
-	Version() string
-	File() string
 }
 
 // ------------------------------------------------------------
@@ -40,7 +33,7 @@ type build struct {
 	FullDisplayName string
 
 	apiUrl          *url.URL
-	artifacts       []Artifact
+	artifacts       []maven.Artifact
 	buildDataAction *buildAction
 }
 
@@ -61,9 +54,9 @@ func (b *build) SCMUrl() (string, error) {
 
 func (b *build) Commit() (owner, repo, sha1 string, err error) {
 	scm, err := b.SCMUrl()
-	if err != nil {
+	if err == nil {
 		u, err := url.Parse(scm)
-		if err != nil {
+		if err == nil {
 			if repoRe.MatchString(u.Path) {
 				matches := repoRe.FindStringSubmatch(u.Path)
 				owner = matches[1]
@@ -89,7 +82,7 @@ func (b *build) SHA1() (string, error) {
 	return rev.SHA1, nil
 }
 
-func (b *build) Artifacts() ([]Artifact, error) {
+func (b *build) Artifacts() ([]maven.Artifact, error) {
 	if b.artifacts == nil {
 		if b.MavenArtifacts == nil {
 			if err := b.load(); err != nil {
@@ -97,10 +90,10 @@ func (b *build) Artifacts() ([]Artifact, error) {
 			}
 		}
 		if b.MavenArtifacts == nil {
-			b.artifacts = make([]Artifact, 0)
+			b.artifacts = make([]maven.Artifact, 0)
 		} else {
 			moduleRecords := b.MavenArtifacts.ModuleRecords
-			artifacts := make([]Artifact, len(moduleRecords))
+			artifacts := make([]maven.Artifact, len(moduleRecords))
 			for i, r := range moduleRecords {
 				artifacts[i] = r.MainArtifact
 			}
@@ -164,31 +157,26 @@ type branch struct {
 // Maven artifact information
 
 type artifact struct {
-	GroupId         string
-	ArtifactId      string
-	ArtifactType    string `json:"type"`
-	ArtifactVersion string `json:"version"`
-	FileName        string
+	GroupId_    string `json:"groupId"`
+	ArtifactId_ string `json:"artifactId"`
+	Type        string `json:"type"`
+	Version_    string `json:"version"`
 }
 
-func (a *artifact) Group() string {
-	return a.GroupId
+func (a *artifact) GroupId() string {
+	return a.GroupId_
 }
 
-func (a *artifact) Artifact() string {
-	return a.ArtifactId
+func (a *artifact) ArtifactId() string {
+	return a.ArtifactId_
 }
 
-func (a *artifact) Type() string {
-	return a.ArtifactType
+func (a *artifact) Packaging() string {
+	return a.Type
 }
 
 func (a *artifact) Version() string {
-	return a.ArtifactVersion
-}
-
-func (a *artifact) File() string {
-	return a.FileName
+	return a.Version_
 }
 
 type mavenArtifacts struct {

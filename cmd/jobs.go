@@ -137,9 +137,9 @@ func (j *jobs) printJob(job jenkins.Job) error {
 		} else {
 			var allArtifactInfo []string
 			for _, a := range artifacts {
-				artifactInfo := fmt.Sprintf("%v:%v:%v", a.Group(), a.Artifact(), a.Version())
+				artifactInfo := fmt.Sprintf("%v:%v:%v", a.GroupId(), a.ArtifactId(), a.Version())
 				if j.verbose {
-					artifactInfo = fmt.Sprintf("%v (%v, %v)", artifactInfo, a.Type(), a.File())
+					artifactInfo = fmt.Sprintf("%v (%v)", artifactInfo, a.Packaging())
 				}
 				allArtifactInfo = append(allArtifactInfo, artifactInfo)
 			}

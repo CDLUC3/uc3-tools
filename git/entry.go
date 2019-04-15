@@ -11,8 +11,9 @@ import (
 const contentTypeRaw = "application/vnd.github.VERSION.raw"
 
 type Entry interface {
+	Repository() Repository
 	Path() string
-	GetContent() (string, error)
+	GetContent() ([]byte, error)
 }
 
 type entry struct {
@@ -24,37 +25,41 @@ type entry struct {
 	repository *repository
 }
 
+func (e *entry) Repository() Repository {
+	return e.repository
+}
+
 func (e *entry) Path() string {
 	return e.path
 }
 
-func (e *entry) GetContent() (string, error) {
+func (e *entry) GetContent() ([]byte, error) {
 	if e.eType != Blob {
-		return "", fmt.Errorf("can't get content of %v entry", e.eType)
+		return nil, fmt.Errorf("can't get content of %v entry", e.eType)
 	}
 	u := e.url
 	//noinspection GoBoolExpressions
 	if inTest && !strings.HasPrefix(u.Host, "127.0.0.1") {
-		return "", fmt.Errorf("no real URLs in test!: %v", u)
+		return nil, fmt.Errorf("no real URLs in test!: %v", u)
 	}
 
 	req, err := http.NewRequest("GET", u.String(), nil)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 	req.Header.Set("Accept", contentTypeRaw)
 
 	httpClient := e.repository.HttpClient()
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 	bytes, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 	if len(bytes) != e.size {
-		return "", fmt.Errorf("expected %d bytes, got %d", e.size, len(bytes))
+		return nil, fmt.Errorf("expected %d bytes, got %d", e.size, len(bytes))
 	}
-	return string(bytes), nil
+	return bytes, nil
 }

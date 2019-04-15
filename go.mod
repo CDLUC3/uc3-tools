@@ -3,6 +3,7 @@ module github.com/dmolesUC3/mrt-build-info
 go 1.12
 
 require (
+	github.com/beevik/etree v1.1.0
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect

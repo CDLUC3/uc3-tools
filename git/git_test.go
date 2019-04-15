@@ -93,8 +93,6 @@ func (s *GitSuite) TestEntries(c *C) {
 	content, err := entry.GetContent()
 	c.Assert(err, IsNil)
 
-	expectedBytes, _ := ioutil.ReadFile("testdata/pom.xml")
-	expected := string(expectedBytes)
-
-	c.Assert(content, Equals, expected)
+	expected, _ := ioutil.ReadFile("testdata/pom.xml")
+	c.Assert(string(content), Equals, string(expected))
 }
