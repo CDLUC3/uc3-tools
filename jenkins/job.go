@@ -11,6 +11,7 @@ import (
 type Job interface {
 	Name() string
 	LastSuccess() (Build, error)
+	Parameters() []Parameter
 }
 
 // ------------------------------------------------------------
@@ -21,6 +22,9 @@ type job struct {
 	URL                 string
 	LastSuccessfulBuild *build
 
+	Actions []action
+
+	parameters []Parameter
 	apiUrl *url.URL
 }
 
@@ -40,6 +44,21 @@ func (j *job) LastSuccess() (Build, error) {
 	return j.LastSuccessfulBuild, nil
 }
 
+func (j *job) Parameters() []Parameter {
+	if j.parameters == nil {
+		var params []Parameter
+		for _, a := range j.Actions {
+			if a.Class == "hudson.model.ParametersDefinitionProperty" {
+				for _, p := range a.ParameterDefinitions {
+					params = append(params, &p)
+				}
+			}
+		}
+		j.parameters = params
+	}
+	return j.parameters
+}
+
 func (j *job) load() error {
 	if j.apiUrl == nil {
 		u, err := url.Parse(j.URL)
@@ -51,4 +70,9 @@ func (j *job) load() error {
 	return unmarshal(j.apiUrl, j)
 }
 
+
+type action struct {
+	Class string `json:"_class"`
+	ParameterDefinitions []parameterDefinition
+}
 

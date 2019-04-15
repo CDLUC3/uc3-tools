@@ -63,6 +63,20 @@ func (s *JsonSuite) TestParseJob(c *C) {
 	c.Assert(err, IsNil)
 
 	c.Assert(build.BuildNumber(), Equals, 93)
+
+	params := job.Parameters()
+	c.Assert(len(params), Equals, 1)
+
+	param := params[0]
+	c.Check(param.Name(), Equals, "propertyDirName")
+	c.Check(param.Default(), Equals, "dev")
+
+	expected := []string{"dev", "stage", "prod", "audit", "test"}
+	choices := param.Choices()
+	c.Assert(len(choices), Equals, len(expected))
+	for i, actual := range choices {
+		c.Check(actual, Equals, expected[i])
+	}
 }
 
 func (s *JsonSuite) TestParseBuild(c *C) {
@@ -101,8 +115,8 @@ func (s *JsonSuite) TestParseBuild(c *C) {
 
 func (s JsonSuite) TestBuildCommit(c *C) {
 	re := regexp.MustCompile("([^/]+)/([^@]+)@([a-f0-9]+)")
-	repoByFile := map[string]string {
-		"testdata/build.json": "CDLUC3/mrt-store@af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+	repoByFile := map[string]string{
+		"testdata/build.json":         "CDLUC3/mrt-store@af174ac555758a1c639a7a3da39e022d9fdbf3a6",
 		"testdata/build-private.json": "cdlib/mrt-conf-prv@691770b9182d3870c85aba8ca776c0a3e85aa57e",
 	}
 	for file, expected := range repoByFile {
@@ -120,4 +134,3 @@ func (s JsonSuite) TestBuildCommit(c *C) {
 		c.Assert(sha1, Equals, matches[3])
 	}
 }
-
