@@ -5,11 +5,9 @@ import (
 	"github.com/dmolesUC3/mrt-build-info/git"
 	"github.com/dmolesUC3/mrt-build-info/jenkins"
 	"github.com/dmolesUC3/mrt-build-info/maven"
-	"github.com/dmolesUC3/mrt-build-info/misc"
 	"github.com/spf13/cobra"
 	"os"
-	"regexp"
-	"sort"
+	"strings"
 )
 
 func init() {
@@ -141,87 +139,18 @@ func (j *job) printPomEntry(entry git.Entry) error {
 	if err != nil {
 		return err
 	}
-	artifact, err := pom.Artifact()
-	if err != nil {
-		return err
-	}
-	params, err := j.parametersFor(artifact)
-	if err != nil {
-		return err
-	}
 	pomInfo, err := pom.FormatInfo()
 	if err != nil {
 		return err
 	}
-	if len(params) == 0 {
-		fmt.Println(pomInfo)
-		return nil
-	}
-	paramNames := make([]string, len(params))
-	for paramName := range params {
-		paramNames = append(paramNames, paramName)
-	}
-	sort.Strings(paramNames)
-
-	parameterized := []string{pomInfo}
-	for _, paramName := range paramNames {
-		current := parameterized
-		param := params[paramName]
-		var next []string
-		for _, c := range current {
-			next = append(next, param.Parameterize(c)...)
+	parameterizedPomInfo := j.Parameterize(pomInfo)
+	for _, p := range parameterizedPomInfo {
+		fmt.Println(p)
+		if j.logErrors && jenkins.IsParameterized(p) {
+			missing := strings.Join(jenkins.Parameters(p), ", ")
+			found := strings.Join(j.ParameterNames(), ", ")
+			_, _ = fmt.Fprintf(os.Stderr, "job %v missing parameters pom %v: %v (found: %v)", j.Name(), pom.Path(), missing, found)
 		}
-		parameterized = next
-	}
-	for _, pomInfoParameterized := range parameterized {
-		fmt.Println(pomInfoParameterized)
 	}
 	return nil
-}
-
-var paramSubRe = regexp.MustCompile("\\${([^}]+)}")
-
-func (j *job) artifactParamNames(artifact maven.Artifact) []string {
-	var artifactParamNames []string
-	matches := paramSubRe.FindAllStringSubmatch(artifact.String(), -1)
-	if len(matches) == 0 {
-		return artifactParamNames
-	}
-	for _, match := range matches {
-		if len(match) != 2 {
-			panic(fmt.Errorf("invalid submatch: %#v", match))
-		}
-		artifactParamNames = append(artifactParamNames, match[1])
-	}
-	return misc.SortUniq(artifactParamNames)
-}
-
-func (j *job) parametersFor(artifact maven.Artifact) (map[string]jenkins.Parameter, error) {
-	matchingParams := map[string]jenkins.Parameter{}
-	artifactParamNames := j.artifactParamNames(artifact)
-	if len(artifactParamNames) == 0 {
-		// not parameterized
-		return matchingParams, nil
-	}
-
-	var jobParamNames []string
-	for _, param := range j.Parameters() {
-		jobParamNames = append(jobParamNames, param.Name())
-		if misc.SliceContains(artifactParamNames, param.Name()) {
-			matchingParams[param.Name()] = param
-		}
-	}
-
-	var missingParams []string
-	for _, paramName := range artifactParamNames {
-		if _, ok := matchingParams[paramName]; !ok {
-			missingParams = append(missingParams, paramName)
-		}
-	}
-
-	if len(missingParams) == 0 {
-		return matchingParams, nil
-	}
-
-	return nil, fmt.Errorf("job %v missing parameters %v in artifact %v (found parameters: %v)", j.Name(), missingParams, artifact, jobParamNames)
 }

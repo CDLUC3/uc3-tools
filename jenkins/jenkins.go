@@ -17,6 +17,24 @@ var client *http.Client
 var apiUrlRelative = misc.UrlMustParse("api/json?depth=1&pretty=true")
 var apiUrlRegexp = regexp.MustCompile("/api/json(\\?.+)?$")
 
+var paramSubRe = regexp.MustCompile("\\${([^}]+)}")
+
+func IsParameterized(str string) bool {
+	return paramSubRe.MatchString(str)
+}
+
+func Parameters(str string) []string {
+	var parameters []string
+	matches := paramSubRe.FindAllStringSubmatch(str, -1)
+	for _, match := range matches {
+		if len(match) != 2 { // should never happen
+			panic(fmt.Errorf("invalid submatch: %#v", match))
+		}
+		parameters = append(parameters, match[1])
+	}
+	return parameters
+}
+
 func getBody(u *url.URL) ([]byte, error) {
 	//noinspection GoBoolExpressions
 	if inTest && !strings.HasPrefix(u.Host, "127.0.0.1") {
@@ -55,4 +73,3 @@ func toApiUrl(u *url.URL) *url.URL {
 	}
 	return u.ResolveReference(apiUrlRelative)
 }
-

@@ -3,6 +3,8 @@ package jenkins
 import (
 	"fmt"
 	"net/url"
+	"sort"
+	"strings"
 )
 
 // ------------------------------------------------------------
@@ -12,6 +14,8 @@ type Job interface {
 	Name() string
 	LastSuccess() (Build, error)
 	Parameters() []Parameter
+	ParameterNames() []string
+	Parameterize(str string) []string
 }
 
 // ------------------------------------------------------------
@@ -50,13 +54,43 @@ func (j *job) Parameters() []Parameter {
 		for _, a := range j.Actions {
 			if a.Class == "hudson.model.ParametersDefinitionProperty" {
 				for _, p := range a.ParameterDefinitions {
+					sort.Strings(p.Choices_)
 					params = append(params, &p)
 				}
 			}
 		}
+		sort.Slice(params, func(i, j int) bool {
+			n1, n2 := params[i].Name(), params[j].Name()
+			if strings.Compare(n1, n2) < 0 {
+				return true
+			}
+			return false
+		})
 		j.parameters = params
 	}
 	return j.parameters
+}
+
+func (j *job) ParameterNames() []string {
+	params := j.Parameters()
+	paramNames := make([]string, len(params))
+	for i, param := range params {
+		paramNames[i] = param.Name()
+	}
+	return paramNames
+}
+
+func (j *job) Parameterize(str string) []string {
+	parameterized := []string{str}
+	for _, param := range j.Parameters() {
+		current := parameterized
+		var next []string
+		for _, c := range current {
+			next = append(next, param.Parameterize(c)...)
+		}
+		parameterized = next
+	}
+	return parameterized
 }
 
 func (j *job) load() error {
@@ -69,7 +103,6 @@ func (j *job) load() error {
 	}
 	return unmarshal(j.apiUrl, j)
 }
-
 
 type action struct {
 	Class string `json:"_class"`
