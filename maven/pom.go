@@ -7,6 +7,7 @@ import (
 )
 
 type Pom interface {
+	fmt.Stringer
 	Artifact() (Artifact, error)
 	Path() string
 	Repository() git.Repository
@@ -22,6 +23,10 @@ func PomFromEntry(entry git.Entry) (Pom, error) {
 type pom struct {
 	git.Entry
 	doc *etree.Document
+}
+
+func (p *pom) String() string {
+	return fmt.Sprintf("%v (%v)", p.Path(), p.Repository())
 }
 
 func (p *pom) document() (*etree.Document, error) {
@@ -45,5 +50,5 @@ func (p *pom) Artifact() (Artifact, error) {
 	if err != nil {
 		return nil, err
 	}
-	return RootArtifact(doc)
+	return RootArtifact(doc, p.String())
 }

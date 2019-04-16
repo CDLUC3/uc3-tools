@@ -11,6 +11,8 @@ import (
 	"regexp"
 )
 
+var repoCache = map[string]map[string]Repository{}
+
 type Repository interface {
 	fmt.Stringer
 	Owner() string
@@ -20,8 +22,34 @@ type Repository interface {
 	Find(pattern string, entryType EntryType) ([]Entry, error)
 }
 
-func NewRepository(owner, repo, sha1, token string) Repository {
-	return &repository{owner: owner, repo: repo, sha1: sha1, token: token}
+func MakeRepoUrlStr(owner string, repo string) string {
+	return fmt.Sprintf("http://github.com/%v/%v", owner, repo)
+}
+
+func GetRepository(owner, repoName, sha1, token string) (Repository, error) {
+	if owner == "" {
+		return nil, fmt.Errorf("repo must have an owner")
+	}
+	if repoName == "" {
+		return nil, fmt.Errorf("repo must have a name")
+	}
+	if sha1 == "" {
+		return nil, fmt.Errorf("repo must have a revision")
+	}
+	urlStr := MakeRepoUrlStr(owner, repoName)
+
+	var ok bool
+	var reposBySHA1 map[string]Repository
+	if reposBySHA1, ok = repoCache[urlStr]; !ok {
+		reposBySHA1 = map[string]Repository{}
+		repoCache[urlStr] = reposBySHA1
+	}
+	var repo Repository
+	if repo, ok = reposBySHA1[sha1]; !ok {
+		repo = &repository{owner: owner, repo: repoName, sha1: sha1, token: token}
+		reposBySHA1[sha1] = repo
+	}
+	return repo, nil
 }
 
 type repository struct {
@@ -52,7 +80,7 @@ func (r *repository) Name() string {
 }
 
 func (r *repository) URL() *url.URL {
-	urlStr := fmt.Sprintf("http://github.com/%v/%v", r.owner, r.repo)
+	urlStr := MakeRepoUrlStr(r.owner, r.repo)
 	return misc.UrlMustParse(urlStr)
 }
 

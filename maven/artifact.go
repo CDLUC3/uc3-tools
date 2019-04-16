@@ -13,18 +13,18 @@ type Artifact interface {
 	Version() string
 }
 
-func RootArtifact(doc *etree.Document) (Artifact, error) {
+func RootArtifact(doc *etree.Document, source string) (Artifact, error) {
 	elem := doc.FindElement("/project")
 	if elem == nil {
-		return nil, fmt.Errorf("<project> not found")
+		return nil, fmt.Errorf("<project> not found in " + source)
 	}
-	return artifactFrom(elem)
+	return artifactFrom(elem, source)
 }
 
-func Dependencies(doc *etree.Document) ([]Artifact, error) {
+func Dependencies(doc *etree.Document, source string) ([]Artifact, error) {
 	var artifacts []Artifact
 	for _, elem := range doc.FindElements("/project/dependencies/dependency") {
-		a, err := artifactFrom(elem)
+		a, err := artifactFrom(elem, source)
 		if err != nil {
 			return nil, err
 		}
@@ -45,7 +45,7 @@ func (a *artifact) String() string {
 }
 
 // TODO: parse out parameters (e.g. version "${propertyDir}-1.0-SNAPSHOT"
-func artifactFrom(elem *etree.Element) (*artifact, error) {
+func artifactFrom(elem *etree.Element, source string) (*artifact, error) {
 	fields := []string{"groupId", "artifactId", "packaging", "version"}
 	values := map[string]string{}
 	for _, f := range fields {
@@ -55,20 +55,18 @@ func artifactFrom(elem *etree.Element) (*artifact, error) {
 				values[f] = "jar" // treat as default
 				continue
 			}
-			return nil, fmt.Errorf("<%s> not found", f)
+			return nil, fmt.Errorf("<%s> not found in %v", f, source)
 		}
 		values[f] = v.Text()
 	}
 	a := artifact{
-		groupId: values["groupId"],
+		groupId:    values["groupId"],
 		artifactId: values["artifactId"],
-		packaging: values["packaging"],
-		version: values["version"],
+		packaging:  values["packaging"],
+		version:    values["version"],
 	}
 	return &a, nil
 }
-
-
 
 func (a *artifact) GroupId() string {
 	return a.groupId
@@ -85,5 +83,3 @@ func (a *artifact) Packaging() string {
 func (a *artifact) Version() string {
 	return a.version
 }
-
-

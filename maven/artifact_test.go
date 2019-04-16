@@ -12,10 +12,11 @@ type ArtifactSuite struct {
 
 func (s *ArtifactSuite) TestRootArtifact(c *C) {
 	doc := etree.NewDocument()
-	err := doc.ReadFromFile("testdata/pom.xml")
+	file := "testdata/pom.xml"
+	err := doc.ReadFromFile(file)
 	c.Assert(err, IsNil) // just to be sure
 
-	artifact, err := RootArtifact(doc)
+	artifact, err := RootArtifact(doc, file)
 	c.Assert(err, IsNil)
 
 	c.Check(artifact.GroupId(), Equals, "org.cdlib.mrt")
@@ -26,10 +27,11 @@ func (s *ArtifactSuite) TestRootArtifact(c *C) {
 
 func (s *ArtifactSuite) TestDependencies(c *C) {
 	doc := etree.NewDocument()
-	err := doc.ReadFromFile("testdata/pom.xml")
+	file := "testdata/pom.xml"
+	err := doc.ReadFromFile(file)
 	c.Assert(err, IsNil) // just to be sure
 
-	artifacts, err := Dependencies(doc)
+	artifacts, err := Dependencies(doc, file)
 	c.Assert(err, IsNil)
 
 	expected := []artifact{
