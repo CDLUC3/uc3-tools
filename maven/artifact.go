@@ -13,6 +13,7 @@ type Artifact interface {
 	Version() string
 }
 
+// TODO: something smarter than passing source around
 func RootArtifact(doc *etree.Document, source string) (Artifact, error) {
 	elem := doc.FindElement("/project")
 	if elem == nil {
@@ -21,6 +22,7 @@ func RootArtifact(doc *etree.Document, source string) (Artifact, error) {
 	return artifactFrom(elem, source)
 }
 
+// TODO: something smarter than passing source around
 func Dependencies(doc *etree.Document, source string) ([]Artifact, error) {
 	var artifacts []Artifact
 	for _, elem := range doc.FindElements("/project/dependencies/dependency") {

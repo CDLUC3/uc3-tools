@@ -17,6 +17,9 @@ var client *http.Client
 var apiUrlRelative = misc.UrlMustParse("api/json?depth=1&pretty=true")
 var apiUrlRegexp = regexp.MustCompile("/api/json(\\?.+)?$")
 
+var configUrlRelative = misc.UrlMustParse("config.xml")
+var configUrlRegexp = regexp.MustCompile("/config.xml")
+
 var paramSubRe = regexp.MustCompile("\\${([^}]+)}")
 
 func IsParameterized(str string) bool {
@@ -72,4 +75,16 @@ func toApiUrl(u *url.URL) *url.URL {
 		panic(fmt.Errorf("url '%v' is already an API URL", u))
 	}
 	return u.ResolveReference(apiUrlRelative)
+}
+
+func isConfigUrl(u *url.URL) bool {
+	return configUrlRegexp.MatchString(u.Path)
+}
+
+
+func toConfigUrl(u *url.URL) *url.URL {
+	if isConfigUrl(u) {
+		panic(fmt.Errorf("url '%v' is already an CONFIG URL", u))
+	}
+	return u.ResolveReference(configUrlRelative)
 }

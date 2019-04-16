@@ -13,6 +13,7 @@ import (
 type Job interface {
 	Name() string
 	LastSuccess() (Build, error)
+	ConfigUrl() *url.URL
 	Parameters() []Parameter
 	ParameterNames() []string
 	Parameterize(str string) []string
@@ -30,6 +31,7 @@ type job struct {
 
 	parameters []Parameter
 	apiUrl *url.URL
+	configUrl *url.URL
 }
 
 func (j *job) Name() string {
@@ -94,16 +96,31 @@ func (j *job) Parameterize(str string) []string {
 	return parameterized
 }
 
+func (j *job) ConfigUrl() *url.URL {
+	if j.configUrl == nil {
+		u, err := url.Parse(j.URL)
+		if err != nil {
+			panic(err)
+		}
+		j.configUrl = toConfigUrl(u)
+	}
+	return j.configUrl
+}
+
 func (j *job) load() error {
 	if j.apiUrl == nil {
 		u, err := url.Parse(j.URL)
 		if err != nil {
-			panic(err)
+			return err
 		}
 		j.apiUrl = toApiUrl(u)
 	}
 	return unmarshal(j.apiUrl, j)
 }
+
+
+// ------------------------------------------------------------
+// Helper types
 
 type action struct {
 	Class string `json:"_class"`
