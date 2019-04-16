@@ -5,6 +5,8 @@ import (
 	"strings"
 )
 
+var POMURLs = false
+
 var inTest bool = false
 
 func isPom(entry git.Entry) bool {

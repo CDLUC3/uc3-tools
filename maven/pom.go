@@ -11,6 +11,7 @@ type Pom interface {
 	Artifact() (Artifact, error)
 	Path() string
 	Repository() git.Repository
+	FormatInfo() (string, error)
 }
 
 func PomFromEntry(entry git.Entry) (Pom, error) {
@@ -27,6 +28,18 @@ type pom struct {
 
 func (p *pom) String() string {
 	return fmt.Sprintf("%v (%v)", p.Path(), p.Repository())
+}
+
+func (p *pom) FormatInfo() (string, error) {
+	artifact, err := p.Artifact()
+	if err != nil {
+		return "", err
+	}
+	pomInfo := fmt.Sprintf("%v\t%v\t%v", artifact.String(), p.Repository(), p.Path())
+	if POMURLs {
+		pomInfo = fmt.Sprintf("%v\t%v", pomInfo, git.WebUrlForEntry(p.Entry))
+	}
+	return pomInfo, nil
 }
 
 func (p *pom) document() (*etree.Document, error) {

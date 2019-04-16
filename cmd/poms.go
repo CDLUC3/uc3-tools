@@ -34,7 +34,7 @@ func init() {
 	}
 	cmd.Flags().BoolVarP(&git.FullSHA, "full-sha", "f", false, "don't abbreviate SHA hashes in URLs")
 	cmd.Flags().StringVarP(&poms.job, "job", "j", "", "read POMs for single specified job")
-	cmd.Flags().BoolVarP(&poms.listUrls, "list-urls", "u", false, "list URL used to retrieve POM file")
+	cmd.Flags().BoolVarP(&maven.POMURLs, "pom-urls", "u", false, "list URL used to retrieve POM file")
 	cmd.Flags().BoolVarP(&poms.logErrors, "log-errors", "l", false, "log non-fatal errors to stderr")
 	cmd.Flags().StringVarP(&poms.token, "token", "t", "", "GitHub API token (https://github.com/settings/tokens)")
 	cmd.Flags().BoolVarP(&poms.verbose, "verbose", "v", false, "verbose output")
@@ -72,15 +72,6 @@ func (p *poms) List(server jenkins.JenkinsServer) error {
 		}
 	}
 	return fmt.Errorf("no such job: %#v", p.job)
-}
-
-// TODO: clean up args here, make standalone
-func (p *poms) printPomInfo(artifactStr string, pom maven.Pom, entry git.Entry) {
-	pomInfo := fmt.Sprintf("%v\t%v\t%v", artifactStr, pom.Repository(), pom.Path())
-	if p.listUrls {
-		pomInfo = fmt.Sprintf("%v\t%v", pomInfo, git.WebUrlForEntry(entry))
-	}
-	fmt.Println(pomInfo)
 }
 
 func (p *poms) printAllJobs(jobs []jenkins.Job) {
@@ -158,8 +149,12 @@ func (j *job) printPomEntry(entry git.Entry) error {
 	if err != nil {
 		return err
 	}
+	pomInfo, err := pom.FormatInfo()
+	if err != nil {
+		return err
+	}
 	if len(params) == 0 {
-		j.printPomInfo(artifact.String(), pom, entry)
+		fmt.Println(pomInfo)
 		return nil
 	}
 	paramNames := make([]string, len(params))
@@ -168,7 +163,7 @@ func (j *job) printPomEntry(entry git.Entry) error {
 	}
 	sort.Strings(paramNames)
 
-	parameterized := []string{artifact.String()}
+	parameterized := []string{pomInfo}
 	for _, paramName := range paramNames {
 		current := parameterized
 		param := params[paramName]
@@ -178,8 +173,8 @@ func (j *job) printPomEntry(entry git.Entry) error {
 		}
 		parameterized = next
 	}
-	for _, artifactStr := range parameterized {
-		j.printPomInfo(artifactStr, pom, entry)
+	for _, pomInfoParameterized := range parameterized {
+		fmt.Println(pomInfoParameterized)
 	}
 	return nil
 }

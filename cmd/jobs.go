@@ -125,7 +125,7 @@ func (j *jobs) printJob(job jenkins.Job) error {
 				}
 				fields = append(fields, "")
 			} else {
-				fields = append(fields, sha1)
+				fields = append(fields, sha1.String())
 			}
 		}
 	}
