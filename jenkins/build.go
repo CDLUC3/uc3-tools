@@ -15,7 +15,7 @@ type Build interface {
 	SCMUrl() (string, error)
 	SHA1() (string, error)
 	Artifacts() ([]maven.Artifact, error)
-	Commit() (owner, repo, sha1 string, err error)
+	Commit() (owner, repoName, sha1 string, err error)
 }
 
 // ------------------------------------------------------------
@@ -52,7 +52,7 @@ func (b *build) SCMUrl() (string, error) {
 	return bd.RemoteURLs[0], nil
 }
 
-func (b *build) Commit() (owner, repo, sha1 string, err error) {
+func (b *build) Commit() (owner, repoName, sha1 string, err error) {
 	scm, err := b.SCMUrl()
 	if err == nil {
 		u, err := url.Parse(scm)
@@ -60,7 +60,7 @@ func (b *build) Commit() (owner, repo, sha1 string, err error) {
 			if repoRe.MatchString(u.Path) {
 				matches := repoRe.FindStringSubmatch(u.Path)
 				owner = matches[1]
-				repo = matches[2]
+				repoName = matches[2]
 				sha1, err = b.SHA1()
 			} else {
 				err = fmt.Errorf("SCM URL %#v for %v does not appear to be a Git URL", u, b.FullDisplayName)
