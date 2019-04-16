@@ -149,7 +149,14 @@ func (j *job) printPomEntry(entry git.Entry) error {
 		if j.logErrors && jenkins.IsParameterized(p) {
 			missing := strings.Join(jenkins.Parameters(p), ", ")
 			found := strings.Join(j.ParameterNames(), ", ")
-			_, _ = fmt.Fprintf(os.Stderr, "job %v missing parameters pom %v: %v (found: %v)", j.Name(), pom.Path(), missing, found)
+			indent := ""
+			if j.verbose {
+				indent = "\t\t"
+			}
+			_, _ = fmt.Fprintf(os.Stderr,
+				"%vjob %v missing parameters pom %v: %v (found: %v)\n",
+				indent, j.Name(), pom.Path(), missing, found,
+			)
 		}
 	}
 	return nil
