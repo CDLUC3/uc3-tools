@@ -54,8 +54,9 @@ func (j *job) Parameters() []Parameter {
 		for _, a := range j.Actions {
 			if a.Class == "hudson.model.ParametersDefinitionProperty" {
 				for _, p := range a.ParameterDefinitions {
+					p1 := p
 					sort.Strings(p.Choices_)
-					params = append(params, &p)
+					params = append(params, &p1)
 				}
 			}
 		}
