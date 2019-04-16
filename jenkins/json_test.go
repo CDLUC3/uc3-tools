@@ -2,6 +2,7 @@ package jenkins
 
 import (
 	"encoding/json"
+	"github.com/dmolesUC3/mrt-build-info/git"
 	. "gopkg.in/check.v1"
 	"io/ioutil"
 	"regexp"
@@ -92,7 +93,7 @@ func (s *JsonSuite) TestParseBuild(c *C) {
 
 	sha1, err := build.SHA1()
 	c.Assert(err, IsNil)
-	c.Assert(sha1, Equals, "af174ac555758a1c639a7a3da39e022d9fdbf3a6")
+	c.Assert(sha1, Equals, git.SHA1("af174ac555758a1c639a7a3da39e022d9fdbf3a6"))
 
 	artifacts, err := build.Artifacts()
 	c.Assert(err, IsNil)
@@ -131,6 +132,6 @@ func (s JsonSuite) TestBuildCommit(c *C) {
 		matches := re.FindStringSubmatch(expected)
 		c.Assert(owner, Equals, matches[1])
 		c.Assert(repo, Equals, matches[2])
-		c.Assert(sha1, Equals, matches[3])
+		c.Assert(sha1, Equals, git.SHA1(matches[3]))
 	}
 }

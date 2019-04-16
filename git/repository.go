@@ -11,14 +11,14 @@ import (
 	"regexp"
 )
 
-var repoCache = map[string]map[string]Repository{}
+var repoCache = map[string]map[SHA1]Repository{}
 
 type Repository interface {
 	fmt.Stringer
 	Owner() string
 	Name() string
 	URL() *url.URL
-	SHA1() string
+	SHA1() SHA1
 	Find(pattern string, entryType EntryType) ([]Entry, error)
 }
 
@@ -26,7 +26,7 @@ func MakeRepoUrlStr(owner string, repo string) string {
 	return fmt.Sprintf("http://github.com/%v/%v", owner, repo)
 }
 
-func GetRepository(owner, repoName, sha1, token string) (Repository, error) {
+func GetRepository(owner, repoName string, sha1 SHA1, token string) (Repository, error) {
 	if owner == "" {
 		return nil, fmt.Errorf("repo must have an owner")
 	}
@@ -39,9 +39,9 @@ func GetRepository(owner, repoName, sha1, token string) (Repository, error) {
 	urlStr := MakeRepoUrlStr(owner, repoName)
 
 	var ok bool
-	var reposBySHA1 map[string]Repository
+	var reposBySHA1 map[SHA1]Repository
 	if reposBySHA1, ok = repoCache[urlStr]; !ok {
-		reposBySHA1 = map[string]Repository{}
+		reposBySHA1 = map[SHA1]Repository{}
 		repoCache[urlStr] = reposBySHA1
 	}
 	var repo Repository
@@ -55,7 +55,7 @@ func GetRepository(owner, repoName, sha1, token string) (Repository, error) {
 type repository struct {
 	owner string
 	repo  string
-	sha1  string
+	sha1  SHA1
 	token string
 
 	ctx          context.Context
@@ -63,7 +63,7 @@ type repository struct {
 	githubClient *github.Client
 }
 
-func (r *repository) SHA1() string {
+func (r *repository) SHA1() SHA1 {
 	return r.sha1
 }
 
@@ -91,7 +91,7 @@ func (r *repository) Find(pattern string, entryType EntryType) ([]Entry, error) 
 	}
 
 	client := r.GitHubClient()
-	tree, _, err := client.Git.GetTree(r.Context(), r.owner, r.repo, r.sha1, true)
+	tree, _, err := client.Git.GetTree(r.Context(), r.owner, r.repo, r.sha1.Full(), true)
 	if err != nil {
 		return nil, err
 	}

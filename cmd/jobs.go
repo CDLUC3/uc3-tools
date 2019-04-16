@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/git"
 	"github.com/dmolesUC3/mrt-build-info/jenkins"
 	"github.com/spf13/cobra"
 	"os"
@@ -33,7 +34,8 @@ func init() {
 	cmd.Flags().BoolVarP(&jobs.repo, "repositories", "r", false, "list repositories")
 	cmd.Flags().BoolVarP(&jobs.verbose, "verbose", "v", false, "verbose output")
 	cmd.Flags().StringVarP(&jobs.job, "job", "j", "", "show info only for specified job")
-	cmd.Flags().BoolVarP(&jobs.fullSHA, "full-sha", "f", false, "don't abbreviate SHA hashes in URLs")
+
+	cmd.Flags().BoolVarP(&git.FullSHA, "full-sha", "f", false, "don't abbreviate SHA hashes in URLs")
 
 	rootCmd.AddCommand(cmd)
 }
@@ -41,7 +43,6 @@ func init() {
 type jobs struct {
 	artifacts bool
 	build     bool
-	fullSHA   bool
 	logErrors bool
 	repo      bool
 	verbose   bool
@@ -124,9 +125,6 @@ func (j *jobs) printJob(job jenkins.Job) error {
 				}
 				fields = append(fields, "")
 			} else {
-				if !j.fullSHA {
-					sha1 = sha1[0:12]
-				}
 				fields = append(fields, sha1)
 			}
 		}

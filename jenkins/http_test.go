@@ -2,6 +2,7 @@ package jenkins
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/git"
 	"github.com/dmolesUC3/mrt-build-info/misc"
 	. "gopkg.in/check.v1"
 	"io/ioutil"
@@ -120,7 +121,7 @@ func (s *HttpSuite) TestNode(c *C) {
 
 	sha1, err := build.SHA1()
 	c.Assert(err, IsNil)
-	c.Assert(sha1, Equals, "af174ac555758a1c639a7a3da39e022d9fdbf3a6")
+	c.Assert(sha1, Equals, git.SHA1("af174ac555758a1c639a7a3da39e022d9fdbf3a6"))
 
 	artifacts, err := build.Artifacts()
 	c.Assert(err, IsNil)

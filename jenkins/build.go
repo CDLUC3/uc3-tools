@@ -2,9 +2,10 @@ package jenkins
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/git"
+	"github.com/dmolesUC3/mrt-build-info/maven"
 	"net/url"
 	"regexp"
-	"github.com/dmolesUC3/mrt-build-info/maven"
 )
 
 // ------------------------------------------------------------
@@ -13,9 +14,9 @@ import (
 type Build interface {
 	BuildNumber() int
 	SCMUrl() (string, error)
-	SHA1() (string, error)
+	SHA1() (git.SHA1, error)
 	Artifacts() ([]maven.Artifact, error)
-	Commit() (owner, repoName, sha1 string, err error)
+	Commit() (owner, repoName string, sha1 git.SHA1, err error)
 }
 
 // ------------------------------------------------------------
@@ -52,7 +53,7 @@ func (b *build) SCMUrl() (string, error) {
 	return bd.RemoteURLs[0], nil
 }
 
-func (b *build) Commit() (owner, repoName, sha1 string, err error) {
+func (b *build) Commit() (owner, repoName string, sha1 git.SHA1, err error) {
 	scm, err := b.SCMUrl()
 	if err == nil {
 		u, err := url.Parse(scm)
@@ -70,7 +71,7 @@ func (b *build) Commit() (owner, repoName, sha1 string, err error) {
 	return
 }
 
-func (b *build) SHA1() (string, error) {
+func (b *build) SHA1() (git.SHA1, error) {
 	bd, err := b.buildData()
 	if err != nil {
 		return "", err
@@ -144,7 +145,7 @@ type buildAction struct {
 }
 
 type revision struct {
-	SHA1     string
+	SHA1     git.SHA1
 	Branches []branch `json:"branch"`
 }
 

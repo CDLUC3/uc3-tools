@@ -74,7 +74,9 @@ func (s *GitSuite) RoundTrip(req *http.Request) (*http.Response, error) {
 }
 
 func (s *GitSuite) TestEntries(c *C) {
-	repo := GetRepository("CDLUC3", "mrt-store", "af174ac555758a1c639a7a3da39e022d9fdbf3a6", "").(*repository)
+	r, err := GetRepository("CDLUC3", "mrt-store", "af174ac555758a1c639a7a3da39e022d9fdbf3a6", "")
+	c.Assert(err, IsNil)
+	repo := r.(*repository)
 	repo.httpClient = s.MockClient()
 
 	entries, err := repo.Find("pom.xml", Blob)

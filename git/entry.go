@@ -19,10 +19,10 @@ type Entry interface {
 	URL() *url.URL
 }
 
-func WebUrlForEntry(e Entry, fullSHA bool) *url.URL {
+func WebUrlForEntry(e Entry) *url.URL {
 	repo := e.Repository()
 	sha1 := repo.SHA1()
-	if !fullSHA {
+	if !FullSHA {
 		sha1 = sha1[0:12]
 	}
 	u := fmt.Sprintf("http://github.com/%v/%v/blob/%v/%v", repo.Owner(), repo.Name(), sha1, e.Path())

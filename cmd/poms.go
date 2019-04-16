@@ -32,7 +32,7 @@ func init() {
 			return poms.List(server)
 		},
 	}
-	cmd.Flags().BoolVarP(&poms.fullSHA, "full-sha", "f", false, "don't abbreviate SHA hashes in URLs")
+	cmd.Flags().BoolVarP(&git.FullSHA, "full-sha", "f", false, "don't abbreviate SHA hashes in URLs")
 	cmd.Flags().StringVarP(&poms.job, "job", "j", "", "read POMs for single specified job")
 	cmd.Flags().BoolVarP(&poms.listUrls, "list-urls", "u", false, "list URL used to retrieve POM file")
 	cmd.Flags().BoolVarP(&poms.logErrors, "log-errors", "l", false, "log non-fatal errors to stderr")
@@ -43,7 +43,6 @@ func init() {
 }
 
 type poms struct {
-	fullSHA   bool
 	job       string
 	listUrls  bool
 	logErrors bool
@@ -79,7 +78,7 @@ func (p *poms) List(server jenkins.JenkinsServer) error {
 func (p *poms) printPomInfo(artifactStr string, pom maven.Pom, entry git.Entry) {
 	pomInfo := fmt.Sprintf("%v\t%v\t%v", artifactStr, pom.Repository(), pom.Path())
 	if p.listUrls {
-		pomInfo = fmt.Sprintf("%v\t%v", pomInfo, git.WebUrlForEntry(entry, p.fullSHA))
+		pomInfo = fmt.Sprintf("%v\t%v", pomInfo, git.WebUrlForEntry(entry))
 	}
 	fmt.Println(pomInfo)
 }
