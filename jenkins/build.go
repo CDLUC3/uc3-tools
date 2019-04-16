@@ -24,7 +24,7 @@ type Build interface {
 
 const buildDataClass = "hudson.plugins.git.util.BuildData"
 
-var repoRe = regexp.MustCompile("/(.+)/([^/]+)\\.git")
+var repoRe = regexp.MustCompile("/(.+)/([^./]+)(?:\\.git)?$")
 
 type build struct {
 	Number          int

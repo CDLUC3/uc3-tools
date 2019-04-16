@@ -6,6 +6,7 @@ import (
 	. "gopkg.in/check.v1"
 	"io/ioutil"
 	"regexp"
+	"sort"
 )
 
 var _ = Suite(&JsonSuite{})
@@ -60,6 +61,12 @@ func (s *JsonSuite) TestParseJob(c *C) {
 
 	c.Assert(job.Name(), Equals, "mrt-store-pub")
 
+	configUrl := job.ConfigUrl()
+	c.Assert(configUrl, NotNil)
+
+	expectedConfigUrl := "http://builds.cdlib.org/job/mrt-store-pub/config.xml"
+	c.Assert(configUrl.String(), Equals, expectedConfigUrl)
+
 	build, err := job.LastSuccess()
 	c.Assert(err, IsNil)
 
@@ -73,6 +80,7 @@ func (s *JsonSuite) TestParseJob(c *C) {
 	c.Check(param.Default(), Equals, "dev")
 
 	expected := []string{"dev", "stage", "prod", "audit", "test"}
+	sort.Strings(expected)
 	choices := param.Choices()
 	c.Assert(len(choices), Equals, len(expected))
 	for i, actual := range choices {
@@ -119,6 +127,7 @@ func (s JsonSuite) TestBuildCommit(c *C) {
 	repoByFile := map[string]string{
 		"testdata/build.json":         "CDLUC3/mrt-store@af174ac555758a1c639a7a3da39e022d9fdbf3a6",
 		"testdata/build-private.json": "cdlib/mrt-conf-prv@691770b9182d3870c85aba8ca776c0a3e85aa57e",
+		"testdata/build-ingest-dev.json": "CDLUC3/mrt-ingest@a572b8c116ef56936ffd866749bd667d29a36fdd",
 	}
 	for file, expected := range repoByFile {
 		data, _ := ioutil.ReadFile(file)
