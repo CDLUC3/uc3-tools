@@ -33,6 +33,7 @@ func init() {
 	}
 	cmd.Flags().BoolVarP(&jobs.artifacts, "artifacts", "a", false, "show artifacts from last successful build")
 	cmd.Flags().BoolVarP(&jobs.build, "build", "b", false, "show info for last successful build")
+	cmd.Flags().BoolVarP(&jobs.parameters, "parameters", "p", false, "show build parameters")
 	cmd.Flags().BoolVarP(&jobs.repo, "repositories", "r", false, "show repositories")
 
 	AddCommand(cmd)
@@ -41,6 +42,7 @@ func init() {
 type jobs struct {
 	artifacts bool
 	build     bool
+	parameters bool
 	repo      bool
 	errors    []error
 }
@@ -72,6 +74,17 @@ func (j *jobs) printTable(jobs []jenkins.Job) {
 		NewTableColumn("Job Name", len(jobs), func(row int) string {
 			return jobs[row].Name()
 		}),
+	}
+	if j.parameters {
+		columns = append(columns, NewTableColumn(
+			"Parameters", len(jobs), func(row int) string {
+				var allParamInfo []string
+				for _, p := range jobs[row].Parameters() {
+					paramInfo := fmt.Sprintf("%v (%v)", p.Name(), strings.Join(p.Choices(), ", "))
+					allParamInfo = append(allParamInfo, paramInfo)
+				}
+				return strings.Join(allParamInfo, ", ")
+			}))
 	}
 	if j.repo {
 		columns = append(columns, NewTableColumn(
