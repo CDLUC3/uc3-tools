@@ -2,13 +2,13 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/dmolesUC3/mrt-build-info/git"
 	"github.com/dmolesUC3/mrt-build-info/jenkins"
 	"github.com/dmolesUC3/mrt-build-info/maven"
 	. "github.com/dmolesUC3/mrt-build-info/shared"
 	"github.com/spf13/cobra"
 	"os"
 	"strings"
+	"text/tabwriter"
 )
 
 func init() {
@@ -31,127 +31,139 @@ func init() {
 			return poms.List(server)
 		},
 	}
+	cmd.Flags().BoolVarP(&poms.artifacts, "artifacts", "a", false, "list POM artifacts")
 	cmd.Flags().BoolVarP(&maven.POMURLs, "pom-urls", "u", false, "list URL used to retrieve POM file")
 
 	AddCommand(cmd)
 }
 
 type poms struct {
-	listUrls  bool
-	token     string
+	// // Deprecated
+	// listUrls  bool
+	artifacts bool
+	errors    []error
 }
 
-// TODO:
-//   - Don't just iterate over every pom in every repo; read the builds
-//   - Move print logic into domain objects
-//   - Get groupId etc. from parent POMs
-
+//noinspection GoUnhandledErrorResult
 func (p *poms) List(server jenkins.JenkinsServer) error {
-	jobs, err := server.Jobs()
+	if Flags.Verbose {
+		fmt.Fprintln(os.Stderr, "Retrieving jobs...")
+	}
+	allJobs, err := server.Jobs()
 	if err != nil {
 		return err
 	}
 
-	job := Flags.Job
-	if job == "" {
-		p.printAllJobs(jobs)
-		return nil
-	}
-
-	for _, j := range jobs {
-		if j.Name() == job {
-			return p.printOneJob(j)
+	var jobs []jenkins.Job
+	var poms []maven.Pom
+	for _, j := range allJobs {
+		if Flags.Job != "" && j.Name() != Flags.Job {
+			continue
 		}
-	}
-	return fmt.Errorf("no such job: %#v", job)
-}
-
-func (p *poms) printAllJobs(jobs []jenkins.Job) {
-	for i, j := range jobs {
-		if Flags.Verbose {
-			fmt.Printf("%v (job %d of %d):\n", j.Name(), i+1, len(jobs))
-		}
-		err := p.printOneJob(j)
-		if err != nil  {
-			if Flags.Verbose {
-				_, _ = fmt.Fprint(os.Stderr, "\t")
-			}
-			_, _ = fmt.Fprintln(os.Stderr, err.Error())
-		}
-	}
-}
-
-func (p *poms) printOneJob(j jenkins.Job) error {
-	j1 := job{*p, j}
-	pomEntries, err := j1.pomEntries()
-	if err != nil {
-		return err
-	}
-	for i, pomEntry := range pomEntries {
-		if Flags.Verbose {
-			fmt.Printf("\t%v: %v (pom %d of %d)\n\t\t", j.Name(), pomEntry.Path(), i+1, len(pomEntries))
-		}
-		err = j1.printPomEntry(pomEntry)
+		jobPoms, err := j.POMs()
 		if err != nil {
-			_, _ = fmt.Fprintln(os.Stderr, err.Error())
+			p.errors = append(p.errors, err)
+			continue
+		}
+		for _, p := range jobPoms {
+			jobs = append(jobs, j)
+			poms = append(poms, p)
 		}
 	}
+
+	columns := p.MakeTableColumns(jobs, poms)
+	table := TableFrom(columns...)
+	table.Print(os.Stdout, "\t")
+
+	if len(p.errors) > 0 {
+		w := tabwriter.NewWriter(os.Stderr, 0, 0, 2, ' ', tabwriter.DiscardEmptyColumns)
+		fmt.Fprintf(w, "%d errors:\n", len(p.errors))
+		for i, err := range p.errors {
+			fmt.Fprintf(w, "%d. %v\n", i+1, err)
+		}
+		w.Flush()
+	}
+
 	return nil
 }
 
-type job struct {
-	poms // TODO: don't do this, just explicitly include fields
-	jenkins.Job
-}
+func (p *poms) MakeTableColumns(jobs []jenkins.Job, poms []maven.Pom) []TableColumn {
+	if len(jobs) != len(poms) {
+		panic(fmt.Errorf("mismatched jobs (%d) and poms(%d)", len(jobs), len(poms)))
+	}
+	rows := len(jobs)
 
-func (j *job) repo() (git.Repository, error) {
-	build, err := j.LastSuccess()
-	if err != nil {
-		return nil, fmt.Errorf("can't determine repository for job %v: %v", j.Name(), err)
+	columns := []TableColumn{
+		NewTableColumn("Job", rows, func(row int) string {
+			return jobs[row].Name()
+		}),
+		NewTableColumn("POM", rows, func(row int) string {
+			return poms[row].Path()
+		}),
 	}
-	owner, repoName, sha1, err := build.Commit()
-	if err != nil {
-		return nil, fmt.Errorf("can't determine repository for job %v: %v", j.Name(), err)
-	}
-	repo, err := git.GetRepository(owner, repoName, sha1)
-	if err != nil {
-		return nil, fmt.Errorf("can't determine repository for job %v: %v", j.Name(), err)
-	}
-	return repo, nil
-}
-
-func (j *job) pomEntries() ([]git.Entry, error) {
-	repository, err := j.repo()
-	if err != nil {
-		return nil, err
-	}
-	return repository.Find("pom.xml$", git.Blob)
-}
-
-func (j *job) printPomEntry(entry git.Entry) error {
-	pom, err := maven.PomFromEntry(entry)
-	if err != nil {
-		return err
-	}
-	pomInfo, err := pom.FormatInfo()
-	if err != nil {
-		return err
-	}
-	parameterizedPomInfo := j.Parameterize(pomInfo)
-	for _, p := range parameterizedPomInfo {
-		fmt.Println(p)
-		if jenkins.IsParameterized(p) {
-			missing := strings.Join(jenkins.Parameters(p), ", ")
-			found := strings.Join(j.ParameterNames(), ", ")
-			indent := ""
-			if Flags.Verbose {
-				indent = "\t\t"
+	if maven.POMURLs {
+		columns = append(columns, NewTableColumn("POM URL", rows, func(row int) string {
+			url := poms[row].URL()
+			if url == nil {
+				return valueUnknown
 			}
-			_, _ = fmt.Fprintf(os.Stderr,
-				"%vjob %v missing parameters pom %v: %v (found: %v)\n",
-				indent, j.Name(), pom.Path(), missing, found,
-			)
-		}
+			return url.String()
+		}))
 	}
-	return nil
+	if p.artifacts {
+		columns = append(columns, NewTableColumn("Artifacts", rows, func(row int) string {
+			return p.ArtifactInfo(jobs[row], poms[row])
+		}))
+	}
+
+	return columns
+}
+
+func (p *poms) ArtifactInfo(job jenkins.Job, pom maven.Pom) string {
+	artifact, err := pom.Artifact()
+	if err != nil {
+		p.errors = append(p.errors, err)
+		return ""
+	}
+	artifactStr := artifact.String()
+	if jenkins.IsParameterized(artifactStr) {
+		var expanded []string
+		artifactParams := jenkins.Parameters(artifactStr)
+		mvnParamToVal, err := job.MavenParamToValue()
+		if err != nil {
+			p.errors = append(p.errors, err)
+			return artifactStr
+		}
+		var missing []string
+		var found []string
+		for _, p := range artifactParams {
+			current := len(expanded)
+			if val, ok := mvnParamToVal[p]; ok {
+				if strings.HasPrefix(val, "$") {
+					for _, jp := range job.Parameters() {
+						jpName := jp.Name()
+						if val == "$"+jpName {
+							found = append(found, p + " -> " + jpName)
+							paramSub := "${" + p + "}"
+							for _, v := range jp.Choices() {
+								expanded = append(expanded, strings.ReplaceAll(artifactStr, paramSub, v))
+							}
+						}
+					}
+				}
+			}
+			if len(expanded) == current {
+				missing = append(missing, p)
+			}
+		}
+		if len(missing) > 0 {
+			err = fmt.Errorf(
+				"job %v: pom %v missing parameters: %v (found: %v)\n",
+				job.Name(), pom.Path(), strings.Join(missing, ", "), strings.Join(found, ", "),
+			)
+			p.errors = append(p.errors, err)
+		}
+		return strings.Join(expanded, ", ")
+	}
+	return artifactStr
 }

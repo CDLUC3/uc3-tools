@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/beevik/etree"
 	"github.com/dmolesUC3/mrt-build-info/git"
+	"net/url"
 )
 
 type Pom interface {
@@ -11,6 +12,8 @@ type Pom interface {
 	Artifact() (Artifact, error)
 	Path() string
 	Repository() git.Repository
+	URL() *url.URL
+	// Deprecated
 	FormatInfo() (string, error)
 }
 
@@ -30,6 +33,7 @@ func (p *pom) String() string {
 	return fmt.Sprintf("%v (%v)", p.Path(), p.Repository())
 }
 
+// Deprecated
 func (p *pom) FormatInfo() (string, error) {
 	artifact, err := p.Artifact()
 	if err != nil {
@@ -37,9 +41,13 @@ func (p *pom) FormatInfo() (string, error) {
 	}
 	pomInfo := fmt.Sprintf("%v\t%v\t%v", artifact.String(), p.Repository(), p.Path())
 	if POMURLs {
-		pomInfo = fmt.Sprintf("%v\t%v", pomInfo, git.WebUrlForEntry(p.Entry))
+		pomInfo = fmt.Sprintf("%v\t%v", pomInfo, p.URL())
 	}
 	return pomInfo, nil
+}
+
+func (p *pom) URL() *url.URL {
+	return git.WebUrlForEntry(p.Entry)
 }
 
 func (p *pom) document() (*etree.Document, error) {
@@ -58,6 +66,8 @@ func (p *pom) document() (*etree.Document, error) {
 	return p.doc, nil
 }
 
+// TODO:
+//   - Get groupId etc. from parent POMs
 func (p *pom) Artifact() (Artifact, error) {
 	doc, err := p.document()
 	if err != nil {

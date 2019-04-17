@@ -16,7 +16,7 @@ type Config interface {
 	Goals() string
 	RootPOM() string
 	BuildRoot() string
-	MavenParameters() map[string]string
+	MavenParamToValue() map[string]string
 }
 
 func ConfigFromURL(u *url.URL) (Config, error) {
@@ -76,7 +76,7 @@ func (c *config) BuildRoot() string {
 	return filepath.Dir(rootPom)
 }
 
-func (c *config) MavenParameters() map[string]string {
+func (c *config) MavenParamToValue() map[string]string {
 	paramToValue := map[string]string{}
 	matches := propRe.FindAllStringSubmatch(c.Goals(), -1)
 	for _, match := range matches {

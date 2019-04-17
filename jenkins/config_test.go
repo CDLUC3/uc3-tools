@@ -23,7 +23,7 @@ func (s *ConfigSuite) TestGoals(c *C) {
 	c.Assert(goals, Equals, expected)
 }
 
-func (s *ConfigSuite) TestMavenParameters(c *C) {
+func (s *ConfigSuite) TestMavenParamToValue(c *C) {
 	data, err := ioutil.ReadFile("testdata/config.xml")
 	c.Assert(err, IsNil)
 
@@ -31,7 +31,7 @@ func (s *ConfigSuite) TestMavenParameters(c *C) {
 	config, err := ConfigFromBytes(data, url)
 	c.Assert(err, IsNil)
 
-	mavenParameters := config.MavenParameters()
+	mavenParameters := config.MavenParamToValue()
 	c.Assert(mavenParameters["propertyDir"], Equals, "$propertyDirName")
 	c.Assert(mavenParameters["java.compiler"], Equals, "1.8")
 }

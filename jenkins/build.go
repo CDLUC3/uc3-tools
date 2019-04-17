@@ -118,7 +118,7 @@ func (b *build) buildData() (*buildAction, error) {
 			}
 		}
 		if b.buildDataAction == nil {
-			return nil, fmt.Errorf("%v action not found in %v (%v)", buildDataClass, b.FullDisplayName, b.apiUrl)
+			return nil, fmt.Errorf("%v action not found in %v", buildDataClass, b.FullDisplayName)
 		}
 	}
 	return b.buildDataAction, nil

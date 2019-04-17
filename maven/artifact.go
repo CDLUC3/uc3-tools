@@ -54,7 +54,6 @@ func (a *artifact) String() string {
 	return ArtifactToString(a)
 }
 
-// TODO: parse out parameters (e.g. version "${propertyDir}-1.0-SNAPSHOT"
 func artifactFrom(elem *etree.Element, source string) (*artifact, error) {
 	fields := []string{"groupId", "artifactId", "packaging", "version"}
 	values := map[string]string{}

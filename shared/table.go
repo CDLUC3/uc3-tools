@@ -2,7 +2,9 @@ package shared
 
 import (
 	"bufio"
+	"fmt"
 	"io"
+	"os"
 	"text/tabwriter"
 )
 
@@ -58,6 +60,10 @@ func (t *table) ValueAt(row, col int) string {
 
 //noinspection GoUnhandledErrorResult
 func (t *table) Print(w io.Writer, sep string) {
+	if Flags.Verbose && !Flags.TSV {
+		fmt.Fprintf(os.Stderr, "Formatting %d rows", t.Rows())
+	}
+
 	var out *bufio.Writer
 	if Flags.TSV {
 		out = bufio.NewWriter(w)
@@ -70,7 +76,7 @@ func (t *table) Print(w io.Writer, sep string) {
 	cols := t.Cols()
 	for col := 0; col < cols; col++ {
 		out.WriteString(t.HeaderFor(col))
-		if col + 1 < cols {
+		if col+1 < cols {
 			out.WriteString(sep)
 		}
 	}
@@ -82,11 +88,18 @@ func (t *table) Print(w io.Writer, sep string) {
 		for col := 0; col < cols; col++ {
 			value := t.ValueAt(row, col)
 			out.WriteString(value)
-			if col + 1 < cols {
+			if col+1 < cols {
 				out.WriteString(sep)
 			}
 		}
 		out.WriteRune('\n')
 		out.Flush()
+
+		if Flags.Verbose && !Flags.TSV {
+			fmt.Fprint(os.Stderr, ".")
+		}
+	}
+	if Flags.Verbose && !Flags.TSV {
+		fmt.Fprintln(os.Stderr, "Done.")
 	}
 }

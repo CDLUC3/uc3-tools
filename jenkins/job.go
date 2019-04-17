@@ -21,8 +21,7 @@ type Job interface {
 	SCMUrl() (string, error)
 	Parameters() []Parameter
 	ParameterNames() []string
-	Parameterize(str string) []string
-	MavenParameters() (map[string]string, error)
+	MavenParamToValue() (map[string]string, error)
 	Repository() (git.Repository, error)
 	POMs() ([]maven.Pom, error)
 }
@@ -106,12 +105,12 @@ func (j *job) ParameterNames() []string {
 	return paramNames
 }
 
-func (j *job) MavenParameters() (map[string]string, error) {
+func (j *job) MavenParamToValue() (map[string]string, error) {
 	config, err := j.Config()
 	if err != nil {
 		return map[string]string{}, err
 	}
-	return config.MavenParameters(), nil
+	return config.MavenParamToValue(), nil
 }
 
 func (j *job) Repository() (git.Repository, error) {
@@ -162,19 +161,6 @@ func (j *job) POMs() ([]maven.Pom, error) {
 		j.repoPOMs = poms
 	}
 	return j.repoPOMs, nil
-}
-
-func (j *job) Parameterize(str string) []string {
-	parameterized := []string{str}
-	for _, param := range j.Parameters() {
-		current := parameterized
-		var next []string
-		for _, c := range current {
-			next = append(next, param.Parameterize(c)...)
-		}
-		parameterized = next
-	}
-	return parameterized
 }
 
 func (j *job) ConfigUrl() *url.URL {
