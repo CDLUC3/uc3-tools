@@ -6,6 +6,8 @@ import (
 	"os"
 )
 
+// TODO: 'find' command (by job, artifactId, ...?)
+
 var rootCmd = &cobra.Command {
 	Use:   "mrt-build-info",
 	Short: "Merritt build info",

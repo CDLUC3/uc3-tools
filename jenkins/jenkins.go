@@ -12,15 +12,8 @@ import (
 	"time"
 )
 
-var inTest = false
-var client *http.Client
-var apiUrlRelative = misc.UrlMustParse("api/json?depth=1&pretty=true")
-var apiUrlRegexp = regexp.MustCompile("/api/json(\\?.+)?$")
-
-var configUrlRelative = misc.UrlMustParse("config.xml")
-var configUrlRegexp = regexp.MustCompile("/config.xml")
-
-var paramSubRe = regexp.MustCompile("\\${([^}]+)}")
+// ------------------------------------------------------------
+// Exported symbols
 
 func IsParameterized(str string) bool {
 	return paramSubRe.MatchString(str)
@@ -37,6 +30,19 @@ func Parameters(str string) []string {
 	}
 	return parameters
 }
+
+// ------------------------------------------------------------
+// Unexported symbols
+
+var inTest = false
+var client *http.Client
+var apiUrlRelative = misc.UrlMustParse("api/json?depth=1&pretty=true")
+var apiUrlRegexp = regexp.MustCompile("/api/json(\\?.+)?$")
+
+var configUrlRelative = misc.UrlMustParse("config.xml")
+var configUrlRegexp = regexp.MustCompile("/config.xml")
+
+var paramSubRe = regexp.MustCompile("\\${([^}]+)}")
 
 func getBody(u *url.URL) ([]byte, error) {
 	//noinspection GoBoolExpressions
