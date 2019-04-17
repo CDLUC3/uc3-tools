@@ -3,7 +3,7 @@ package jenkins
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/dmolesUC3/mrt-build-info/misc"
+	"github.com/dmolesUC3/mrt-build-info/shared"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -36,10 +36,10 @@ func Parameters(str string) []string {
 
 var inTest = false
 var client *http.Client
-var apiUrlRelative = misc.UrlMustParse("api/json?depth=1&pretty=true")
+var apiUrlRelative = shared.UrlMustParse("api/json?depth=1&pretty=true")
 var apiUrlRegexp = regexp.MustCompile("/api/json(\\?.+)?$")
 
-var configUrlRelative = misc.UrlMustParse("config.xml")
+var configUrlRelative = shared.UrlMustParse("config.xml")
 var configUrlRegexp = regexp.MustCompile("/config.xml")
 
 var paramSubRe = regexp.MustCompile("\\${([^}]+)}")

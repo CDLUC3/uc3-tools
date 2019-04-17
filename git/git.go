@@ -1,6 +1,7 @@
 package git
 
 var FullSHA = false
+var Token = ""
 
 var inTest = false
 

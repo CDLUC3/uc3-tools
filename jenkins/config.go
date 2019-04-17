@@ -3,7 +3,7 @@ package jenkins
 import (
 	"fmt"
 	"github.com/beevik/etree"
-	"github.com/dmolesUC3/mrt-build-info/misc"
+	"github.com/dmolesUC3/mrt-build-info/shared"
 	"net/url"
 )
 
@@ -24,7 +24,7 @@ func ConfigFromURL(u *url.URL) (Config, error) {
 }
 
 func ConfigFromBytes(data []byte, u *url.URL) (Config, error) {
-	data = misc.HackXMLVersion(data)
+	data = shared.HackXMLVersion(data)
 	doc := etree.NewDocument()
 	err := doc.ReadFromBytes(data)
 	if err != nil {

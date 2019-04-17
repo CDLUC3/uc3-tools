@@ -2,7 +2,7 @@ package git
 
 import (
 	"fmt"
-	"github.com/dmolesUC3/mrt-build-info/misc"
+	"github.com/dmolesUC3/mrt-build-info/shared"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -26,7 +26,7 @@ func WebUrlForEntry(e Entry) *url.URL {
 		sha1 = sha1[0:12]
 	}
 	u := fmt.Sprintf("http://github.com/%v/%v/blob/%v/%v", repo.Owner(), repo.Name(), sha1, e.Path())
-	return misc.UrlMustParse(u)
+	return shared.UrlMustParse(u)
 }
 
 func (r *repository) NewEntry(path, sha1 string, eType EntryType, size int, u *url.URL) Entry {

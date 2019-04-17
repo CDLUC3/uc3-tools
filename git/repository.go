@@ -3,7 +3,7 @@ package git
 import (
 	"context"
 	"fmt"
-	"github.com/dmolesUC3/mrt-build-info/misc"
+	"github.com/dmolesUC3/mrt-build-info/shared"
 	"github.com/google/go-github/github"
 	"golang.org/x/oauth2"
 	"net/http"
@@ -26,7 +26,7 @@ func MakeRepoUrlStr(owner string, repo string) string {
 	return fmt.Sprintf("http://github.com/%v/%v", owner, repo)
 }
 
-func GetRepository(owner, repoName string, sha1 SHA1, token string) (Repository, error) {
+func GetRepository(owner, repoName string, sha1 SHA1) (Repository, error) {
 	if owner == "" {
 		return nil, fmt.Errorf("repo must have an owner")
 	}
@@ -46,7 +46,7 @@ func GetRepository(owner, repoName string, sha1 SHA1, token string) (Repository,
 	}
 	var repo Repository
 	if repo, ok = reposBySHA1[sha1]; !ok {
-		repo = &repository{owner: owner, repo: repoName, sha1: sha1, token: token}
+		repo = &repository{owner: owner, repo: repoName, sha1: sha1}
 		reposBySHA1[sha1] = repo
 	}
 	return repo, nil
@@ -56,7 +56,6 @@ type repository struct {
 	owner string
 	repo  string
 	sha1  SHA1
-	token string
 
 	ctx          context.Context
 	httpClient   *http.Client
@@ -81,7 +80,7 @@ func (r *repository) Name() string {
 
 func (r *repository) URL() *url.URL {
 	urlStr := MakeRepoUrlStr(r.owner, r.repo)
-	return misc.UrlMustParse(urlStr)
+	return shared.UrlMustParse(urlStr)
 }
 
 func (r *repository) Find(pattern string, entryType EntryType) ([]Entry, error) {
@@ -128,10 +127,10 @@ func (r *repository) Context() context.Context {
 
 func (r *repository) HttpClient() *http.Client {
 	if r.httpClient == nil {
-		if r.token == "" {
+		if Token == "" {
 			r.httpClient = http.DefaultClient
 		} else {
-			token := oauth2.Token{AccessToken: r.token}
+			token := oauth2.Token{AccessToken: Token}
 			tokenSource := oauth2.StaticTokenSource(&token)
 			r.httpClient = oauth2.NewClient(r.Context(), tokenSource)
 		}

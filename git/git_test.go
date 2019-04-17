@@ -2,7 +2,7 @@ package git
 
 import (
 	"fmt"
-	"github.com/dmolesUC3/mrt-build-info/misc"
+	"github.com/dmolesUC3/mrt-build-info/shared"
 	. "gopkg.in/check.v1"
 	"io/ioutil"
 	"net/http"
@@ -56,7 +56,7 @@ func (s *GitSuite) HandleRequest(w http.ResponseWriter, r *http.Request) {
 // suite since httptest.Server is designed to only live for one testing.T test
 func (s *GitSuite) SetUpTest(c *C) {
 	s.server = httptest.NewServer(http.HandlerFunc(s.HandleRequest))
-	s.serverUrl = misc.UrlMustParse(s.server.URL)
+	s.serverUrl = shared.UrlMustParse(s.server.URL)
 }
 
 func (s *GitSuite) MockClient() *http.Client {
@@ -74,7 +74,7 @@ func (s *GitSuite) RoundTrip(req *http.Request) (*http.Response, error) {
 }
 
 func (s *GitSuite) TestEntries(c *C) {
-	r, err := GetRepository("CDLUC3", "mrt-store", "af174ac555758a1c639a7a3da39e022d9fdbf3a6", "")
+	r, err := GetRepository("CDLUC3", "mrt-store", "af174ac555758a1c639a7a3da39e022d9fdbf3a6")
 	c.Assert(err, IsNil)
 	repo := r.(*repository)
 	repo.httpClient = s.MockClient()

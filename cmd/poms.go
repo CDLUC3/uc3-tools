@@ -5,6 +5,7 @@ import (
 	"github.com/dmolesUC3/mrt-build-info/git"
 	"github.com/dmolesUC3/mrt-build-info/jenkins"
 	"github.com/dmolesUC3/mrt-build-info/maven"
+	. "github.com/dmolesUC3/mrt-build-info/shared"
 	"github.com/spf13/cobra"
 	"os"
 	"strings"
@@ -30,22 +31,14 @@ func init() {
 			return poms.List(server)
 		},
 	}
-	cmd.Flags().BoolVarP(&git.FullSHA, "full-sha", "f", false, "don't abbreviate SHA hashes in URLs")
-	cmd.Flags().StringVarP(&poms.job, "job", "j", "", "read POMs for single specified job")
 	cmd.Flags().BoolVarP(&maven.POMURLs, "pom-urls", "u", false, "list URL used to retrieve POM file")
-	cmd.Flags().BoolVarP(&poms.logErrors, "log-errors", "l", false, "log non-fatal errors to stderr")
-	cmd.Flags().StringVarP(&poms.token, "token", "t", "", "GitHub API token (https://github.com/settings/tokens)")
-	cmd.Flags().BoolVarP(&poms.verbose, "verbose", "v", false, "verbose output")
 
-	rootCmd.AddCommand(cmd)
+	AddCommand(cmd)
 }
 
 type poms struct {
-	job       string
 	listUrls  bool
-	logErrors bool
 	token     string
-	verbose   bool
 }
 
 // TODO:
@@ -59,27 +52,28 @@ func (p *poms) List(server jenkins.JenkinsServer) error {
 		return err
 	}
 
-	if p.job == "" {
+	job := Flags.Job
+	if job == "" {
 		p.printAllJobs(jobs)
 		return nil
 	}
 
 	for _, j := range jobs {
-		if j.Name() == p.job {
+		if j.Name() == job {
 			return p.printOneJob(j)
 		}
 	}
-	return fmt.Errorf("no such job: %#v", p.job)
+	return fmt.Errorf("no such job: %#v", job)
 }
 
 func (p *poms) printAllJobs(jobs []jenkins.Job) {
 	for i, j := range jobs {
-		if p.verbose {
+		if Flags.Verbose {
 			fmt.Printf("%v (job %d of %d):\n", j.Name(), i+1, len(jobs))
 		}
 		err := p.printOneJob(j)
-		if err != nil && p.logErrors {
-			if p.verbose {
+		if err != nil && Flags.LogErrors {
+			if Flags.Verbose {
 				_, _ = fmt.Fprint(os.Stderr, "\t")
 			}
 			_, _ = fmt.Fprintln(os.Stderr, err.Error())
@@ -94,7 +88,7 @@ func (p *poms) printOneJob(j jenkins.Job) error {
 		return err
 	}
 	for i, pomEntry := range pomEntries {
-		if p.verbose {
+		if Flags.Verbose {
 			fmt.Printf("\t%v: %v (pom %d of %d)\n\t\t", j.Name(), pomEntry.Path(), i+1, len(pomEntries))
 		}
 		err = j1.printPomEntry(pomEntry)
@@ -119,7 +113,7 @@ func (j *job) repo() (git.Repository, error) {
 	if err != nil {
 		return nil, fmt.Errorf("can't determine repository for job %v: %v", j.Name(), err)
 	}
-	repo, err := git.GetRepository(owner, repoName, sha1, j.token)
+	repo, err := git.GetRepository(owner, repoName, sha1)
 	if err != nil {
 		return nil, fmt.Errorf("can't determine repository for job %v: %v", j.Name(), err)
 	}
@@ -146,11 +140,11 @@ func (j *job) printPomEntry(entry git.Entry) error {
 	parameterizedPomInfo := j.Parameterize(pomInfo)
 	for _, p := range parameterizedPomInfo {
 		fmt.Println(p)
-		if j.logErrors && jenkins.IsParameterized(p) {
+		if Flags.LogErrors && jenkins.IsParameterized(p) {
 			missing := strings.Join(jenkins.Parameters(p), ", ")
 			found := strings.Join(j.ParameterNames(), ", ")
 			indent := ""
-			if j.verbose {
+			if Flags.Verbose {
 				indent = "\t\t"
 			}
 			_, _ = fmt.Fprintf(os.Stderr,

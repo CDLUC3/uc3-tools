@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/dmolesUC3/mrt-build-info/git"
 	"github.com/dmolesUC3/mrt-build-info/jenkins"
+	. "github.com/dmolesUC3/mrt-build-info/shared"
 	"github.com/spf13/cobra"
 	"os"
 	"strings"
@@ -30,23 +30,15 @@ func init() {
 	}
 	cmd.Flags().BoolVarP(&jobs.artifacts, "artifacts", "a", false, "list artifacts")
 	cmd.Flags().BoolVarP(&jobs.build, "build", "b", false, "show info for last successful build")
-	cmd.Flags().BoolVarP(&jobs.logErrors, "log-errors", "l", false, "log non-fatal errors to stderr")
 	cmd.Flags().BoolVarP(&jobs.repo, "repositories", "r", false, "list repositories")
-	cmd.Flags().BoolVarP(&jobs.verbose, "verbose", "v", false, "verbose output")
-	cmd.Flags().StringVarP(&jobs.job, "job", "j", "", "show info only for specified job")
 
-	cmd.Flags().BoolVarP(&git.FullSHA, "full-sha", "f", false, "don't abbreviate SHA hashes in URLs")
-
-	rootCmd.AddCommand(cmd)
+	AddCommand(cmd)
 }
 
 type jobs struct {
 	artifacts bool
 	build     bool
-	logErrors bool
 	repo      bool
-	verbose   bool
-	job       string
 }
 
 func (j *jobs) nameOnly() bool {
@@ -68,7 +60,7 @@ func (j *jobs) List(server jenkins.JenkinsServer) error {
 		}
 		if j.build {
 			fields = append(fields, "Build")
-			if j.verbose {
+			if Flags.Verbose {
 				fields = append(fields, "SHA Hash")
 			}
 		}
@@ -79,11 +71,13 @@ func (j *jobs) List(server jenkins.JenkinsServer) error {
 	}
 
 	for _, job := range jobs {
-		if j.job != "" && j.job != job.Name() {
+		if Flags.Job != "" && Flags.Job != job.Name() {
 			continue
 		}
 		if err := j.printJob(job); err != nil {
-			return err
+			if Flags.LogErrors {
+				_, _ = fmt.Fprintln(os.Stderr, err.Error())
+			}
 		}
 	}
 	return nil
@@ -107,7 +101,7 @@ func (j *jobs) printJob(job jenkins.Job) error {
 	if j.repo {
 		scmUrl, err := b.SCMUrl()
 		if err != nil {
-			if j.logErrors {
+			if Flags.LogErrors {
 				_, _ = fmt.Fprintln(os.Stderr, err.Error())
 			}
 			fields = append(fields, "")
@@ -117,10 +111,10 @@ func (j *jobs) printJob(job jenkins.Job) error {
 
 	if j.build {
 		fields = append(fields, fmt.Sprintf("%d", b.BuildNumber()))
-		if j.verbose {
+		if Flags.Verbose {
 			sha1, err := b.SHA1()
 			if err != nil {
-				if j.logErrors {
+				if Flags.LogErrors {
 					_, _ = fmt.Fprintln(os.Stderr, err.Error())
 				}
 				fields = append(fields, "")
@@ -133,7 +127,7 @@ func (j *jobs) printJob(job jenkins.Job) error {
 	if j.artifacts {
 		artifacts, err := b.Artifacts()
 		if err != nil {
-			if j.logErrors {
+			if Flags.LogErrors {
 				_, _ = fmt.Fprintln(os.Stderr, err.Error())
 			}
 			fields = append(fields, "")

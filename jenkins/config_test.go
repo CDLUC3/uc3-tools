@@ -1,7 +1,7 @@
 package jenkins
 
 import (
-	"github.com/dmolesUC3/mrt-build-info/misc"
+	"github.com/dmolesUC3/mrt-build-info/shared"
 	. "gopkg.in/check.v1"
 	"io/ioutil"
 )
@@ -15,7 +15,7 @@ func (s *ConfigSuite) TestGoals(c *C) {
 	data, err := ioutil.ReadFile("testdata/config.xml")
 	c.Assert(err, IsNil)
 
-	url := misc.UrlMustParse("http://builds.cdlib.org/job/mrt-store-pub/config.xml")
+	url := shared.UrlMustParse("http://builds.cdlib.org/job/mrt-store-pub/config.xml")
 	config, err := ConfigFromBytes(data, url)
 	c.Assert(err, IsNil)
 

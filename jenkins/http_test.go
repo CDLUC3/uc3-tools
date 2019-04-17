@@ -3,7 +3,7 @@ package jenkins
 import (
 	"fmt"
 	"github.com/dmolesUC3/mrt-build-info/git"
-	"github.com/dmolesUC3/mrt-build-info/misc"
+	"github.com/dmolesUC3/mrt-build-info/shared"
 	. "gopkg.in/check.v1"
 	"io/ioutil"
 	"net/http"
@@ -54,7 +54,7 @@ func (s *HttpSuite) HandleRequest(w http.ResponseWriter, r *http.Request) {
 // suite since httptest.Server is designed to only live for one testing.T test
 func (s *HttpSuite) SetUpTest(c *C) {
 	s.server = httptest.NewServer(http.HandlerFunc(s.HandleRequest))
-	s.serverUrl = misc.UrlMustParse(s.server.URL)
+	s.serverUrl = shared.UrlMustParse(s.server.URL)
 	jenkins, err := ServerFromUrl(s.server.URL)
 	if err != nil {
 		c.Error(err)
