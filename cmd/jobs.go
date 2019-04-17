@@ -7,7 +7,10 @@ import (
 	"github.com/spf13/cobra"
 	"os"
 	"strings"
+	"text/tabwriter"
 )
+
+const valueUnknown = "(unknown)"
 
 func init() {
 	jobs := &jobs{}
@@ -28,9 +31,9 @@ func init() {
 			return jobs.List(server)
 		},
 	}
-	cmd.Flags().BoolVarP(&jobs.artifacts, "artifacts", "a", false, "list artifacts")
+	cmd.Flags().BoolVarP(&jobs.artifacts, "artifacts", "a", false, "show artifacts from last successful build")
 	cmd.Flags().BoolVarP(&jobs.build, "build", "b", false, "show info for last successful build")
-	cmd.Flags().BoolVarP(&jobs.repo, "repositories", "r", false, "list repositories")
+	cmd.Flags().BoolVarP(&jobs.repo, "repositories", "r", false, "show repositories")
 
 	AddCommand(cmd)
 }
@@ -39,6 +42,7 @@ type jobs struct {
 	artifacts bool
 	build     bool
 	repo      bool
+	errors    []error
 }
 
 func (j *jobs) nameOnly() bool {
@@ -51,96 +55,88 @@ func (j *jobs) List(server jenkins.JenkinsServer) error {
 		return err
 	}
 
-	// TODO: some kind of column model that makes this less hacky
-	if !j.nameOnly() {
-		var fields []string
-		fields = append(fields, "Job Name")
-		if j.repo {
-			fields = append(fields, "Repository")
+	if j.nameOnly() {
+		for row := 0; row < len(jobs); row++ {
+			fmt.Println(jobs[row].Name())
 		}
-		if j.build {
-			fields = append(fields, "Build")
-			if Flags.Verbose {
-				fields = append(fields, "SHA Hash")
-			}
-		}
-		if j.artifacts {
-			fields = append(fields, "Artifacts")
-		}
-		fmt.Println(strings.Join(fields, "\t"))
+	} else {
+		j.printTable(jobs)
 	}
 
-	for _, job := range jobs {
-		if Flags.Job != "" && Flags.Job != job.Name() {
-			continue
-		}
-		if err := j.printJob(job); err != nil {
-			if Flags.LogErrors {
-				_, _ = fmt.Fprintln(os.Stderr, err.Error())
-			}
-		}
-	}
 	return nil
 }
 
-func (j *jobs) printJob(job jenkins.Job) error {
-	name := job.Name()
-	if j.nameOnly() {
-		fmt.Println(name)
-		return nil
+//noinspection GoUnhandledErrorResult
+func (j *jobs) printTable(jobs []jenkins.Job) {
+	columns := []TableColumn{
+		NewTableColumn("Job Name", len(jobs), func(row int) string {
+			return jobs[row].Name()
+		}),
 	}
-	b, err := job.LastSuccess()
-	if err != nil {
-		return err
-	}
-
-	var fields []string
-	fields = append(fields, name)
-
-	// TODO: some kind of column model that makes this less hacky
 	if j.repo {
-		scmUrl, err := b.SCMUrl()
-		if err != nil {
-			if Flags.LogErrors {
-				_, _ = fmt.Fprintln(os.Stderr, err.Error())
-			}
-			fields = append(fields, "")
-		}
-		fields = append(fields, scmUrl)
-	}
-
-	if j.build {
-		fields = append(fields, fmt.Sprintf("%d", b.BuildNumber()))
-		if Flags.Verbose {
-			sha1, err := b.SHA1()
-			if err != nil {
-				if Flags.LogErrors {
-					_, _ = fmt.Fprintln(os.Stderr, err.Error())
+		columns = append(columns, NewTableColumn(
+			"Repository", len(jobs), func(row int) string {
+				scmUrl, err := jobs[row].SCMUrl()
+				if err != nil {
+					j.errors = append(j.errors, err)
+					return valueUnknown
 				}
-				fields = append(fields, "")
-			} else {
-				fields = append(fields, sha1.String())
-			}
-		}
+				return scmUrl
+			}))
 	}
-
+	if j.build {
+		columns = append(columns, NewTableColumn(
+			"Last Success", len(jobs), func(row int) string {
+				b, err := jobs[row].LastSuccess()
+				if err != nil {
+					j.errors = append(j.errors, err)
+					return valueUnknown
+				}
+				return fmt.Sprintf("%d", b.BuildNumber())
+			}))
+		columns = append(columns, NewTableColumn(
+			"SHA Hash", len(jobs), func(row int) string {
+				b, err := jobs[row].LastSuccess()
+				if err != nil {
+					j.errors = append(j.errors, err)
+					return valueUnknown
+				}
+				sha1, err := b.SHA1()
+				if err != nil {
+					j.errors = append(j.errors, err)
+					return valueUnknown
+				}
+				return sha1.String()
+			}))
+	}
 	if j.artifacts {
-		artifacts, err := b.Artifacts()
-		if err != nil {
-			if Flags.LogErrors {
-				_, _ = fmt.Fprintln(os.Stderr, err.Error())
-			}
-			fields = append(fields, "")
-		} else {
-			var allArtifactInfo []string
-			for _, a := range artifacts {
-				allArtifactInfo = append(allArtifactInfo, a.String())
-			}
-			fields = append(fields, strings.Join(allArtifactInfo, ", "))
-		}
+		columns = append(columns, NewTableColumn(
+			"Last Artifacts", len(jobs), func(row int) string {
+				b, err := jobs[row].LastSuccess()
+				if err != nil {
+					j.errors = append(j.errors, err)
+					return valueUnknown
+				}
+				artifacts, err := b.Artifacts()
+				if len(artifacts) == 0 {
+					return "(no artifacts)"
+				}
+				var allArtifactInfo []string
+				for _, a := range artifacts {
+					allArtifactInfo = append(allArtifactInfo, a.String())
+				}
+				return strings.Join(allArtifactInfo, ", ")
+			}))
 	}
+	table := TableFrom(columns...)
+	table.Print(os.Stdout, "\t")
 
-	fmt.Println(strings.Join(fields, "\t"))
-
-	return nil
+	if len(j.errors) > 0 {
+		w := tabwriter.NewWriter(os.Stderr, 0, 0, 2, ' ', tabwriter.DiscardEmptyColumns)
+		fmt.Fprintf(w, "%d errors:\n", len(j.errors))
+		for i, err := range j.errors {
+			fmt.Fprintf(w, "%d. %v\n", i+1, err)
+		}
+		w.Flush()
+	}
 }

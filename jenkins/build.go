@@ -165,7 +165,7 @@ type artifact struct {
 }
 
 func (a *artifact) String() string {
-	return fmt.Sprintf("%v:%v:%v (%v)", a.GroupId(), a.ArtifactId(), a.Version(), a.Packaging())
+	return maven.ArtifactToString(a)
 }
 
 func (a *artifact) GroupId() string {

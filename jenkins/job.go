@@ -14,6 +14,7 @@ type Job interface {
 	Name() string
 	LastSuccess() (Build, error)
 	ConfigUrl() *url.URL
+	SCMUrl() (string, error)
 	Parameters() []Parameter
 	ParameterNames() []string
 	Parameterize(str string) []string
@@ -105,6 +106,18 @@ func (j *job) ConfigUrl() *url.URL {
 		j.configUrl = toConfigUrl(u)
 	}
 	return j.configUrl
+}
+
+func (j *job) SCMUrl() (string, error) {
+	b, err := j.LastSuccess()
+	if err != nil {
+		return "", err
+	}
+	scmUrl, err := b.SCMUrl()
+	if err != nil {
+		return "", err
+	}
+	return scmUrl, nil
 }
 
 func (j *job) load() error {

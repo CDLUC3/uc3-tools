@@ -72,7 +72,7 @@ func (p *poms) printAllJobs(jobs []jenkins.Job) {
 			fmt.Printf("%v (job %d of %d):\n", j.Name(), i+1, len(jobs))
 		}
 		err := p.printOneJob(j)
-		if err != nil && Flags.LogErrors {
+		if err != nil  {
 			if Flags.Verbose {
 				_, _ = fmt.Fprint(os.Stderr, "\t")
 			}
@@ -140,7 +140,7 @@ func (j *job) printPomEntry(entry git.Entry) error {
 	parameterizedPomInfo := j.Parameterize(pomInfo)
 	for _, p := range parameterizedPomInfo {
 		fmt.Println(p)
-		if Flags.LogErrors && jenkins.IsParameterized(p) {
+		if jenkins.IsParameterized(p) {
 			missing := strings.Join(jenkins.Parameters(p), ", ")
 			found := strings.Join(j.ParameterNames(), ", ")
 			indent := ""

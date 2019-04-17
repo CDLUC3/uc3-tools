@@ -3,6 +3,7 @@ package maven
 import (
 	"fmt"
 	"github.com/beevik/etree"
+	. "github.com/dmolesUC3/mrt-build-info/shared"
 )
 
 type Artifact interface {
@@ -35,6 +36,13 @@ func Dependencies(doc *etree.Document, source string) ([]Artifact, error) {
 	return artifacts, nil
 }
 
+func ArtifactToString(a Artifact) string {
+	if Flags.Verbose {
+		return fmt.Sprintf("%v:%v:%v (%v)", a.GroupId(), a.ArtifactId(), a.Version(), a.Packaging())
+	}
+	return fmt.Sprintf("%v:%v:%v", a.GroupId(), a.ArtifactId(), a.Version())
+}
+
 type artifact struct {
 	groupId    string
 	artifactId string
@@ -43,7 +51,7 @@ type artifact struct {
 }
 
 func (a *artifact) String() string {
-	return fmt.Sprintf("%v:%v:%v (%v)", a.GroupId(), a.ArtifactId(), a.Version(), a.Packaging())
+	return ArtifactToString(a)
 }
 
 // TODO: parse out parameters (e.g. version "${propertyDir}-1.0-SNAPSHOT"
