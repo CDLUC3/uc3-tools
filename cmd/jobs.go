@@ -36,44 +36,76 @@ func init() {
 	cmd.Flags().BoolVarP(&jobs.parameters, "parameters", "p", false, "show build parameters")
 	cmd.Flags().BoolVarP(&jobs.repo, "repositories", "r", false, "show repositories")
 
+	cmd.Flags().BoolVar(&jobs.apiUrl, "api-url", false, "show Jenkins API URLs")
+	cmd.Flags().BoolVar(&jobs.configXML, "config-xml", false, "show Jenkins config.xml URLs")
+
 	AddCommand(cmd)
 }
 
 type jobs struct {
-	artifacts bool
-	build     bool
+	apiUrl     bool
+	artifacts  bool
+	build      bool
+	configXML bool
 	parameters bool
-	repo      bool
-	errors    []error
+	repo       bool
+	errors     []error
 }
 
-func (j *jobs) nameOnly() bool {
-	return !(j.artifacts || j.build || j.repo)
-}
-
+//noinspection GoUnhandledErrorResult
 func (j *jobs) List(server jenkins.JenkinsServer) error {
 	jobs, err := server.Jobs()
 	if err != nil {
 		return err
 	}
 
-	if j.nameOnly() {
-		for row := 0; row < len(jobs); row++ {
-			fmt.Println(jobs[row].Name())
+	columns := j.MakeTableColumns(jobs)
+	if len(columns) == 1 {
+		for row, rowCount := 0, columns[0].Rows(); row < rowCount; row++ {
+			fmt.Println(columns[0].ValueAt(row))
 		}
 	} else {
-		j.printTable(jobs)
+		table := TableFrom(columns...)
+		table.Print(os.Stdout, "\t")
+	}
+
+	if len(j.errors) > 0 {
+		w := tabwriter.NewWriter(os.Stderr, 0, 0, 2, ' ', tabwriter.DiscardEmptyColumns)
+		fmt.Fprintf(w, "%d errors:\n", len(j.errors))
+		for i, err := range j.errors {
+			fmt.Fprintf(w, "%d. %v\n", i+1, err)
+		}
+		w.Flush()
 	}
 
 	return nil
 }
 
-//noinspection GoUnhandledErrorResult
-func (j *jobs) printTable(jobs []jenkins.Job) {
+func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 	columns := []TableColumn{
 		NewTableColumn("Job Name", len(jobs), func(row int) string {
 			return jobs[row].Name()
 		}),
+	}
+	if j.apiUrl {
+		columns = append(columns, NewTableColumn(
+			"API Url", len(jobs), func(row int) string {
+				apiUrl := jobs[row].APIUrl()
+				if apiUrl == nil {
+					return valueUnknown
+				}
+				return apiUrl.String()
+			}))
+	}
+	if j.configXML {
+		columns = append(columns, NewTableColumn(
+			"config.xml", len(jobs), func(row int) string {
+				configUrl := jobs[row].ConfigUrl()
+				if configUrl == nil {
+					return valueUnknown
+				}
+				return configUrl.String()
+			}))
 	}
 	if j.parameters {
 		columns = append(columns, NewTableColumn(
@@ -141,15 +173,5 @@ func (j *jobs) printTable(jobs []jenkins.Job) {
 				return strings.Join(allArtifactInfo, ", ")
 			}))
 	}
-	table := TableFrom(columns...)
-	table.Print(os.Stdout, "\t")
-
-	if len(j.errors) > 0 {
-		w := tabwriter.NewWriter(os.Stderr, 0, 0, 2, ' ', tabwriter.DiscardEmptyColumns)
-		fmt.Fprintf(w, "%d errors:\n", len(j.errors))
-		for i, err := range j.errors {
-			fmt.Fprintf(w, "%d. %v\n", i+1, err)
-		}
-		w.Flush()
-	}
+	return columns
 }

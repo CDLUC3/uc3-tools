@@ -14,6 +14,7 @@ type Job interface {
 	Name() string
 	LastSuccess() (Build, error)
 	ConfigUrl() *url.URL
+	APIUrl() *url.URL
 	SCMUrl() (string, error)
 	Parameters() []Parameter
 	ParameterNames() []string
@@ -120,15 +121,19 @@ func (j *job) SCMUrl() (string, error) {
 	return scmUrl, nil
 }
 
-func (j *job) load() error {
+func (j *job) APIUrl() *url.URL {
 	if j.apiUrl == nil {
 		u, err := url.Parse(j.URL)
 		if err != nil {
-			return err
+			panic(err)
 		}
 		j.apiUrl = toApiUrl(u)
 	}
-	return unmarshal(j.apiUrl, j)
+	return j.apiUrl
+}
+
+func (j *job) load() error {
+	return unmarshal(j.APIUrl(), j)
 }
 
 
