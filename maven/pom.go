@@ -13,6 +13,7 @@ type Pom interface {
 	Path() string
 	Repository() git.Repository
 	URL() *url.URL
+	BlobURL() *url.URL
 	// Deprecated
 	FormatInfo() (string, error)
 }
@@ -50,6 +51,10 @@ func (p *pom) URL() *url.URL {
 	return git.WebUrlForEntry(p.Entry)
 }
 
+func (p *pom) BlobURL() *url.URL {
+	return p.Entry.URL()
+}
+
 func (p *pom) document() (*etree.Document, error) {
 	if p.doc == nil {
 		data, err := p.GetContent()
@@ -66,8 +71,6 @@ func (p *pom) document() (*etree.Document, error) {
 	return p.doc, nil
 }
 
-// TODO:
-//   - Get groupId etc. from parent POMs
 func (p *pom) Artifact() (Artifact, error) {
 	doc, err := p.document()
 	if err != nil {

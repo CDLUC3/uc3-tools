@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-const contentTypeRaw = "application/vnd.github.VERSION.raw"
+const contentTypeRaw = "application/vnd.github.v3.raw"
 
 type Entry interface {
 	Repository() Repository
@@ -66,7 +66,7 @@ func (e *entry) GetContent() ([]byte, error) {
 	}
 
 	if e.content == nil {
-		u := e.url
+		u := e.URL()
 		//noinspection GoBoolExpressions
 		if inTest && !strings.HasPrefix(u.Host, "127.0.0.1") {
 			return nil, fmt.Errorf("no real URLs in test!: %v", u)

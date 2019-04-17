@@ -54,6 +54,8 @@ func (a *artifact) String() string {
 	return ArtifactToString(a)
 }
 
+// TODO:
+//   - for root, get groupId etc. from parent POMs
 func artifactFrom(elem *etree.Element, source string) (*artifact, error) {
 	fields := []string{"groupId", "artifactId", "packaging", "version"}
 	values := map[string]string{}
