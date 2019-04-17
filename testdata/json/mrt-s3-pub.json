@@ -1,0 +1,1435 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+      
+    },
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "This project builds the mrt-s3jar from the default branch; \r\ndeploying it to the local Maven repository, mvn.cdlib.org/snapshots.",
+  "displayName" : "mrt-s3-pub",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-s3-pub",
+  "fullName" : "mrt-s3-pub",
+  "name" : "mrt-s3-pub",
+  "url" : "http://builds.cdlib.org/job/mrt-s3-pub/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 81,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                "branch" : [
+                  {
+                    "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                "branch" : [
+                  {
+                    "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+            "branch" : [
+              {
+                "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-s3-pub.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 12,
+          "urlName" : "testReport"
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#81",
+      "duration" : 73821,
+      "estimatedDuration" : 77975,
+      "executor" : null,
+      "fullDisplayName" : "mrt-s3-pub #81",
+      "id" : "81",
+      "keepLog" : false,
+      "number" : 81,
+      "queueId" : 505,
+      "result" : "SUCCESS",
+      "timestamp" : 1554755866415,
+      "url" : "http://builds.cdlib.org/job/mrt-s3-pub/81/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 80,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                "branch" : [
+                  {
+                    "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                "branch" : [
+                  {
+                    "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+            "branch" : [
+              {
+                "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-s3-pub.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 12,
+          "urlName" : "testReport"
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#80",
+      "duration" : 79385,
+      "estimatedDuration" : 77975,
+      "executor" : null,
+      "fullDisplayName" : "mrt-s3-pub #80",
+      "id" : "80",
+      "keepLog" : false,
+      "number" : 80,
+      "queueId" : 498,
+      "result" : "SUCCESS",
+      "timestamp" : 1554245381702,
+      "url" : "http://builds.cdlib.org/job/mrt-s3-pub/80/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-src/src/main/java/org/cdlib/mrt/s3/aws/AWSS3Cloud.java"
+            ],
+            "commitId" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+            "timestamp" : 1554245154000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "if AmazonS3Exception contains \"upload may have been aborted or\ncompleted\" - continue processing. Seen during uploads of large minio\ncontent - AWSS3Cloud confirms upload after error\n",
+            "date" : "2019-04-02 15:45:54 -0700",
+            "id" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+            "msg" : "if AmazonS3Exception contains \"upload may have been aborted or",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "s3-src/src/main/java/org/cdlib/mrt/s3/aws/AWSS3Cloud.java"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+          "fullName" : "dloy"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 79,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+                "branch" : [
+                  {
+                    "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+                "branch" : [
+                  {
+                    "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+            "branch" : [
+              {
+                "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-s3-pub.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 12,
+          "urlName" : "testReport"
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#79",
+      "duration" : 80719,
+      "estimatedDuration" : 77975,
+      "executor" : null,
+      "fullDisplayName" : "mrt-s3-pub #79",
+      "id" : "79",
+      "keepLog" : false,
+      "number" : 79,
+      "queueId" : 493,
+      "result" : "SUCCESS",
+      "timestamp" : 1554131977520,
+      "url" : "http://builds.cdlib.org/job/mrt-s3-pub/79/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-src/pom.xml"
+            ],
+            "commitId" : "d2d258b907536ca2525acdd6556340873becd7e3",
+            "timestamp" : 1554130898000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "Upgrade AWS S3 java SDK because of failed minio handling storage on\nlarge content <dependency>   <groupId>com.amazonaws</groupId>  \n<artifactId>aws-java-sdk</artifactId>   <!--version>1.11.438 failed\nsegments minio</version-->   <version>1.11.527</version> </dependency>\n",
+            "date" : "2019-04-01 08:01:38 -0700",
+            "id" : "d2d258b907536ca2525acdd6556340873becd7e3",
+            "msg" : "Upgrade AWS S3 java SDK because of failed minio handling storage on",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "s3-src/pom.xml"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+          "fullName" : "dloy"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 79,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+              "branch" : [
+                {
+                  "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+              "branch" : [
+                {
+                  "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+          "branch" : [
+            {
+              "SHA1" : "d2d258b907536ca2525acdd6556340873becd7e3",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-s3-pub.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 12,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#79",
+    "duration" : 80719,
+    "estimatedDuration" : 77975,
+    "executor" : null,
+    "fullDisplayName" : "mrt-s3-pub #79",
+    "id" : "79",
+    "keepLog" : false,
+    "number" : 79,
+    "queueId" : 493,
+    "result" : "SUCCESS",
+    "timestamp" : 1554131977520,
+    "url" : "http://builds.cdlib.org/job/mrt-s3-pub/79/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "s3-src/pom.xml"
+          ],
+          "commitId" : "d2d258b907536ca2525acdd6556340873becd7e3",
+          "timestamp" : 1554130898000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Upgrade AWS S3 java SDK because of failed minio handling storage on\nlarge content <dependency>   <groupId>com.amazonaws</groupId>  \n<artifactId>aws-java-sdk</artifactId>   <!--version>1.11.438 failed\nsegments minio</version-->   <version>1.11.527</version> </dependency>\n",
+          "date" : "2019-04-01 08:01:38 -0700",
+          "id" : "d2d258b907536ca2525acdd6556340873becd7e3",
+          "msg" : "Upgrade AWS S3 java SDK because of failed minio handling storage on",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "s3-src/pom.xml"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+        "fullName" : "dloy"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Test Result: 0 tests failing out of a total of 12 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    },
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 81,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "branch" : [
+                {
+                  "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "branch" : [
+                {
+                  "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+          "branch" : [
+            {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-s3-pub.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 12,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#81",
+    "duration" : 73821,
+    "estimatedDuration" : 77975,
+    "executor" : null,
+    "fullDisplayName" : "mrt-s3-pub #81",
+    "id" : "81",
+    "keepLog" : false,
+    "number" : 81,
+    "queueId" : 505,
+    "result" : "SUCCESS",
+    "timestamp" : 1554755866415,
+    "url" : "http://builds.cdlib.org/job/mrt-s3-pub/81/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 81,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "branch" : [
+                {
+                  "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "branch" : [
+                {
+                  "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+          "branch" : [
+            {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-s3-pub.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 12,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#81",
+    "duration" : 73821,
+    "estimatedDuration" : 77975,
+    "executor" : null,
+    "fullDisplayName" : "mrt-s3-pub #81",
+    "id" : "81",
+    "keepLog" : false,
+    "number" : 81,
+    "queueId" : 505,
+    "result" : "SUCCESS",
+    "timestamp" : 1554755866415,
+    "url" : "http://builds.cdlib.org/job/mrt-s3-pub/81/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 81,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "branch" : [
+                {
+                  "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "branch" : [
+                {
+                  "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+          "branch" : [
+            {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-s3-pub.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 12,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#81",
+    "duration" : 73821,
+    "estimatedDuration" : 77975,
+    "executor" : null,
+    "fullDisplayName" : "mrt-s3-pub #81",
+    "id" : "81",
+    "keepLog" : false,
+    "number" : 81,
+    "queueId" : 505,
+    "result" : "SUCCESS",
+    "timestamp" : 1554755866415,
+    "url" : "http://builds.cdlib.org/job/mrt-s3-pub/81/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 81,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "branch" : [
+                {
+                  "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "branch" : [
+                {
+                  "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+          "branch" : [
+            {
+              "SHA1" : "62739213612e3eeb59cfb408dc88968d8ba95a81",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-s3-pub.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 12,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#81",
+    "duration" : 73821,
+    "estimatedDuration" : 77975,
+    "executor" : null,
+    "fullDisplayName" : "mrt-s3-pub #81",
+    "id" : "81",
+    "keepLog" : false,
+    "number" : 81,
+    "queueId" : 505,
+    "result" : "SUCCESS",
+    "timestamp" : 1554755866415,
+    "url" : "http://builds.cdlib.org/job/mrt-s3-pub/81/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 82,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-s3-pub » UC3-NodeTest",
+      "fullName" : "mrt-s3-pub/org.cdlib.mrt:mrt-nodetest",
+      "name" : "org.cdlib.mrt:mrt-nodetest",
+      "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-nodetest/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 81,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-nodetest/81/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 80,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-nodetest/80/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 79,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-nodetest/79/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 79,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-nodetest/79/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-nodetest/81/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-nodetest/81/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-nodetest/81/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-nodetest/81/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 82,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-NodeTest"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-s3-pub » UC3-mrtOpenstackPub",
+      "fullName" : "mrt-s3-pub/org.cdlib.mrt:mrt-openstackpub",
+      "name" : "org.cdlib.mrt:mrt-openstackpub",
+      "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-openstackpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 81,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-openstackpub/81/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 80,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-openstackpub/80/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 79,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-openstackpub/79/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 79,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-openstackpub/79/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 3 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-openstackpub/81/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-openstackpub/81/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-openstackpub/81/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-openstackpub/81/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 82,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtOpenstackPub"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-s3-pub » UC3-mrtS3Pub",
+      "fullName" : "mrt-s3-pub/org.cdlib.mrt:mrt-s3",
+      "name" : "org.cdlib.mrt:mrt-s3",
+      "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 81,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3/81/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 80,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3/80/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 79,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3/79/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 79,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3/79/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3/81/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3/81/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3/81/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3/81/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 82,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtS3Pub"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-s3-pub » UC3-mrtS3SrcPub",
+      "fullName" : "mrt-s3-pub/org.cdlib.mrt:mrt-s3srcpub",
+      "name" : "org.cdlib.mrt:mrt-s3srcpub",
+      "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3srcpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 81,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3srcpub/81/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 80,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3srcpub/80/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 79,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3srcpub/79/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 79,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3srcpub/79/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 9 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3srcpub/81/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3srcpub/81/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3srcpub/81/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3srcpub/81/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 82,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtS3SrcPub"
+    }
+  ]
+}

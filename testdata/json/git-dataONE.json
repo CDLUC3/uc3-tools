@@ -1,0 +1,1010 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+      
+    },
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "This project builds the mrt-dataonesrc.jar from the default branch of gihubt; deploying it to the local Maven repository, mvn.cdlib.org/snapshots.",
+  "displayName" : "git-dataONE",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "git-dataONE",
+  "fullName" : "git-dataONE",
+  "name" : "git-dataONE",
+  "url" : "http://builds.cdlib.org/job/git-dataONE/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 1,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                "branch" : [
+                  {
+                    "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                "branch" : [
+                  {
+                    "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+            "branch" : [
+              {
+                "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-dataONE.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 6,
+          "urlName" : "testReport"
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#1",
+      "duration" : 28222,
+      "estimatedDuration" : 28222,
+      "executor" : null,
+      "fullDisplayName" : "git-dataONE #1",
+      "id" : "1",
+      "keepLog" : false,
+      "number" : 1,
+      "queueId" : 226,
+      "result" : "SUCCESS",
+      "timestamp" : 1526670473282,
+      "url" : "http://builds.cdlib.org/job/git-dataONE/1/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 1,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "branch" : [
+                {
+                  "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "branch" : [
+                {
+                  "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+          "branch" : [
+            {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-dataONE.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 6,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#1",
+    "duration" : 28222,
+    "estimatedDuration" : 28222,
+    "executor" : null,
+    "fullDisplayName" : "git-dataONE #1",
+    "id" : "1",
+    "keepLog" : false,
+    "number" : 1,
+    "queueId" : 226,
+    "result" : "SUCCESS",
+    "timestamp" : 1526670473282,
+    "url" : "http://builds.cdlib.org/job/git-dataONE/1/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Test Result: 0 tests failing out of a total of 6 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    },
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 1,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "branch" : [
+                {
+                  "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "branch" : [
+                {
+                  "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+          "branch" : [
+            {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-dataONE.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 6,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#1",
+    "duration" : 28222,
+    "estimatedDuration" : 28222,
+    "executor" : null,
+    "fullDisplayName" : "git-dataONE #1",
+    "id" : "1",
+    "keepLog" : false,
+    "number" : 1,
+    "queueId" : 226,
+    "result" : "SUCCESS",
+    "timestamp" : 1526670473282,
+    "url" : "http://builds.cdlib.org/job/git-dataONE/1/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 1,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "branch" : [
+                {
+                  "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "branch" : [
+                {
+                  "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+          "branch" : [
+            {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-dataONE.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 6,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#1",
+    "duration" : 28222,
+    "estimatedDuration" : 28222,
+    "executor" : null,
+    "fullDisplayName" : "git-dataONE #1",
+    "id" : "1",
+    "keepLog" : false,
+    "number" : 1,
+    "queueId" : 226,
+    "result" : "SUCCESS",
+    "timestamp" : 1526670473282,
+    "url" : "http://builds.cdlib.org/job/git-dataONE/1/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 1,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "branch" : [
+                {
+                  "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "branch" : [
+                {
+                  "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+          "branch" : [
+            {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-dataONE.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 6,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#1",
+    "duration" : 28222,
+    "estimatedDuration" : 28222,
+    "executor" : null,
+    "fullDisplayName" : "git-dataONE #1",
+    "id" : "1",
+    "keepLog" : false,
+    "number" : 1,
+    "queueId" : 226,
+    "result" : "SUCCESS",
+    "timestamp" : 1526670473282,
+    "url" : "http://builds.cdlib.org/job/git-dataONE/1/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 1,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "branch" : [
+                {
+                  "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "branch" : [
+                {
+                  "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+          "branch" : [
+            {
+              "SHA1" : "c803d9999e2107f9d96d74470026ad26e38eed8a",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-dataONE.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 6,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#1",
+    "duration" : 28222,
+    "estimatedDuration" : 28222,
+    "executor" : null,
+    "fullDisplayName" : "git-dataONE #1",
+    "id" : "1",
+    "keepLog" : false,
+    "number" : 1,
+    "queueId" : 226,
+    "result" : "SUCCESS",
+    "timestamp" : 1526670473282,
+    "url" : "http://builds.cdlib.org/job/git-dataONE/1/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 2,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Merritt ingest development build",
+      "displayName" : "mrt-ingest-dev",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-ingest-dev",
+      "fullName" : "mrt-ingest-dev",
+      "name" : "mrt-ingest-dev",
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 535,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 534,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/534/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 533,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/533/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 532,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/532/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 531,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/531/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 531,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/531/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 536,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "cdl-zk-queue",
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "git-core2",
+          "url" : "http://builds.cdlib.org/job/git-core2/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "git-dataONE",
+          "url" : "http://builds.cdlib.org/job/git-dataONE/",
+          "color" : "blue"
+        }
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-ingest",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngest"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestconf",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngestConf"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestinit",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngestInit"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestsrc",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngestSrc"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestwar",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtBatchWar"
+        }
+      ]
+    }
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-dataONE » UC3-mrtDataONESrc",
+      "fullName" : "git-dataONE/org.cdlib.mrt:mrt-dataonesrc",
+      "name" : "org.cdlib.mrt:mrt-dataonesrc",
+      "url" : "http://builds.cdlib.org/job/git-dataONE/org.cdlib.mrt$mrt-dataonesrc/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/git-dataONE/org.cdlib.mrt$mrt-dataonesrc/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/org.cdlib.mrt$mrt-dataonesrc/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 6 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/org.cdlib.mrt$mrt-dataonesrc/1/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/org.cdlib.mrt$mrt-dataonesrc/1/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/org.cdlib.mrt$mrt-dataonesrc/1/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/org.cdlib.mrt$mrt-dataonesrc/1/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 2,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtDataONESrc"
+    }
+  ]
+}

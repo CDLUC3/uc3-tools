@@ -1,0 +1,1782 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "test"
+          ]
+        }
+      ]
+    },
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Build Merritt mrt-audit war using the default code branch on github.\r\n",
+  "displayName" : "mrt-build-audit",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-build-audit",
+  "fullName" : "mrt-build-audit",
+  "name" : "mrt-build-audit",
+  "url" : "http://builds.cdlib.org/job/mrt-build-audit/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 42,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "branch" : [
+                  {
+                    "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "branch" : [
+                  {
+                    "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+            "branch" : [
+              {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-audit"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 3,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#42",
+      "duration" : 38285,
+      "estimatedDuration" : 46042,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-audit #42",
+      "id" : "42",
+      "keepLog" : false,
+      "number" : 42,
+      "queueId" : 470,
+      "result" : "SUCCESS",
+      "timestamp" : 1550249089457,
+      "url" : "http://builds.cdlib.org/job/mrt-build-audit/42/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 41,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "branch" : [
+                  {
+                    "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "branch" : [
+                  {
+                    "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+            "branch" : [
+              {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-audit"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 3,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#41",
+      "duration" : 37614,
+      "estimatedDuration" : 46042,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-audit #41",
+      "id" : "41",
+      "keepLog" : false,
+      "number" : 41,
+      "queueId" : 467,
+      "result" : "SUCCESS",
+      "timestamp" : 1550180078574,
+      "url" : "http://builds.cdlib.org/job/mrt-build-audit/41/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 40,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "branch" : [
+                  {
+                    "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "branch" : [
+                  {
+                    "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+            "branch" : [
+              {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-audit"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 3,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#40",
+      "duration" : 62226,
+      "estimatedDuration" : 46042,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-audit #40",
+      "id" : "40",
+      "keepLog" : false,
+      "number" : 40,
+      "queueId" : 463,
+      "result" : "SUCCESS",
+      "timestamp" : 1549927645676,
+      "url" : "http://builds.cdlib.org/job/mrt-build-audit/40/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 39,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "branch" : [
+                  {
+                    "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "branch" : [
+                  {
+                    "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+            "branch" : [
+              {
+                "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-audit"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 3,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#39",
+      "duration" : 34215,
+      "estimatedDuration" : 46042,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-audit #39",
+      "id" : "39",
+      "keepLog" : false,
+      "number" : 39,
+      "queueId" : 461,
+      "result" : "SUCCESS",
+      "timestamp" : 1548797622748,
+      "url" : "http://builds.cdlib.org/job/mrt-build-audit/39/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "audit-src/pom.xml"
+            ],
+            "commitId" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+            "timestamp" : 1548797455000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Add new com.amazonaws - 1.11.438 Jackson 2.9.7\n",
+            "date" : "2019-01-29 13:30:55 -0800",
+            "id" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+            "msg" : "Add new com.amazonaws - 1.11.438 Jackson 2.9.7",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "audit-src/pom.xml"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+          "fullName" : "replic"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 38,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+                "branch" : [
+                  {
+                    "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+                "branch" : [
+                  {
+                    "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+            "branch" : [
+              {
+                "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-audit"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 3,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#38",
+      "duration" : 28601,
+      "estimatedDuration" : 46042,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-audit #38",
+      "id" : "38",
+      "keepLog" : false,
+      "number" : 38,
+      "queueId" : 442,
+      "result" : "SUCCESS",
+      "timestamp" : 1547586724131,
+      "url" : "http://builds.cdlib.org/job/mrt-build-audit/38/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 38,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+              "branch" : [
+                {
+                  "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+              "branch" : [
+                {
+                  "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+          "branch" : [
+            {
+              "SHA1" : "b518b350825843cc1305d73b548169990837c934",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-audit"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 3,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#38",
+    "duration" : 28601,
+    "estimatedDuration" : 46042,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-audit #38",
+    "id" : "38",
+    "keepLog" : false,
+    "number" : 38,
+    "queueId" : 442,
+    "result" : "SUCCESS",
+    "timestamp" : 1547586724131,
+    "url" : "http://builds.cdlib.org/job/mrt-build-audit/38/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Test Result: 0 tests failing out of a total of 3 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    },
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 42,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "branch" : [
+                {
+                  "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "branch" : [
+                {
+                  "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+          "branch" : [
+            {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-audit"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 3,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#42",
+    "duration" : 38285,
+    "estimatedDuration" : 46042,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-audit #42",
+    "id" : "42",
+    "keepLog" : false,
+    "number" : 42,
+    "queueId" : 470,
+    "result" : "SUCCESS",
+    "timestamp" : 1550249089457,
+    "url" : "http://builds.cdlib.org/job/mrt-build-audit/42/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 42,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "branch" : [
+                {
+                  "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "branch" : [
+                {
+                  "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+          "branch" : [
+            {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-audit"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 3,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#42",
+    "duration" : 38285,
+    "estimatedDuration" : 46042,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-audit #42",
+    "id" : "42",
+    "keepLog" : false,
+    "number" : 42,
+    "queueId" : 470,
+    "result" : "SUCCESS",
+    "timestamp" : 1550249089457,
+    "url" : "http://builds.cdlib.org/job/mrt-build-audit/42/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 42,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "branch" : [
+                {
+                  "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "branch" : [
+                {
+                  "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+          "branch" : [
+            {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-audit"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 3,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#42",
+    "duration" : 38285,
+    "estimatedDuration" : 46042,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-audit #42",
+    "id" : "42",
+    "keepLog" : false,
+    "number" : 42,
+    "queueId" : 470,
+    "result" : "SUCCESS",
+    "timestamp" : 1550249089457,
+    "url" : "http://builds.cdlib.org/job/mrt-build-audit/42/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 42,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "branch" : [
+                {
+                  "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "branch" : [
+                {
+                  "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+          "branch" : [
+            {
+              "SHA1" : "cbfd73970238357ebce37c6837bef1eb22260ff9",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-audit"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 3,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#42",
+    "duration" : 38285,
+    "estimatedDuration" : 46042,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-audit #42",
+    "id" : "42",
+    "keepLog" : false,
+    "number" : 42,
+    "queueId" : 470,
+    "result" : "SUCCESS",
+    "timestamp" : 1550249089457,
+    "url" : "http://builds.cdlib.org/job/mrt-build-audit/42/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 43,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "test"
+          ]
+        }
+      ]
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-audit » UC3-mrtAuditGit",
+      "fullName" : "mrt-build-audit/org.cdlib.mrt:mrt-audit",
+      "name" : "org.cdlib.mrt:mrt-audit",
+      "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 42,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/42/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 41,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/41/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 40,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/40/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/38/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 38,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/38/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/42/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/42/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/42/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/42/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 43,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtAuditGit"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-audit » UC3-mrtAuditConfPub",
+      "fullName" : "mrt-build-audit/org.cdlib.mrt:mrt-auditconfpub",
+      "name" : "org.cdlib.mrt:mrt-auditconfpub",
+      "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 42,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/42/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 41,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/41/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 40,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/40/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/38/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 38,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/38/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/42/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/42/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/42/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/42/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 43,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtAuditConfPub"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-audit » UC3-mrtAuditSrcPub",
+      "fullName" : "mrt-build-audit/org.cdlib.mrt:mrt-auditsrcpub",
+      "name" : "org.cdlib.mrt:mrt-auditsrcpub",
+      "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 42,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/42/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 41,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/41/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 40,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/40/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/38/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 38,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/38/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 3 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/42/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/42/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/42/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/42/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 43,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtAuditSrcPub"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-audit » UC3-mrtAuditWarPub",
+      "fullName" : "mrt-build-audit/org.cdlib.mrt:mrt-auditwarpub",
+      "name" : "org.cdlib.mrt:mrt-auditwarpub",
+      "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 42,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/42/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 41,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/41/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 40,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/40/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/38/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 38,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/38/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/42/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/42/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/42/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/42/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 43,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtAuditWarPub"
+    }
+  ]
+}

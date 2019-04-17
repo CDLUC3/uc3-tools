@@ -1,0 +1,1878 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "demo"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "demo",
+            "dev",
+            "stage",
+            "prod"
+          ]
+        },
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "branch",
+            "value" : "test"
+          },
+          "description" : "test - branch\nmaster - branch",
+          "name" : "branch",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "test",
+            "master"
+          ]
+        }
+      ]
+    },
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Build Merritt mrt-gittest - use for branch ... testing",
+  "displayName" : "test-gittest",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "test-gittest",
+  "fullName" : "test-gittest",
+  "name" : "test-gittest",
+  "url" : "http://builds.cdlib.org/job/test-gittest/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            },
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "branch",
+              "value" : "master"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/test" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 2,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                "branch" : [
+                  {
+                    "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                    "name" : "refs/remotes/origin/test"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                "branch" : [
+                  {
+                    "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                    "name" : "refs/remotes/origin/test"
+                  }
+                ]
+              }
+            },
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 4,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                "branch" : [
+                  {
+                    "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                "branch" : [
+                  {
+                    "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+            "branch" : [
+              {
+                "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/dloy/mrt-gittest.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#4",
+      "duration" : 27347,
+      "estimatedDuration" : 18030,
+      "executor" : null,
+      "fullDisplayName" : "test-gittest #4",
+      "id" : "4",
+      "keepLog" : false,
+      "number" : 4,
+      "queueId" : 257,
+      "result" : "SUCCESS",
+      "timestamp" : 1530134548104,
+      "url" : "http://builds.cdlib.org/job/test-gittest/4/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "m.txt"
+            ],
+            "commitId" : "1d12b0ad95b2639bd9edf9c1fa85cc3fe71955c8",
+            "timestamp" : 1528926681000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "add master m.txt\n",
+            "date" : "2018-06-13 14:51:21 -0700",
+            "id" : "1d12b0ad95b2639bd9edf9c1fa85cc3fe71955c8",
+            "msg" : "add master m.txt",
+            "paths" : [
+              {
+                "editType" : "add",
+                "file" : "m.txt"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "merge.txt"
+            ],
+            "commitId" : "021c01abecdd3add2443a53e4487635be8554ff9",
+            "timestamp" : 1528930758000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "Add merge.txt to master\n",
+            "date" : "2018-06-13 15:59:18 -0700",
+            "id" : "021c01abecdd3add2443a53e4487635be8554ff9",
+            "msg" : "Add merge.txt to master",
+            "paths" : [
+              {
+                "editType" : "add",
+                "file" : "merge.txt"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+          "fullName" : "dloy"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            },
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "branch",
+              "value" : "master"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/test" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 2,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                "branch" : [
+                  {
+                    "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                    "name" : "refs/remotes/origin/test"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                "branch" : [
+                  {
+                    "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                    "name" : "refs/remotes/origin/test"
+                  }
+                ]
+              }
+            },
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 3,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "0e5d244c02525f6a7cf984f9df77b5784bb931aa",
+                "branch" : [
+                  {
+                    "SHA1" : "0e5d244c02525f6a7cf984f9df77b5784bb931aa",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "0e5d244c02525f6a7cf984f9df77b5784bb931aa",
+                "branch" : [
+                  {
+                    "SHA1" : "0e5d244c02525f6a7cf984f9df77b5784bb931aa",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "0e5d244c02525f6a7cf984f9df77b5784bb931aa",
+            "branch" : [
+              {
+                "SHA1" : "0e5d244c02525f6a7cf984f9df77b5784bb931aa",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/dloy/mrt-gittest.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#3",
+      "duration" : 13151,
+      "estimatedDuration" : 18030,
+      "executor" : null,
+      "fullDisplayName" : "test-gittest #3",
+      "id" : "3",
+      "keepLog" : false,
+      "number" : 3,
+      "queueId" : 256,
+      "result" : "SUCCESS",
+      "timestamp" : 1528843263155,
+      "url" : "http://builds.cdlib.org/job/test-gittest/3/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/test" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 2,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                "branch" : [
+                  {
+                    "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                    "name" : "refs/remotes/origin/test"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                "branch" : [
+                  {
+                    "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                    "name" : "refs/remotes/origin/test"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+            "branch" : [
+              {
+                "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                "name" : "refs/remotes/origin/test"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/dloy/mrt-gittest.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#2",
+      "duration" : 13591,
+      "estimatedDuration" : 18030,
+      "executor" : null,
+      "fullDisplayName" : "test-gittest #2",
+      "id" : "2",
+      "keepLog" : false,
+      "number" : 2,
+      "queueId" : 255,
+      "result" : "SUCCESS",
+      "timestamp" : 1528842533736,
+      "url" : "http://builds.cdlib.org/job/test-gittest/2/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/test" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 1,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                "branch" : [
+                  {
+                    "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                    "name" : "refs/remotes/origin/test"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                "branch" : [
+                  {
+                    "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                    "name" : "refs/remotes/origin/test"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+            "branch" : [
+              {
+                "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                "name" : "refs/remotes/origin/test"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/dloy/mrt-gittest.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#1",
+      "duration" : 26979,
+      "estimatedDuration" : 18030,
+      "executor" : null,
+      "fullDisplayName" : "test-gittest #1",
+      "id" : "1",
+      "keepLog" : false,
+      "number" : 1,
+      "queueId" : 254,
+      "result" : "SUCCESS",
+      "timestamp" : 1528839773144,
+      "url" : "http://builds.cdlib.org/job/test-gittest/1/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/test" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 1,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+              "branch" : [
+                {
+                  "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                  "name" : "refs/remotes/origin/test"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+              "branch" : [
+                {
+                  "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                  "name" : "refs/remotes/origin/test"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+          "branch" : [
+            {
+              "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+              "name" : "refs/remotes/origin/test"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/dloy/mrt-gittest.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#1",
+    "duration" : 26979,
+    "estimatedDuration" : 18030,
+    "executor" : null,
+    "fullDisplayName" : "test-gittest #1",
+    "id" : "1",
+    "keepLog" : false,
+    "number" : 1,
+    "queueId" : 254,
+    "result" : "SUCCESS",
+    "timestamp" : 1528839773144,
+    "url" : "http://builds.cdlib.org/job/test-gittest/1/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          },
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "branch",
+            "value" : "master"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/test" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 2,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+              "branch" : [
+                {
+                  "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                  "name" : "refs/remotes/origin/test"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+              "branch" : [
+                {
+                  "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                  "name" : "refs/remotes/origin/test"
+                }
+              ]
+            }
+          },
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 4,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "branch" : [
+                {
+                  "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "branch" : [
+                {
+                  "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "branch" : [
+            {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/dloy/mrt-gittest.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#4",
+    "duration" : 27347,
+    "estimatedDuration" : 18030,
+    "executor" : null,
+    "fullDisplayName" : "test-gittest #4",
+    "id" : "4",
+    "keepLog" : false,
+    "number" : 4,
+    "queueId" : 257,
+    "result" : "SUCCESS",
+    "timestamp" : 1530134548104,
+    "url" : "http://builds.cdlib.org/job/test-gittest/4/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "m.txt"
+          ],
+          "commitId" : "1d12b0ad95b2639bd9edf9c1fa85cc3fe71955c8",
+          "timestamp" : 1528926681000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "add master m.txt\n",
+          "date" : "2018-06-13 14:51:21 -0700",
+          "id" : "1d12b0ad95b2639bd9edf9c1fa85cc3fe71955c8",
+          "msg" : "add master m.txt",
+          "paths" : [
+            {
+              "editType" : "add",
+              "file" : "m.txt"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "merge.txt"
+          ],
+          "commitId" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "timestamp" : 1528930758000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Add merge.txt to master\n",
+          "date" : "2018-06-13 15:59:18 -0700",
+          "id" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "msg" : "Add merge.txt to master",
+          "paths" : [
+            {
+              "editType" : "add",
+              "file" : "merge.txt"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+        "fullName" : "dloy"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          },
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "branch",
+            "value" : "master"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/test" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 2,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+              "branch" : [
+                {
+                  "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                  "name" : "refs/remotes/origin/test"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+              "branch" : [
+                {
+                  "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                  "name" : "refs/remotes/origin/test"
+                }
+              ]
+            }
+          },
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 4,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "branch" : [
+                {
+                  "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "branch" : [
+                {
+                  "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "branch" : [
+            {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/dloy/mrt-gittest.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#4",
+    "duration" : 27347,
+    "estimatedDuration" : 18030,
+    "executor" : null,
+    "fullDisplayName" : "test-gittest #4",
+    "id" : "4",
+    "keepLog" : false,
+    "number" : 4,
+    "queueId" : 257,
+    "result" : "SUCCESS",
+    "timestamp" : 1530134548104,
+    "url" : "http://builds.cdlib.org/job/test-gittest/4/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "m.txt"
+          ],
+          "commitId" : "1d12b0ad95b2639bd9edf9c1fa85cc3fe71955c8",
+          "timestamp" : 1528926681000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "add master m.txt\n",
+          "date" : "2018-06-13 14:51:21 -0700",
+          "id" : "1d12b0ad95b2639bd9edf9c1fa85cc3fe71955c8",
+          "msg" : "add master m.txt",
+          "paths" : [
+            {
+              "editType" : "add",
+              "file" : "m.txt"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "merge.txt"
+          ],
+          "commitId" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "timestamp" : 1528930758000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Add merge.txt to master\n",
+          "date" : "2018-06-13 15:59:18 -0700",
+          "id" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "msg" : "Add merge.txt to master",
+          "paths" : [
+            {
+              "editType" : "add",
+              "file" : "merge.txt"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+        "fullName" : "dloy"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          },
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "branch",
+            "value" : "master"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/test" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 2,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+              "branch" : [
+                {
+                  "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                  "name" : "refs/remotes/origin/test"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+              "branch" : [
+                {
+                  "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                  "name" : "refs/remotes/origin/test"
+                }
+              ]
+            }
+          },
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 4,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "branch" : [
+                {
+                  "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "branch" : [
+                {
+                  "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "branch" : [
+            {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/dloy/mrt-gittest.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#4",
+    "duration" : 27347,
+    "estimatedDuration" : 18030,
+    "executor" : null,
+    "fullDisplayName" : "test-gittest #4",
+    "id" : "4",
+    "keepLog" : false,
+    "number" : 4,
+    "queueId" : 257,
+    "result" : "SUCCESS",
+    "timestamp" : 1530134548104,
+    "url" : "http://builds.cdlib.org/job/test-gittest/4/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "m.txt"
+          ],
+          "commitId" : "1d12b0ad95b2639bd9edf9c1fa85cc3fe71955c8",
+          "timestamp" : 1528926681000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "add master m.txt\n",
+          "date" : "2018-06-13 14:51:21 -0700",
+          "id" : "1d12b0ad95b2639bd9edf9c1fa85cc3fe71955c8",
+          "msg" : "add master m.txt",
+          "paths" : [
+            {
+              "editType" : "add",
+              "file" : "m.txt"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "merge.txt"
+          ],
+          "commitId" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "timestamp" : 1528930758000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Add merge.txt to master\n",
+          "date" : "2018-06-13 15:59:18 -0700",
+          "id" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "msg" : "Add merge.txt to master",
+          "paths" : [
+            {
+              "editType" : "add",
+              "file" : "merge.txt"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+        "fullName" : "dloy"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          },
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "branch",
+            "value" : "master"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/test" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 2,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+              "branch" : [
+                {
+                  "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                  "name" : "refs/remotes/origin/test"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+              "branch" : [
+                {
+                  "SHA1" : "0cdc0bf9dcc09b102d1507a440810199536b24b9",
+                  "name" : "refs/remotes/origin/test"
+                }
+              ]
+            }
+          },
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 4,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "branch" : [
+                {
+                  "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "branch" : [
+                {
+                  "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "branch" : [
+            {
+              "SHA1" : "021c01abecdd3add2443a53e4487635be8554ff9",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/dloy/mrt-gittest.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#4",
+    "duration" : 27347,
+    "estimatedDuration" : 18030,
+    "executor" : null,
+    "fullDisplayName" : "test-gittest #4",
+    "id" : "4",
+    "keepLog" : false,
+    "number" : 4,
+    "queueId" : 257,
+    "result" : "SUCCESS",
+    "timestamp" : 1530134548104,
+    "url" : "http://builds.cdlib.org/job/test-gittest/4/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "m.txt"
+          ],
+          "commitId" : "1d12b0ad95b2639bd9edf9c1fa85cc3fe71955c8",
+          "timestamp" : 1528926681000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "add master m.txt\n",
+          "date" : "2018-06-13 14:51:21 -0700",
+          "id" : "1d12b0ad95b2639bd9edf9c1fa85cc3fe71955c8",
+          "msg" : "add master m.txt",
+          "paths" : [
+            {
+              "editType" : "add",
+              "file" : "m.txt"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "merge.txt"
+          ],
+          "commitId" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "timestamp" : 1528930758000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Add merge.txt to master\n",
+          "date" : "2018-06-13 15:59:18 -0700",
+          "id" : "021c01abecdd3add2443a53e4487635be8554ff9",
+          "msg" : "Add merge.txt to master",
+          "paths" : [
+            {
+              "editType" : "add",
+              "file" : "merge.txt"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+        "fullName" : "dloy"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 5,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "demo"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "demo",
+            "dev",
+            "stage",
+            "prod"
+          ]
+        },
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "branch",
+            "value" : "test"
+          },
+          "description" : "test - branch\nmaster - branch",
+          "name" : "branch",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "test",
+            "master"
+          ]
+        }
+      ]
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "test-gittest » UC3-mrtGitTest",
+      "fullName" : "test-gittest/org.cdlib.mrt:mrt-gittest",
+      "name" : "org.cdlib.mrt:mrt-gittest",
+      "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittest/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 4,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittest/4/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 3,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittest/3/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 2,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittest/2/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittest/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittest/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittest/4/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittest/4/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittest/4/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittest/4/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 5,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtGitTest"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "test-gittest » UC3-mrtGitTestConf",
+      "fullName" : "test-gittest/org.cdlib.mrt:mrt-gittestconf",
+      "name" : "org.cdlib.mrt:mrt-gittestconf",
+      "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestconf/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 4,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestconf/4/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 3,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestconf/3/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 2,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestconf/2/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestconf/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestconf/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestconf/4/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestconf/4/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestconf/4/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestconf/4/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 5,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtGitTestConf"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "test-gittest » UC3-GitTestEmb",
+      "fullName" : "test-gittest/org.cdlib.mrt:mrt-gittestemb",
+      "name" : "org.cdlib.mrt:mrt-gittestemb",
+      "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestemb/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 4,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestemb/4/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 3,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestemb/3/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 2,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestemb/2/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestemb/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestemb/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestemb/4/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestemb/4/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestemb/4/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestemb/4/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 5,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-GitTestEmb"
+    }
+  ]
+}

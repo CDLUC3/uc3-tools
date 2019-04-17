@@ -1,0 +1,1552 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Build private configuration s3",
+  "displayName" : "mrt-build-s3",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-build-s3",
+  "fullName" : "mrt-build-s3",
+  "name" : "mrt-build-s3",
+  "url" : "http://builds.cdlib.org/job/mrt-build-s3/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 51,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                "branch" : [
+                  {
+                    "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                "branch" : [
+                  {
+                    "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+            "branch" : [
+              {
+                "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "ssh://git@github.com/cdlib/mrt-conf-prv.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#51",
+      "duration" : 10719,
+      "estimatedDuration" : 11400,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-s3 #51",
+      "id" : "51",
+      "keepLog" : false,
+      "number" : 51,
+      "queueId" : 504,
+      "result" : "SUCCESS",
+      "timestamp" : 1554755850038,
+      "url" : "http://builds.cdlib.org/job/mrt-build-s3/51/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-conf/src/main/resources/nodes/nodes-prd-store.properties",
+              "s3-conf/src/main/resources/nodes/nodes-prd-audit.properties",
+              "s3-conf/src/main/resources/nodes/nodes-prd-replic.properties"
+            ],
+            "commitId" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+            "timestamp" : 1554755688000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "Add SDSC Minio prod node 9501\n",
+            "date" : "2019-04-08 13:34:48 -0700",
+            "id" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+            "msg" : "Add SDSC Minio prod node 9501",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "s3-conf/src/main/resources/nodes/nodes-prd-audit.properties"
+              },
+              {
+                "editType" : "edit",
+                "file" : "s3-conf/src/main/resources/nodes/nodes-prd-replic.properties"
+              },
+              {
+                "editType" : "edit",
+                "file" : "s3-conf/src/main/resources/nodes/nodes-prd-store.properties"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+          "fullName" : "dloy"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 50,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "branch" : [
+                  {
+                    "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "branch" : [
+                  {
+                    "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+            "branch" : [
+              {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "ssh://git@github.com/cdlib/mrt-conf-prv.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#50",
+      "duration" : 13156,
+      "estimatedDuration" : 11400,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-s3 #50",
+      "id" : "50",
+      "keepLog" : false,
+      "number" : 50,
+      "queueId" : 497,
+      "result" : "SUCCESS",
+      "timestamp" : 1554245359251,
+      "url" : "http://builds.cdlib.org/job/mrt-build-s3/50/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 49,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "branch" : [
+                  {
+                    "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "branch" : [
+                  {
+                    "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+            "branch" : [
+              {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "ssh://git@github.com/cdlib/mrt-conf-prv.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#49",
+      "duration" : 10324,
+      "estimatedDuration" : 11400,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-s3 #49",
+      "id" : "49",
+      "keepLog" : false,
+      "number" : 49,
+      "queueId" : 492,
+      "result" : "SUCCESS",
+      "timestamp" : 1554131958265,
+      "url" : "http://builds.cdlib.org/job/mrt-build-s3/49/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 48,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "branch" : [
+                  {
+                    "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "branch" : [
+                  {
+                    "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+            "branch" : [
+              {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "ssh://git@github.com/cdlib/mrt-conf-prv.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#48",
+      "duration" : 6799,
+      "estimatedDuration" : 11400,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-s3 #48",
+      "id" : "48",
+      "keepLog" : false,
+      "number" : 48,
+      "queueId" : 486,
+      "result" : "SUCCESS",
+      "timestamp" : 1551988288394,
+      "url" : "http://builds.cdlib.org/job/mrt-build-s3/48/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 47,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "branch" : [
+                  {
+                    "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "branch" : [
+                  {
+                    "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+            "branch" : [
+              {
+                "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "ssh://git@github.com/cdlib/mrt-conf-prv.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#47",
+      "duration" : 12427,
+      "estimatedDuration" : 11400,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-s3 #47",
+      "id" : "47",
+      "keepLog" : false,
+      "number" : 47,
+      "queueId" : 484,
+      "result" : "SUCCESS",
+      "timestamp" : 1551985764838,
+      "url" : "http://builds.cdlib.org/job/mrt-build-s3/47/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-conf/src/main/resources/nodes/nodes-prod.properties",
+              "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+            ],
+            "commitId" : "edf6f6e3d1b10b5883d821cb5fd5c7fda0dda2cf",
+            "timestamp" : 1551981731000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "Remove last deprecated NodeIO nodes entries\n",
+            "date" : "2019-03-07 10:02:11 -0800",
+            "id" : "edf6f6e3d1b10b5883d821cb5fd5c7fda0dda2cf",
+            "msg" : "Remove last deprecated NodeIO nodes entries",
+            "paths" : [
+              {
+                "editType" : "delete",
+                "file" : "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+              },
+              {
+                "editType" : "delete",
+                "file" : "s3-conf/src/main/resources/nodes/nodes-prod.properties"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-conf/src/main/resources/nodes/nodes-dev.properties"
+            ],
+            "commitId" : "bec4be550f6ddd5ee4206a475e315647a28adbb8",
+            "timestamp" : 1551982144000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "Remove last deprecated NodeIO nodes entries\n",
+            "date" : "2019-03-07 10:09:04 -0800",
+            "id" : "bec4be550f6ddd5ee4206a475e315647a28adbb8",
+            "msg" : "Remove last deprecated NodeIO nodes entries",
+            "paths" : [
+              {
+                "editType" : "delete",
+                "file" : "s3-conf/src/main/resources/nodes/nodes-dev.properties"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-conf/src/main/resources/nodes/nodes-pair-unm.properties"
+            ],
+            "commitId" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+            "timestamp" : 1551985417000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "Restore unm cloudhost table\n",
+            "date" : "2019-03-07 11:03:37 -0800",
+            "id" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+            "msg" : "Restore unm cloudhost table",
+            "paths" : [
+              {
+                "editType" : "add",
+                "file" : "s3-conf/src/main/resources/nodes/nodes-pair-unm.properties"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+          "fullName" : "dloy"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 47,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+              "branch" : [
+                {
+                  "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+              "branch" : [
+                {
+                  "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+          "branch" : [
+            {
+              "SHA1" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "ssh://git@github.com/cdlib/mrt-conf-prv.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#47",
+    "duration" : 12427,
+    "estimatedDuration" : 11400,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-s3 #47",
+    "id" : "47",
+    "keepLog" : false,
+    "number" : 47,
+    "queueId" : 484,
+    "result" : "SUCCESS",
+    "timestamp" : 1551985764838,
+    "url" : "http://builds.cdlib.org/job/mrt-build-s3/47/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "s3-conf/src/main/resources/nodes/nodes-prod.properties",
+            "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+          ],
+          "commitId" : "edf6f6e3d1b10b5883d821cb5fd5c7fda0dda2cf",
+          "timestamp" : 1551981731000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Remove last deprecated NodeIO nodes entries\n",
+          "date" : "2019-03-07 10:02:11 -0800",
+          "id" : "edf6f6e3d1b10b5883d821cb5fd5c7fda0dda2cf",
+          "msg" : "Remove last deprecated NodeIO nodes entries",
+          "paths" : [
+            {
+              "editType" : "delete",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+            },
+            {
+              "editType" : "delete",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prod.properties"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "s3-conf/src/main/resources/nodes/nodes-dev.properties"
+          ],
+          "commitId" : "bec4be550f6ddd5ee4206a475e315647a28adbb8",
+          "timestamp" : 1551982144000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Remove last deprecated NodeIO nodes entries\n",
+          "date" : "2019-03-07 10:09:04 -0800",
+          "id" : "bec4be550f6ddd5ee4206a475e315647a28adbb8",
+          "msg" : "Remove last deprecated NodeIO nodes entries",
+          "paths" : [
+            {
+              "editType" : "delete",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-dev.properties"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "s3-conf/src/main/resources/nodes/nodes-pair-unm.properties"
+          ],
+          "commitId" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+          "timestamp" : 1551985417000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Restore unm cloudhost table\n",
+          "date" : "2019-03-07 11:03:37 -0800",
+          "id" : "15de0a39e3ba4dbe85902b23f3112b76c137932b",
+          "msg" : "Restore unm cloudhost table",
+          "paths" : [
+            {
+              "editType" : "add",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-pair-unm.properties"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+        "fullName" : "dloy"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 51,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "branch" : [
+                {
+                  "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "branch" : [
+                {
+                  "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "branch" : [
+            {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "ssh://git@github.com/cdlib/mrt-conf-prv.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#51",
+    "duration" : 10719,
+    "estimatedDuration" : 11400,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-s3 #51",
+    "id" : "51",
+    "keepLog" : false,
+    "number" : 51,
+    "queueId" : 504,
+    "result" : "SUCCESS",
+    "timestamp" : 1554755850038,
+    "url" : "http://builds.cdlib.org/job/mrt-build-s3/51/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "s3-conf/src/main/resources/nodes/nodes-prd-store.properties",
+            "s3-conf/src/main/resources/nodes/nodes-prd-audit.properties",
+            "s3-conf/src/main/resources/nodes/nodes-prd-replic.properties"
+          ],
+          "commitId" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "timestamp" : 1554755688000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Add SDSC Minio prod node 9501\n",
+          "date" : "2019-04-08 13:34:48 -0700",
+          "id" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "msg" : "Add SDSC Minio prod node 9501",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-audit.properties"
+            },
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-replic.properties"
+            },
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-store.properties"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+        "fullName" : "dloy"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 51,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "branch" : [
+                {
+                  "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "branch" : [
+                {
+                  "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "branch" : [
+            {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "ssh://git@github.com/cdlib/mrt-conf-prv.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#51",
+    "duration" : 10719,
+    "estimatedDuration" : 11400,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-s3 #51",
+    "id" : "51",
+    "keepLog" : false,
+    "number" : 51,
+    "queueId" : 504,
+    "result" : "SUCCESS",
+    "timestamp" : 1554755850038,
+    "url" : "http://builds.cdlib.org/job/mrt-build-s3/51/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "s3-conf/src/main/resources/nodes/nodes-prd-store.properties",
+            "s3-conf/src/main/resources/nodes/nodes-prd-audit.properties",
+            "s3-conf/src/main/resources/nodes/nodes-prd-replic.properties"
+          ],
+          "commitId" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "timestamp" : 1554755688000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Add SDSC Minio prod node 9501\n",
+          "date" : "2019-04-08 13:34:48 -0700",
+          "id" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "msg" : "Add SDSC Minio prod node 9501",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-audit.properties"
+            },
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-replic.properties"
+            },
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-store.properties"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+        "fullName" : "dloy"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 51,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "branch" : [
+                {
+                  "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "branch" : [
+                {
+                  "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "branch" : [
+            {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "ssh://git@github.com/cdlib/mrt-conf-prv.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#51",
+    "duration" : 10719,
+    "estimatedDuration" : 11400,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-s3 #51",
+    "id" : "51",
+    "keepLog" : false,
+    "number" : 51,
+    "queueId" : 504,
+    "result" : "SUCCESS",
+    "timestamp" : 1554755850038,
+    "url" : "http://builds.cdlib.org/job/mrt-build-s3/51/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "s3-conf/src/main/resources/nodes/nodes-prd-store.properties",
+            "s3-conf/src/main/resources/nodes/nodes-prd-audit.properties",
+            "s3-conf/src/main/resources/nodes/nodes-prd-replic.properties"
+          ],
+          "commitId" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "timestamp" : 1554755688000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Add SDSC Minio prod node 9501\n",
+          "date" : "2019-04-08 13:34:48 -0700",
+          "id" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "msg" : "Add SDSC Minio prod node 9501",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-audit.properties"
+            },
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-replic.properties"
+            },
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-store.properties"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+        "fullName" : "dloy"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 51,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "branch" : [
+                {
+                  "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "branch" : [
+                {
+                  "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "branch" : [
+            {
+              "SHA1" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "ssh://git@github.com/cdlib/mrt-conf-prv.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#51",
+    "duration" : 10719,
+    "estimatedDuration" : 11400,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-s3 #51",
+    "id" : "51",
+    "keepLog" : false,
+    "number" : 51,
+    "queueId" : 504,
+    "result" : "SUCCESS",
+    "timestamp" : 1554755850038,
+    "url" : "http://builds.cdlib.org/job/mrt-build-s3/51/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "s3-conf/src/main/resources/nodes/nodes-prd-store.properties",
+            "s3-conf/src/main/resources/nodes/nodes-prd-audit.properties",
+            "s3-conf/src/main/resources/nodes/nodes-prd-replic.properties"
+          ],
+          "commitId" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "timestamp" : 1554755688000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Add SDSC Minio prod node 9501\n",
+          "date" : "2019-04-08 13:34:48 -0700",
+          "id" : "691770b9182d3870c85aba8ca776c0a3e85aa57e",
+          "msg" : "Add SDSC Minio prod node 9501",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-audit.properties"
+            },
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-replic.properties"
+            },
+            {
+              "editType" : "edit",
+              "file" : "s3-conf/src/main/resources/nodes/nodes-prd-store.properties"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+        "fullName" : "dloy"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 52,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-s3 » UC3-mrtConfS3",
+      "fullName" : "mrt-build-s3/org.cdlib.mrt:mrt-confs3",
+      "name" : "org.cdlib.mrt:mrt-confs3",
+      "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 51,
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/51/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 50,
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/50/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 49,
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/49/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 48,
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/48/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 47,
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/47/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 47,
+        "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/47/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 51,
+        "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/51/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 51,
+        "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/51/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 51,
+        "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/51/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 51,
+        "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/51/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 52,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtConfS3"
+    }
+  ]
+}

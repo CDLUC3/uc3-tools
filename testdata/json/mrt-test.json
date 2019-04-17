@@ -1,0 +1,1097 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Build private test repository to cover all mrt src",
+  "displayName" : "mrt-test",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-test",
+  "fullName" : "mrt-test",
+  "name" : "mrt-test",
+  "url" : "http://builds.cdlib.org/job/mrt-test/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 3,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                "branch" : [
+                  {
+                    "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                "branch" : [
+                  {
+                    "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+            "branch" : [
+              {
+                "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "ssh://git@github.com/cdlib/mrt-test.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#3",
+      "duration" : 38020,
+      "estimatedDuration" : 23650,
+      "executor" : null,
+      "fullDisplayName" : "mrt-test #3",
+      "id" : "3",
+      "keepLog" : false,
+      "number" : 3,
+      "queueId" : 17,
+      "result" : "SUCCESS",
+      "timestamp" : 1504907082854,
+      "url" : "http://builds.cdlib.org/job/mrt-test/3/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 2,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                "branch" : [
+                  {
+                    "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                "branch" : [
+                  {
+                    "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+            "branch" : [
+              {
+                "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "ssh://git@github.com/cdlib/mrt-test.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#2",
+      "duration" : 13966,
+      "estimatedDuration" : 23650,
+      "executor" : null,
+      "fullDisplayName" : "mrt-test #2",
+      "id" : "2",
+      "keepLog" : false,
+      "number" : 2,
+      "queueId" : 16,
+      "result" : "SUCCESS",
+      "timestamp" : 1504823617562,
+      "url" : "http://builds.cdlib.org/job/mrt-test/2/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 1,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                "branch" : [
+                  {
+                    "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                "branch" : [
+                  {
+                    "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+            "branch" : [
+              {
+                "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/cdlib/mrt-test.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#1",
+      "duration" : 18965,
+      "estimatedDuration" : 23650,
+      "executor" : null,
+      "fullDisplayName" : "mrt-test #1",
+      "id" : "1",
+      "keepLog" : false,
+      "number" : 1,
+      "queueId" : 13,
+      "result" : "SUCCESS",
+      "timestamp" : 1504814008505,
+      "url" : "http://builds.cdlib.org/job/mrt-test/1/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 1,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "branch" : [
+                {
+                  "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "branch" : [
+                {
+                  "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+          "branch" : [
+            {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/cdlib/mrt-test.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#1",
+    "duration" : 18965,
+    "estimatedDuration" : 23650,
+    "executor" : null,
+    "fullDisplayName" : "mrt-test #1",
+    "id" : "1",
+    "keepLog" : false,
+    "number" : 1,
+    "queueId" : 13,
+    "result" : "SUCCESS",
+    "timestamp" : 1504814008505,
+    "url" : "http://builds.cdlib.org/job/mrt-test/1/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 3,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "branch" : [
+                {
+                  "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "branch" : [
+                {
+                  "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+          "branch" : [
+            {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "ssh://git@github.com/cdlib/mrt-test.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#3",
+    "duration" : 38020,
+    "estimatedDuration" : 23650,
+    "executor" : null,
+    "fullDisplayName" : "mrt-test #3",
+    "id" : "3",
+    "keepLog" : false,
+    "number" : 3,
+    "queueId" : 17,
+    "result" : "SUCCESS",
+    "timestamp" : 1504907082854,
+    "url" : "http://builds.cdlib.org/job/mrt-test/3/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 3,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "branch" : [
+                {
+                  "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "branch" : [
+                {
+                  "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+          "branch" : [
+            {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "ssh://git@github.com/cdlib/mrt-test.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#3",
+    "duration" : 38020,
+    "estimatedDuration" : 23650,
+    "executor" : null,
+    "fullDisplayName" : "mrt-test #3",
+    "id" : "3",
+    "keepLog" : false,
+    "number" : 3,
+    "queueId" : 17,
+    "result" : "SUCCESS",
+    "timestamp" : 1504907082854,
+    "url" : "http://builds.cdlib.org/job/mrt-test/3/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 3,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "branch" : [
+                {
+                  "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "branch" : [
+                {
+                  "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+          "branch" : [
+            {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "ssh://git@github.com/cdlib/mrt-test.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#3",
+    "duration" : 38020,
+    "estimatedDuration" : 23650,
+    "executor" : null,
+    "fullDisplayName" : "mrt-test #3",
+    "id" : "3",
+    "keepLog" : false,
+    "number" : 3,
+    "queueId" : 17,
+    "result" : "SUCCESS",
+    "timestamp" : 1504907082854,
+    "url" : "http://builds.cdlib.org/job/mrt-test/3/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 3,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "branch" : [
+                {
+                  "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "branch" : [
+                {
+                  "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+          "branch" : [
+            {
+              "SHA1" : "f0fe10c8c247d6c07a361489f163f64623e48a21",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "ssh://git@github.com/cdlib/mrt-test.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#3",
+    "duration" : 38020,
+    "estimatedDuration" : 23650,
+    "executor" : null,
+    "fullDisplayName" : "mrt-test #3",
+    "id" : "3",
+    "keepLog" : false,
+    "number" : 3,
+    "queueId" : 17,
+    "result" : "SUCCESS",
+    "timestamp" : 1504907082854,
+    "url" : "http://builds.cdlib.org/job/mrt-test/3/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 4,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-test » UC3-mrtS3TestPrv",
+      "fullName" : "mrt-test/org.cdlib.mrt:mrt-s3test",
+      "name" : "org.cdlib.mrt:mrt-s3test",
+      "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-s3test/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 3,
+          "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-s3test/3/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 2,
+          "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-s3test/2/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-s3test/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-s3test/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-s3test/3/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-s3test/3/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-s3test/3/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-s3test/3/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 4,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtS3TestPrv"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-test » UC3-mrtTest",
+      "fullName" : "mrt-test/org.cdlib.mrt:mrt-test",
+      "name" : "org.cdlib.mrt:mrt-test",
+      "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-test/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 3,
+          "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-test/3/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 2,
+          "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-test/2/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-test/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-test/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-test/3/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-test/3/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-test/3/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-test/3/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 4,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtTest"
+    }
+  ]
+}

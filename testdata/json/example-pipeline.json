@@ -1,0 +1,64 @@
+{
+  "_class" : "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+  "actions" : [
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "",
+  "displayName" : "example-pipeline",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "example-pipeline",
+  "fullName" : "example-pipeline",
+  "name" : "example-pipeline",
+  "url" : "http://builds.cdlib.org/job/example-pipeline/",
+  "buildable" : true,
+  "builds" : [
+    
+  ],
+  "color" : "notbuilt",
+  "firstBuild" : null,
+  "healthReport" : [
+    
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : null,
+  "lastCompletedBuild" : null,
+  "lastFailedBuild" : null,
+  "lastStableBuild" : null,
+  "lastSuccessfulBuild" : null,
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 1,
+  "property" : [
+    
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : true,
+  "resumeBlocked" : false
+}

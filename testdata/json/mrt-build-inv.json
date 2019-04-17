@@ -1,0 +1,1837 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "test"
+          ]
+        }
+      ]
+    },
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Build Merritt mrt-inventory war using the default code branch.\r\n",
+  "displayName" : "mrt-build-inv",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-build-inv",
+  "fullName" : "mrt-build-inv",
+  "name" : "mrt-build-inv",
+  "url" : "http://builds.cdlib.org/job/mrt-build-inv/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 41,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                "branch" : [
+                  {
+                    "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                "branch" : [
+                  {
+                    "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+            "branch" : [
+              {
+                "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-inventory"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 2,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#41",
+      "duration" : 21681,
+      "estimatedDuration" : 23682,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-inv #41",
+      "id" : "41",
+      "keepLog" : false,
+      "number" : 41,
+      "queueId" : 510,
+      "result" : "SUCCESS",
+      "timestamp" : 1555441290842,
+      "url" : "http://builds.cdlib.org/job/mrt-build-inv/41/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 40,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                "branch" : [
+                  {
+                    "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                "branch" : [
+                  {
+                    "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+            "branch" : [
+              {
+                "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-inventory"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 2,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#40",
+      "duration" : 28242,
+      "estimatedDuration" : 23682,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-inv #40",
+      "id" : "40",
+      "keepLog" : false,
+      "number" : 40,
+      "queueId" : 509,
+      "result" : "SUCCESS",
+      "timestamp" : 1555436781175,
+      "url" : "http://builds.cdlib.org/job/mrt-build-inv/40/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "inv-src/src/main/java/org/cdlib/mrt/inv/action/Versions.java"
+            ],
+            "commitId" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+            "timestamp" : 1555436678000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Detect Not found and set exception\n",
+            "date" : "2019-04-16 10:44:38 -0700",
+            "id" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+            "msg" : "Detect Not found and set exception",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "inv-src/src/main/java/org/cdlib/mrt/inv/action/Versions.java"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+          "fullName" : "replic"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 39,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+                "branch" : [
+                  {
+                    "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+                "branch" : [
+                  {
+                    "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+            "branch" : [
+              {
+                "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-inventory"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 2,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#39",
+      "duration" : 21122,
+      "estimatedDuration" : 23682,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-inv #39",
+      "id" : "39",
+      "keepLog" : false,
+      "number" : 39,
+      "queueId" : 491,
+      "result" : "SUCCESS",
+      "timestamp" : 1553545074599,
+      "url" : "http://builds.cdlib.org/job/mrt-build-inv/39/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 38,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+                "branch" : [
+                  {
+                    "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+                "branch" : [
+                  {
+                    "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+            "branch" : [
+              {
+                "SHA1" : "a095512dfb186c6353b9eff1948374b077718ea9",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-inventory"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 2,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#38",
+      "duration" : 41892,
+      "estimatedDuration" : 23682,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-inv #38",
+      "id" : "38",
+      "keepLog" : false,
+      "number" : 38,
+      "queueId" : 490,
+      "result" : "SUCCESS",
+      "timestamp" : 1553193636148,
+      "url" : "http://builds.cdlib.org/job/mrt-build-inv/38/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "inv-src/src/main/java/org/cdlib/mrt/inv/action/Versions.java",
+              "inv-src/pom.xml",
+              "inv-src/src/main/java/org/cdlib/mrt/inv/utility/NodeIOInv.java",
+              "inv-src/src/main/java/org/cdlib/mrt/inv/service/VersionsState.java",
+              "inv-src/src/main/java/org/cdlib/mrt/inv/test/VersionsTest3.java",
+              "inv-src/src/main/java/org/cdlib/mrt/inv/action/SaveNode.java",
+              "inv-src/src/main/java/org/cdlib/mrt/inv/service/InvService.java"
+            ],
+            "commitId" : "a095512dfb186c6353b9eff1948374b077718ea9",
+            "timestamp" : 1553192126000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Tracker #164702206 - [Inv Versions] Add NodeIO table  support for bucket\nidentification Support for NodeIO tables in versions processing Support\nof standard form of localVolume in storage can-info.txt Update filenode\nmethod to use current storageBase\n",
+            "date" : "2019-03-21 11:15:26 -0700",
+            "id" : "a095512dfb186c6353b9eff1948374b077718ea9",
+            "msg" : "Tracker #164702206 - [Inv Versions] Add NodeIO table  support for bucket",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "inv-src/src/main/java/org/cdlib/mrt/inv/service/InvService.java"
+              },
+              {
+                "editType" : "add",
+                "file" : "inv-src/src/main/java/org/cdlib/mrt/inv/utility/NodeIOInv.java"
+              },
+              {
+                "editType" : "edit",
+                "file" : "inv-src/src/main/java/org/cdlib/mrt/inv/action/Versions.java"
+              },
+              {
+                "editType" : "edit",
+                "file" : "inv-src/src/main/java/org/cdlib/mrt/inv/service/VersionsState.java"
+              },
+              {
+                "editType" : "edit",
+                "file" : "inv-src/src/main/java/org/cdlib/mrt/inv/action/SaveNode.java"
+              },
+              {
+                "editType" : "edit",
+                "file" : "inv-src/pom.xml"
+              },
+              {
+                "editType" : "edit",
+                "file" : "inv-src/src/main/java/org/cdlib/mrt/inv/test/VersionsTest3.java"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+          "fullName" : "replic"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 37,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+                "branch" : [
+                  {
+                    "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+                "branch" : [
+                  {
+                    "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+            "branch" : [
+              {
+                "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-inventory"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 2,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#37",
+      "duration" : 37761,
+      "estimatedDuration" : 23682,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-inv #37",
+      "id" : "37",
+      "keepLog" : false,
+      "number" : 37,
+      "queueId" : 464,
+      "result" : "SUCCESS",
+      "timestamp" : 1550091900834,
+      "url" : "http://builds.cdlib.org/job/mrt-build-inv/37/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 37,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+              "branch" : [
+                {
+                  "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+              "branch" : [
+                {
+                  "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+          "branch" : [
+            {
+              "SHA1" : "650bb5c15a6f70b169eab566d3610c19e173d801",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-inventory"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 2,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#37",
+    "duration" : 37761,
+    "estimatedDuration" : 23682,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-inv #37",
+    "id" : "37",
+    "keepLog" : false,
+    "number" : 37,
+    "queueId" : 464,
+    "result" : "SUCCESS",
+    "timestamp" : 1550091900834,
+    "url" : "http://builds.cdlib.org/job/mrt-build-inv/37/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Test Result: 0 tests failing out of a total of 2 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    },
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 41,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "branch" : [
+                {
+                  "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "branch" : [
+                {
+                  "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+          "branch" : [
+            {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-inventory"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 2,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#41",
+    "duration" : 21681,
+    "estimatedDuration" : 23682,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-inv #41",
+    "id" : "41",
+    "keepLog" : false,
+    "number" : 41,
+    "queueId" : 510,
+    "result" : "SUCCESS",
+    "timestamp" : 1555441290842,
+    "url" : "http://builds.cdlib.org/job/mrt-build-inv/41/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 41,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "branch" : [
+                {
+                  "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "branch" : [
+                {
+                  "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+          "branch" : [
+            {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-inventory"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 2,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#41",
+    "duration" : 21681,
+    "estimatedDuration" : 23682,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-inv #41",
+    "id" : "41",
+    "keepLog" : false,
+    "number" : 41,
+    "queueId" : 510,
+    "result" : "SUCCESS",
+    "timestamp" : 1555441290842,
+    "url" : "http://builds.cdlib.org/job/mrt-build-inv/41/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 41,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "branch" : [
+                {
+                  "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "branch" : [
+                {
+                  "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+          "branch" : [
+            {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-inventory"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 2,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#41",
+    "duration" : 21681,
+    "estimatedDuration" : 23682,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-inv #41",
+    "id" : "41",
+    "keepLog" : false,
+    "number" : 41,
+    "queueId" : 510,
+    "result" : "SUCCESS",
+    "timestamp" : 1555441290842,
+    "url" : "http://builds.cdlib.org/job/mrt-build-inv/41/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 41,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "branch" : [
+                {
+                  "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "branch" : [
+                {
+                  "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+          "branch" : [
+            {
+              "SHA1" : "ef9e182d981af66f924bbff12740e46e5e2accc8",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-inventory"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 2,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#41",
+    "duration" : 21681,
+    "estimatedDuration" : 23682,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-inv #41",
+    "id" : "41",
+    "keepLog" : false,
+    "number" : 41,
+    "queueId" : 510,
+    "result" : "SUCCESS",
+    "timestamp" : 1555441290842,
+    "url" : "http://builds.cdlib.org/job/mrt-build-inv/41/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 42,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "test"
+          ]
+        }
+      ]
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-inv » UC3-mrtInventory",
+      "fullName" : "mrt-build-inv/org.cdlib.mrt:mrt-inventory",
+      "name" : "org.cdlib.mrt:mrt-inventory",
+      "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 41,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/41/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 40,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/40/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/38/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 37,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/37/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 37,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/37/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/41/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/41/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/41/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/41/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 42,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtInventory"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-inv » UC3-mrtInventoryConf",
+      "fullName" : "mrt-build-inv/org.cdlib.mrt:mrt-inventoryconf",
+      "name" : "org.cdlib.mrt:mrt-inventoryconf",
+      "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 41,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/41/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 40,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/40/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/38/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 37,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/37/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 37,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/37/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/41/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/41/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/41/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/41/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 42,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtInventoryConf"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-inv » UC3-mrtInventorySrc",
+      "fullName" : "mrt-build-inv/org.cdlib.mrt:mrt-inventorysrc",
+      "name" : "org.cdlib.mrt:mrt-inventorysrc",
+      "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 41,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/41/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 40,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/40/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/38/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 37,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/37/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 37,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/37/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 2 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/41/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/41/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/41/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/41/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 42,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtInventorySrc"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-inv » UC3-mrtInventoryWar",
+      "fullName" : "mrt-build-inv/org.cdlib.mrt:mrt-invwar",
+      "name" : "org.cdlib.mrt:mrt-invwar",
+      "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 41,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/41/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 40,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/40/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/38/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 37,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/37/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 37,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/37/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/41/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/41/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/41/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 41,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/41/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 42,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtInventoryWar"
+    }
+  ]
+}

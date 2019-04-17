@@ -1,0 +1,1861 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "This project builds the mrt-xoai.jar from the default branch; deploying it to the local Maven repository, mvn.cdlib.org/snapshots.",
+  "displayName" : "git-mrt-xoai",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "git-mrt-xoai",
+  "fullName" : "git-mrt-xoai",
+  "name" : "git-mrt-xoai",
+  "url" : "http://builds.cdlib.org/job/git-mrt-xoai/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 8,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                "branch" : [
+                  {
+                    "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                "branch" : [
+                  {
+                    "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+            "branch" : [
+              {
+                "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLIB/mrt-conf-prv.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 86,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#8",
+      "duration" : 42320,
+      "estimatedDuration" : 39658,
+      "executor" : null,
+      "fullDisplayName" : "git-mrt-xoai #8",
+      "id" : "8",
+      "keepLog" : false,
+      "number" : 8,
+      "queueId" : 357,
+      "result" : "SUCCESS",
+      "timestamp" : 1540319166505,
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/8/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 7,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                "branch" : [
+                  {
+                    "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                "branch" : [
+                  {
+                    "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+            "branch" : [
+              {
+                "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLIB/mrt-conf-prv.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 86,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#7",
+      "duration" : 43966,
+      "estimatedDuration" : 39658,
+      "executor" : null,
+      "fullDisplayName" : "git-mrt-xoai #7",
+      "id" : "7",
+      "keepLog" : false,
+      "number" : 7,
+      "queueId" : 355,
+      "result" : "SUCCESS",
+      "timestamp" : 1540244699047,
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/7/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-conf/src/main/resources/nodes/ch-riverside-dev.properties",
+              "s3-conf/src/main/resources/nodes/ch-local-dev.properties",
+              "s3-conf/src/main/resources/nodes/ch-riverside-prd.properties",
+              "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+            ],
+            "commitId" : "7dcea039a5e8b359cfed5b539e2562b7559a5149",
+            "timestamp" : 1523917416000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Setup dev storage nodeio for ucdn\n",
+            "date" : "2018-04-16 15:23:36 -0700",
+            "id" : "7dcea039a5e8b359cfed5b539e2562b7559a5149",
+            "msg" : "Setup dev storage nodeio for ucdn",
+            "paths" : [
+              {
+                "editType" : "add",
+                "file" : "s3-conf/src/main/resources/nodes/ch-local-dev.properties"
+              },
+              {
+                "editType" : "add",
+                "file" : "s3-conf/src/main/resources/nodes/ch-riverside-dev.properties"
+              },
+              {
+                "editType" : "add",
+                "file" : "s3-conf/src/main/resources/nodes/ch-riverside-prd.properties"
+              },
+              {
+                "editType" : "add",
+                "file" : "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-conf/src/main/resources/nodes/ch-local-dev.properties"
+            ],
+            "commitId" : "47b935bd376ac0036e003b218bf6583bf74b3589",
+            "timestamp" : 1523919978000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Setup dev replic1 nodeio for ucdn\n",
+            "date" : "2018-04-16 16:06:18 -0700",
+            "id" : "47b935bd376ac0036e003b218bf6583bf74b3589",
+            "msg" : "Setup dev replic1 nodeio for ucdn",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "s3-conf/src/main/resources/nodes/ch-local-dev.properties"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-conf/src/main/resources/nodes/README.txt"
+            ],
+            "commitId" : "974e12b177ab1afecb7bafe97ff037db083bba10",
+            "timestamp" : 1528218417000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "NodeIO properties documentation\n",
+            "date" : "2018-06-05 10:06:57 -0700",
+            "id" : "974e12b177ab1afecb7bafe97ff037db083bba10",
+            "msg" : "NodeIO properties documentation",
+            "paths" : [
+              {
+                "editType" : "add",
+                "file" : "s3-conf/src/main/resources/nodes/README.txt"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "README.md"
+            ],
+            "commitId" : "65df48f40697e1d11fcc3232e39c8b5ac288bd09",
+            "timestamp" : 1528761137000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/noreply",
+              "fullName" : "noreply"
+            },
+            "authorEmail" : "noreply@github.com",
+            "comment" : "Create README.md\n",
+            "date" : "2018-06-11 16:52:17 -0700",
+            "id" : "65df48f40697e1d11fcc3232e39c8b5ac288bd09",
+            "msg" : "Create README.md",
+            "paths" : [
+              {
+                "editType" : "add",
+                "file" : "README.md"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-conf/src/main/resources/nodes/ch-local-prd.properties"
+            ],
+            "commitId" : "3f26379538c1575a30dc9d079c0e2c1456e4ac85",
+            "timestamp" : 1532122459000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Use for s3 nodeio test\n",
+            "date" : "2018-07-20 14:34:19 -0700",
+            "id" : "3f26379538c1575a30dc9d079c0e2c1456e4ac85",
+            "msg" : "Use for s3 nodeio test",
+            "paths" : [
+              {
+                "editType" : "add",
+                "file" : "s3-conf/src/main/resources/nodes/ch-local-prd.properties"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-conf/src/main/resources/nodes/ch-ucsb-stg.properties",
+              "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+            ],
+            "commitId" : "390e982273394d317ac5fdeb7b9a5f27dbfccb70",
+            "timestamp" : 1536079827000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Add ucsb\n",
+            "date" : "2018-09-04 09:50:27 -0700",
+            "id" : "390e982273394d317ac5fdeb7b9a5f27dbfccb70",
+            "msg" : "Add ucsb",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+              },
+              {
+                "editType" : "add",
+                "file" : "s3-conf/src/main/resources/nodes/ch-ucsb-stg.properties"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-conf/src/main/resources/nodes/ch-ucsb-stg.properties",
+              "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+            ],
+            "commitId" : "92849247a2b86cf5dfe588ffa0187538f97cc1f0",
+            "timestamp" : 1536082039000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Add ucsb add node for 8800\n",
+            "date" : "2018-09-04 10:27:19 -0700",
+            "id" : "92849247a2b86cf5dfe588ffa0187538f97cc1f0",
+            "msg" : "Add ucsb add node for 8800",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "s3-conf/src/main/resources/nodes/ch-ucsb-stg.properties"
+              },
+              {
+                "editType" : "edit",
+                "file" : "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "s3-conf/src/main/resources/nodes/ch-ucsb-prd.properties",
+              "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+            ],
+            "commitId" : "dae9f3f73af2582181ca745ead3f341411f74f33",
+            "timestamp" : 1536703484000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "add support dryad\n",
+            "date" : "2018-09-11 15:04:44 -0700",
+            "id" : "dae9f3f73af2582181ca745ead3f341411f74f33",
+            "msg" : "add support dryad",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "s3-conf/src/main/resources/nodes/nodes-ch-ucdn.properties"
+              },
+              {
+                "editType" : "add",
+                "file" : "s3-conf/src/main/resources/nodes/ch-ucsb-prd.properties"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "store-conf/src/main/properties/audit/SDSC-S3.properties",
+              "store-conf/src/main/properties/audit/TStorageStore.properties",
+              "store-conf/src/main/properties/audit/TStorageLogger.properties"
+            ],
+            "commitId" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+            "timestamp" : 1538071504000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Add audit\n",
+            "date" : "2018-09-27 11:05:04 -0700",
+            "id" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+            "msg" : "Add audit",
+            "paths" : [
+              {
+                "editType" : "add",
+                "file" : "store-conf/src/main/properties/audit/TStorageStore.properties"
+              },
+              {
+                "editType" : "add",
+                "file" : "store-conf/src/main/properties/audit/SDSC-S3.properties"
+              },
+              {
+                "editType" : "add",
+                "file" : "store-conf/src/main/properties/audit/TStorageLogger.properties"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/noreply",
+          "fullName" : "noreply"
+        },
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+          "fullName" : "replic"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 6,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                "branch" : [
+                  {
+                    "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                "branch" : [
+                  {
+                    "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+            "branch" : [
+              {
+                "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLIB/mrt-conf-prv.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 86,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#6",
+      "duration" : 32688,
+      "estimatedDuration" : 39658,
+      "executor" : null,
+      "fullDisplayName" : "git-mrt-xoai #6",
+      "id" : "6",
+      "keepLog" : false,
+      "number" : 6,
+      "queueId" : 76,
+      "result" : "SUCCESS",
+      "timestamp" : 1516314182874,
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/6/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 5,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                "branch" : [
+                  {
+                    "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                "branch" : [
+                  {
+                    "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+            "branch" : [
+              {
+                "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLIB/mrt-conf-prv.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 86,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#5",
+      "duration" : 39163,
+      "estimatedDuration" : 39658,
+      "executor" : null,
+      "fullDisplayName" : "git-mrt-xoai #5",
+      "id" : "5",
+      "keepLog" : false,
+      "number" : 5,
+      "queueId" : 75,
+      "result" : "SUCCESS",
+      "timestamp" : 1516308234197,
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/5/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 5,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+              "branch" : [
+                {
+                  "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+              "branch" : [
+                {
+                  "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+          "branch" : [
+            {
+              "SHA1" : "2fa0bdbe779b2dd3e16302ec655e1599a5dc8ffb",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLIB/mrt-conf-prv.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 86,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#5",
+    "duration" : 39163,
+    "estimatedDuration" : 39658,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-xoai #5",
+    "id" : "5",
+    "keepLog" : false,
+    "number" : 5,
+    "queueId" : 75,
+    "result" : "SUCCESS",
+    "timestamp" : 1516308234197,
+    "url" : "http://builds.cdlib.org/job/git-mrt-xoai/5/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Test Result: 0 tests failing out of a total of 86 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    },
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 8,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "branch" : [
+                {
+                  "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "branch" : [
+                {
+                  "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+          "branch" : [
+            {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLIB/mrt-conf-prv.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 86,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#8",
+    "duration" : 42320,
+    "estimatedDuration" : 39658,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-xoai #8",
+    "id" : "8",
+    "keepLog" : false,
+    "number" : 8,
+    "queueId" : 357,
+    "result" : "SUCCESS",
+    "timestamp" : 1540319166505,
+    "url" : "http://builds.cdlib.org/job/git-mrt-xoai/8/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 8,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "branch" : [
+                {
+                  "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "branch" : [
+                {
+                  "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+          "branch" : [
+            {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLIB/mrt-conf-prv.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 86,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#8",
+    "duration" : 42320,
+    "estimatedDuration" : 39658,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-xoai #8",
+    "id" : "8",
+    "keepLog" : false,
+    "number" : 8,
+    "queueId" : 357,
+    "result" : "SUCCESS",
+    "timestamp" : 1540319166505,
+    "url" : "http://builds.cdlib.org/job/git-mrt-xoai/8/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 8,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "branch" : [
+                {
+                  "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "branch" : [
+                {
+                  "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+          "branch" : [
+            {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLIB/mrt-conf-prv.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 86,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#8",
+    "duration" : 42320,
+    "estimatedDuration" : 39658,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-xoai #8",
+    "id" : "8",
+    "keepLog" : false,
+    "number" : 8,
+    "queueId" : 357,
+    "result" : "SUCCESS",
+    "timestamp" : 1540319166505,
+    "url" : "http://builds.cdlib.org/job/git-mrt-xoai/8/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 8,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "branch" : [
+                {
+                  "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "branch" : [
+                {
+                  "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+          "branch" : [
+            {
+              "SHA1" : "582807570c5c74786b87a838a95d055d2c1f8aea",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLIB/mrt-conf-prv.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 86,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#8",
+    "duration" : 42320,
+    "estimatedDuration" : 39658,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-xoai #8",
+    "id" : "8",
+    "keepLog" : false,
+    "number" : 8,
+    "queueId" : 357,
+    "result" : "SUCCESS",
+    "timestamp" : 1540319166505,
+    "url" : "http://builds.cdlib.org/job/git-mrt-xoai/8/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 10,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-mrt-xoai » XOAI : OAI-PMH Java Toolkit",
+      "fullName" : "git-mrt-xoai/com.lyncode:xoai",
+      "name" : "com.lyncode:xoai",
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai/6/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai/5/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai/5/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai/8/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai/8/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai/8/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai/8/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 10,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "XOAI : OAI-PMH Java Toolkit"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-mrt-xoai » XOAI Commons",
+      "fullName" : "git-mrt-xoai/com.lyncode:xoai-common",
+      "name" : "com.lyncode:xoai-common",
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-common/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-common/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-common/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-common/6/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-common/5/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-common/5/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 19 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-common/8/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-common/8/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-common/8/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-common/8/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 10,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "XOAI Commons"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-mrt-xoai » XOAI Data Provider",
+      "fullName" : "git-mrt-xoai/com.lyncode:xoai-data-provider",
+      "name" : "com.lyncode:xoai-data-provider",
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-data-provider/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-data-provider/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-data-provider/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-data-provider/6/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-data-provider/5/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-data-provider/5/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 40 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-data-provider/8/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-data-provider/8/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-data-provider/8/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-data-provider/8/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 10,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "XOAI Data Provider"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-mrt-xoai » XOAI Service Provider",
+      "fullName" : "git-mrt-xoai/com.lyncode:xoai-service-provider",
+      "name" : "com.lyncode:xoai-service-provider",
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-service-provider/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-service-provider/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-service-provider/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-service-provider/6/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-service-provider/5/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-service-provider/5/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 27 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-service-provider/8/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-service-provider/8/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-service-provider/8/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-service-provider/8/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 10,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "XOAI Service Provider"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-mrt-xoai » UC3-mrtZooPubSrc",
+      "fullName" : "git-mrt-xoai/org.cdlib.mrt:mrt-zoopub-src",
+      "name" : "org.cdlib.mrt:mrt-zoopub-src",
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/org.cdlib.mrt$mrt-zoopub-src/",
+      "buildable" : true,
+      "builds" : [
+        
+      ],
+      "color" : "notbuilt",
+      "firstBuild" : null,
+      "healthReport" : [
+        
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : null,
+      "lastCompletedBuild" : null,
+      "lastFailedBuild" : null,
+      "lastStableBuild" : null,
+      "lastSuccessfulBuild" : null,
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 9,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtZooPubSrc"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-mrt-xoai » UC3-mrtzoo",
+      "fullName" : "git-mrt-xoai/org.cdlib.mrt:zoo-client",
+      "name" : "org.cdlib.mrt:zoo-client",
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/org.cdlib.mrt$zoo-client/",
+      "buildable" : true,
+      "builds" : [
+        
+      ],
+      "color" : "notbuilt",
+      "firstBuild" : null,
+      "healthReport" : [
+        
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : null,
+      "lastCompletedBuild" : null,
+      "lastFailedBuild" : null,
+      "lastStableBuild" : null,
+      "lastSuccessfulBuild" : null,
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 9,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtzoo"
+    }
+  ]
+}

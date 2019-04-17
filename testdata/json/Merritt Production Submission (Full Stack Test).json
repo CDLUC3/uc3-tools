@@ -1,0 +1,624 @@
+{
+  "_class" : "hudson.model.FreeStyleProject",
+  "actions" : [
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Merritt Production Stack test\r\n\r\nApache -> UI -> Ingest -> Storage",
+  "displayName" : "Merritt Production Submission (Full Stack Test)",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "Merritt Production Submission (Full Stack Test)",
+  "fullName" : "Merritt Production Submission (Full Stack Test)",
+  "name" : "Merritt Production Submission (Full Stack Test)",
+  "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.model.FreeStyleBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#5",
+      "duration" : 4879,
+      "estimatedDuration" : 3949,
+      "executor" : null,
+      "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #5",
+      "id" : "5",
+      "keepLog" : false,
+      "number" : 5,
+      "queueId" : 253,
+      "result" : "SUCCESS",
+      "timestamp" : 1527110222188,
+      "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/5/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.scm.EmptyChangeLogSet",
+        "items" : [
+          
+        ],
+        "kind" : null
+      },
+      "culprits" : [
+        
+      ]
+    },
+    {
+      "_class" : "hudson.model.FreeStyleBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#4",
+      "duration" : 3627,
+      "estimatedDuration" : 3949,
+      "executor" : null,
+      "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #4",
+      "id" : "4",
+      "keepLog" : false,
+      "number" : 4,
+      "queueId" : 243,
+      "result" : "SUCCESS",
+      "timestamp" : 1527101462780,
+      "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/4/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.scm.EmptyChangeLogSet",
+        "items" : [
+          
+        ],
+        "kind" : null
+      },
+      "culprits" : [
+        
+      ]
+    },
+    {
+      "_class" : "hudson.model.FreeStyleBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#3",
+      "duration" : 3174,
+      "estimatedDuration" : 3949,
+      "executor" : null,
+      "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #3",
+      "id" : "3",
+      "keepLog" : false,
+      "number" : 3,
+      "queueId" : 235,
+      "result" : "FAILURE",
+      "timestamp" : 1526939806476,
+      "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/3/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.scm.EmptyChangeLogSet",
+        "items" : [
+          
+        ],
+        "kind" : null
+      },
+      "culprits" : [
+        
+      ]
+    },
+    {
+      "_class" : "hudson.model.FreeStyleBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#2",
+      "duration" : 3341,
+      "estimatedDuration" : 3949,
+      "executor" : null,
+      "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #2",
+      "id" : "2",
+      "keepLog" : false,
+      "number" : 2,
+      "queueId" : 234,
+      "result" : "SUCCESS",
+      "timestamp" : 1526939785469,
+      "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/2/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.scm.EmptyChangeLogSet",
+        "items" : [
+          
+        ],
+        "kind" : null
+      },
+      "culprits" : [
+        
+      ]
+    },
+    {
+      "_class" : "hudson.model.FreeStyleBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#1",
+      "duration" : 181,
+      "estimatedDuration" : 3949,
+      "executor" : null,
+      "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #1",
+      "id" : "1",
+      "keepLog" : false,
+      "number" : 1,
+      "queueId" : 233,
+      "result" : "FAILURE",
+      "timestamp" : 1526938563259,
+      "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/1/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.scm.EmptyChangeLogSet",
+        "items" : [
+          
+        ],
+        "kind" : null
+      },
+      "culprits" : [
+        
+      ]
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.model.FreeStyleBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#1",
+    "duration" : 181,
+    "estimatedDuration" : 3949,
+    "executor" : null,
+    "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #1",
+    "id" : "1",
+    "keepLog" : false,
+    "number" : 1,
+    "queueId" : 233,
+    "result" : "FAILURE",
+    "timestamp" : 1526938563259,
+    "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/1/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.scm.EmptyChangeLogSet",
+      "items" : [
+        
+      ],
+      "kind" : null
+    },
+    "culprits" : [
+      
+    ]
+  },
+  "healthReport" : [
+    {
+      "description" : "Build stability: 2 out of the last 5 builds failed.",
+      "iconClassName" : "icon-health-40to59",
+      "iconUrl" : "health-40to59.png",
+      "score" : 60
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.model.FreeStyleBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#5",
+    "duration" : 4879,
+    "estimatedDuration" : 3949,
+    "executor" : null,
+    "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #5",
+    "id" : "5",
+    "keepLog" : false,
+    "number" : 5,
+    "queueId" : 253,
+    "result" : "SUCCESS",
+    "timestamp" : 1527110222188,
+    "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/5/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.scm.EmptyChangeLogSet",
+      "items" : [
+        
+      ],
+      "kind" : null
+    },
+    "culprits" : [
+      
+    ]
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.model.FreeStyleBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#5",
+    "duration" : 4879,
+    "estimatedDuration" : 3949,
+    "executor" : null,
+    "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #5",
+    "id" : "5",
+    "keepLog" : false,
+    "number" : 5,
+    "queueId" : 253,
+    "result" : "SUCCESS",
+    "timestamp" : 1527110222188,
+    "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/5/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.scm.EmptyChangeLogSet",
+      "items" : [
+        
+      ],
+      "kind" : null
+    },
+    "culprits" : [
+      
+    ]
+  },
+  "lastFailedBuild" : {
+    "_class" : "hudson.model.FreeStyleBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#3",
+    "duration" : 3174,
+    "estimatedDuration" : 3949,
+    "executor" : null,
+    "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #3",
+    "id" : "3",
+    "keepLog" : false,
+    "number" : 3,
+    "queueId" : 235,
+    "result" : "FAILURE",
+    "timestamp" : 1526939806476,
+    "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/3/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.scm.EmptyChangeLogSet",
+      "items" : [
+        
+      ],
+      "kind" : null
+    },
+    "culprits" : [
+      
+    ]
+  },
+  "lastStableBuild" : {
+    "_class" : "hudson.model.FreeStyleBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#5",
+    "duration" : 4879,
+    "estimatedDuration" : 3949,
+    "executor" : null,
+    "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #5",
+    "id" : "5",
+    "keepLog" : false,
+    "number" : 5,
+    "queueId" : 253,
+    "result" : "SUCCESS",
+    "timestamp" : 1527110222188,
+    "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/5/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.scm.EmptyChangeLogSet",
+      "items" : [
+        
+      ],
+      "kind" : null
+    },
+    "culprits" : [
+      
+    ]
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.model.FreeStyleBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#5",
+    "duration" : 4879,
+    "estimatedDuration" : 3949,
+    "executor" : null,
+    "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #5",
+    "id" : "5",
+    "keepLog" : false,
+    "number" : 5,
+    "queueId" : 253,
+    "result" : "SUCCESS",
+    "timestamp" : 1527110222188,
+    "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/5/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.scm.EmptyChangeLogSet",
+      "items" : [
+        
+      ],
+      "kind" : null
+    },
+    "culprits" : [
+      
+    ]
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : {
+    "_class" : "hudson.model.FreeStyleBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#3",
+    "duration" : 3174,
+    "estimatedDuration" : 3949,
+    "executor" : null,
+    "fullDisplayName" : "Merritt Production Submission (Full Stack Test) #3",
+    "id" : "3",
+    "keepLog" : false,
+    "number" : 3,
+    "queueId" : 235,
+    "result" : "FAILURE",
+    "timestamp" : 1526939806476,
+    "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/3/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.scm.EmptyChangeLogSet",
+      "items" : [
+        
+      ],
+      "kind" : null
+    },
+    "culprits" : [
+      
+    ]
+  },
+  "nextBuildNumber" : 6,
+  "property" : [
+    
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.scm.NullSCM",
+    "browser" : null,
+    "type" : "hudson.scm.NullSCM"
+  },
+  "upstreamProjects" : [
+    
+  ]
+}

@@ -1,0 +1,1485 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "This project builds the mrt-zoo-pub.jar from the default branch; deploying it to the local Maven repository, mvn.cdlib.org/snapshots.",
+  "displayName" : "git-mrt-zoo",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "git-mrt-zoo",
+  "fullName" : "git-mrt-zoo",
+  "name" : "git-mrt-zoo",
+  "url" : "http://builds.cdlib.org/job/git-mrt-zoo/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 11,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                "branch" : [
+                  {
+                    "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                "branch" : [
+                  {
+                    "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+            "branch" : [
+              {
+                "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-zoo.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#11",
+      "duration" : 7436,
+      "estimatedDuration" : 9614,
+      "executor" : null,
+      "fullDisplayName" : "git-mrt-zoo #11",
+      "id" : "11",
+      "keepLog" : false,
+      "number" : 11,
+      "queueId" : 369,
+      "result" : "SUCCESS",
+      "timestamp" : 1540421309246,
+      "url" : "http://builds.cdlib.org/job/git-mrt-zoo/11/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 10,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                "branch" : [
+                  {
+                    "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                "branch" : [
+                  {
+                    "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+            "branch" : [
+              {
+                "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-zoo.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#10",
+      "duration" : 11547,
+      "estimatedDuration" : 9614,
+      "executor" : null,
+      "fullDisplayName" : "git-mrt-zoo #10",
+      "id" : "10",
+      "keepLog" : false,
+      "number" : 10,
+      "queueId" : 368,
+      "result" : "SUCCESS",
+      "timestamp" : 1540419902197,
+      "url" : "http://builds.cdlib.org/job/git-mrt-zoo/10/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 9,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                "branch" : [
+                  {
+                    "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                "branch" : [
+                  {
+                    "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+            "branch" : [
+              {
+                "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-zoo.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#9",
+      "duration" : 9859,
+      "estimatedDuration" : 9614,
+      "executor" : null,
+      "fullDisplayName" : "git-mrt-zoo #9",
+      "id" : "9",
+      "keepLog" : false,
+      "number" : 9,
+      "queueId" : 367,
+      "result" : "SUCCESS",
+      "timestamp" : 1540405149680,
+      "url" : "http://builds.cdlib.org/job/git-mrt-zoo/9/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "pom.xml"
+            ],
+            "commitId" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+            "timestamp" : 1540403102000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "change from 1.7 java to 1.8 compile\n",
+            "date" : "2018-10-24 10:45:02 -0700",
+            "id" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+            "msg" : "change from 1.7 java to 1.8 compile",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "pom.xml"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+          "fullName" : "dloy"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 8,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                "branch" : [
+                  {
+                    "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                "branch" : [
+                  {
+                    "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+            "branch" : [
+              {
+                "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-zoo.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#8",
+      "duration" : 9929,
+      "estimatedDuration" : 9614,
+      "executor" : null,
+      "fullDisplayName" : "git-mrt-zoo #8",
+      "id" : "8",
+      "keepLog" : false,
+      "number" : 8,
+      "queueId" : 366,
+      "result" : "SUCCESS",
+      "timestamp" : 1540405022837,
+      "url" : "http://builds.cdlib.org/job/git-mrt-zoo/8/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 7,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                "branch" : [
+                  {
+                    "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                "branch" : [
+                  {
+                    "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+            "branch" : [
+              {
+                "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-zoo.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#7",
+      "duration" : 259,
+      "estimatedDuration" : 9614,
+      "executor" : null,
+      "fullDisplayName" : "git-mrt-zoo #7",
+      "id" : "7",
+      "keepLog" : false,
+      "number" : 7,
+      "queueId" : 365,
+      "result" : "FAILURE",
+      "timestamp" : 1540404937032,
+      "url" : "http://builds.cdlib.org/job/git-mrt-zoo/7/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : null,
+      "mavenVersionUsed" : "2.2.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 7,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+              "branch" : [
+                {
+                  "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+              "branch" : [
+                {
+                  "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+          "branch" : [
+            {
+              "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-zoo.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#7",
+    "duration" : 259,
+    "estimatedDuration" : 9614,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-zoo #7",
+    "id" : "7",
+    "keepLog" : false,
+    "number" : 7,
+    "queueId" : 365,
+    "result" : "FAILURE",
+    "timestamp" : 1540404937032,
+    "url" : "http://builds.cdlib.org/job/git-mrt-zoo/7/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : null,
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Build stability: 1 out of the last 5 builds failed.",
+      "iconClassName" : "icon-health-60to79",
+      "iconUrl" : "health-60to79.png",
+      "score" : 80
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 11,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "branch" : [
+                {
+                  "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "branch" : [
+                {
+                  "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+          "branch" : [
+            {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-zoo.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#11",
+    "duration" : 7436,
+    "estimatedDuration" : 9614,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-zoo #11",
+    "id" : "11",
+    "keepLog" : false,
+    "number" : 11,
+    "queueId" : 369,
+    "result" : "SUCCESS",
+    "timestamp" : 1540421309246,
+    "url" : "http://builds.cdlib.org/job/git-mrt-zoo/11/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 11,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "branch" : [
+                {
+                  "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "branch" : [
+                {
+                  "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+          "branch" : [
+            {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-zoo.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#11",
+    "duration" : 7436,
+    "estimatedDuration" : 9614,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-zoo #11",
+    "id" : "11",
+    "keepLog" : false,
+    "number" : 11,
+    "queueId" : 369,
+    "result" : "SUCCESS",
+    "timestamp" : 1540421309246,
+    "url" : "http://builds.cdlib.org/job/git-mrt-zoo/11/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastFailedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 7,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+              "branch" : [
+                {
+                  "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+              "branch" : [
+                {
+                  "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+          "branch" : [
+            {
+              "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-zoo.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#7",
+    "duration" : 259,
+    "estimatedDuration" : 9614,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-zoo #7",
+    "id" : "7",
+    "keepLog" : false,
+    "number" : 7,
+    "queueId" : 365,
+    "result" : "FAILURE",
+    "timestamp" : 1540404937032,
+    "url" : "http://builds.cdlib.org/job/git-mrt-zoo/7/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : null,
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 11,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "branch" : [
+                {
+                  "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "branch" : [
+                {
+                  "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+          "branch" : [
+            {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-zoo.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#11",
+    "duration" : 7436,
+    "estimatedDuration" : 9614,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-zoo #11",
+    "id" : "11",
+    "keepLog" : false,
+    "number" : 11,
+    "queueId" : 369,
+    "result" : "SUCCESS",
+    "timestamp" : 1540421309246,
+    "url" : "http://builds.cdlib.org/job/git-mrt-zoo/11/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 11,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "branch" : [
+                {
+                  "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "branch" : [
+                {
+                  "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+          "branch" : [
+            {
+              "SHA1" : "275773ebcc558c2fab74d30353362b7fb5656d76",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-zoo.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#11",
+    "duration" : 7436,
+    "estimatedDuration" : 9614,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-zoo #11",
+    "id" : "11",
+    "keepLog" : false,
+    "number" : 11,
+    "queueId" : 369,
+    "result" : "SUCCESS",
+    "timestamp" : 1540421309246,
+    "url" : "http://builds.cdlib.org/job/git-mrt-zoo/11/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 7,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+              "branch" : [
+                {
+                  "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+              "branch" : [
+                {
+                  "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+          "branch" : [
+            {
+              "SHA1" : "49fac25596672367f671c971f638fe092917a2ac",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-zoo.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#7",
+    "duration" : 259,
+    "estimatedDuration" : 9614,
+    "executor" : null,
+    "fullDisplayName" : "git-mrt-zoo #7",
+    "id" : "7",
+    "keepLog" : false,
+    "number" : 7,
+    "queueId" : 365,
+    "result" : "FAILURE",
+    "timestamp" : 1540404937032,
+    "url" : "http://builds.cdlib.org/job/git-mrt-zoo/7/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : null,
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "nextBuildNumber" : 12,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-mrt-zoo » UC3-mrtZooPubSrc",
+      "fullName" : "git-mrt-zoo/org.cdlib.mrt:mrt-zoopub-src",
+      "name" : "org.cdlib.mrt:mrt-zoopub-src",
+      "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$mrt-zoopub-src/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 11,
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$mrt-zoopub-src/11/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 10,
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$mrt-zoopub-src/10/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 9,
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$mrt-zoopub-src/9/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$mrt-zoopub-src/8/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$mrt-zoopub-src/8/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 11,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$mrt-zoopub-src/11/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 11,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$mrt-zoopub-src/11/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 11,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$mrt-zoopub-src/11/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 11,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$mrt-zoopub-src/11/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 12,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtZooPubSrc"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-mrt-zoo » UC3-mrtzoo",
+      "fullName" : "git-mrt-zoo/org.cdlib.mrt:zoo-client",
+      "name" : "org.cdlib.mrt:zoo-client",
+      "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$zoo-client/",
+      "buildable" : true,
+      "builds" : [
+        
+      ],
+      "color" : "notbuilt",
+      "firstBuild" : null,
+      "healthReport" : [
+        
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : null,
+      "lastCompletedBuild" : null,
+      "lastFailedBuild" : null,
+      "lastStableBuild" : null,
+      "lastSuccessfulBuild" : null,
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 11,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtzoo"
+    }
+  ]
+}
