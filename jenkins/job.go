@@ -2,6 +2,8 @@ package jenkins
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/git"
+	"github.com/dmolesUC3/mrt-build-info/maven"
 	"net/url"
 	"sort"
 	"strings"
@@ -20,6 +22,9 @@ type Job interface {
 	Parameters() []Parameter
 	ParameterNames() []string
 	Parameterize(str string) []string
+	MavenParameters() (map[string]string, error)
+	Repository() (git.Repository, error)
+	POMs() ([]maven.Pom, error)
 }
 
 // ------------------------------------------------------------
@@ -37,6 +42,8 @@ type job struct {
 	configUrl  *url.URL
 
 	config Config
+	repo git.Repository
+	repoPOMs []maven.Pom
 }
 
 func (j *job) Name() string {
@@ -105,6 +112,56 @@ func (j *job) MavenParameters() (map[string]string, error) {
 		return map[string]string{}, err
 	}
 	return config.MavenParameters(), nil
+}
+
+func (j *job) Repository() (git.Repository, error) {
+	if j.repo == nil {
+		build, err := j.LastSuccess()
+		if err != nil {
+			return nil, fmt.Errorf("can't determine repository for job %v: %v", j.Name(), err)
+		}
+		owner, repoName, sha1, err := build.Commit()
+		if err != nil {
+			return nil, fmt.Errorf("can't determine repository for job %v: %v", j.Name(), err)
+		}
+		repo, err := git.GetRepository(owner, repoName, sha1)
+		if err != nil {
+			return nil, fmt.Errorf("can't determine repository for job %v: %v", j.Name(), err)
+		}
+		j.repo = repo
+	}
+	return j.repo, nil
+}
+
+func (j *job) POMs() ([]maven.Pom, error) {
+	if j.repoPOMs == nil {
+		repo, err := j.Repository()
+		if err != nil {
+			return nil, err
+		}
+		entries, err := repo.Find("pom.xml$", git.Blob)
+		if err != nil {
+			return nil, err
+		}
+		config, err := j.Config()
+		if err != nil {
+			return nil, err
+		}
+		buildRoot := config.BuildRoot()
+		var poms []maven.Pom
+		for _, entry := range entries {
+			// Exclude repo POMs not below build root
+			if strings.HasPrefix(entry.Path(), buildRoot) {
+				pom, err := maven.PomFromEntry(entry)
+				if err != nil {
+					return nil, err
+				}
+				poms = append(poms, pom)
+			}
+		}
+		j.repoPOMs = poms
+	}
+	return j.repoPOMs, nil
 }
 
 func (j *job) Parameterize(str string) []string {

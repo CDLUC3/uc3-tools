@@ -38,6 +38,7 @@ func init() {
 
 	cmd.Flags().BoolVar(&jobs.apiUrl, "api-url", false, "show Jenkins API URLs")
 	cmd.Flags().BoolVar(&jobs.configXML, "config-xml", false, "show Jenkins config.xml URLs")
+	cmd.Flags().BoolVar(&jobs.poms, "poms", false, "show POMs")
 
 	AddCommand(cmd)
 }
@@ -46,8 +47,9 @@ type jobs struct {
 	apiUrl     bool
 	artifacts  bool
 	build      bool
-	configXML bool
+	configXML  bool
 	parameters bool
+	poms       bool
 	repo       bool
 	errors     []error
 }
@@ -127,6 +129,21 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 					return valueUnknown
 				}
 				return scmUrl
+			}))
+	}
+	if j.poms {
+		columns = append(columns, NewTableColumn(
+			"POMs", len(jobs), func(row int) string {
+				poms, err := jobs[row].POMs()
+				if err != nil {
+					j.errors = append(j.errors, err)
+					return valueUnknown
+				}
+				var allPomInfo []string
+				for _, p := range poms {
+					allPomInfo = append(allPomInfo, p.Path())
+				}
+				return strings.Join(allPomInfo, ", ")
 			}))
 	}
 	if j.build {

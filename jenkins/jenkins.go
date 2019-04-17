@@ -87,7 +87,6 @@ func isConfigUrl(u *url.URL) bool {
 	return configUrlRegexp.MatchString(u.Path)
 }
 
-
 func toConfigUrl(u *url.URL) *url.URL {
 	if isConfigUrl(u) {
 		panic(fmt.Errorf("url '%v' is already an CONFIG URL", u))

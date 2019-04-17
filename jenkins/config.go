@@ -4,6 +4,7 @@ import (
 	"github.com/beevik/etree"
 	"github.com/dmolesUC3/mrt-build-info/shared"
 	"net/url"
+	"path/filepath"
 	"regexp"
 )
 
@@ -13,6 +14,8 @@ import (
 type Config interface {
 	URL() *url.URL
 	Goals() string
+	RootPOM() string
+	BuildRoot() string
 	MavenParameters() map[string]string
 }
 
@@ -54,6 +57,23 @@ func (c *config) Goals() string {
 		return ""
 	}
 	return goals.Text()
+}
+
+func (c *config) RootPOM() string {
+	rootPom := c.doc.FindElement("//rootPOM")
+	if rootPom == nil {
+		return ""
+	}
+	return rootPom.Text()
+}
+
+// Assumes we only ever build below the root POM
+func (c *config) BuildRoot() string {
+	rootPom := c.RootPOM()
+	if rootPom == "" {
+		return ""
+	}
+	return filepath.Dir(rootPom)
 }
 
 func (c *config) MavenParameters() map[string]string {
