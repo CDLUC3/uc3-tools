@@ -1,10 +1,10 @@
 package jenkins
 
 import (
-	"fmt"
 	"github.com/beevik/etree"
 	"github.com/dmolesUC3/mrt-build-info/shared"
 	"net/url"
+	"regexp"
 )
 
 // ------------------------------------------------------------
@@ -12,7 +12,8 @@ import (
 
 type Config interface {
 	URL() *url.URL
-	Goals() (string, error)
+	Goals() string
+	MavenParameters() map[string]string
 }
 
 func ConfigFromURL(u *url.URL) (Config, error) {
@@ -36,6 +37,8 @@ func ConfigFromBytes(data []byte, u *url.URL) (Config, error) {
 // ------------------------------------------------------------
 // Unexported symbols
 
+var propRe = regexp.MustCompile("-D([^=]+)=([^ ]+)")
+
 type config struct {
 	doc *etree.Document
 	url *url.URL
@@ -45,10 +48,19 @@ func (c *config) URL() *url.URL {
 	return c.url
 }
 
-func (c *config) Goals() (string, error) {
+func (c *config) Goals() string {
 	goals := c.doc.FindElement("//goals")
 	if goals == nil {
-		return "", fmt.Errorf("<goals> not found in %v", c.url)
+		return ""
 	}
-	return goals.Text(), nil
+	return goals.Text()
+}
+
+func (c *config) MavenParameters() map[string]string {
+	paramToValue := map[string]string{}
+	matches := propRe.FindAllStringSubmatch(c.Goals(), -1)
+	for _, match := range matches {
+		paramToValue[match[1]] = match[2]
+	}
+	return paramToValue
 }

@@ -13,6 +13,7 @@ import (
 type Job interface {
 	Name() string
 	LastSuccess() (Build, error)
+	Config() (Config, error)
 	ConfigUrl() *url.URL
 	APIUrl() *url.URL
 	SCMUrl() (string, error)
@@ -32,8 +33,10 @@ type job struct {
 	Actions []action
 
 	parameters []Parameter
-	apiUrl *url.URL
-	configUrl *url.URL
+	apiUrl     *url.URL
+	configUrl  *url.URL
+
+	config Config
 }
 
 func (j *job) Name() string {
@@ -50,6 +53,17 @@ func (j *job) LastSuccess() (Build, error) {
 		}
 	}
 	return j.LastSuccessfulBuild, nil
+}
+
+func (j *job) Config() (Config, error) {
+	if j.config == nil {
+		config, err := ConfigFromURL(j.ConfigUrl())
+		if err != nil {
+			return nil, err
+		}
+		j.config = config
+	}
+	return j.config, nil
 }
 
 func (j *job) Parameters() []Parameter {
@@ -83,6 +97,14 @@ func (j *job) ParameterNames() []string {
 		paramNames[i] = param.Name()
 	}
 	return paramNames
+}
+
+func (j *job) MavenParameters() (map[string]string, error) {
+	config, err := j.Config()
+	if err != nil {
+		return map[string]string{}, err
+	}
+	return config.MavenParameters(), nil
 }
 
 func (j *job) Parameterize(str string) []string {
@@ -136,12 +158,10 @@ func (j *job) load() error {
 	return unmarshal(j.APIUrl(), j)
 }
 
-
 // ------------------------------------------------------------
 // Helper types
 
 type action struct {
-	Class string `json:"_class"`
+	Class                string `json:"_class"`
 	ParameterDefinitions []parameterDefinition
 }
-
