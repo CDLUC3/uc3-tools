@@ -8,6 +8,7 @@ import (
 	"golang.org/x/oauth2"
 	"net/http"
 	"net/url"
+	"os"
 	"regexp"
 	"strings"
 )
@@ -65,6 +66,8 @@ type repository struct {
 	ctx          context.Context
 	httpClient   *http.Client
 	githubClient *github.Client
+
+	tree *github.Tree
 }
 
 func (r *repository) SHA1() SHA1 {
@@ -92,7 +95,8 @@ func (r *repository) GetEntry(path string, sha1 SHA1, eType EntryType, size int,
 	urlPath := strings.ToLower(u.Path)
 	prefix := strings.ToLower(fmt.Sprintf("/repos/%v/%v/", r.owner, r.repo))
 	if !strings.HasPrefix(urlPath, prefix) {
-		panic(fmt.Errorf("entry URL %v does not appear to belong to repository %v/%v", u, r.owner, r.repo))
+		msg := fmt.Sprintf("entry URL %v does not appear to belong to repository %v/%v (repo moved?)", u, r.owner, r.repo)
+		_, _ = fmt.Fprintln(os.Stderr, msg)
 	}
 
 	if r.entries == nil {
@@ -112,14 +116,25 @@ func (r *repository) GetEntry(path string, sha1 SHA1, eType EntryType, size int,
 	return e
 }
 
+func (r *repository) Tree() (*github.Tree, error) {
+	if r.tree == nil {
+		client := r.GitHubClient()
+		tree, _, err := client.Git.GetTree(r.Context(), r.owner, r.repo, r.sha1.Full(), true)
+		if err != nil {
+			return nil, err
+		}
+		r.tree = tree
+	}
+	return r.tree, nil
+}
+
 func (r *repository) Find(pattern string, entryType EntryType) ([]Entry, error) {
 	re, err := regexp.Compile(pattern)
 	if err != nil {
 		return nil, err
 	}
 
-	client := r.GitHubClient()
-	tree, _, err := client.Git.GetTree(r.Context(), r.owner, r.repo, r.sha1.Full(), true)
+	tree, err := r.Tree()
 	if err != nil {
 		return nil, err
 	}
