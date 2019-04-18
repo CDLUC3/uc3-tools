@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"net/url"
 	"regexp"
+	"strings"
 )
 
 var repoCache = map[string]map[SHA1]Repository{}
@@ -20,6 +21,9 @@ type Repository interface {
 	URL() *url.URL
 	SHA1() SHA1
 	Find(pattern string, entryType EntryType) ([]Entry, error)
+
+	// Unexported symbols
+	getEntry(path string, sha1 SHA1, eType EntryType, size int, u *url.URL) Entry
 }
 
 func MakeRepoUrlStr(owner string, repo string) string {
@@ -36,13 +40,13 @@ func GetRepository(owner, repoName string, sha1 SHA1) (Repository, error) {
 	if sha1 == "" {
 		return nil, fmt.Errorf("repo must have a revision")
 	}
-	urlStr := MakeRepoUrlStr(owner, repoName)
+	urlStrLowerCase := strings.ToLower(MakeRepoUrlStr(owner, repoName))
 
 	var ok bool
 	var reposBySHA1 map[SHA1]Repository
-	if reposBySHA1, ok = repoCache[urlStr]; !ok {
+	if reposBySHA1, ok = repoCache[urlStrLowerCase]; !ok {
 		reposBySHA1 = map[SHA1]Repository{}
-		repoCache[urlStr] = reposBySHA1
+		repoCache[urlStrLowerCase] = reposBySHA1
 	}
 	var repo Repository
 	if repo, ok = reposBySHA1[sha1]; !ok {
@@ -53,9 +57,10 @@ func GetRepository(owner, repoName string, sha1 SHA1) (Repository, error) {
 }
 
 type repository struct {
-	owner string
-	repo  string
-	sha1  SHA1
+	owner   string
+	repo    string
+	sha1    SHA1
+	entries map[string]map[SHA1]Entry
 
 	ctx          context.Context
 	httpClient   *http.Client
@@ -81,6 +86,24 @@ func (r *repository) Name() string {
 func (r *repository) URL() *url.URL {
 	urlStr := MakeRepoUrlStr(r.owner, r.repo)
 	return shared.UrlMustParse(urlStr)
+}
+
+func (r *repository) getEntry(path string, sha1 SHA1, eType EntryType, size int, u *url.URL) Entry {
+	if r.entries == nil {
+		r.entries = map[string]map[SHA1]Entry{}
+	}
+	var ok bool
+	var entriesBySHA1 map[SHA1]Entry
+	if entriesBySHA1, ok = r.entries[path]; !ok {
+		entriesBySHA1 = map[SHA1]Entry{}
+		r.entries[path] = entriesBySHA1
+	}
+	var e Entry
+	if e, ok = entriesBySHA1[sha1]; !ok {
+		e = &entry{path: path, sha1: sha1, eType: eType, size: size, url: u, repository: r}
+		entriesBySHA1[sha1] = e
+	}
+	return e
 }
 
 func (r *repository) Find(pattern string, entryType EntryType) ([]Entry, error) {
@@ -112,7 +135,7 @@ func (r *repository) Find(pattern string, entryType EntryType) ([]Entry, error) 
 		if err != nil {
 			return entries, err
 		}
-		entries = append(entries, r.NewEntry(path, e.GetSHA(), eType, e.GetSize(), u))
+		entries = append(entries, r.getEntry(path, SHA1(e.GetSHA()), eType, e.GetSize(), u))
 	}
 
 	return entries, nil

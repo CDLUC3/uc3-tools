@@ -13,7 +13,7 @@ const contentTypeRaw = "application/vnd.github.v3.raw"
 
 type Entry interface {
 	Repository() Repository
-	SHA1() string
+	SHA1() SHA1
 	Path() string
 	GetContent() ([]byte, error)
 	URL() *url.URL
@@ -29,13 +29,9 @@ func WebUrlForEntry(e Entry) *url.URL {
 	return shared.UrlMustParse(u)
 }
 
-func (r *repository) NewEntry(path, sha1 string, eType EntryType, size int, u *url.URL) Entry {
-	return &entry{path: path, sha1: sha1, eType: eType, size: size, url: u, repository: r}
-}
-
 type entry struct {
 	path       string
-	sha1       string
+	sha1       SHA1
 	eType      EntryType
 	size       int
 	url        *url.URL
@@ -48,7 +44,7 @@ func (e *entry) Repository() Repository {
 	return e.repository
 }
 
-func (e *entry) SHA1() string {
+func (e *entry) SHA1() SHA1 {
 	return e.sha1
 }
 

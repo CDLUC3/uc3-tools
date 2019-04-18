@@ -19,6 +19,9 @@ func Test(t *testing.T) {
 
 var _ = Suite(&GitSuite{})
 
+// ------------------------------------------------------------
+// Fixtuer
+
 type GitSuite struct {
 	server    *httptest.Server
 	serverUrl *url.URL
@@ -72,6 +75,9 @@ func (s *GitSuite) RoundTrip(req *http.Request) (*http.Response, error) {
 	}
 	return http.DefaultTransport.RoundTrip(req)
 }
+
+// ------------------------------------------------------------
+// Tests
 
 func (s *GitSuite) TestEntries(c *C) {
 	r, err := GetRepository("CDLUC3", "mrt-store", "af174ac555758a1c639a7a3da39e022d9fdbf3a6")
