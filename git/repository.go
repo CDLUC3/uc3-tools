@@ -23,7 +23,7 @@ type Repository interface {
 	Find(pattern string, entryType EntryType) ([]Entry, error)
 
 	// Unexported symbols
-	getEntry(path string, sha1 SHA1, eType EntryType, size int, u *url.URL) Entry
+	GetEntry(path string, sha1 SHA1, eType EntryType, size int, u *url.URL) Entry
 }
 
 func MakeRepoUrlStr(owner string, repo string) string {
@@ -88,7 +88,13 @@ func (r *repository) URL() *url.URL {
 	return shared.UrlMustParse(urlStr)
 }
 
-func (r *repository) getEntry(path string, sha1 SHA1, eType EntryType, size int, u *url.URL) Entry {
+func (r *repository) GetEntry(path string, sha1 SHA1, eType EntryType, size int, u *url.URL) Entry {
+	urlPath := strings.ToLower(u.Path)
+	prefix := strings.ToLower(fmt.Sprintf("/repos/%v/%v/", r.owner, r.repo))
+	if !strings.HasPrefix(urlPath, prefix) {
+		panic(fmt.Errorf("entry URL %v does not appear to belong to repository %v/%v", u, r.owner, r.repo))
+	}
+
 	if r.entries == nil {
 		r.entries = map[string]map[SHA1]Entry{}
 	}
@@ -135,7 +141,7 @@ func (r *repository) Find(pattern string, entryType EntryType) ([]Entry, error) 
 		if err != nil {
 			return entries, err
 		}
-		entries = append(entries, r.getEntry(path, SHA1(e.GetSHA()), eType, e.GetSize(), u))
+		entries = append(entries, r.GetEntry(path, SHA1(e.GetSHA()), eType, e.GetSize(), u))
 	}
 
 	return entries, nil

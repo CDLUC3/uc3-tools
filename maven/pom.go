@@ -7,6 +7,8 @@ import (
 	"net/url"
 )
 
+var pomCache = map[git.Entry]Pom{}
+
 type Pom interface {
 	fmt.Stringer
 	Artifact() (Artifact, error)
@@ -22,7 +24,12 @@ func PomFromEntry(entry git.Entry) (Pom, error) {
 	if !isPom(entry) {
 		return nil, fmt.Errorf("entry %#v does not appear to be a Maven POM", entry.Path())
 	}
-	return &pom{Entry: entry}, nil
+	if p, ok := pomCache[entry]; ok {
+		return p, nil
+	}
+	p := &pom{Entry: entry}
+	pomCache[entry] = p
+	return p, nil
 }
 
 type pom struct {
