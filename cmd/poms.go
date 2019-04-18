@@ -8,7 +8,6 @@ import (
 	"github.com/spf13/cobra"
 	"os"
 	"strings"
-	"text/tabwriter"
 )
 
 func init() {
@@ -38,8 +37,6 @@ func init() {
 }
 
 type poms struct {
-	// // Deprecated
-	// listUrls  bool
 	artifacts bool
 	errors    []error
 }
@@ -75,17 +72,10 @@ func (p *poms) List(server jenkins.JenkinsServer) error {
 	table := TableFrom(columns...)
 	table.Print(os.Stdout, "\t")
 
-	if len(p.errors) > 0 {
-		w := tabwriter.NewWriter(os.Stderr, 0, 0, 2, ' ', tabwriter.DiscardEmptyColumns)
-		fmt.Fprintf(w, "%d errors:\n", len(p.errors))
-		for i, err := range p.errors {
-			fmt.Fprintf(w, "%d. %v\n", i+1, err)
-		}
-		w.Flush()
-	}
-
+	PrintErrors(p.errors)
 	return nil
 }
+
 
 func (p *poms) MakeTableColumns(jobs []jenkins.Job, poms []maven.Pom) []TableColumn {
 	if len(jobs) != len(poms) {

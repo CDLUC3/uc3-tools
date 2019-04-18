@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/beevik/etree"
 	. "github.com/dmolesUC3/mrt-build-info/shared"
+	"strings"
 )
 
 type Artifact interface {
@@ -13,6 +14,12 @@ type Artifact interface {
 	Packaging() string
 	Version() string
 }
+
+type ArtifactsByString []Artifact
+
+func (a ArtifactsByString) Len() int           { return len(a) }
+func (a ArtifactsByString) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a ArtifactsByString) Less(i, j int) bool { return strings.Compare(a[i].String(), a[j].String()) < 0 }
 
 var artifactCache = map[artifact]*artifact{}
 

@@ -7,7 +7,6 @@ import (
 	"github.com/spf13/cobra"
 	"os"
 	"strings"
-	"text/tabwriter"
 )
 
 func init() {
@@ -72,15 +71,7 @@ func (j *jobs) List(server jenkins.JenkinsServer) error {
 		table.Print(os.Stdout, "\t")
 	}
 
-	if len(j.errors) > 0 {
-		w := tabwriter.NewWriter(os.Stderr, 0, 0, 2, ' ', tabwriter.DiscardEmptyColumns)
-		fmt.Fprintf(w, "%d errors:\n", len(j.errors))
-		for i, err := range j.errors {
-			fmt.Fprintf(w, "%d. %v\n", i+1, err)
-		}
-		w.Flush()
-	}
-
+	PrintErrors(j.errors)
 	return nil
 }
 
