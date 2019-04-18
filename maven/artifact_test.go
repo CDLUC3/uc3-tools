@@ -25,6 +25,19 @@ func (s *ArtifactSuite) TestRootArtifact(c *C) {
 	c.Check(artifact.Version(), Equals, "1.0-SNAPSHOT")
 }
 
+func (s *ArtifactSuite) TestEquality(c *C) {
+	a1 := GetArtifact("org.cdlib.mrt", "mrt-storepub-src", "jar", "1.0-SNAPSHOT")
+	a2 := GetArtifact("org.cdlib.mrt", "mrt-storepub-src", "jar", "1.0-SNAPSHOT")
+
+	c.Assert(a1 == a2, Equals, true)
+
+	aa1 := a1.(*artifact)
+	aa2 := a2.(*artifact)
+
+	c.Assert(aa1 == aa2, Equals, true)
+	c.Assert(*aa1 == *aa2, Equals, true)
+}
+
 func (s *ArtifactSuite) TestDependencies(c *C) {
 	doc := etree.NewDocument()
 	file := "testdata/pom.xml"

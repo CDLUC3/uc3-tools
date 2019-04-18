@@ -14,6 +14,18 @@ type Artifact interface {
 	Version() string
 }
 
+var artifactCache = map[artifact]*artifact{}
+
+func GetArtifact(groupId string, artifactId string, packaging string, version string) Artifact {
+	arec := artifact{groupId: groupId, artifactId: artifactId, packaging: packaging, version: version}
+	if aptr, ok := artifactCache[arec]; ok {
+		return aptr
+	}
+	aptr := &arec
+	artifactCache[arec] = aptr
+	return aptr
+}
+
 // TODO: something smarter than passing source around
 func RootArtifact(doc *etree.Document, source string) (Artifact, error) {
 	elem := doc.FindElement("/project")
@@ -56,7 +68,7 @@ func (a *artifact) String() string {
 
 // TODO:
 //   - for root, get groupId etc. from parent POMs
-func artifactFrom(elem *etree.Element, source string) (*artifact, error) {
+func artifactFrom(elem *etree.Element, source string) (Artifact, error) {
 	fields := []string{"groupId", "artifactId", "packaging", "version"}
 	values := map[string]string{}
 	for _, f := range fields {
@@ -70,13 +82,7 @@ func artifactFrom(elem *etree.Element, source string) (*artifact, error) {
 		}
 		values[f] = v.Text()
 	}
-	a := artifact{
-		groupId:    values["groupId"],
-		artifactId: values["artifactId"],
-		packaging:  values["packaging"],
-		version:    values["version"],
-	}
-	return &a, nil
+	return GetArtifact(values["groupId"], values["artifactId"], values["packaging"], values["version"]), nil
 }
 
 func (a *artifact) GroupId() string {

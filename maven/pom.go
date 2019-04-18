@@ -12,6 +12,7 @@ var pomCache = map[git.Entry]Pom{}
 type Pom interface {
 	fmt.Stringer
 	Artifact() (Artifact, error)
+	Dependencies() ([]Artifact, error)
 	Path() string
 	Repository() git.Repository
 	URL() *url.URL
@@ -35,6 +36,8 @@ func PomFromEntry(entry git.Entry) (Pom, error) {
 type pom struct {
 	git.Entry
 	doc *etree.Document
+
+	dependencies []Artifact
 }
 
 func (p *pom) String() string {
@@ -84,4 +87,19 @@ func (p *pom) Artifact() (Artifact, error) {
 		return nil, err
 	}
 	return RootArtifact(doc, p.String())
+}
+
+func (p *pom) Dependencies() ([]Artifact, error) {
+	if p.dependencies == nil {
+		doc, err := p.document()
+		if err != nil {
+			return nil, err
+		}
+		deps, err := Dependencies(doc, p.Path())
+		if err != nil {
+			return nil, err
+		}
+		p.dependencies = deps
+	}
+	return p.dependencies, nil
 }

@@ -96,7 +96,7 @@ func (b *build) Artifacts() ([]maven.Artifact, error) {
 			moduleRecords := b.MavenArtifacts.ModuleRecords
 			artifacts := make([]maven.Artifact, len(moduleRecords))
 			for i, r := range moduleRecords {
-				artifacts[i] = r.MainArtifact
+				artifacts[i] = r.MainArtifact.ToArtifact()
 			}
 			b.artifacts = artifacts
 		}
@@ -155,33 +155,17 @@ type branch struct {
 }
 
 // ------------------------------------------------------------
-// Maven artifact information
+// Maven jsonArtifact information
 
-type artifact struct {
-	GroupId_    string `json:"groupId"`
-	ArtifactId_ string `json:"artifactId"`
-	Type        string `json:"type"`
-	Version_    string `json:"version"`
+type jsonArtifact struct {
+	GroupId    string `json:"groupId"`
+	ArtifactId string `json:"artifactId"`
+	Type       string `json:"type"`
+	Version    string `json:"version"`
 }
 
-func (a *artifact) String() string {
-	return maven.ArtifactToString(a)
-}
-
-func (a *artifact) GroupId() string {
-	return a.GroupId_
-}
-
-func (a *artifact) ArtifactId() string {
-	return a.ArtifactId_
-}
-
-func (a *artifact) Packaging() string {
-	return a.Type
-}
-
-func (a *artifact) Version() string {
-	return a.Version_
+func (j jsonArtifact) ToArtifact() maven.Artifact {
+	return maven.GetArtifact(j.GroupId, j.ArtifactId, j.Type, j.Version)
 }
 
 type mavenArtifacts struct {
@@ -189,6 +173,6 @@ type mavenArtifacts struct {
 }
 
 type moduleRecord struct {
-	MainArtifact *artifact
-	POMArtifact  *artifact
+	MainArtifact *jsonArtifact
+	POMArtifact  *jsonArtifact
 }
