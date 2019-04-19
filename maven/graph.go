@@ -57,7 +57,7 @@ func (g *graph) DependenciesOf(artifact Artifact) (deps []Artifact) {
 func (g *graph) DependenciesOn(artifact Artifact) (deps []Artifact) {
 	if depsToArtifact, ok := g.depsByTo[artifact]; ok {
 		for _, d := range depsToArtifact {
-			deps = append(deps, d.toArtifact)
+			deps = append(deps, d.fromArtifact)
 		}
 	}
 	return deps
