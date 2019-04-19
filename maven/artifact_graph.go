@@ -16,9 +16,10 @@ type ArtifactGraph interface {
 	DependenciesOf(artifact Artifact) (deps []Artifact)
 	DependenciesOn(artifact Artifact) (deps []Artifact)
 	PomForArtifact(artifact Artifact) Pom
+	Poms() []Pom
 }
 
-func NewGraph(poms []Pom) (ArtifactGraph, []error) {
+func NewArtifactGraph(poms []Pom) (ArtifactGraph, []error) {
 	//noinspection GoUnhandledErrorResult
 	if Flags.Verbose {
 		fmt.Fprintf(os.Stderr, "Determining artifact dependencies for %d poms...\n", len(poms))

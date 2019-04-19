@@ -10,6 +10,8 @@ import (
 	"os"
 )
 
+// TODO: rewrite to use new graph types
+
 func init() {
 	deps := &deps{}
 
@@ -70,7 +72,7 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 		}
 	}
 
-	graph, errors := maven.NewGraph(poms)
+	graph, errors := maven.NewArtifactGraph(poms)
 	d.errors = append(d.errors, errors...)
 
 	artifacts := graph.SortedArtifacts()

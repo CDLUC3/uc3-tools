@@ -3,10 +3,12 @@ package jenkins
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/dmolesUC3/mrt-build-info/shared"
+	. "github.com/dmolesUC3/mrt-build-info/maven"
+	. "github.com/dmolesUC3/mrt-build-info/shared"
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"os"
 	"regexp"
 	"strings"
 	"time"
@@ -34,12 +36,40 @@ func Parameters(str string) []string {
 // ------------------------------------------------------------
 // Unexported symbols
 
+func mapPomsToJobs(jobs []Job) (map[Pom]Job, []error) {
+	//noinspection GoUnhandledErrorResult
+	if Flags.Verbose {
+		fmt.Fprintf(os.Stderr, "Retrieving POMs for %d jobs...", len(jobs))
+		defer func() { fmt.Fprintln(os.Stderr, "Done.") }()
+	}
+
+	var errors []error
+	jobsByPom := map[Pom]Job{}
+	for _, j := range jobs {
+		//noinspection GoUnhandledErrorResult
+		if Flags.Verbose {
+			fmt.Fprint(os.Stderr, ".")
+		}
+		poms, errs := j.POMs()
+		if len(errs) > 0 {
+			errors = append(errors, errs...)
+		}
+		if len(poms) == 0 {
+			errors = append(errors, fmt.Errorf("no POMs found for job %v", j.Name()))
+		}
+		for _, p := range poms {
+			jobsByPom[p] = j
+		}
+	}
+	return jobsByPom, errors
+}
+
 var inTest = false
 var client *http.Client
-var apiUrlRelative = shared.UrlMustParse("api/json?depth=1&pretty=true")
+var apiUrlRelative = UrlMustParse("api/json?depth=1&pretty=true")
 var apiUrlRegexp = regexp.MustCompile("/api/json(\\?.+)?$")
 
-var configUrlRelative = shared.UrlMustParse("config.xml")
+var configUrlRelative = UrlMustParse("config.xml")
 var configUrlRegexp = regexp.MustCompile("/config.xml")
 
 var paramSubRe = regexp.MustCompile("\\${([^}]+)}")

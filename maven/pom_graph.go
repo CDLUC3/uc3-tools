@@ -7,6 +7,13 @@ import (
 )
 
 type PomGraph interface {
+	Poms() []Pom
+	DependenciesOf(pom Pom) (deps []Pom)
+	DependenciesOn(pom Pom) (deps []Pom)
+}
+
+func NewPomGraph(agraph ArtifactGraph) PomGraph {
+	return &pomGraph{artifactGraph: agraph}
 }
 
 type pomDep struct {
@@ -20,6 +27,10 @@ type pomGraph struct {
 	allDeps    []pomDep
 	depsByFrom map[Pom][]pomDep
 	depsByTo   map[Pom][]pomDep
+}
+
+func (g *pomGraph) Poms() []Pom {
+	return g.artifactGraph.Poms()
 }
 
 func (g *pomGraph) DependenciesOf(pom Pom) (deps []Pom) {
@@ -82,6 +93,9 @@ func (g *pomGraph) deps() (allDeps []pomDep, depsByFrom map[Pom][]pomDep, depsBy
 				depsByTo[toPom] = append(toDeps, dep)
 			}
 		}
+		g.allDeps = allDeps
+		g.depsByFrom = depsByFrom
+		g.depsByTo = depsByTo
 	}
 	return g.allDeps, g.depsByFrom, g.depsByTo
 }
