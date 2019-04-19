@@ -39,7 +39,6 @@ func init() {
 	cmd.Flags().BoolVar(&jobs.configXML, "config-xml", false, "show Jenkins config.xml URLs")
 	cmd.Flags().BoolVar(&jobs.poms, "poms", false, "show POMs")
 
-	cmd.Flags().StringVarP(&Flags.Job, "job", "j", "", "show info only for specified job")
 	AddCommand(cmd)
 }
 

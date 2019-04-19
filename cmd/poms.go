@@ -35,7 +35,6 @@ func init() {
 	cmd.Flags().BoolVarP(&poms.deps, "deps", "d", false, "list POM dependencies")
 	cmd.Flags().BoolVarP(&maven.POMURLs, "pom-urls", "u", false, "list URL used to retrieve POM file")
 
-	cmd.Flags().StringVarP(&Flags.Job, "job", "j", "", "show info only for specified job")
 	AddCommand(cmd)
 }
 
@@ -74,8 +73,8 @@ func (p *poms) List(server jenkins.JenkinsServer) error {
 		}
 	}
 
-	columns := p.MakeTableColumns(jobs, poms)
-	table := TableFrom(columns...)
+	cols := p.MakeTableColumns(jobs, poms)
+	table := TableFrom(cols...)
 	table.Print(os.Stdout, "\t")
 
 	PrintErrors(p.errors)
