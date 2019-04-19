@@ -61,7 +61,7 @@ func (t *table) ValueAt(row, col int) string {
 //noinspection GoUnhandledErrorResult
 func (t *table) Print(w io.Writer, sep string) {
 	if Flags.Verbose && !Flags.TSV {
-		fmt.Fprintf(os.Stderr, "Formatting %d rows", t.Rows())
+		fmt.Fprintf(os.Stderr, "Formatting %d rows\n", t.Rows())
 	}
 
 	var out *bufio.Writer

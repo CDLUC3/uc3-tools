@@ -10,8 +10,6 @@ import (
 
 // TODO: 'find' command (by job, artifactId, ...?)
 
-const valueUnknown = "(unknown)"
-
 var rootCmd = &cobra.Command{
 	Use:   "mrt-build-info",
 	Short: "Merritt build info",

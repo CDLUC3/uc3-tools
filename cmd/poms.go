@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/cmd/columns"
 	"github.com/dmolesUC3/mrt-build-info/jenkins"
 	"github.com/dmolesUC3/mrt-build-info/maven"
 	. "github.com/dmolesUC3/mrt-build-info/shared"
@@ -86,32 +87,23 @@ func (p *poms) MakeTableColumns(jobs []jenkins.Job, poms []maven.Pom) []TableCol
 	if len(jobs) != len(poms) {
 		panic(fmt.Errorf("mismatched jobs (%d) and poms(%d)", len(jobs), len(poms)))
 	}
-	rows := len(jobs)
-
-	columns := []TableColumn{
-		NewTableColumn("Job", rows, func(row int) string {
-			return jobs[row].Name()
-		}),
-		NewTableColumn("POM", rows, func(row int) string {
-			return poms[row].Path()
-		}),
-	}
+	cols := []TableColumn{columns.Job(jobs), columns.Pom(poms), }
 	if maven.POMURLs {
-		columns = append(columns, NewTableColumn("POM Blob URL", rows, func(row int) string {
+		cols = append(cols, NewTableColumn("POM Blob URL", len(jobs), func(row int) string {
 			url := poms[row].BlobURL()
 			if url == nil {
-				return valueUnknown
+				return columns.ValueUnknown
 			}
 			return url.String()
 		}))
 	}
 	if p.artifacts {
-		columns = append(columns, NewTableColumn("Artifacts", rows, func(row int) string {
+		cols = append(cols, NewTableColumn("Artifacts", len(jobs), func(row int) string {
 			return p.ArtifactInfo(jobs[row], poms[row])
 		}))
 	}
 	if p.deps {
-		columns = append(columns, NewTableColumn("Dependencies", rows, func(row int) string {
+		cols = append(cols, NewTableColumn("Dependencies", len(jobs), func(row int) string {
 			deps, errs := poms[row].Dependencies()
 			if errs != nil {
 				p.errors = append(p.errors, errs...)
@@ -121,7 +113,7 @@ func (p *poms) MakeTableColumns(jobs []jenkins.Job, poms []maven.Pom) []TableCol
 		}))
 	}
 
-	return columns
+	return cols
 }
 
 func (p *poms) ArtifactInfo(job jenkins.Job, pom maven.Pom) string {

@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/cmd/columns"
 	"github.com/dmolesUC3/mrt-build-info/jenkins"
 	"github.com/dmolesUC3/mrt-build-info/maven"
 	. "github.com/dmolesUC3/mrt-build-info/shared"
@@ -63,13 +64,13 @@ func (j *jobs) List(server jenkins.JenkinsServer) error {
 		return err
 	}
 
-	columns := j.MakeTableColumns(jobs)
-	if len(columns) == 1 {
-		for row, rowCount := 0, columns[0].Rows(); row < rowCount; row++ {
-			fmt.Println(columns[0].ValueAt(row))
+	cols := j.MakeTableColumns(jobs)
+	if len(cols) == 1 {
+		for row, rowCount := 0, cols[0].Rows(); row < rowCount; row++ {
+			fmt.Println(cols[0].ValueAt(row))
 		}
 	} else {
-		table := TableFrom(columns...)
+		table := TableFrom(cols...)
 		table.Print(os.Stdout, "\t")
 	}
 
@@ -78,33 +79,29 @@ func (j *jobs) List(server jenkins.JenkinsServer) error {
 }
 
 func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
-	columns := []TableColumn{
-		NewTableColumn("Job Name", len(jobs), func(row int) string {
-			return jobs[row].Name()
-		}),
-	}
+	cols := []TableColumn{columns.Job(jobs)}
 	if j.apiUrl {
-		columns = append(columns, NewTableColumn(
+		cols = append(cols, NewTableColumn(
 			"API Url", len(jobs), func(row int) string {
 				apiUrl := jobs[row].APIUrl()
 				if apiUrl == nil {
-					return valueUnknown
+					return columns.ValueUnknown
 				}
 				return apiUrl.String()
 			}))
 	}
 	if j.configXML {
-		columns = append(columns, NewTableColumn(
+		cols = append(cols, NewTableColumn(
 			"config.xml", len(jobs), func(row int) string {
 				configUrl := jobs[row].ConfigUrl()
 				if configUrl == nil {
-					return valueUnknown
+					return columns.ValueUnknown
 				}
 				return configUrl.String()
 			}))
 	}
 	if j.parameters {
-		columns = append(columns, NewTableColumn(
+		cols = append(cols, NewTableColumn(
 			"Parameters", len(jobs), func(row int) string {
 				var allParamInfo []string
 				for _, p := range jobs[row].Parameters() {
@@ -115,25 +112,25 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 			}))
 	}
 	if j.repo {
-		columns = append(columns, NewTableColumn(
+		cols = append(cols, NewTableColumn(
 			"Repository", len(jobs), func(row int) string {
 				scmUrl, err := jobs[row].SCMUrl()
 				if err != nil {
 					j.errors = append(j.errors, err)
-					return valueUnknown
+					return columns.ValueUnknown
 				}
 				return scmUrl
 			}))
 	}
 	if j.poms {
-		columns = append(columns, NewTableColumn(
+		cols = append(cols, NewTableColumn(
 			"POMs", len(jobs), func(row int) string {
 				poms, errs := jobs[row].POMs()
 				if len(errs) > 0 {
 					j.errors = append(j.errors, errs...)
 				}
 				if len(poms) == 0 {
-					return valueUnknown
+					return columns.ValueUnknown
 				}
 				var allPomInfo []string
 				for _, p := range poms {
@@ -143,37 +140,37 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 			}))
 	}
 	if j.build {
-		columns = append(columns, NewTableColumn(
+		cols = append(cols, NewTableColumn(
 			"Last Success", len(jobs), func(row int) string {
 				b, err := jobs[row].LastSuccess()
 				if err != nil {
 					j.errors = append(j.errors, err)
-					return valueUnknown
+					return columns.ValueUnknown
 				}
 				return fmt.Sprintf("%d", b.BuildNumber())
 			}))
-		columns = append(columns, NewTableColumn(
+		cols = append(cols, NewTableColumn(
 			"SHA Hash", len(jobs), func(row int) string {
 				b, err := jobs[row].LastSuccess()
 				if err != nil {
 					j.errors = append(j.errors, err)
-					return valueUnknown
+					return columns.ValueUnknown
 				}
 				sha1, err := b.SHA1()
 				if err != nil {
 					j.errors = append(j.errors, err)
-					return valueUnknown
+					return columns.ValueUnknown
 				}
 				return sha1.String()
 			}))
 	}
 	if j.artifacts {
-		columns = append(columns, NewTableColumn(
+		cols = append(cols, NewTableColumn(
 			"Last Artifacts", len(jobs), func(row int) string {
 				b, err := jobs[row].LastSuccess()
 				if err != nil {
 					j.errors = append(j.errors, err)
-					return valueUnknown
+					return columns.ValueUnknown
 				}
 				artifacts, err := b.Artifacts()
 				if len(artifacts) == 0 {
@@ -182,5 +179,6 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 				return maven.ArtifactsByString(artifacts).String()
 			}))
 	}
-	return columns
+	return cols
 }
+

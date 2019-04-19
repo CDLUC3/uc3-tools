@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/cmd/columns"
 	"github.com/dmolesUC3/mrt-build-info/jenkins"
 	"github.com/dmolesUC3/mrt-build-info/maven"
 	. "github.com/dmolesUC3/mrt-build-info/shared"
@@ -37,6 +38,7 @@ type deps struct {
 	errors []error
 }
 
+// TODO: clean this up, move most of it somewhere (Jenkins package?)
 //noinspection GoUnhandledErrorResult
 func (d *deps) List(server jenkins.JenkinsServer) error {
 	if Flags.Verbose {
@@ -50,8 +52,9 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 	if Flags.Verbose {
 		fmt.Fprintln(os.Stderr, "Retreiving POMs...")
 	}
-	jobsByPom := map[maven.Pom]jenkins.Job{}
+	var jobs []jenkins.Job
 	var poms []maven.Pom
+	jobsByPom := map[maven.Pom]jenkins.Job{}
 	for _, j := range allJobs {
 		if Flags.Job != "" && j.Name() != Flags.Job {
 			continue
@@ -64,8 +67,9 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 			d.errors = append(d.errors, fmt.Errorf("no POMs found for job %v", j.Name()))
 		}
 		for _, p := range jobPoms {
-			jobsByPom[p] = j
+			jobs = append(jobs, j)
 			poms = append(poms, p)
+			jobsByPom[p] = j
 		}
 	}
 
@@ -80,28 +84,101 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 	}
 	artifacts := graph.SortedArtifacts()
 
-	// TODO: prettier output
-	// TODO: job deps vs pom deps
-	for _, artifact := range artifacts {
-		fmt.Println(artifact.String())
+	allInfo := map[maven.Artifact]*artifactInfo{}
+	infoFor := func(artifact maven.Artifact) *artifactInfo {
+		var info *artifactInfo
+		var ok bool
+		if info, ok = allInfo[artifact]; !ok {
+			pom := graph.PomForArtifact(artifact)
+			info = &artifactInfo{job: jobsByPom[pom], pom: pom, artifact: artifact}
+			allInfo[artifact] = info
+		}
+		return info
+	}
 
-		requires := graph.DependenciesOf(artifact)
-		if len(requires) > 0 {
-			fmt.Printf("- Requires %d\n", len(requires))
-			for _, r := range requires {
-				fmt.Printf("  - %v\n", r)
-			}
+	var rows []depRow
+
+	// TODO: table
+	// TODO: job deps vs pom deps
+	for _, art := range artifacts {
+		artInfo := infoFor(art)
+
+		requires := graph.DependenciesOf(art)
+		requiredBy := graph.DependenciesOn(art)
+
+		artRows := 1
+		if len(requires) > artRows {
+			artRows = len(requires)
+		}
+		if len(requiredBy) > artRows {
+			artRows = len(requiredBy)
 		}
 
-		requiredBy := graph.DependenciesOn(artifact)
-		if len(requiredBy) > 0 {
-			fmt.Printf("- Required by %d\n", len(requiredBy))
-			for _, r := range requiredBy {
-				fmt.Printf("  - %v\n", r)
+		for i := 0; i < artRows; i++ {
+			row := depRow{artifact: artInfo}
+			if i < len(requires) {
+				row.requires = infoFor(requires[i])
 			}
+			if i < len(requiredBy) {
+				row.requiredBy = infoFor(requiredBy[i])
+			}
+			rows = append(rows, row)
 		}
 	}
 
+	cols := makeTableColumns(rows)
+	table := TableFrom(cols...)
+	table.Print(os.Stdout, "\t")
+
 	PrintErrors(d.errors)
 	return nil
+}
+
+type artifactInfo struct {
+	job      jenkins.Job
+	pom      maven.Pom
+	artifact maven.Artifact
+}
+
+func (a *artifactInfo) Job() jenkins.Job {
+	if a == nil {
+		return nil
+	}
+	return a.job
+}
+
+func (a *artifactInfo) Pom() maven.Pom {
+	if a == nil {
+		return nil
+	}
+	return a.pom
+}
+
+func (a *artifactInfo) Artifact() maven.Artifact {
+	if a == nil {
+		return nil
+	}
+	return a.artifact
+}
+
+type depRow struct {
+	artifact   *artifactInfo
+	requires   *artifactInfo
+	requiredBy *artifactInfo
+}
+
+func makeTableColumns(rows []depRow) []TableColumn {
+	return []TableColumn{
+		columns.Jobs(func(row int) jenkins.Job { return rows[row].artifact.Job() }, len(rows)),
+		columns.Poms(func(row int) maven.Pom { return rows[row].artifact.Pom() }, len(rows)),
+		columns.Artifacts(func(row int) maven.Artifact { return rows[row].artifact.Artifact() }, len(rows)),
+
+		columns.Jobs(func(row int) jenkins.Job { return rows[row].requires.Job() }, len(rows)),
+		columns.Poms(func(row int) maven.Pom { return rows[row].requires.Pom() }, len(rows)),
+		columns.Artifacts(func(row int) maven.Artifact { return rows[row].requires.Artifact() }, len(rows)),
+
+		columns.Jobs(func(row int) jenkins.Job { return rows[row].requiredBy.Job() }, len(rows)),
+		columns.Poms(func(row int) maven.Pom { return rows[row].requiredBy.Pom() }, len(rows)),
+		columns.Artifacts(func(row int) maven.Artifact { return rows[row].requiredBy.Artifact() }, len(rows)),
+	}
 }
