@@ -56,10 +56,12 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 		if Flags.Job != "" && j.Name() != Flags.Job {
 			continue
 		}
-		jobPoms, err := j.POMs()
-		if err != nil {
-			d.errors = append(d.errors, err)
-			continue
+		jobPoms, errs := j.POMs()
+		if len(errs) > 0 {
+			d.errors = append(d.errors, errs...)
+		}
+		if len(jobPoms) == 0 {
+			d.errors = append(d.errors, fmt.Errorf("no POMs found for job %v", j.Name()))
 		}
 		for _, p := range jobPoms {
 			jobsByPom[p] = j
@@ -84,15 +86,19 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 		fmt.Println(artifact.String())
 
 		requires := graph.DependenciesOf(artifact)
-		fmt.Printf("- Requires %d\n", len(requires))
-		for _, r := range requires {
-			fmt.Printf("  - %v\n", r)
+		if len(requires) > 0 {
+			fmt.Printf("- Requires %d\n", len(requires))
+			for _, r := range requires {
+				fmt.Printf("  - %v\n", r)
+			}
 		}
 
 		requiredBy := graph.DependenciesOn(artifact)
-		fmt.Printf("- Required by %d\n", len(requiredBy))
-		for _, r := range requiredBy {
-			fmt.Printf("  - %v\n", r)
+		if len(requiredBy) > 0 {
+			fmt.Printf("- Required by %d\n", len(requiredBy))
+			for _, r := range requiredBy {
+				fmt.Printf("  - %v\n", r)
+			}
 		}
 	}
 

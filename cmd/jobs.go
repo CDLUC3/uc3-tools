@@ -38,6 +38,7 @@ func init() {
 	cmd.Flags().BoolVar(&jobs.configXML, "config-xml", false, "show Jenkins config.xml URLs")
 	cmd.Flags().BoolVar(&jobs.poms, "poms", false, "show POMs")
 
+	cmd.Flags().StringVarP(&Flags.Job, "job", "j", "", "show info only for specified job")
 	AddCommand(cmd)
 }
 
@@ -127,9 +128,11 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 	if j.poms {
 		columns = append(columns, NewTableColumn(
 			"POMs", len(jobs), func(row int) string {
-				poms, err := jobs[row].POMs()
-				if err != nil {
-					j.errors = append(j.errors, err)
+				poms, errs := jobs[row].POMs()
+				if len(errs) > 0 {
+					j.errors = append(j.errors, errs...)
+				}
+				if len(poms) == 0 {
 					return valueUnknown
 				}
 				var allPomInfo []string

@@ -34,6 +34,7 @@ func init() {
 	cmd.Flags().BoolVarP(&poms.deps, "deps", "d", false, "list POM dependencies")
 	cmd.Flags().BoolVarP(&maven.POMURLs, "pom-urls", "u", false, "list URL used to retrieve POM file")
 
+	cmd.Flags().StringVarP(&Flags.Job, "job", "j", "", "show info only for specified job")
 	AddCommand(cmd)
 }
 
@@ -59,10 +60,12 @@ func (p *poms) List(server jenkins.JenkinsServer) error {
 		if Flags.Job != "" && j.Name() != Flags.Job {
 			continue
 		}
-		jobPoms, err := j.POMs()
-		if err != nil {
-			p.errors = append(p.errors, err)
-			continue
+		jobPoms, errs := j.POMs()
+		if len(errs) > 0 {
+			p.errors = append(p.errors, errs...)
+		}
+		if len(jobPoms) == 0 {
+			p.errors = append(p.errors, fmt.Errorf("no POMs found for job %v", j.Name()))
 		}
 		for _, p := range jobPoms {
 			jobs = append(jobs, j)

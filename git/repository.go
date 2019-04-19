@@ -8,7 +8,6 @@ import (
 	"golang.org/x/oauth2"
 	"net/http"
 	"net/url"
-	"os"
 	"regexp"
 	"strings"
 )
@@ -21,7 +20,7 @@ type Repository interface {
 	Name() string
 	URL() *url.URL
 	SHA1() SHA1
-	Find(pattern string, entryType EntryType) ([]Entry, error)
+	Find(pattern string, entryType EntryType) (entries []Entry, errors []error)
 
 	// Unexported symbols
 	GetEntry(path string, sha1 SHA1, eType EntryType, size int, u *url.URL) Entry
@@ -92,13 +91,6 @@ func (r *repository) URL() *url.URL {
 }
 
 func (r *repository) GetEntry(path string, sha1 SHA1, eType EntryType, size int, u *url.URL) Entry {
-	urlPath := strings.ToLower(u.Path)
-	prefix := strings.ToLower(fmt.Sprintf("/repos/%v/%v/", r.owner, r.repo))
-	if !strings.HasPrefix(urlPath, prefix) {
-		msg := fmt.Sprintf("entry URL %v does not appear to belong to repository %v/%v (repo moved?)", u, r.owner, r.repo)
-		_, _ = fmt.Fprintln(os.Stderr, msg)
-	}
-
 	if r.entries == nil {
 		r.entries = map[string]map[SHA1]Entry{}
 	}
@@ -128,21 +120,24 @@ func (r *repository) Tree() (*github.Tree, error) {
 	return r.tree, nil
 }
 
-func (r *repository) Find(pattern string, entryType EntryType) ([]Entry, error) {
+func (r *repository) Find(pattern string, entryType EntryType) ([]Entry, []error) {
+
 	re, err := regexp.Compile(pattern)
 	if err != nil {
-		return nil, err
+		return nil, []error{err}
 	}
 
 	tree, err := r.Tree()
 	if err != nil {
-		return nil, err
+		return nil, []error{err}
 	}
 	if tree.GetTruncated() {
-		return nil, fmt.Errorf("repository %v/%v has too many files to return as a flat list", r.owner, r.repo)
+		err := fmt.Errorf("repository %v/%v has too many files to return as a flat list", r.owner, r.repo)
+		return nil, []error{err}
 	}
 
 	var entries []Entry
+	var errors []error
 	for _, e := range tree.Entries {
 		eType := GetEntryType(e)
 		if eType != entryType {
@@ -154,12 +149,18 @@ func (r *repository) Find(pattern string, entryType EntryType) ([]Entry, error) 
 		}
 		u, err := url.Parse(e.GetURL())
 		if err != nil {
-			return entries, err
+			errors = append(errors, err)
+		} else {
+			entry := r.GetEntry(path, SHA1(e.GetSHA()), eType, e.GetSize(), u)
+			if !r.isThisRepo(entry.URL()) {
+				err := fmt.Errorf("entry URL %v does not appear to belong to repository %v/%v (repo moved?)", entry.URL(), r.owner, r.repo)
+				errors = append(errors, err)
+			}
+			entries = append(entries, entry)
 		}
-		entries = append(entries, r.GetEntry(path, SHA1(e.GetSHA()), eType, e.GetSize(), u))
 	}
 
-	return entries, nil
+	return entries, errors
 }
 
 func (r *repository) Context() context.Context {
@@ -189,3 +190,13 @@ func (r *repository) GitHubClient() *github.Client {
 	}
 	return r.githubClient
 }
+
+func (r *repository) isThisRepo(entryUrl *url.URL) bool {
+	urlPath := strings.ToLower(entryUrl.Path)
+	prefix := strings.ToLower(fmt.Sprintf("/repos/%v/%v/", r.owner, r.repo))
+	if !strings.HasPrefix(urlPath, prefix) {
+		return false
+	}
+	return true
+}
+

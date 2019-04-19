@@ -23,7 +23,7 @@ type Job interface {
 	ParameterNames() []string
 	MavenParamToValue() (map[string]string, error)
 	Repository() (git.Repository, error)
-	POMs() ([]maven.Pom, error)
+	POMs() (poms []maven.Pom, errors []error)
 }
 
 // ------------------------------------------------------------
@@ -40,8 +40,8 @@ type job struct {
 	apiUrl     *url.URL
 	configUrl  *url.URL
 
-	config Config
-	repo git.Repository
+	config   Config
+	repo     git.Repository
 	repoPOMs []maven.Pom
 }
 
@@ -132,35 +132,41 @@ func (j *job) Repository() (git.Repository, error) {
 	return j.repo, nil
 }
 
-func (j *job) POMs() ([]maven.Pom, error) {
+func (j *job) POMs() ([]maven.Pom, []error) {
+	var errors []error
 	if j.repoPOMs == nil {
 		repo, err := j.Repository()
 		if err != nil {
-			return nil, err
-		}
-		entries, err := repo.Find("pom.xml$", git.Blob)
-		if err != nil {
-			return nil, err
+			return nil, []error{err}
 		}
 		config, err := j.Config()
 		if err != nil {
-			return nil, err
+			return nil, []error{err}
 		}
+
+		pattern := "pom.xml$"
 		buildRoot := config.BuildRoot()
+		if buildRoot == "" {
+		} else {
+			pattern = fmt.Sprintf("^%v/.*%v", buildRoot, pattern)
+		}
+
+		entries, errs := repo.Find(pattern, git.Blob)
+		errors = append(errors, errs...)
+
 		var poms []maven.Pom
 		for _, entry := range entries {
-			// Exclude repo POMs not below build root
-			if strings.HasPrefix(entry.Path(), buildRoot) {
-				pom, err := maven.PomFromEntry(entry)
-				if err != nil {
-					return nil, err
-				}
+			pom, err := maven.PomFromEntry(entry)
+			if err != nil {
+				errors = append(errors, err)
+			}
+			if pom != nil {
 				poms = append(poms, pom)
 			}
 		}
 		j.repoPOMs = poms
 	}
-	return j.repoPOMs, nil
+	return j.repoPOMs, errors
 }
 
 func (j *job) ConfigUrl() *url.URL {
