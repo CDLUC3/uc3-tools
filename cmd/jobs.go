@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/dmolesUC3/mrt-build-info/jenkins"
+	"github.com/dmolesUC3/mrt-build-info/maven"
 	. "github.com/dmolesUC3/mrt-build-info/shared"
 	"github.com/spf13/cobra"
 	"os"
@@ -175,11 +176,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 				if len(artifacts) == 0 {
 					return "(no artifacts)"
 				}
-				var allArtifactInfo []string
-				for _, a := range artifacts {
-					allArtifactInfo = append(allArtifactInfo, a.String())
-				}
-				return strings.Join(allArtifactInfo, ", ")
+				return maven.ArtifactsByString(artifacts).String()
 			}))
 	}
 	return columns

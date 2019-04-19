@@ -109,17 +109,12 @@ func (p *poms) MakeTableColumns(jobs []jenkins.Job, poms []maven.Pom) []TableCol
 	}
 	if p.deps {
 		columns = append(columns, NewTableColumn("Dependencies", rows, func(row int) string {
-			deps, err := poms[row].Dependencies()
-			if err != nil {
-				p.errors = append(p.errors, err)
+			deps, errs := poms[row].Dependencies()
+			if errs != nil {
+				p.errors = append(p.errors, errs...)
 				return ""
 			}
-			// TODO: add a method to do this for any []Artifact
-			depInfo := make([]string, len(deps))
-			for i, dep := range deps {
-				depInfo[i] = dep.String()
-			}
-			return strings.Join(depInfo, ", ")
+			return maven.ArtifactsByString(deps).String()
 		}))
 	}
 

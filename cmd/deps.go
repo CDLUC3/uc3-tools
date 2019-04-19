@@ -7,7 +7,6 @@ import (
 	. "github.com/dmolesUC3/mrt-build-info/shared"
 	"github.com/spf13/cobra"
 	"os"
-	"strings"
 )
 
 func init() {
@@ -85,20 +84,16 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 		fmt.Println(artifact.String())
 
 		requires := graph.DependenciesOf(artifact)
-		requiresStr := make([]string, len(requires))
-		for i, r := range requires {
-			requiresStr[i] = r.String()
+		fmt.Printf("- Requires %d\n", len(requires))
+		for _, r := range requires {
+			fmt.Printf("  - %v\n", r)
 		}
 
-		// TODO: figure out why this is always empty
 		requiredBy := graph.DependenciesOn(artifact)
-		requiredByStr := make([]string, len(requiredBy))
-		for i, r := range requiredBy {
-			requiredByStr[i] = r.String()
+		fmt.Printf("- Required by %d\n", len(requiredBy))
+		for _, r := range requiredBy {
+			fmt.Printf("  - %v\n", r)
 		}
-
-		fmt.Printf("\tRequires:    %v\n", strings.Join(requiresStr, ", "))
-		fmt.Printf("\tRequired by: %v\n", strings.Join(requiredByStr, ", "))
 	}
 
 	PrintErrors(d.errors)

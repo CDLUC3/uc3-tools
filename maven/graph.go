@@ -2,8 +2,6 @@ package maven
 
 import (
 	"fmt"
-	"github.com/dmolesUC3/mrt-build-info/shared"
-	"os"
 	"sort"
 )
 
@@ -109,11 +107,8 @@ func dependencies(allPoms []Pom, pomsByArtifact map[Artifact]Pom) (depsByFrom ma
 			errors = append(errors, err)
 			continue
 		}
-		pomDeps, err := pom.Dependencies()
-		if err != nil {
-			errors = append(errors, err)
-			continue
-		}
+		pomDeps, depErrs := pom.Dependencies()
+		errors = append(errors, depErrs...)
 
 		for _, toArtifact := range pomDeps {
 			var ok bool

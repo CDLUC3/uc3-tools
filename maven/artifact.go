@@ -21,6 +21,14 @@ func (a ArtifactsByString) Len() int           { return len(a) }
 func (a ArtifactsByString) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a ArtifactsByString) Less(i, j int) bool { return strings.Compare(a[i].String(), a[j].String()) < 0 }
 
+func (a ArtifactsByString) String() string {
+	info := make([]string, len(a))
+	for i, dep := range a {
+		info[i] = dep.String()
+	}
+	return strings.Join(info, ", ")
+}
+
 var artifactCache = map[artifact]*artifact{}
 
 func GetArtifact(groupId string, artifactId string, packaging string, version string) Artifact {
@@ -31,28 +39,6 @@ func GetArtifact(groupId string, artifactId string, packaging string, version st
 	aptr := &arec
 	artifactCache[arec] = aptr
 	return aptr
-}
-
-// TODO: something smarter than passing source around
-func RootArtifact(doc *etree.Document, source string) (Artifact, error) {
-	elem := doc.FindElement("/project")
-	if elem == nil {
-		return nil, fmt.Errorf("<project> not found in " + source)
-	}
-	return artifactFrom(elem, source)
-}
-
-// TODO: something smarter than passing source around
-func Dependencies(doc *etree.Document, source string) ([]Artifact, error) {
-	var artifacts []Artifact
-	for _, elem := range doc.FindElements("/project/dependencies/dependency") {
-		a, err := artifactFrom(elem, source)
-		if err != nil {
-			return nil, err
-		}
-		artifacts = append(artifacts, a)
-	}
-	return artifacts, nil
 }
 
 func ArtifactToString(a Artifact) string {
@@ -75,7 +61,7 @@ func (a *artifact) String() string {
 
 // TODO:
 //   - for root, get groupId etc. from parent POMs
-func artifactFrom(elem *etree.Element, source string) (Artifact, error) {
+func artifactFrom(elem *etree.Element) (Artifact, error) {
 	fields := []string{"groupId", "artifactId", "packaging", "version"}
 	values := map[string]string{}
 	for _, f := range fields {
@@ -85,7 +71,7 @@ func artifactFrom(elem *etree.Element, source string) (Artifact, error) {
 				values[f] = "jar" // treat as default
 				continue
 			}
-			return nil, fmt.Errorf("<%s> not found in %v", f, source)
+			return nil, fmt.Errorf("<%s> not found", f)
 		}
 		values[f] = v.Text()
 	}
