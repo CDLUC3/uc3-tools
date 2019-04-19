@@ -6,6 +6,7 @@ import (
 	"github.com/dmolesUC3/mrt-build-info/git"
 	"net/url"
 	"sort"
+	"strings"
 )
 
 var pomCache = map[git.Entry]Pom{}
@@ -22,6 +23,11 @@ type Pom interface {
 	// Deprecated
 	FormatInfo() (string, error)
 }
+
+type PomsByLocation []Pom
+func (p PomsByLocation) Len() int           { return len(p) }
+func (p PomsByLocation) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
+func (p PomsByLocation) Less(i, j int) bool { return strings.Compare(p[i].Location(), p[j].Location()) < 0 }
 
 func PomFromEntry(entry git.Entry) (Pom, error) {
 	if !isPom(entry) {
@@ -48,7 +54,7 @@ func (p *pom) String() string {
 }
 
 func (p *pom) Location() string {
-	return fmt.Sprintf("%v (%v)", p.Path(), p.Repository())
+	return fmt.Sprintf("%v/%v", p.Repository(), p.Path())
 }
 
 // Deprecated

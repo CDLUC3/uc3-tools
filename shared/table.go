@@ -61,7 +61,8 @@ func (t *table) ValueAt(row, col int) string {
 //noinspection GoUnhandledErrorResult
 func (t *table) Print(w io.Writer, sep string) {
 	if Flags.Verbose && !Flags.TSV {
-		fmt.Fprintf(os.Stderr, "Formatting %d rows\n", t.Rows())
+		fmt.Fprintf(os.Stderr, "Formatting %d rows...", t.Rows())
+		defer func() { fmt.Fprintln(os.Stderr, "Done.") }()
 	}
 
 	var out *bufio.Writer
@@ -85,6 +86,9 @@ func (t *table) Print(w io.Writer, sep string) {
 
 	rows := t.Rows()
 	for row := 0; row < rows; row++ {
+		if Flags.Verbose && !Flags.TSV {
+			fmt.Fprint(os.Stderr, ".")
+		}
 		for col := 0; col < cols; col++ {
 			value := t.ValueAt(row, col)
 			out.WriteString(value)
@@ -94,12 +98,5 @@ func (t *table) Print(w io.Writer, sep string) {
 		}
 		out.WriteRune('\n')
 		out.Flush()
-
-		if Flags.Verbose && !Flags.TSV {
-			fmt.Fprint(os.Stderr, ".")
-		}
-	}
-	if Flags.Verbose && !Flags.TSV {
-		fmt.Fprintln(os.Stderr, "Done.")
 	}
 }

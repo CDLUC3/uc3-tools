@@ -55,9 +55,6 @@ type jobs struct {
 
 //noinspection GoUnhandledErrorResult
 func (j *jobs) List(server jenkins.JenkinsServer) error {
-	if Flags.Verbose {
-		fmt.Fprintln(os.Stderr, "Retrieving jobs...")
-	}
 	jobs, err := server.Jobs()
 	if err != nil {
 		return err

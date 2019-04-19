@@ -2,7 +2,9 @@ package jenkins
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/shared"
 	"net/url"
+	"os"
 )
 
 // JenkinsServer represents a Jenkins server
@@ -41,8 +43,12 @@ type jenkinsServer struct {
 	node    Node
 }
 
+//noinspection GoUnhandledErrorResult
 func (s *jenkinsServer) Jobs() ([]Job, error) {
 	if s.node == nil {
+		if shared.Flags.Verbose {
+			fmt.Fprintf(os.Stderr, "Retrieving jobs from %v...\n", s.apiRoot)
+		}
 		var n Node = &node{}
 		if err := unmarshal(s.apiRoot, n); err != nil {
 			return nil, err

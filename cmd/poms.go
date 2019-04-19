@@ -46,9 +46,6 @@ type poms struct {
 
 //noinspection GoUnhandledErrorResult
 func (p *poms) List(server jenkins.JenkinsServer) error {
-	if Flags.Verbose {
-		fmt.Fprintln(os.Stderr, "Retrieving jobs...")
-	}
 	allJobs, err := server.Jobs()
 	if err != nil {
 		return err

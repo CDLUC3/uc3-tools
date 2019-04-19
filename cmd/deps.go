@@ -41,9 +41,6 @@ type deps struct {
 // TODO: clean this up, move most of it somewhere (Jenkins package?)
 //noinspection GoUnhandledErrorResult
 func (d *deps) List(server jenkins.JenkinsServer) error {
-	if Flags.Verbose {
-		fmt.Fprintln(os.Stderr, "Retrieving jobs...")
-	}
 	allJobs, err := server.Jobs()
 	if err != nil {
 		return err
@@ -73,15 +70,9 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 		}
 	}
 
-	if Flags.Verbose {
-		fmt.Fprintln(os.Stderr, "Building graph...")
-	}
 	graph, errors := maven.NewGraph(poms)
 	d.errors = append(d.errors, errors...)
 
-	if Flags.Verbose {
-		fmt.Fprintln(os.Stderr, "Sorting POMs...")
-	}
 	artifacts := graph.SortedArtifacts()
 
 	allInfo := map[maven.Artifact]*artifactInfo{}

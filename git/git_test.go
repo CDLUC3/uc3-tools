@@ -85,8 +85,8 @@ func (s *GitSuite) TestEntries(c *C) {
 	repo := r.(*repository)
 	repo.httpClient = s.MockClient()
 
-	entries, err := repo.Find("pom.xml", Blob)
-	c.Assert(err, IsNil)
+	entries, errs := repo.Find("pom.xml", Blob)
+	c.Assert(len(errs), Equals, 0)
 	c.Assert(len(entries), Equals, 3)
 
 	var entry Entry
