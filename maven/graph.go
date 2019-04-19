@@ -2,6 +2,8 @@ package maven
 
 import (
 	"fmt"
+	"github.com/dmolesUC3/mrt-build-info/shared"
+	"os"
 	"sort"
 )
 
@@ -9,25 +11,23 @@ import (
 // Graph
 
 type Graph interface {
+	Artifacts() []Artifact
 	SortedArtifacts() []Artifact
 	DependenciesOf(artifact Artifact) (deps []Artifact)
 	DependenciesOn(artifact Artifact) (deps []Artifact)
 	PomForArtifact(artifact Artifact) Pom
 }
 
-func NewGraph(poms []Pom) (Graph, error) {
-	artifacts, pomsByArtifact, err := artifactsFromPoms(poms)
-	if err != nil {
-		return nil, err
-	}
+func NewGraph(poms []Pom) (Graph, []error) {
+	var errors []error
+	artifacts, pomsByArtifact, errs1 := artifactsFromPoms(poms)
+	errors = append(errors, errs1...)
 
-	depsByFrom, depsByTo, err := dependencies(poms, pomsByArtifact)
-	if err != nil {
-		return nil, err
-	}
+	depsByFrom, depsByTo, errs2 := dependencies(poms, pomsByArtifact)
+	errors = append(errors, errs2...)
 
 	g := graph{artifacts: artifacts, pomsByArtifact: pomsByArtifact, depsByFrom: depsByFrom, depsByTo: depsByTo}
-	return &g, nil
+	return &g, errors
 }
 
 // ------------------------------------------------------------
@@ -65,6 +65,10 @@ func (g *graph) DependenciesOn(artifact Artifact) (deps []Artifact) {
 	return deps
 }
 
+func (g *graph) Artifacts() []Artifact {
+	return g.artifacts
+}
+
 func (g *graph) SortedArtifacts() []Artifact {
 	if g.sortedArtifacts == nil {
 		g.sortedArtifacts = newTopoSort(g).sortedArtifacts()
@@ -76,56 +80,61 @@ func (g *graph) PomForArtifact(artifact Artifact) Pom {
 	return g.pomsByArtifact[artifact]
 }
 
-func artifactsFromPoms(poms []Pom) ([]Artifact, map[Artifact]Pom, error) {
+func artifactsFromPoms(poms []Pom) ([]Artifact, map[Artifact]Pom, []error) {
+	var errors []error
+
 	var allArtifacts []Artifact
 	a2p := map[Artifact]Pom{}
 	for _, pom := range poms {
 		artifact, err := pom.Artifact()
 		if err != nil {
-			return nil, nil, err
+			errors = append(errors, err)
+			continue
 		}
 		allArtifacts = append(allArtifacts, artifact)
 		a2p[artifact] = pom
 	}
 	sort.Sort(ArtifactsByString(allArtifacts))
-	return allArtifacts, a2p, nil
+	return allArtifacts, a2p, errors
 }
 
-func dependencies(allPoms []Pom, pomsByArtifact map[Artifact]Pom) (depsByFrom map[Artifact][]dependency, depsByTo map[Artifact][]dependency, err error) {
+func dependencies(allPoms []Pom, pomsByArtifact map[Artifact]Pom) (depsByFrom map[Artifact][]dependency, depsByTo map[Artifact][]dependency, err []error) {
+	var errors []error
+
 	depsByFrom = map[Artifact][]dependency{}
 	depsByTo = map[Artifact][]dependency{}
 	for _, pom := range allPoms {
 		fromArtifact, err := pom.Artifact()
 		if err != nil {
-			return nil, nil, err // really shouldn't happen
+			errors = append(errors, err)
+			continue
 		}
 		pomDeps, err := pom.Dependencies()
 		if err != nil {
-			return nil, nil, err
+			errors = append(errors, err)
+			continue
 		}
 
 		for _, toArtifact := range pomDeps {
 			var ok bool
-			if _, ok = pomsByArtifact[fromArtifact]; !ok {
-				// external dependency
+			if _, ok = pomsByArtifact[toArtifact]; !ok {
+				// third-party dependency
 				continue
 			}
 			var fromDeps []dependency
 			if fromDeps, ok = depsByFrom[fromArtifact]; !ok {
 				fromDeps = []dependency{}
-				depsByFrom[fromArtifact] = fromDeps
 			}
 			var toDeps []dependency
 			if toDeps, ok = depsByTo[toArtifact]; !ok {
 				toDeps = []dependency{}
-				depsByTo[toArtifact] = toDeps
 			}
 			dep := dependency{fromArtifact: fromArtifact, toArtifact: toArtifact}
-			fromDeps = append(fromDeps, dep)
-			toDeps = append(toDeps, dep)
+			depsByFrom[fromArtifact] = append(fromDeps, dep)
+			depsByTo[toArtifact] = append(toDeps, dep)
 		}
 	}
-	return depsByFrom, depsByTo, nil
+	return depsByFrom, depsByTo, errors
 }
 
 // ------------------------------------------------------------

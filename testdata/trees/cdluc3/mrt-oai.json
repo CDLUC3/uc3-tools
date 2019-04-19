@@ -1,0 +1,36 @@
+{
+  "sha": "782e972109d7ad84da07b9c0332c474e13ad97ac",
+  "url": "https://api.github.com/repos/CDLUC3/mrt-oai/git/trees/782e972109d7ad84da07b9c0332c474e13ad97ac",
+  "tree": [
+    {
+      "path": "oai-conf",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "32a288899cd51576ee1262b8fa38e604e7d5edc2",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-oai/git/trees/32a288899cd51576ee1262b8fa38e604e7d5edc2"
+    },
+    {
+      "path": "oai-src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eaac83dafc0c3e1e4348eb849a24f2b38ebdcf52",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-oai/git/trees/eaac83dafc0c3e1e4348eb849a24f2b38ebdcf52"
+    },
+    {
+      "path": "oai-war",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c6b094e8a077ad25d7c2f86491b247968703fe6c",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-oai/git/trees/c6b094e8a077ad25d7c2f86491b247968703fe6c"
+    },
+    {
+      "path": "pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cad5d87d50d7b30f097f4fcb8d1ac6c0e50b54d6",
+      "size": 1162,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-oai/git/blobs/cad5d87d50d7b30f097f4fcb8d1ac6c0e50b54d6"
+    }
+  ],
+  "truncated": false
+}

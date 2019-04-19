@@ -1,0 +1,30 @@
+{
+  "sha": "c803d9999e2107f9d96d74470026ad26e38eed8a",
+  "url": "https://api.github.com/repos/CDLUC3/mrt-dataONE/git/trees/c803d9999e2107f9d96d74470026ad26e38eed8a",
+  "tree": [
+    {
+      "path": "README.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e438a0759b9a34956c150f41da4d776747d55cf7",
+      "size": 183,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-dataONE/git/blobs/e438a0759b9a34956c150f41da4d776747d55cf7"
+    },
+    {
+      "path": "pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9a988635ab1ac66b700bd73b18b68c73bb653ef",
+      "size": 10134,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-dataONE/git/blobs/b9a988635ab1ac66b700bd73b18b68c73bb653ef"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "84f5fb4b83b1e53a549a54f31b933648b6fa11fd",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-dataONE/git/trees/84f5fb4b83b1e53a549a54f31b933648b6fa11fd"
+    }
+  ],
+  "truncated": false
+}

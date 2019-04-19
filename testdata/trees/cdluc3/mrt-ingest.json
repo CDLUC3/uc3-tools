@@ -1,0 +1,59 @@
+{
+  "sha": "a572b8c116ef56936ffd866749bd667d29a36fdd",
+  "url": "https://api.github.com/repos/CDLUC3/mrt-ingest/git/trees/a572b8c116ef56936ffd866749bd667d29a36fdd",
+  "tree": [
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0bf1ef8ea7991287ca5153b4ee782b51252ecaf",
+      "size": 1510,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-ingest/git/blobs/b0bf1ef8ea7991287ca5153b4ee782b51252ecaf"
+    },
+    {
+      "path": "README",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "347f8588d3ce36c89ae953948bee57d2b5036933",
+      "size": 3316,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-ingest/git/blobs/347f8588d3ce36c89ae953948bee57d2b5036933"
+    },
+    {
+      "path": "batch-war",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fe23d3c5d45c1a1d05e38e7718af052bef9a9c45",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-ingest/git/trees/fe23d3c5d45c1a1d05e38e7718af052bef9a9c45"
+    },
+    {
+      "path": "ingest-conf",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "858b02b2635ea996e13b458e2d27f35d776f4ad3",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-ingest/git/trees/858b02b2635ea996e13b458e2d27f35d776f4ad3"
+    },
+    {
+      "path": "ingest-init",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f88f8afdc913798585ed0941045e51ebbca240d1",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-ingest/git/trees/f88f8afdc913798585ed0941045e51ebbca240d1"
+    },
+    {
+      "path": "ingest-src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bd72f3ffe19453e8f9fd9d859f270c3393daf976",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-ingest/git/trees/bd72f3ffe19453e8f9fd9d859f270c3393daf976"
+    },
+    {
+      "path": "pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "678c104eec775404bd7ab7128bfe05a79b8c1ef7",
+      "size": 744,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-ingest/git/blobs/678c104eec775404bd7ab7128bfe05a79b8c1ef7"
+    }
+  ],
+  "truncated": false
+}

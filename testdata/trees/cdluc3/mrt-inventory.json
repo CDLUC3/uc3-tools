@@ -1,0 +1,36 @@
+{
+  "sha": "ef9e182d981af66f924bbff12740e46e5e2accc8",
+  "url": "https://api.github.com/repos/CDLUC3/mrt-inventory/git/trees/ef9e182d981af66f924bbff12740e46e5e2accc8",
+  "tree": [
+    {
+      "path": "inv-conf",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4047f3ed35b55925094c6da252eee5734391615d",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-inventory/git/trees/4047f3ed35b55925094c6da252eee5734391615d"
+    },
+    {
+      "path": "inv-src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "be1d3416498048a801819ffddd2c39316ae116bf",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-inventory/git/trees/be1d3416498048a801819ffddd2c39316ae116bf"
+    },
+    {
+      "path": "inv-war",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2064ce8017c686cd10a25ce6ba9e2619565f2513",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-inventory/git/trees/2064ce8017c686cd10a25ce6ba9e2619565f2513"
+    },
+    {
+      "path": "pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5eeb7a6309e45fb0db7bc939c262000fe99cd53b",
+      "size": 923,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-inventory/git/blobs/5eeb7a6309e45fb0db7bc939c262000fe99cd53b"
+    }
+  ],
+  "truncated": false
+}

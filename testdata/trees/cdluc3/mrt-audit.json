@@ -1,0 +1,51 @@
+{
+  "sha": "cbfd73970238357ebce37c6837bef1eb22260ff9",
+  "url": "https://api.github.com/repos/CDLUC3/mrt-audit/git/trees/cbfd73970238357ebce37c6837bef1eb22260ff9",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f02dfb9cc76ef651482d0f26ba70b89d758214cc",
+      "size": 2386,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-audit/git/blobs/f02dfb9cc76ef651482d0f26ba70b89d758214cc"
+    },
+    {
+      "path": ".idea",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b280a407ea3a5ae0ca64c26c8db9e917ad4e7707",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-audit/git/trees/b280a407ea3a5ae0ca64c26c8db9e917ad4e7707"
+    },
+    {
+      "path": "audit-conf",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f0ea8b810652f6db7191b9f8911d94113a315d9b",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-audit/git/trees/f0ea8b810652f6db7191b9f8911d94113a315d9b"
+    },
+    {
+      "path": "audit-src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5205bba4d80f2ea0ff565422fc9cd1562452d995",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-audit/git/trees/5205bba4d80f2ea0ff565422fc9cd1562452d995"
+    },
+    {
+      "path": "audit-war",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f3436a44ff6b4b572a3d329cf30fd3d33bb723ea",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-audit/git/trees/f3436a44ff6b4b572a3d329cf30fd3d33bb723ea"
+    },
+    {
+      "path": "pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4cd096765908fe72fa6f870873a5358f4f03702",
+      "size": 1097,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-audit/git/blobs/c4cd096765908fe72fa6f870873a5358f4f03702"
+    }
+  ],
+  "truncated": false
+}

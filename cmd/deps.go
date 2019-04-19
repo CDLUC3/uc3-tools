@@ -48,6 +48,9 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 		return err
 	}
 
+	if Flags.Verbose {
+		fmt.Fprintln(os.Stderr, "Retreiving POMs...")
+	}
 	jobsByPom := map[maven.Pom]jenkins.Job{}
 	var poms []maven.Pom
 	for _, j := range allJobs {
@@ -65,14 +68,20 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 		}
 	}
 
-	graph, err := maven.NewGraph(poms)
-	if err != nil {
-		return err
+	if Flags.Verbose {
+		fmt.Fprintln(os.Stderr, "Building graph...")
 	}
+	graph, errors := maven.NewGraph(poms)
+	d.errors = append(d.errors, errors...)
+
+	if Flags.Verbose {
+		fmt.Fprintln(os.Stderr, "Sorting POMs...")
+	}
+	artifacts := graph.SortedArtifacts()
 
 	// TODO: prettier output
 	// TODO: job deps vs pom deps
-	for _, artifact := range graph.SortedArtifacts() {
+	for _, artifact := range artifacts {
 		fmt.Println(artifact.String())
 
 		requires := graph.DependenciesOf(artifact)
@@ -81,14 +90,15 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 			requiresStr[i] = r.String()
 		}
 
+		// TODO: figure out why this is always empty
 		requiredBy := graph.DependenciesOn(artifact)
 		requiredByStr := make([]string, len(requiredBy))
 		for i, r := range requiredBy {
 			requiredByStr[i] = r.String()
 		}
 
-		fmt.Printf("\tRequires:    %v", strings.Join(requiresStr, ", "))
-		fmt.Printf("\tRequired by: %v", strings.Join(requiredByStr, ", "))
+		fmt.Printf("\tRequires:    %v\n", strings.Join(requiresStr, ", "))
+		fmt.Printf("\tRequired by: %v\n", strings.Join(requiredByStr, ", "))
 	}
 
 	PrintErrors(d.errors)

@@ -1,0 +1,51 @@
+{
+  "sha": "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+  "url": "https://api.github.com/repos/CDLUC3/mrt-replic/git/trees/e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f02dfb9cc76ef651482d0f26ba70b89d758214cc",
+      "size": 2386,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-replic/git/blobs/f02dfb9cc76ef651482d0f26ba70b89d758214cc"
+    },
+    {
+      "path": ".idea",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "45e254753950ccbf15ee7ca2ec23e8e099ea84ba",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-replic/git/trees/45e254753950ccbf15ee7ca2ec23e8e099ea84ba"
+    },
+    {
+      "path": "pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff5dfd3c8435e64852000387a62e07604e66af3a",
+      "size": 947,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-replic/git/blobs/ff5dfd3c8435e64852000387a62e07604e66af3a"
+    },
+    {
+      "path": "replication-conf",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2c99c65ae8e86244a3f08bfdadfd6a0a5c085a9e",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-replic/git/trees/2c99c65ae8e86244a3f08bfdadfd6a0a5c085a9e"
+    },
+    {
+      "path": "replication-src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "51dd058601fb54b2c619243b9884660dd342efbf",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-replic/git/trees/51dd058601fb54b2c619243b9884660dd342efbf"
+    },
+    {
+      "path": "replication-war",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "71f6f028adc4f22043f94843b596bfe50383b107",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-replic/git/trees/71f6f028adc4f22043f94843b596bfe50383b107"
+    }
+  ],
+  "truncated": false
+}

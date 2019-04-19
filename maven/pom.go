@@ -5,6 +5,7 @@ import (
 	"github.com/beevik/etree"
 	"github.com/dmolesUC3/mrt-build-info/git"
 	"net/url"
+	"sort"
 )
 
 var pomCache = map[git.Entry]Pom{}
@@ -99,6 +100,7 @@ func (p *pom) Dependencies() ([]Artifact, error) {
 		if err != nil {
 			return nil, err
 		}
+		sort.Sort(ArtifactsByString(deps))
 		p.dependencies = deps
 	}
 	return p.dependencies, nil

@@ -1,0 +1,29 @@
+{
+  "sha": "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+  "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+  "tree": [
+    {
+      "path": "pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc7fd47f1d159241f9469ab5711b91b1673373e7",
+      "size": 1349,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/cc7fd47f1d159241f9469ab5711b91b1673373e7"
+    },
+    {
+      "path": "store-src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "916519f9a3db971a8e13de5ca31ae12e848fc146",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/916519f9a3db971a8e13de5ca31ae12e848fc146"
+    },
+    {
+      "path": "store-war",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "53a475f3d1792275463996158608793ff0f2b16f",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/53a475f3d1792275463996158608793ff0f2b16f"
+    }
+  ],
+  "truncated": false
+}

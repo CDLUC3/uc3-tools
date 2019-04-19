@@ -1,0 +1,67 @@
+{
+  "sha": "88f6022e3e622b5aef4fac43be3cc27eedf8f714",
+  "url": "https://api.github.com/repos/CDLUC3/mrt-core2/git/trees/88f6022e3e622b5aef4fac43be3cc27eedf8f714",
+  "tree": [
+    {
+      "path": "LICENSE.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2af12de08e5369e3be4639925008fc4ee44c67f",
+      "size": 1563,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-core2/git/blobs/d2af12de08e5369e3be4639925008fc4ee44c67f"
+    },
+    {
+      "path": "README.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31fabdc4c8df1169d652cea2b0cac87193477609",
+      "size": 612,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-core2/git/blobs/31fabdc4c8df1169d652cea2b0cac87193477609"
+    },
+    {
+      "path": "SETUP.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "542bba0704df035b666465829401e32db744676e",
+      "size": 295,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-core2/git/blobs/542bba0704df035b666465829401e32db744676e"
+    },
+    {
+      "path": "core-util-init",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cfcbbc0fc2c615c0b656b9671df0860f54659bbd",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-core2/git/trees/cfcbbc0fc2c615c0b656b9671df0860f54659bbd"
+    },
+    {
+      "path": "core",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "62338ddc533b9160869bd76b511f2ac2cbb5b420",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-core2/git/trees/62338ddc533b9160869bd76b511f2ac2cbb5b420"
+    },
+    {
+      "path": "jena",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fb9427dfc5e99fb537568d10bf4a8e3bdc1a4417",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-core2/git/trees/fb9427dfc5e99fb537568d10bf4a8e3bdc1a4417"
+    },
+    {
+      "path": "json",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f31eeb13ccb430e9c249470b8874c18d1b92f24c",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-core2/git/trees/f31eeb13ccb430e9c249470b8874c18d1b92f24c"
+    },
+    {
+      "path": "pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08237ac7815b1bb438c42253451782ac7eacf36b",
+      "size": 714,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-core2/git/blobs/08237ac7815b1bb438c42253451782ac7eacf36b"
+    }
+  ],
+  "truncated": false
+}

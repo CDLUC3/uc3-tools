@@ -1,0 +1,22 @@
+{
+  "sha": "275773ebcc558c2fab74d30353362b7fb5656d76",
+  "url": "https://api.github.com/repos/CDLUC3/mrt-zoo/git/trees/275773ebcc558c2fab74d30353362b7fb5656d76",
+  "tree": [
+    {
+      "path": "pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51b8f911433647179bdaeeb25768679b8687e0a3",
+      "size": 1002,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-zoo/git/blobs/51b8f911433647179bdaeeb25768679b8687e0a3"
+    },
+    {
+      "path": "zoo-client-src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "656f0479091e2ec60c4df84f5a89434ec7319eca",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-zoo/git/trees/656f0479091e2ec60c4df84f5a89434ec7319eca"
+    }
+  ],
+  "truncated": false
+}
