@@ -29,6 +29,7 @@ func init() {
 	cmd.Flags().BoolVarP(&poms.artifacts, "artifacts", "a", false, "list POM artifacts")
 	cmd.Flags().BoolVarP(&poms.deps, "deps", "d", false, "list POM dependencies")
 	cmd.Flags().BoolVarP(&maven.POMURLs, "pom-urls", "u", false, "list URL used to retrieve POM file")
+	cmd.Flags().StringVarP(&Flags.Job, "job", "j", "", "show info only for specified job")
 
 	AddCommand(cmd)
 }
