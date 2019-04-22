@@ -29,6 +29,15 @@ func (p PomsByLocation) Len() int           { return len(p) }
 func (p PomsByLocation) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
 func (p PomsByLocation) Less(i, j int) bool { return strings.Compare(p[i].Location(), p[j].Location()) < 0 }
 
+func (p PomsByLocation) String() string {
+	info := make([]string, len(p))
+	for i, dep := range p {
+		info[i] = dep.Location()
+	}
+	return strings.Join(info, ", ")
+}
+
+
 func PomFromEntry(entry git.Entry) (Pom, error) {
 	if !isPom(entry) {
 		return nil, fmt.Errorf("entry %#v does not appear to be a Maven POM", entry.Path())

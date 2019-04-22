@@ -60,6 +60,9 @@ func (t *table) ValueAt(row, col int) string {
 
 //noinspection GoUnhandledErrorResult
 func (t *table) Print(w io.Writer, sep string) {
+	if t == nil {
+		fmt.Fprintln(w, "(nil table)")
+	}
 	if Flags.Verbose && !Flags.TSV {
 		fmt.Fprintf(os.Stderr, "Formatting %d rows...", t.Rows())
 		defer func() { fmt.Fprintln(os.Stderr, "Done.") }()

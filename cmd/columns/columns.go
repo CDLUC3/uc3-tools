@@ -16,16 +16,6 @@ func Pom(poms []maven.Pom) TableColumn {
 	return Poms(func(row int) maven.Pom { return poms[row] }, len(poms))
 }
 
-func Artifacts(artFor func(row int) maven.Artifact, rows int) TableColumn {
-	return NewTableColumn("Artifact", rows, func(row int) string {
-		art := artFor(row)
-		if art == nil {
-			return ""
-		}
-		return art.String()
-	})
-}
-
 func Jobs(jobFor func(row int) jenkins.Job, rows int) TableColumn {
 	return NewTableColumn("Job Name", rows, func(row int) string {
 		job := jobFor(row)

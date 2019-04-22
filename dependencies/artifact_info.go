@@ -1,11 +1,14 @@
 package dependencies
 
 import (
+	"fmt"
 	"github.com/dmolesUC3/mrt-build-info/jenkins"
 	"github.com/dmolesUC3/mrt-build-info/maven"
+	"github.com/dmolesUC3/mrt-build-info/shared"
 )
 
 type ArtifactInfo interface {
+	fmt.Stringer
 	Job() jenkins.Job
 	Pom() maven.Pom
 	Artifact() maven.Artifact
@@ -19,6 +22,13 @@ type artifactInfo struct {
 
 func InfoFor(job jenkins.Job, pom maven.Pom, artifact maven.Artifact) ArtifactInfo {
 	return &artifactInfo{job: job, pom: pom, artifact: artifact}
+}
+
+func (a *artifactInfo) String() string {
+	if !shared.Flags.Verbose {
+		return a.artifact.String()
+	}
+	return fmt.Sprintf("%v (%v, %v)", a.artifact, a.pom, a.job)
 }
 
 func (a *artifactInfo) Job() jenkins.Job {

@@ -19,14 +19,9 @@ func init() {
 		Short: "List Maven poms",
 		Args:  cobra.MaximumNArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) (err error) {
-			var server jenkins.JenkinsServer
-			if len(args) == 0 {
-				server = jenkins.DefaultServer()
-			} else {
-				server, err = jenkins.ServerFromUrl(args[0])
-				if err != nil {
-					return err
-				}
+			server, err := ServerFrom(args)
+			if err != nil {
+				return err
 			}
 			return poms.List(server)
 		},

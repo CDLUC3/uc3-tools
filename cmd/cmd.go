@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/dmolesUC3/mrt-build-info/git"
+	"github.com/dmolesUC3/mrt-build-info/jenkins"
 	. "github.com/dmolesUC3/mrt-build-info/shared"
 	"github.com/spf13/cobra"
 	"os"
@@ -14,6 +15,15 @@ var rootCmd = &cobra.Command{
 	Use:   "mrt-build-info",
 	Short: "Merritt build info",
 	Long:  "Tools for gathering Merritt build information",
+}
+
+func ServerFrom(args []string) (server jenkins.JenkinsServer, err error) {
+	if len(args) == 0 {
+		server = jenkins.DefaultServer()
+	} else {
+		server, err = jenkins.ServerFromUrl(args[0])
+	}
+	return
 }
 
 func AddCommand(cmd *cobra.Command) {

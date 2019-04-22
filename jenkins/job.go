@@ -26,6 +26,20 @@ type Job interface {
 	POMs() (poms []maven.Pom, errors []error)
 }
 
+type JobsByName []Job
+
+func (a JobsByName) Len() int           { return len(a) }
+func (a JobsByName) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a JobsByName) Less(i, j int) bool { return strings.Compare(a[i].Name(), a[j].Name()) < 0 }
+
+func (a JobsByName) String() string {
+	info := make([]string, len(a))
+	for i, dep := range a {
+		info[i] = dep.Name()
+	}
+	return strings.Join(info, ", ")
+}
+
 // ------------------------------------------------------------
 // Unexported symbols
 

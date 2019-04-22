@@ -10,6 +10,11 @@ import (
 
 type JobGraph interface {
 	ArtifactGraph() (ArtifactGraph, []error)
+	PomGraph() (PomGraph, []error)
+	Jobs() []Job
+	JobFor(pom Pom) (Job, []error)
+	DependenciesOf(job Job) (deps []Job, errors []error)
+	DependenciesOn(job Job) (deps []Job, errors []error)
 }
 
 func NewJobGraph(jobs []Job) JobGraph {
@@ -35,6 +40,11 @@ type jobGraph struct {
 	depsByTo   map[Job][]jobDep
 }
 
+// TODO: SortedJobs()?
+func (g *jobGraph) Jobs() []Job {
+	return g.jobs
+}
+
 func (g *jobGraph) Poms() ([]Pom, []error) {
 	var errors []error
 	if g.poms == nil {
@@ -50,6 +60,17 @@ func (g *jobGraph) Poms() ([]Pom, []error) {
 		g.poms = poms
 	}
 	return g.poms, errors
+}
+
+func (g *jobGraph) JobFor(pom Pom) (Job, []error) {
+	jobsByPom, errs := g.JobsByPom()
+	if jobsByPom != nil {
+		if job, ok := jobsByPom[pom]; ok {
+			return job, errs
+		}
+	}
+	errs = append(errs, fmt.Errorf("no job found for pom %v", pom))
+	return nil, errs
 }
 
 func (g *jobGraph) JobsByPom() (map[Pom]Job, []error) {
@@ -101,6 +122,7 @@ func (g *jobGraph) DependenciesOf(job Job) (deps []Job, errors []error) {
 			}
 		}
 	}
+	sort.Sort(JobsByName(deps))
 	return deps, errs
 }
 
@@ -113,6 +135,7 @@ func (g *jobGraph) DependenciesOn(job Job) (deps []Job, errors []error) {
 			}
 		}
 	}
+	sort.Sort(JobsByName(deps))
 	return deps, errs
 }
 

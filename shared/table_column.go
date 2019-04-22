@@ -8,7 +8,6 @@ type TableColumn interface {
 	Header() string
 	Rows() int
 	ValueAt(row int) string
-	WithHeader(h string) TableColumn
 }
 
 func NewTableColumn(header string, rows int, valueAt func(row int) string) TableColumn {
@@ -37,11 +36,6 @@ func (c *tableColumn) ValueAt(row int) string {
 		panic(fmt.Errorf("row out of bounds: %d of %d", row, c.rows))
 	}
 	return c.valueAt(row)
-}
-
-func (c *tableColumn) WithHeader(h string) TableColumn {
-	c1 := tableColumn{header: h, rows: c.rows, valueAt: c.valueAt}
-	return &c1
 }
 
 
