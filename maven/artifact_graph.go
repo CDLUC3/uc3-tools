@@ -81,12 +81,12 @@ func (g *artifactGraph) Artifacts() []Artifact {
 }
 
 func (g *artifactGraph) SortedArtifacts() []Artifact {
-	//noinspection GoUnhandledErrorResult
-	if Flags.Verbose {
-		fmt.Fprintf(os.Stderr, "Sorting %d artifacts...", len(g.artifacts))
-		defer func() { fmt.Fprintln(os.Stderr, "Done.") }()
-	}
 	if g.sortedArtifacts == nil {
+		//noinspection GoUnhandledErrorResult
+		if Flags.Verbose {
+			fmt.Fprintf(os.Stderr, "Sorting %d artifacts...", len(g.artifacts))
+			defer func() { fmt.Fprintln(os.Stderr, "Done.") }()
+		}
 		g.sortedArtifacts = newTopoSort(g).sortedArtifacts()
 	}
 	return g.sortedArtifacts

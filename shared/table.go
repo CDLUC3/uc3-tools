@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"os"
 	"text/tabwriter"
 )
 
@@ -63,10 +62,6 @@ func (t *table) Print(w io.Writer, sep string) {
 	if t == nil {
 		fmt.Fprintln(w, "(nil table)")
 	}
-	if Flags.Verbose && !Flags.TSV {
-		fmt.Fprintf(os.Stderr, "Formatting %d rows...", t.Rows())
-		defer func() { fmt.Fprintln(os.Stderr, "Done.") }()
-	}
 
 	var out *bufio.Writer
 	if Flags.TSV {
@@ -89,9 +84,6 @@ func (t *table) Print(w io.Writer, sep string) {
 
 	rows := t.Rows()
 	for row := 0; row < rows; row++ {
-		if Flags.Verbose && !Flags.TSV {
-			fmt.Fprint(os.Stderr, ".")
-		}
 		for col := 0; col < cols; col++ {
 			value := t.ValueAt(row, col)
 			out.WriteString(value)
