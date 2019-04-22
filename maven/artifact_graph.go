@@ -64,6 +64,7 @@ func (g *artifactGraph) DependenciesOf(artifact Artifact) (deps []Artifact) {
 			deps = append(deps, d.toArtifact)
 		}
 	}
+	Deduplicate(ArtifactsByString(deps), func(len int) { deps = deps[:len] })
 	return deps
 }
 
@@ -73,6 +74,7 @@ func (g *artifactGraph) DependenciesOn(artifact Artifact) (deps []Artifact) {
 			deps = append(deps, d.fromArtifact)
 		}
 	}
+	Deduplicate(ArtifactsByString(deps), func(len int) { deps = deps[:len] })
 	return deps
 }
 

@@ -25,17 +25,22 @@ type Pom interface {
 }
 
 type PomsByLocation []Pom
-func (p PomsByLocation) Len() int           { return len(p) }
-func (p PomsByLocation) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
-func (p PomsByLocation) Less(i, j int) bool { return strings.Compare(p[i].Location(), p[j].Location()) < 0 }
 
-func (p PomsByLocation) String() string {
-	info := make([]string, len(p))
-	for i, dep := range p {
+func (s PomsByLocation) Len() int         { return len(s) }
+func (s PomsByLocation) Swap(i, j int)    { s[i], s[j] = s[j], s[i] }
+func (s PomsByLocation) Less(i, j int) bool { return strings.Compare(s[i].Location(), s[j].Location()) < 0 }
+func (s PomsByLocation) Eq(i, j int) bool { return s[i] == s[j] }
+func (s PomsByLocation) Copy(j, i int)    { s[j] = s[i] }
+
+func (s PomsByLocation) String() string {
+	info := make([]string, len(s))
+	for i, dep := range s {
 		info[i] = dep.Location()
 	}
 	return strings.Join(info, ", ")
 }
+
+
 
 
 func PomFromEntry(entry git.Entry) (Pom, error) {

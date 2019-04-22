@@ -40,6 +40,7 @@ func (g *pomGraph) DependenciesOf(pom Pom) (deps []Pom) {
 			deps = append(deps, d.toPom)
 		}
 	}
+	Deduplicate(PomsByLocation(deps), func(len int) { deps = deps[:len] })
 	return deps
 }
 
@@ -50,16 +51,16 @@ func (g *pomGraph) DependenciesOn(pom Pom) (deps []Pom) {
 			deps = append(deps, d.fromPom)
 		}
 	}
+	Deduplicate(PomsByLocation(deps), func(len int) { deps = deps[:len] })
 	return deps
 }
-
 
 func (g *pomGraph) deps() (allDeps []pomDep, depsByFrom map[Pom][]pomDep, depsByTo map[Pom][]pomDep) {
 	if g.allDeps == nil {
 		allDeps = []pomDep{}
 		depsByFrom = map[Pom][]pomDep{}
 		depsByTo = map[Pom][]pomDep{}
-		
+
 		agraph := g.artifactGraph
 		artifacts := agraph.Artifacts()
 		//noinspection GoUnhandledErrorResult
@@ -76,7 +77,7 @@ func (g *pomGraph) deps() (allDeps []pomDep, depsByFrom map[Pom][]pomDep, depsBy
 			fromPom := agraph.PomForArtifact(fromArtifact)
 			for _, toArtifact := range agraph.DependenciesOf(fromArtifact) {
 				toPom := agraph.PomForArtifact(toArtifact)
-				
+
 				var ok bool
 				var fromDeps []pomDep
 				if fromDeps, ok = depsByFrom[fromPom]; !ok {

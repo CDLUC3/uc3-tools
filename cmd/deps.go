@@ -9,8 +9,6 @@ import (
 	"os"
 )
 
-// TODO: rewrite to use new graph types
-
 func init() {
 	deps := &deps{}
 

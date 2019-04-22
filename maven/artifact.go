@@ -17,13 +17,15 @@ type Artifact interface {
 
 type ArtifactsByString []Artifact
 
-func (a ArtifactsByString) Len() int           { return len(a) }
-func (a ArtifactsByString) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-func (a ArtifactsByString) Less(i, j int) bool { return strings.Compare(a[i].String(), a[j].String()) < 0 }
+func (s ArtifactsByString) Len() int           { return len(s) }
+func (s ArtifactsByString) Swap(i, j int)      { s[i], s[j] = s[j], s[i] }
+func (s ArtifactsByString) Less(i, j int) bool { return strings.Compare(s[i].String(), s[j].String()) < 0 }
+func (s ArtifactsByString) Eq(i, j int) bool   { return s[i] == s[j] }
+func (s ArtifactsByString) Copy(j, i int)      { s[j] = s[i] }
 
-func (a ArtifactsByString) String() string {
-	info := make([]string, len(a))
-	for i, dep := range a {
+func (s ArtifactsByString) String() string {
+	info := make([]string, len(s))
+	for i, dep := range s {
 		info[i] = dep.String()
 	}
 	return strings.Join(info, ", ")

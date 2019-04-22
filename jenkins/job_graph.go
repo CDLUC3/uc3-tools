@@ -122,7 +122,7 @@ func (g *jobGraph) DependenciesOf(job Job) (deps []Job, errors []error) {
 			}
 		}
 	}
-	sort.Sort(JobsByName(deps))
+	Deduplicate(JobsByName(deps), func(len int) { deps = deps[:len] })
 	return deps, errs
 }
 
@@ -135,7 +135,7 @@ func (g *jobGraph) DependenciesOn(job Job) (deps []Job, errors []error) {
 			}
 		}
 	}
-	sort.Sort(JobsByName(deps))
+	Deduplicate(JobsByName(deps), func(len int) { deps = deps[:len] })
 	return deps, errs
 }
 
