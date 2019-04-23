@@ -29,6 +29,7 @@ func init() {
 	cmd.Flags().BoolVarP(&deps.poms, "poms", "p", false, "list Maven pom dependencies")
 	cmd.Flags().BoolVarP(&deps.artifacts, "artifacts", "a", false, "list Maven artifact dependencies")
 	cmd.Flags().BoolVar(&deps.all, "all", false, "list all depdendencies")
+	cmd.Flags().BoolVar(&deps.expand, "expand", false, "expand tables to rows")
 
 	AddCommand(cmd)
 }
@@ -38,6 +39,7 @@ type deps struct {
 	poms      bool
 	artifacts bool
 	all       bool
+	expand    bool
 	errors    []error
 }
 
@@ -63,15 +65,15 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 	jgraph := jenkins.NewJobGraph(jobs)
 
 	var titles []string
-	var tables []func() Table
+	var ftables []func() Table
 
 	if d.jobs {
 		titles = append(titles, "Jenkins job dependencies")
-		tables = append(tables, func() Table { return JobsTable(jgraph) })
+		ftables = append(ftables, func() Table { return JobsTable(jgraph) })
 	}
 	if d.poms {
 		titles = append(titles, "Maven pom dependencies")
-		tables = append(tables, func() Table {
+		ftables = append(ftables, func() Table {
 			table, errs := PomsTable(jgraph)
 			if len(errs) > 0 {
 				d.errors = append(d.errors, errs...)
@@ -81,7 +83,7 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 	}
 	if d.artifacts {
 		titles = append(titles, "Maven artifact dependencies")
-		tables = append(tables, func() Table {
+		ftables = append(ftables, func() Table {
 			table, errs := ArtifactsTable(jgraph)
 			if len(errs) > 0 {
 				d.errors = append(d.errors, errs...)
@@ -91,12 +93,17 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 	}
 	for i, title := range titles {
 		//noinspection GoNilness
-		table := tables[i]
+		ftable := ftables[i]
+		table := ftable()
+		if d.expand {
+			table = SplitRows(table, ",")
+		}
 
+		// Call this *after* generating the table, in case of debug output
 		fmt.Println(title)
 		fmt.Println()
 
-		table().Print(os.Stdout, "\t")
+		table.Print(os.Stdout, "\t")
 		if i+1 < len(titles) {
 			fmt.Println()
 		}

@@ -11,6 +11,9 @@ type Deduplicable interface {
 }
 
 func Deduplicate(in Deduplicable, truncate func(len int)) {
+	if in.Len() < 2 {
+		return
+	}
 	DeduplicateAny(
 		func() { sort.Sort(in) },
 		in.Len,

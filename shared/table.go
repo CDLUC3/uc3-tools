@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"strings"
 	"text/tabwriter"
 )
 
@@ -95,3 +96,77 @@ func (t *table) Print(w io.Writer, sep string) {
 		out.Flush()
 	}
 }
+
+func SplitRows(t Table, sep string) Table {
+	var splitRows [][]string
+
+	cols := t.Cols()
+	rows := t.Rows()
+	for row := 0; row <= rows; row++ {
+		cells := make([]string, cols)
+		for col := 0; col < cols; col++ {
+			cells[col] = t.ValueAt(row, col)
+		}
+		splitRows = append(splitRows, splitRow(cells, sep)...)
+	}
+
+	splitRowCount := len(splitRows)
+	for i, srow := range splitRows {
+		if len(srow) != cols {
+			panic(fmt.Errorf("%d: expected %d cells, found %d: %#v", i, cols, len(srow), srow))
+		}
+	}
+
+	columns := make([]TableColumn, cols)
+	for c := 0; c < cols; c++ {
+		cIndex := c // make sure we close over the current value
+		columns[cIndex] = NewTableColumn(t.HeaderFor(cIndex), splitRowCount, func(row int) string {
+			srow := splitRows[row]
+			return srow[cIndex]
+		})
+	}
+	return &table{columns: columns, rows: &splitRowCount}
+}
+
+/*
+splitRow splits a row vertically based on a separator, e.g.
+
+ 	{"a", "b", "c,d,e", "f,g"}
+
+becomes
+
+	{
+		{"a", "b", "c", "f"},
+		{"", "", "d", "g"},
+		{"", "", "e", ""},
+	}
+*/
+func splitRow(cells []string, sep string) [][]string {
+	var columns [][]string
+	var rowCount = 0
+	for _, cell := range cells {
+		cellCol := strings.Split(cell, sep)
+		columns = append(columns, cellCol)
+		if len(cellCol) > rowCount {
+			rowCount = len(cellCol)
+		}
+	}
+
+	cols := len(cells)
+	rows := make([][]string, rowCount)
+	for row := 0; row < rowCount; row++ {
+		sRow := make([]string, cols)
+		for col := 0; col < cols; col++ {
+			var cellCol = columns[col]
+			if len(cellCol) > row {
+				cellVal := cellCol[row]
+				sRow[col] = strings.TrimSpace(cellVal)
+			}
+		}
+		rows[row] = sRow
+	}
+
+	return rows
+}
+
+
