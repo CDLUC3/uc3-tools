@@ -108,5 +108,7 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 			fmt.Println()
 		}
 	}
+
+	PrintErrors(d.errors)
 	return nil
 }
