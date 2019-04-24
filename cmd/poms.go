@@ -8,7 +8,6 @@ import (
 	. "github.com/dmolesUC3/mrt-build-info/shared"
 	"github.com/spf13/cobra"
 	"os"
-	"strings"
 )
 
 func init() {
@@ -42,14 +41,17 @@ type poms struct {
 
 //noinspection GoUnhandledErrorResult
 func (p *poms) List(server jenkins.JenkinsServer) error {
-	allJobs, err := server.Jobs()
+	jobs, err := server.Jobs()
 	if err != nil {
 		return err
 	}
+	jgraph := jenkins.NewJobGraph(jobs)
+	jgraph.PomGraph()
 
-	var jobs []jenkins.Job
+
+	var pomJobs []jenkins.Job
 	var poms []maven.Pom
-	for _, j := range allJobs {
+	for _, j := range jobs {
 		if Flags.Job != "" && j.Name() != Flags.Job {
 			continue
 		}
@@ -61,12 +63,12 @@ func (p *poms) List(server jenkins.JenkinsServer) error {
 			p.errors = append(p.errors, fmt.Errorf("no POMs found for job %v", j.Name()))
 		}
 		for _, p := range jobPoms {
-			jobs = append(jobs, j)
+			pomJobs = append(pomJobs, j)
 			poms = append(poms, p)
 		}
 	}
 
-	cols := p.MakeTableColumns(jobs, poms)
+	cols := p.MakeTableColumns(pomJobs, poms)
 	table := TableFrom(cols...)
 	table.Print(os.Stdout, "\t")
 
@@ -81,7 +83,7 @@ func (p *poms) MakeTableColumns(jobs []jenkins.Job, poms []maven.Pom) []TableCol
 	}
 	cols := []TableColumn{columns.Job(jobs), columns.Pom(poms), }
 	if maven.POMURLs {
-		cols = append(cols, NewTableColumn("POM Blob URL", len(jobs), func(row int) string {
+		cols = append(cols, NewTableColumn("POM Blob URL", len(poms), func(row int) string {
 			url := poms[row].BlobURL()
 			if url == nil {
 				return columns.ValueUnknown
@@ -90,12 +92,18 @@ func (p *poms) MakeTableColumns(jobs []jenkins.Job, poms []maven.Pom) []TableCol
 		}))
 	}
 	if p.artifacts {
-		cols = append(cols, NewTableColumn("Artifacts", len(jobs), func(row int) string {
-			return p.ArtifactInfo(jobs[row], poms[row])
+		cols = append(cols, NewTableColumn("Artifacts", len(poms), func(row int) string {
+			pom := poms[row]
+			artifact, err := pom.Artifact()
+			if err != nil {
+				p.errors = append(p.errors, err)
+				return ""
+			}
+			return artifact.String()
 		}))
 	}
 	if p.deps {
-		cols = append(cols, NewTableColumn("Dependencies", len(jobs), func(row int) string {
+		cols = append(cols, NewTableColumn("Dependencies", len(poms), func(row int) string {
 			deps, errs := poms[row].Dependencies()
 			if errs != nil {
 				p.errors = append(p.errors, errs...)
@@ -106,53 +114,4 @@ func (p *poms) MakeTableColumns(jobs []jenkins.Job, poms []maven.Pom) []TableCol
 	}
 
 	return cols
-}
-
-func (p *poms) ArtifactInfo(job jenkins.Job, pom maven.Pom) string {
-	artifact, err := pom.Artifact()
-	if err != nil {
-		p.errors = append(p.errors, err)
-		return ""
-	}
-	artifactStr := artifact.String()
-	if jenkins.IsParameterized(artifactStr) {
-		var expanded []string
-		artifactParams := jenkins.Parameters(artifactStr)
-		mvnParamToVal, err := job.MavenParamToValue()
-		if err != nil {
-			p.errors = append(p.errors, err)
-			return artifactStr
-		}
-		var missing []string
-		var found []string
-		for _, p := range artifactParams {
-			current := len(expanded)
-			if val, ok := mvnParamToVal[p]; ok {
-				if strings.HasPrefix(val, "$") {
-					for _, jp := range job.Parameters() {
-						jpName := jp.Name()
-						if val == "$"+jpName {
-							found = append(found, p + " -> " + jpName)
-							paramSub := "${" + p + "}"
-							for _, v := range jp.Choices() {
-								expanded = append(expanded, strings.ReplaceAll(artifactStr, paramSub, v))
-							}
-						}
-					}
-				}
-			}
-			if len(expanded) == current {
-				missing = append(missing, p)
-			}
-		}
-		if len(missing) > 0 {
-			err = fmt.Errorf(
-				"job %v: pom %v missing parameters: %v (found: %v)\n",
-				job.Name(), pom.Path(), strings.Join(missing, ", "), strings.Join(found, ", "),
-			)
-			p.errors = append(p.errors, err)
-		}
-		return strings.Join(expanded, ", ")
-	}
-	return artifactStr
 }
