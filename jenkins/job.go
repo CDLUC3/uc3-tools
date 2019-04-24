@@ -20,8 +20,6 @@ type Job interface {
 	APIUrl() *url.URL
 	SCMUrl() (string, error)
 	Parameters() []Parameter
-	ParameterNames() []string
-	MavenParamToValue() (map[string]string, error)
 	Repository() (git.Repository, error)
 	POMs() (poms []maven.Pom, errors []error)
 }
@@ -110,23 +108,6 @@ func (j *job) Parameters() []Parameter {
 		j.parameters = params
 	}
 	return j.parameters
-}
-
-func (j *job) ParameterNames() []string {
-	params := j.Parameters()
-	paramNames := make([]string, len(params))
-	for i, param := range params {
-		paramNames[i] = param.Name()
-	}
-	return paramNames
-}
-
-func (j *job) MavenParamToValue() (map[string]string, error) {
-	config, err := j.Config()
-	if err != nil {
-		return map[string]string{}, err
-	}
-	return config.MavenParamToValue(), nil
 }
 
 func (j *job) Repository() (git.Repository, error) {
