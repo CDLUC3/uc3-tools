@@ -1,0 +1,138 @@
+{
+  "_class" : "hudson.maven.MavenModuleSetBuild",
+  "actions" : [
+    {
+      "_class" : "hudson.model.CauseAction",
+      "causes" : [
+        {
+          "_class" : "hudson.model.Cause$UserIdCause",
+          "shortDescription" : "Started by user anonymous",
+          "userId" : null,
+          "userName" : "anonymous"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.plugins.git.util.BuildData",
+      "buildsByBranchName" : {
+        "refs/remotes/origin/master" : {
+          "_class" : "hudson.plugins.git.util.Build",
+          "buildNumber" : 535,
+          "buildResult" : null,
+          "marked" : {
+            "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+            "branch" : [
+              {
+                "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "revision" : {
+            "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+            "branch" : [
+              {
+                "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision" : {
+        "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+        "branch" : [
+          {
+            "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+            "name" : "refs/remotes/origin/master"
+          }
+        ]
+      },
+      "remoteUrls" : [
+        "https://github.com/CDLUC3/mrt-ingest"
+      ],
+      "scmName" : ""
+    },
+    {
+      "_class" : "hudson.plugins.git.GitTagAction"
+    },
+    {
+      
+    },
+    {
+      "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+    },
+    {
+      
+    },
+    {
+      
+    }
+  ],
+  "artifacts" : [
+    {
+      "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+      "fileName" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+      "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT-archive.zip"
+    },
+    {
+      "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+      "fileName" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+      "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT.war"
+    }
+  ],
+  "building" : false,
+  "description" : null,
+  "displayName" : "#535",
+  "duration" : 43579,
+  "estimatedDuration" : 40738,
+  "executor" : null,
+  "fullDisplayName" : "mrt-ingest-dev #535",
+  "id" : "535",
+  "keepLog" : false,
+  "number" : 535,
+  "queueId" : 488,
+  "result" : "SUCCESS",
+  "timestamp" : 1552517520411,
+  "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/",
+  "builtOn" : "",
+  "changeSet" : {
+    "_class" : "hudson.plugins.git.GitChangeSetList",
+    "items" : [
+      {
+        "_class" : "hudson.plugins.git.GitChangeSet",
+        "affectedPaths" : [
+          "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+        ],
+        "commitId" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+        "timestamp" : 1551737872000,
+        "author" : {
+          "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+          "fullName" : "mreyes"
+        },
+        "authorEmail" : "mreyes@linux-mjr.ad.ucop.edu",
+        "comment" : "- Set Subject line of Notification that there was a failure - No stack\ntrace if we can not determine Format type\n",
+        "date" : "2019-03-04 14:17:52 -0800",
+        "id" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+        "msg" : "- Set Subject line of Notification that there was a failure - No stack",
+        "paths" : [
+          {
+            "editType" : "edit",
+            "file" : "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+          }
+        ]
+      }
+    ],
+    "kind" : "git"
+  },
+  "culprits" : [
+    {
+      "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+      "fullName" : "mreyes"
+    }
+  ],
+  "mavenArtifacts" : {
+    
+  },
+  "mavenVersionUsed" : "2.2.1"
+}

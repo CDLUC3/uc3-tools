@@ -1,0 +1,1782 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "test"
+          ]
+        }
+      ]
+    },
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Build Merritt mrt-sword war using the default code branch.\r\n",
+  "displayName" : "mrt-build-sword",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-build-sword",
+  "fullName" : "mrt-build-sword",
+  "name" : "mrt-build-sword",
+  "url" : "http://builds.cdlib.org/job/mrt-build-sword/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "dev"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 10,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "branch" : [
+                  {
+                    "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "branch" : [
+                  {
+                    "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+            "branch" : [
+              {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-sword"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 2,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#10",
+      "duration" : 21897,
+      "estimatedDuration" : 24588,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-sword #10",
+      "id" : "10",
+      "keepLog" : false,
+      "number" : 10,
+      "queueId" : 304,
+      "result" : "SUCCESS",
+      "timestamp" : 1534445752380,
+      "url" : "http://builds.cdlib.org/job/mrt-build-sword/10/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 9,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "branch" : [
+                  {
+                    "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "branch" : [
+                  {
+                    "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+            "branch" : [
+              {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-sword"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 2,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#9",
+      "duration" : 30262,
+      "estimatedDuration" : 24588,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-sword #9",
+      "id" : "9",
+      "keepLog" : false,
+      "number" : 9,
+      "queueId" : 281,
+      "result" : "SUCCESS",
+      "timestamp" : 1533857230925,
+      "url" : "http://builds.cdlib.org/job/mrt-build-sword/9/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 8,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "branch" : [
+                  {
+                    "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "branch" : [
+                  {
+                    "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+            "branch" : [
+              {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-sword"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 2,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#8",
+      "duration" : 21606,
+      "estimatedDuration" : 24588,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-sword #8",
+      "id" : "8",
+      "keepLog" : false,
+      "number" : 8,
+      "queueId" : 277,
+      "result" : "SUCCESS",
+      "timestamp" : 1533315125507,
+      "url" : "http://builds.cdlib.org/job/mrt-build-sword/8/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "dev"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 7,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "branch" : [
+                  {
+                    "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "branch" : [
+                  {
+                    "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+            "branch" : [
+              {
+                "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-sword"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 2,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#7",
+      "duration" : 22562,
+      "estimatedDuration" : 24588,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-sword #7",
+      "id" : "7",
+      "keepLog" : false,
+      "number" : 7,
+      "queueId" : 275,
+      "result" : "SUCCESS",
+      "timestamp" : 1533243305050,
+      "url" : "http://builds.cdlib.org/job/mrt-build-sword/7/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "sword-src/pom.xml"
+            ],
+            "commitId" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+            "timestamp" : 1533243159000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Use standard pom.xml source configuration using 1.8\n",
+            "date" : "2018-08-02 13:52:39 -0700",
+            "id" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+            "msg" : "Use standard pom.xml source configuration using 1.8",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "sword-src/pom.xml"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+          "fullName" : "replic"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "dev"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 6,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+                "branch" : [
+                  {
+                    "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+                "branch" : [
+                  {
+                    "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+            "branch" : [
+              {
+                "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-sword"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 2,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#6",
+      "duration" : 28179,
+      "estimatedDuration" : 24588,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-sword #6",
+      "id" : "6",
+      "keepLog" : false,
+      "number" : 6,
+      "queueId" : 274,
+      "result" : "SUCCESS",
+      "timestamp" : 1533241423376,
+      "url" : "http://builds.cdlib.org/job/mrt-build-sword/6/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 6,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+              "branch" : [
+                {
+                  "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+              "branch" : [
+                {
+                  "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+          "branch" : [
+            {
+              "SHA1" : "cc1c53343e581593abd81c064e3834044e4719d1",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-sword"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 2,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#6",
+    "duration" : 28179,
+    "estimatedDuration" : 24588,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-sword #6",
+    "id" : "6",
+    "keepLog" : false,
+    "number" : 6,
+    "queueId" : 274,
+    "result" : "SUCCESS",
+    "timestamp" : 1533241423376,
+    "url" : "http://builds.cdlib.org/job/mrt-build-sword/6/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Test Result: 0 tests failing out of a total of 2 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    },
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 10,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "branch" : [
+                {
+                  "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "branch" : [
+                {
+                  "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+          "branch" : [
+            {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-sword"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 2,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#10",
+    "duration" : 21897,
+    "estimatedDuration" : 24588,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-sword #10",
+    "id" : "10",
+    "keepLog" : false,
+    "number" : 10,
+    "queueId" : 304,
+    "result" : "SUCCESS",
+    "timestamp" : 1534445752380,
+    "url" : "http://builds.cdlib.org/job/mrt-build-sword/10/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 10,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "branch" : [
+                {
+                  "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "branch" : [
+                {
+                  "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+          "branch" : [
+            {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-sword"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 2,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#10",
+    "duration" : 21897,
+    "estimatedDuration" : 24588,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-sword #10",
+    "id" : "10",
+    "keepLog" : false,
+    "number" : 10,
+    "queueId" : 304,
+    "result" : "SUCCESS",
+    "timestamp" : 1534445752380,
+    "url" : "http://builds.cdlib.org/job/mrt-build-sword/10/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 10,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "branch" : [
+                {
+                  "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "branch" : [
+                {
+                  "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+          "branch" : [
+            {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-sword"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 2,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#10",
+    "duration" : 21897,
+    "estimatedDuration" : 24588,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-sword #10",
+    "id" : "10",
+    "keepLog" : false,
+    "number" : 10,
+    "queueId" : 304,
+    "result" : "SUCCESS",
+    "timestamp" : 1534445752380,
+    "url" : "http://builds.cdlib.org/job/mrt-build-sword/10/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 10,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "branch" : [
+                {
+                  "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "branch" : [
+                {
+                  "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+          "branch" : [
+            {
+              "SHA1" : "1a01c30995d263057c4c9f486527cd25edbb28b5",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-sword"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 2,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#10",
+    "duration" : 21897,
+    "estimatedDuration" : 24588,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-sword #10",
+    "id" : "10",
+    "keepLog" : false,
+    "number" : 10,
+    "queueId" : 304,
+    "result" : "SUCCESS",
+    "timestamp" : 1534445752380,
+    "url" : "http://builds.cdlib.org/job/mrt-build-sword/10/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 11,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "test"
+          ]
+        }
+      ]
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-sword » UC3-mrtSwordConfPub",
+      "fullName" : "mrt-build-sword/org.cdlib.mrt:mrt-swordconfpub",
+      "name" : "org.cdlib.mrt:mrt-swordconfpub",
+      "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 10,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/10/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 9,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/9/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/6/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 6,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/6/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/10/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/10/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/10/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/10/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 11,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtSwordConfPub"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-sword » UC3-mrtSwordPub",
+      "fullName" : "mrt-build-sword/org.cdlib.mrt:mrt-swordpub",
+      "name" : "org.cdlib.mrt:mrt-swordpub",
+      "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 10,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/10/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 9,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/9/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/6/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 6,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/6/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/10/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/10/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/10/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/10/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 11,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtSwordPub"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-sword » UC3-mrtSwordSrcPub",
+      "fullName" : "mrt-build-sword/org.cdlib.mrt:mrt-swordsrcpub",
+      "name" : "org.cdlib.mrt:mrt-swordsrcpub",
+      "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 10,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/10/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 9,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/9/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/6/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 6,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/6/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 2 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/10/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/10/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/10/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/10/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 11,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtSwordSrcPub"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-sword » UC3-mrtSwordWarPub",
+      "fullName" : "mrt-build-sword/org.cdlib.mrt:mrt-swordwarpub",
+      "name" : "org.cdlib.mrt:mrt-swordwarpub",
+      "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 10,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/10/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 9,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/9/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/6/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 6,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/6/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/10/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/10/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/10/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/10/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 11,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtSwordWarPub"
+    }
+  ]
+}

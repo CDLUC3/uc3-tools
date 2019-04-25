@@ -1,0 +1,1826 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "home-dpr2 - have the /dpr2/mrtHomes/store architecture.\nhome-dpr2store - have the /dpr2store/mrtHomes/store architecture.",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "audit",
+            "test"
+          ]
+        }
+      ]
+    },
+    {
+      
+    },
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Build Merritt store-store-pub war using the default code branch.\r\n",
+  "displayName" : "mrt-store-pub",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-store-pub",
+  "fullName" : "mrt-store-pub",
+  "name" : "mrt-store-pub",
+  "url" : "http://builds.cdlib.org/job/mrt-store-pub/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 93,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                "branch" : [
+                  {
+                    "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                "branch" : [
+                  {
+                    "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+            "branch" : [
+              {
+                "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-store.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 3,
+          "urlName" : "testReport"
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#93",
+      "duration" : 49480,
+      "estimatedDuration" : 42280,
+      "executor" : null,
+      "fullDisplayName" : "mrt-store-pub #93",
+      "id" : "93",
+      "keepLog" : false,
+      "number" : 93,
+      "queueId" : 507,
+      "result" : "SUCCESS",
+      "timestamp" : 1554825451917,
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 92,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                "branch" : [
+                  {
+                    "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                "branch" : [
+                  {
+                    "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+            "branch" : [
+              {
+                "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-store.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 3,
+          "urlName" : "testReport"
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#92",
+      "duration" : 37308,
+      "estimatedDuration" : 42280,
+      "executor" : null,
+      "fullDisplayName" : "mrt-store-pub #92",
+      "id" : "92",
+      "keepLog" : false,
+      "number" : 92,
+      "queueId" : 503,
+      "result" : "SUCCESS",
+      "timestamp" : 1554492621233,
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/92/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 91,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                "branch" : [
+                  {
+                    "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                "branch" : [
+                  {
+                    "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+            "branch" : [
+              {
+                "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-store.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 3,
+          "urlName" : "testReport"
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#91",
+      "duration" : 40053,
+      "estimatedDuration" : 42280,
+      "executor" : null,
+      "fullDisplayName" : "mrt-store-pub #91",
+      "id" : "91",
+      "keepLog" : false,
+      "number" : 91,
+      "queueId" : 500,
+      "result" : "SUCCESS",
+      "timestamp" : 1554320469565,
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/91/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "store-src/src/main/java/org/cdlib/mrt/cloud/action/AddVersionContentAbs.java",
+              "store-src/src/main/java/org/cdlib/mrt/store/cloud/CloudObjectService.java",
+              "store-src/src/main/java/org/cdlib/mrt/cloud/action/UpdateVersionThread.java"
+            ],
+            "commitId" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+            "timestamp" : 1554320291000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Use threaded form of update command that is able to issue retry. Used as\na retry fix for minio error - earlier mod cloud API corrected\n",
+            "date" : "2019-04-03 12:38:11 -0700",
+            "id" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+            "msg" : "Use threaded form of update command that is able to issue retry. Used as",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "store-src/src/main/java/org/cdlib/mrt/cloud/action/AddVersionContentAbs.java"
+              },
+              {
+                "editType" : "edit",
+                "file" : "store-src/src/main/java/org/cdlib/mrt/store/cloud/CloudObjectService.java"
+              },
+              {
+                "editType" : "add",
+                "file" : "store-src/src/main/java/org/cdlib/mrt/cloud/action/UpdateVersionThread.java"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+          "fullName" : "replic"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 90,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                "branch" : [
+                  {
+                    "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                "branch" : [
+                  {
+                    "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+            "branch" : [
+              {
+                "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-store.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 3,
+          "urlName" : "testReport"
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#90",
+      "duration" : 38986,
+      "estimatedDuration" : 42280,
+      "executor" : null,
+      "fullDisplayName" : "mrt-store-pub #90",
+      "id" : "90",
+      "keepLog" : false,
+      "number" : 90,
+      "queueId" : 496,
+      "result" : "SUCCESS",
+      "timestamp" : 1554135528698,
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/90/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 89,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                "branch" : [
+                  {
+                    "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                "branch" : [
+                  {
+                    "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+            "branch" : [
+              {
+                "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-store.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 3,
+          "urlName" : "testReport"
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#89",
+      "duration" : 34478,
+      "estimatedDuration" : 42280,
+      "executor" : null,
+      "fullDisplayName" : "mrt-store-pub #89",
+      "id" : "89",
+      "keepLog" : false,
+      "number" : 89,
+      "queueId" : 483,
+      "result" : "SUCCESS",
+      "timestamp" : 1551897700704,
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/89/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 89,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+              "branch" : [
+                {
+                  "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+              "branch" : [
+                {
+                  "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+          "branch" : [
+            {
+              "SHA1" : "b75581d48c3892e8e8a5309fe2e264f4942913cc",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-store.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 3,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#89",
+    "duration" : 34478,
+    "estimatedDuration" : 42280,
+    "executor" : null,
+    "fullDisplayName" : "mrt-store-pub #89",
+    "id" : "89",
+    "keepLog" : false,
+    "number" : 89,
+    "queueId" : 483,
+    "result" : "SUCCESS",
+    "timestamp" : 1551897700704,
+    "url" : "http://builds.cdlib.org/job/mrt-store-pub/89/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Test Result: 0 tests failing out of a total of 3 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    },
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 93,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "branch" : [
+                {
+                  "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "branch" : [
+                {
+                  "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+          "branch" : [
+            {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-store.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 3,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#93",
+    "duration" : 49480,
+    "estimatedDuration" : 42280,
+    "executor" : null,
+    "fullDisplayName" : "mrt-store-pub #93",
+    "id" : "93",
+    "keepLog" : false,
+    "number" : 93,
+    "queueId" : 507,
+    "result" : "SUCCESS",
+    "timestamp" : 1554825451917,
+    "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 93,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "branch" : [
+                {
+                  "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "branch" : [
+                {
+                  "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+          "branch" : [
+            {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-store.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 3,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#93",
+    "duration" : 49480,
+    "estimatedDuration" : 42280,
+    "executor" : null,
+    "fullDisplayName" : "mrt-store-pub #93",
+    "id" : "93",
+    "keepLog" : false,
+    "number" : 93,
+    "queueId" : 507,
+    "result" : "SUCCESS",
+    "timestamp" : 1554825451917,
+    "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 93,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "branch" : [
+                {
+                  "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "branch" : [
+                {
+                  "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+          "branch" : [
+            {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-store.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 3,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#93",
+    "duration" : 49480,
+    "estimatedDuration" : 42280,
+    "executor" : null,
+    "fullDisplayName" : "mrt-store-pub #93",
+    "id" : "93",
+    "keepLog" : false,
+    "number" : 93,
+    "queueId" : 507,
+    "result" : "SUCCESS",
+    "timestamp" : 1554825451917,
+    "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 93,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "branch" : [
+                {
+                  "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "branch" : [
+                {
+                  "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+          "branch" : [
+            {
+              "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-store.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 3,
+        "urlName" : "testReport"
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#93",
+    "duration" : 49480,
+    "estimatedDuration" : 42280,
+    "executor" : null,
+    "fullDisplayName" : "mrt-store-pub #93",
+    "id" : "93",
+    "keepLog" : false,
+    "number" : 93,
+    "queueId" : 507,
+    "result" : "SUCCESS",
+    "timestamp" : 1554825451917,
+    "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 94,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "home-dpr2 - have the /dpr2/mrtHomes/store architecture.\nhome-dpr2store - have the /dpr2store/mrtHomes/store architecture.",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "audit",
+            "test"
+          ]
+        }
+      ]
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-store-pub » UC3-mrtPubStore",
+      "fullName" : "mrt-store-pub/org.cdlib.mrt:mrt-pubstore",
+      "name" : "org.cdlib.mrt:mrt-pubstore",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-pubstore/",
+      "buildable" : true,
+      "builds" : [
+        
+      ],
+      "color" : "notbuilt",
+      "firstBuild" : null,
+      "healthReport" : [
+        
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : null,
+      "lastCompletedBuild" : null,
+      "lastFailedBuild" : null,
+      "lastStableBuild" : null,
+      "lastSuccessfulBuild" : null,
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 93,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtPubStore"
+    },
+    {
+      "actions" : [
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-store-pub » UC3-mrtPubStoreSrc",
+      "fullName" : "mrt-store-pub/org.cdlib.mrt:mrt-pubstoresrc",
+      "name" : "org.cdlib.mrt:mrt-pubstoresrc",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-pubstoresrc/",
+      "buildable" : true,
+      "builds" : [
+        
+      ],
+      "color" : "notbuilt",
+      "firstBuild" : null,
+      "healthReport" : [
+        
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : null,
+      "lastCompletedBuild" : null,
+      "lastFailedBuild" : null,
+      "lastStableBuild" : null,
+      "lastSuccessfulBuild" : null,
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 93,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtPubStoreSrc"
+    },
+    {
+      "actions" : [
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-store-pub » UC3-mrtPubStoreWar",
+      "fullName" : "mrt-store-pub/org.cdlib.mrt:mrt-pubstorewar",
+      "name" : "org.cdlib.mrt:mrt-pubstorewar",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-pubstorewar/",
+      "buildable" : true,
+      "builds" : [
+        
+      ],
+      "color" : "notbuilt",
+      "firstBuild" : null,
+      "healthReport" : [
+        
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : null,
+      "lastCompletedBuild" : null,
+      "lastFailedBuild" : null,
+      "lastStableBuild" : null,
+      "lastSuccessfulBuild" : null,
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 93,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtPubStoreWar"
+    },
+    {
+      "actions" : [
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-store-pub » UC3-mrtStorePub",
+      "fullName" : "mrt-store-pub/org.cdlib.mrt:mrt-storepub",
+      "name" : "org.cdlib.mrt:mrt-storepub",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 93,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/93/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 92,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/92/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 91,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/91/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 90,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/90/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 89,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/89/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 89,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/89/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/93/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/93/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/93/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/93/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 94,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtStorePub"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-store-pub » UC3-mrtStorePub-src",
+      "fullName" : "mrt-store-pub/org.cdlib.mrt:mrt-storepub-src",
+      "name" : "org.cdlib.mrt:mrt-storepub-src",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 93,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/93/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 92,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/92/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 91,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/91/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 90,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/90/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 89,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/89/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 89,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/89/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 3 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/93/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/93/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/93/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/93/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 94,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtStorePub-src"
+    },
+    {
+      "actions" : [
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-store-pub » UC3-mrtStorePub-war",
+      "fullName" : "mrt-store-pub/org.cdlib.mrt:mrt-storewar",
+      "name" : "org.cdlib.mrt:mrt-storewar",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 93,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/93/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 92,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/92/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 91,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/91/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 90,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/90/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 89,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/89/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 89,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/89/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/93/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/93/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/93/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/93/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 94,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtStorePub-war"
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "_class" : "hudson.maven.MavenModuleSetBuild",
+  "actions" : [
+    {
+      "_class" : "hudson.model.ParametersAction",
+      "parameters" : [
+        {
+          "_class" : "hudson.model.StringParameterValue",
+          "name" : "propertyDirName",
+          "value" : "prod"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.model.CauseAction",
+      "causes" : [
+        {
+          "_class" : "hudson.model.Cause$UserIdCause",
+          "shortDescription" : "Started by user anonymous",
+          "userId" : null,
+          "userName" : "anonymous"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.plugins.git.util.BuildData",
+      "buildsByBranchName" : {
+        "refs/remotes/origin/master" : {
+          "_class" : "hudson.plugins.git.util.Build",
+          "buildNumber" : 93,
+          "buildResult" : null,
+          "marked" : {
+            "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+            "branch" : [
+              {
+                "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "revision" : {
+            "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+            "branch" : [
+              {
+                "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision" : {
+        "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+        "branch" : [
+          {
+            "SHA1" : "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+            "name" : "refs/remotes/origin/master"
+          }
+        ]
+      },
+      "remoteUrls" : [
+        "https://github.com/CDLUC3/mrt-store.git"
+      ],
+      "scmName" : ""
+    },
+    {
+      "_class" : "hudson.plugins.git.GitTagAction",
+      "tags" : [
+        
+      ]
+    },
+    {
+      
+    },
+    {
+      "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+      "failCount" : 0,
+      "skipCount" : 0,
+      "totalCount" : 3,
+      "urlName" : "testReport",
+      "childReports" : [
+        {
+          "child" : {
+            "_class" : "hudson.maven.MavenBuild",
+            "number" : 93,
+            "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/93/"
+          },
+          "result" : {
+            "_class" : "hudson.tasks.junit.TestResult",
+            "testActions" : [
+              
+            ],
+            "duration" : 0.053000003,
+            "empty" : false,
+            "failCount" : 0,
+            "passCount" : 3,
+            "skipCount" : 0,
+            "suites" : [
+              {
+                "cases" : [
+                  {
+                    "testActions" : [
+                      
+                    ],
+                    "age" : 0,
+                    "className" : "org.cdlib.mrt.store.action.AsyncContainerObjectTest",
+                    "duration" : 0.022,
+                    "failedSince" : 0,
+                    "name" : "testMessage",
+                    "skipped" : false,
+                    "status" : "PASSED"
+                  },
+                  {
+                    "testActions" : [
+                      
+                    ],
+                    "age" : 0,
+                    "className" : "org.cdlib.mrt.store.action.AsyncContainerObjectTest",
+                    "duration" : 0.0,
+                    "failedSince" : 0,
+                    "name" : "defaultTest",
+                    "skipped" : false,
+                    "status" : "PASSED"
+                  }
+                ],
+                "duration" : 0.045,
+                "enclosingBlockNames" : [
+                  
+                ],
+                "enclosingBlocks" : [
+                  
+                ],
+                "id" : null,
+                "name" : "org.cdlib.mrt.store.action.AsyncContainerObjectTest",
+                "nodeId" : null,
+                "timestamp" : null
+              },
+              {
+                "cases" : [
+                  {
+                    "testActions" : [
+                      
+                    ],
+                    "age" : 0,
+                    "className" : "org.cdlib.mrt.store.can.CANTest",
+                    "duration" : 0.008,
+                    "failedSince" : 0,
+                    "name" : "testGetLocalIDs",
+                    "skipped" : false,
+                    "status" : "PASSED"
+                  }
+                ],
+                "duration" : 0.008,
+                "enclosingBlockNames" : [
+                  
+                ],
+                "enclosingBlocks" : [
+                  
+                ],
+                "id" : null,
+                "name" : "org.cdlib.mrt.store.can.CANTest",
+                "nodeId" : null,
+                "timestamp" : null
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord",
+      "moduleRecords" : [
+        {
+          "attachedArtifacts" : [
+            
+          ],
+          "mainArtifact" : {
+            "artifactId" : "mrt-storepub",
+            "canonicalName" : "mrt-storepub-1.0-SNAPSHOT.pom",
+            "classifier" : null,
+            "fileName" : "mrt-storepub-1.0-SNAPSHOT.pom",
+            "groupId" : "org.cdlib.mrt",
+            "md5sum" : "a4370baf81c7de1cff37e4968c74fed8",
+            "type" : "pom",
+            "version" : "1.0-SNAPSHOT"
+          },
+          "parent" : {
+            "number" : 93,
+            "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/93/"
+          },
+          "pomArtifact" : {
+            "artifactId" : "mrt-storepub",
+            "canonicalName" : "mrt-storepub-1.0-SNAPSHOT.pom",
+            "classifier" : null,
+            "fileName" : "pom.xml",
+            "groupId" : "org.cdlib.mrt",
+            "md5sum" : "a4370baf81c7de1cff37e4968c74fed8",
+            "type" : "pom",
+            "version" : "1.0-SNAPSHOT"
+          },
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/93/mavenArtifacts/"
+        },
+        {
+          "attachedArtifacts" : [
+            
+          ],
+          "mainArtifact" : {
+            "artifactId" : "mrt-storepub-src",
+            "canonicalName" : "mrt-storepub-src-1.0-SNAPSHOT.jar",
+            "classifier" : null,
+            "fileName" : "mrt-storepub-src-1.0-SNAPSHOT.jar",
+            "groupId" : "org.cdlib.mrt",
+            "md5sum" : "3980fb2fde744b9b2881a0e09c9e5367",
+            "type" : "jar",
+            "version" : "1.0-SNAPSHOT"
+          },
+          "parent" : {
+            "number" : 93,
+            "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/93/"
+          },
+          "pomArtifact" : {
+            "artifactId" : "mrt-storepub-src",
+            "canonicalName" : "mrt-storepub-src-1.0-SNAPSHOT.pom",
+            "classifier" : null,
+            "fileName" : "pom.xml",
+            "groupId" : "org.cdlib.mrt",
+            "md5sum" : "fc054c1c48c9fa148426d67d49db2088",
+            "type" : "pom",
+            "version" : "1.0-SNAPSHOT"
+          },
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/93/mavenArtifacts/"
+        },
+        {
+          "attachedArtifacts" : [
+            
+          ],
+          "mainArtifact" : {
+            "artifactId" : "mrt-storewar",
+            "canonicalName" : "mrt-storewar-1.0-SNAPSHOT.war",
+            "classifier" : null,
+            "fileName" : "mrt-storewar-1.0-SNAPSHOT.war",
+            "groupId" : "org.cdlib.mrt",
+            "md5sum" : "542f0c004c158fa9bdf292eda2cd377a",
+            "type" : "war",
+            "version" : "1.0-SNAPSHOT"
+          },
+          "parent" : {
+            "number" : 93,
+            "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/93/"
+          },
+          "pomArtifact" : {
+            "artifactId" : "mrt-storewar",
+            "canonicalName" : "mrt-storewar-1.0-SNAPSHOT.pom",
+            "classifier" : null,
+            "fileName" : "pom.xml",
+            "groupId" : "org.cdlib.mrt",
+            "md5sum" : "42c56b26f5dc86c61e62f165b6a53ad9",
+            "type" : "pom",
+            "version" : "1.0-SNAPSHOT"
+          },
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/93/mavenArtifacts/"
+        }
+      ]
+    },
+    {
+      
+    },
+    {
+      
+    }
+  ],
+  "artifacts" : [
+    
+  ],
+  "building" : false,
+  "description" : null,
+  "displayName" : "#93",
+  "duration" : 49480,
+  "estimatedDuration" : 42280,
+  "executor" : null,
+  "fullDisplayName" : "mrt-store-pub #93",
+  "id" : "93",
+  "keepLog" : false,
+  "number" : 93,
+  "queueId" : 507,
+  "result" : "SUCCESS",
+  "timestamp" : 1554825451917,
+  "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/",
+  "builtOn" : "",
+  "changeSet" : {
+    "_class" : "hudson.plugins.git.GitChangeSetList",
+    "items" : [
+      
+    ],
+    "kind" : "git"
+  },
+  "culprits" : [
+    
+  ],
+  "mavenArtifacts" : {
+    "moduleRecords" : [
+      {
+        "attachedArtifacts" : [
+          
+        ],
+        "mainArtifact" : {
+          "artifactId" : "mrt-storepub",
+          "canonicalName" : "mrt-storepub-1.0-SNAPSHOT.pom",
+          "classifier" : null,
+          "fileName" : "mrt-storepub-1.0-SNAPSHOT.pom",
+          "groupId" : "org.cdlib.mrt",
+          "md5sum" : "a4370baf81c7de1cff37e4968c74fed8",
+          "type" : "pom",
+          "version" : "1.0-SNAPSHOT"
+        },
+        "parent" : {
+          "number" : 93,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/93/"
+        },
+        "pomArtifact" : {
+          "artifactId" : "mrt-storepub",
+          "canonicalName" : "mrt-storepub-1.0-SNAPSHOT.pom",
+          "classifier" : null,
+          "fileName" : "pom.xml",
+          "groupId" : "org.cdlib.mrt",
+          "md5sum" : "a4370baf81c7de1cff37e4968c74fed8",
+          "type" : "pom",
+          "version" : "1.0-SNAPSHOT"
+        },
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/93/mavenArtifacts/"
+      },
+      {
+        "attachedArtifacts" : [
+          
+        ],
+        "mainArtifact" : {
+          "artifactId" : "mrt-storepub-src",
+          "canonicalName" : "mrt-storepub-src-1.0-SNAPSHOT.jar",
+          "classifier" : null,
+          "fileName" : "mrt-storepub-src-1.0-SNAPSHOT.jar",
+          "groupId" : "org.cdlib.mrt",
+          "md5sum" : "3980fb2fde744b9b2881a0e09c9e5367",
+          "type" : "jar",
+          "version" : "1.0-SNAPSHOT"
+        },
+        "parent" : {
+          "number" : 93,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/93/"
+        },
+        "pomArtifact" : {
+          "artifactId" : "mrt-storepub-src",
+          "canonicalName" : "mrt-storepub-src-1.0-SNAPSHOT.pom",
+          "classifier" : null,
+          "fileName" : "pom.xml",
+          "groupId" : "org.cdlib.mrt",
+          "md5sum" : "fc054c1c48c9fa148426d67d49db2088",
+          "type" : "pom",
+          "version" : "1.0-SNAPSHOT"
+        },
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/93/mavenArtifacts/"
+      },
+      {
+        "attachedArtifacts" : [
+          
+        ],
+        "mainArtifact" : {
+          "artifactId" : "mrt-storewar",
+          "canonicalName" : "mrt-storewar-1.0-SNAPSHOT.war",
+          "classifier" : null,
+          "fileName" : "mrt-storewar-1.0-SNAPSHOT.war",
+          "groupId" : "org.cdlib.mrt",
+          "md5sum" : "542f0c004c158fa9bdf292eda2cd377a",
+          "type" : "war",
+          "version" : "1.0-SNAPSHOT"
+        },
+        "parent" : {
+          "number" : 93,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/93/"
+        },
+        "pomArtifact" : {
+          "artifactId" : "mrt-storewar",
+          "canonicalName" : "mrt-storewar-1.0-SNAPSHOT.pom",
+          "classifier" : null,
+          "fileName" : "pom.xml",
+          "groupId" : "org.cdlib.mrt",
+          "md5sum" : "42c56b26f5dc86c61e62f165b6a53ad9",
+          "type" : "pom",
+          "version" : "1.0-SNAPSHOT"
+        },
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/93/mavenArtifacts/"
+      }
+    ]
+  },
+  "mavenVersionUsed" : "2.2.1"
+}

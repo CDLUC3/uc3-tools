@@ -1,0 +1,1757 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "test"
+          ]
+        }
+      ]
+    },
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Build Merritt mrt-oai war using the default code branch.\r\n",
+  "displayName" : "mrt-build-oai",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-build-oai",
+  "fullName" : "mrt-build-oai",
+  "name" : "mrt-build-oai",
+  "url" : "http://builds.cdlib.org/job/mrt-build-oai/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 19,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "branch" : [
+                  {
+                    "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "branch" : [
+                  {
+                    "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+            "branch" : [
+              {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-oai"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 11,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#19",
+      "duration" : 25849,
+      "estimatedDuration" : 31859,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-oai #19",
+      "id" : "19",
+      "keepLog" : false,
+      "number" : 19,
+      "queueId" : 359,
+      "result" : "SUCCESS",
+      "timestamp" : 1540320441467,
+      "url" : "http://builds.cdlib.org/job/mrt-build-oai/19/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 18,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "branch" : [
+                  {
+                    "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "branch" : [
+                  {
+                    "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+            "branch" : [
+              {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-oai"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 11,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#18",
+      "duration" : 36261,
+      "estimatedDuration" : 31859,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-oai #18",
+      "id" : "18",
+      "keepLog" : false,
+      "number" : 18,
+      "queueId" : 358,
+      "result" : "SUCCESS",
+      "timestamp" : 1540319266767,
+      "url" : "http://builds.cdlib.org/job/mrt-build-oai/18/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "dev"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 17,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "branch" : [
+                  {
+                    "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "branch" : [
+                  {
+                    "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+            "branch" : [
+              {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-oai"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 11,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#17",
+      "duration" : 33468,
+      "estimatedDuration" : 31859,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-oai #17",
+      "id" : "17",
+      "keepLog" : false,
+      "number" : 17,
+      "queueId" : 356,
+      "result" : "SUCCESS",
+      "timestamp" : 1540250484871,
+      "url" : "http://builds.cdlib.org/job/mrt-build-oai/17/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "dev"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 16,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "branch" : [
+                  {
+                    "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "branch" : [
+                  {
+                    "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+            "branch" : [
+              {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-oai"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 11,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#16",
+      "duration" : 31183,
+      "estimatedDuration" : 31859,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-oai #16",
+      "id" : "16",
+      "keepLog" : false,
+      "number" : 16,
+      "queueId" : 303,
+      "result" : "SUCCESS",
+      "timestamp" : 1534444705839,
+      "url" : "http://builds.cdlib.org/job/mrt-build-oai/16/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 15,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "branch" : [
+                  {
+                    "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "branch" : [
+                  {
+                    "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+            "branch" : [
+              {
+                "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-oai"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+          "failCount" : 0,
+          "skipCount" : 0,
+          "totalCount" : 11,
+          "urlName" : "testReport"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#15",
+      "duration" : 27761,
+      "estimatedDuration" : 31859,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-oai #15",
+      "id" : "15",
+      "keepLog" : false,
+      "number" : 15,
+      "queueId" : 282,
+      "result" : "SUCCESS",
+      "timestamp" : 1533859367496,
+      "url" : "http://builds.cdlib.org/job/mrt-build-oai/15/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 15,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "branch" : [
+                {
+                  "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "branch" : [
+                {
+                  "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+          "branch" : [
+            {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-oai"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 11,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#15",
+    "duration" : 27761,
+    "estimatedDuration" : 31859,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-oai #15",
+    "id" : "15",
+    "keepLog" : false,
+    "number" : 15,
+    "queueId" : 282,
+    "result" : "SUCCESS",
+    "timestamp" : 1533859367496,
+    "url" : "http://builds.cdlib.org/job/mrt-build-oai/15/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Test Result: 0 tests failing out of a total of 11 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    },
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 19,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "branch" : [
+                {
+                  "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "branch" : [
+                {
+                  "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+          "branch" : [
+            {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-oai"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 11,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#19",
+    "duration" : 25849,
+    "estimatedDuration" : 31859,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-oai #19",
+    "id" : "19",
+    "keepLog" : false,
+    "number" : 19,
+    "queueId" : 359,
+    "result" : "SUCCESS",
+    "timestamp" : 1540320441467,
+    "url" : "http://builds.cdlib.org/job/mrt-build-oai/19/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 19,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "branch" : [
+                {
+                  "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "branch" : [
+                {
+                  "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+          "branch" : [
+            {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-oai"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 11,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#19",
+    "duration" : 25849,
+    "estimatedDuration" : 31859,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-oai #19",
+    "id" : "19",
+    "keepLog" : false,
+    "number" : 19,
+    "queueId" : 359,
+    "result" : "SUCCESS",
+    "timestamp" : 1540320441467,
+    "url" : "http://builds.cdlib.org/job/mrt-build-oai/19/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 19,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "branch" : [
+                {
+                  "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "branch" : [
+                {
+                  "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+          "branch" : [
+            {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-oai"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 11,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#19",
+    "duration" : 25849,
+    "estimatedDuration" : 31859,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-oai #19",
+    "id" : "19",
+    "keepLog" : false,
+    "number" : 19,
+    "queueId" : 359,
+    "result" : "SUCCESS",
+    "timestamp" : 1540320441467,
+    "url" : "http://builds.cdlib.org/job/mrt-build-oai/19/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 19,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "branch" : [
+                {
+                  "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "branch" : [
+                {
+                  "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+          "branch" : [
+            {
+              "SHA1" : "782e972109d7ad84da07b9c0332c474e13ad97ac",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-oai"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+        "failCount" : 0,
+        "skipCount" : 0,
+        "totalCount" : 11,
+        "urlName" : "testReport"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#19",
+    "duration" : 25849,
+    "estimatedDuration" : 31859,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-oai #19",
+    "id" : "19",
+    "keepLog" : false,
+    "number" : 19,
+    "queueId" : 359,
+    "result" : "SUCCESS",
+    "timestamp" : 1540320441467,
+    "url" : "http://builds.cdlib.org/job/mrt-build-oai/19/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 20,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "test"
+          ]
+        }
+      ]
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-oai » UC3-mrtOAIConfPub",
+      "fullName" : "mrt-build-oai/org.cdlib.mrt:mrt-oaiconfpub",
+      "name" : "org.cdlib.mrt:mrt-oaiconfpub",
+      "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 19,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/19/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 18,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/18/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 17,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/17/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 16,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/16/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 15,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/15/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 15,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/15/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/19/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/19/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/19/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/19/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 20,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtOAIConfPub"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-oai » UC3-mrtOAIGit",
+      "fullName" : "mrt-build-oai/org.cdlib.mrt:mrt-oaigit",
+      "name" : "org.cdlib.mrt:mrt-oaigit",
+      "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 19,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/19/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 18,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/18/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 17,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/17/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 16,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/16/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 15,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/15/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 15,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/15/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/19/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/19/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/19/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/19/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 20,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtOAIGit"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-oai » UC3-mrtOAISrcPub",
+      "fullName" : "mrt-build-oai/org.cdlib.mrt:mrt-oaisrcpub",
+      "name" : "org.cdlib.mrt:mrt-oaisrcpub",
+      "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 19,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/19/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 18,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/18/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 17,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/17/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 16,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/16/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 15,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/15/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 15,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/15/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 11 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/19/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/19/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/19/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/19/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 20,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtOAISrcPub"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-oai » UC3-mrtOAIWar",
+      "fullName" : "mrt-build-oai/org.cdlib.mrt:mrt-oaiwar",
+      "name" : "org.cdlib.mrt:mrt-oaiwar",
+      "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 19,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/19/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 18,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/18/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 17,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/17/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 16,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/16/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 15,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/15/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 15,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/15/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/19/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/19/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/19/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/19/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 20,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtOAIWar"
+    }
+  ]
+}

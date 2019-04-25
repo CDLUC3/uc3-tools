@@ -1,0 +1,1894 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "test"
+          ]
+        }
+      ]
+    },
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Build Merritt mrt-replic war using the default code branch.\r\n",
+  "displayName" : "mrt-build-replic",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-build-replic",
+  "fullName" : "mrt-build-replic",
+  "name" : "mrt-build-replic",
+  "url" : "http://builds.cdlib.org/job/mrt-build-replic/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 39,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                "branch" : [
+                  {
+                    "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                "branch" : [
+                  {
+                    "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+            "branch" : [
+              {
+                "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-replic"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#39",
+      "duration" : 35291,
+      "estimatedDuration" : 38635,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-replic #39",
+      "id" : "39",
+      "keepLog" : false,
+      "number" : 39,
+      "queueId" : 508,
+      "result" : "SUCCESS",
+      "timestamp" : 1555001203070,
+      "url" : "http://builds.cdlib.org/job/mrt-build-replic/39/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "replication-src/src/main/java/org/cdlib/mrt/replic/basic/service/RunReplication.java",
+              "replication-src/src/main/java/org/cdlib/mrt/replic/basic/test/ReplicatorSetTest.java",
+              "replication-conf/src/main/properties/docker/Replic.properties",
+              "replication-conf/src/main/properties/docker/ReplicLogger.properties"
+            ],
+            "commitId" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+            "timestamp" : 1554999906000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Use automatic update to determine if this replication server owns a\nspecific primary entry Add docker properties\n",
+            "date" : "2019-04-11 09:25:06 -0700",
+            "id" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+            "msg" : "Use automatic update to determine if this replication server owns a",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "replication-src/src/main/java/org/cdlib/mrt/replic/basic/service/RunReplication.java"
+              },
+              {
+                "editType" : "add",
+                "file" : "replication-src/src/main/java/org/cdlib/mrt/replic/basic/test/ReplicatorSetTest.java"
+              },
+              {
+                "editType" : "add",
+                "file" : "replication-conf/src/main/properties/docker/Replic.properties"
+              },
+              {
+                "editType" : "add",
+                "file" : "replication-conf/src/main/properties/docker/ReplicLogger.properties"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+          "fullName" : "replic"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 38,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "52d648236dda8fb0c574c364dc703b81f5be2623",
+                "branch" : [
+                  {
+                    "SHA1" : "52d648236dda8fb0c574c364dc703b81f5be2623",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "52d648236dda8fb0c574c364dc703b81f5be2623",
+                "branch" : [
+                  {
+                    "SHA1" : "52d648236dda8fb0c574c364dc703b81f5be2623",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "52d648236dda8fb0c574c364dc703b81f5be2623",
+            "branch" : [
+              {
+                "SHA1" : "52d648236dda8fb0c574c364dc703b81f5be2623",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-replic"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#38",
+      "duration" : 44314,
+      "estimatedDuration" : 38635,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-replic #38",
+      "id" : "38",
+      "keepLog" : false,
+      "number" : 38,
+      "queueId" : 495,
+      "result" : "SUCCESS",
+      "timestamp" : 1554132700012,
+      "url" : "http://builds.cdlib.org/job/mrt-build-replic/38/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "replication-src/pom.xml"
+            ],
+            "commitId" : "52d648236dda8fb0c574c364dc703b81f5be2623",
+            "timestamp" : 1554132628000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+              "fullName" : "replic"
+            },
+            "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+            "comment" : "Upgrade AWS S3 java SDK because of failed minio handling storage on\nlarge content <dependency>   <groupId>com.amazonaws</groupId>  \n<artifactId>aws-java-sdk</artifactId>   <!--version>1.11.438 failed\nsegments minio</version-->   <version>1.11.527</version> </dependency>\n",
+            "date" : "2019-04-01 08:30:28 -0700",
+            "id" : "52d648236dda8fb0c574c364dc703b81f5be2623",
+            "msg" : "Upgrade AWS S3 java SDK because of failed minio handling storage on",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "replication-src/pom.xml"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+          "fullName" : "replic"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 37,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                "branch" : [
+                  {
+                    "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                "branch" : [
+                  {
+                    "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+            "branch" : [
+              {
+                "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-replic"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#37",
+      "duration" : 36300,
+      "estimatedDuration" : 38635,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-replic #37",
+      "id" : "37",
+      "keepLog" : false,
+      "number" : 37,
+      "queueId" : 494,
+      "result" : "SUCCESS",
+      "timestamp" : 1554132092664,
+      "url" : "http://builds.cdlib.org/job/mrt-build-replic/37/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "stage"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 36,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                "branch" : [
+                  {
+                    "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                "branch" : [
+                  {
+                    "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+            "branch" : [
+              {
+                "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-replic"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#36",
+      "duration" : 42331,
+      "estimatedDuration" : 38635,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-replic #36",
+      "id" : "36",
+      "keepLog" : false,
+      "number" : 36,
+      "queueId" : 469,
+      "result" : "SUCCESS",
+      "timestamp" : 1550248564875,
+      "url" : "http://builds.cdlib.org/job/mrt-build-replic/36/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "propertyDirName",
+              "value" : "prod"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 35,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                "branch" : [
+                  {
+                    "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                "branch" : [
+                  {
+                    "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+            "branch" : [
+              {
+                "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-replic"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#35",
+      "duration" : 37083,
+      "estimatedDuration" : 38635,
+      "executor" : null,
+      "fullDisplayName" : "mrt-build-replic #35",
+      "id" : "35",
+      "keepLog" : false,
+      "number" : 35,
+      "queueId" : 468,
+      "result" : "SUCCESS",
+      "timestamp" : 1550182393714,
+      "url" : "http://builds.cdlib.org/job/mrt-build-replic/35/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "prod"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 35,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+              "branch" : [
+                {
+                  "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+              "branch" : [
+                {
+                  "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+          "branch" : [
+            {
+              "SHA1" : "dd3cb3af9fb777199fcd5a8415dc91c126cf14d9",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-replic"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#35",
+    "duration" : 37083,
+    "estimatedDuration" : 38635,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-replic #35",
+    "id" : "35",
+    "keepLog" : false,
+    "number" : 35,
+    "queueId" : 468,
+    "result" : "SUCCESS",
+    "timestamp" : 1550182393714,
+    "url" : "http://builds.cdlib.org/job/mrt-build-replic/35/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 39,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "branch" : [
+                {
+                  "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "branch" : [
+                {
+                  "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "branch" : [
+            {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-replic"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#39",
+    "duration" : 35291,
+    "estimatedDuration" : 38635,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-replic #39",
+    "id" : "39",
+    "keepLog" : false,
+    "number" : 39,
+    "queueId" : 508,
+    "result" : "SUCCESS",
+    "timestamp" : 1555001203070,
+    "url" : "http://builds.cdlib.org/job/mrt-build-replic/39/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "replication-src/src/main/java/org/cdlib/mrt/replic/basic/service/RunReplication.java",
+            "replication-src/src/main/java/org/cdlib/mrt/replic/basic/test/ReplicatorSetTest.java",
+            "replication-conf/src/main/properties/docker/Replic.properties",
+            "replication-conf/src/main/properties/docker/ReplicLogger.properties"
+          ],
+          "commitId" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "timestamp" : 1554999906000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+            "fullName" : "replic"
+          },
+          "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+          "comment" : "Use automatic update to determine if this replication server owns a\nspecific primary entry Add docker properties\n",
+          "date" : "2019-04-11 09:25:06 -0700",
+          "id" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "msg" : "Use automatic update to determine if this replication server owns a",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "replication-src/src/main/java/org/cdlib/mrt/replic/basic/service/RunReplication.java"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-src/src/main/java/org/cdlib/mrt/replic/basic/test/ReplicatorSetTest.java"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-conf/src/main/properties/docker/Replic.properties"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-conf/src/main/properties/docker/ReplicLogger.properties"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+        "fullName" : "replic"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 39,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "branch" : [
+                {
+                  "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "branch" : [
+                {
+                  "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "branch" : [
+            {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-replic"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#39",
+    "duration" : 35291,
+    "estimatedDuration" : 38635,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-replic #39",
+    "id" : "39",
+    "keepLog" : false,
+    "number" : 39,
+    "queueId" : 508,
+    "result" : "SUCCESS",
+    "timestamp" : 1555001203070,
+    "url" : "http://builds.cdlib.org/job/mrt-build-replic/39/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "replication-src/src/main/java/org/cdlib/mrt/replic/basic/service/RunReplication.java",
+            "replication-src/src/main/java/org/cdlib/mrt/replic/basic/test/ReplicatorSetTest.java",
+            "replication-conf/src/main/properties/docker/Replic.properties",
+            "replication-conf/src/main/properties/docker/ReplicLogger.properties"
+          ],
+          "commitId" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "timestamp" : 1554999906000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+            "fullName" : "replic"
+          },
+          "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+          "comment" : "Use automatic update to determine if this replication server owns a\nspecific primary entry Add docker properties\n",
+          "date" : "2019-04-11 09:25:06 -0700",
+          "id" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "msg" : "Use automatic update to determine if this replication server owns a",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "replication-src/src/main/java/org/cdlib/mrt/replic/basic/service/RunReplication.java"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-src/src/main/java/org/cdlib/mrt/replic/basic/test/ReplicatorSetTest.java"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-conf/src/main/properties/docker/Replic.properties"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-conf/src/main/properties/docker/ReplicLogger.properties"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+        "fullName" : "replic"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 39,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "branch" : [
+                {
+                  "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "branch" : [
+                {
+                  "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "branch" : [
+            {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-replic"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#39",
+    "duration" : 35291,
+    "estimatedDuration" : 38635,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-replic #39",
+    "id" : "39",
+    "keepLog" : false,
+    "number" : 39,
+    "queueId" : 508,
+    "result" : "SUCCESS",
+    "timestamp" : 1555001203070,
+    "url" : "http://builds.cdlib.org/job/mrt-build-replic/39/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "replication-src/src/main/java/org/cdlib/mrt/replic/basic/service/RunReplication.java",
+            "replication-src/src/main/java/org/cdlib/mrt/replic/basic/test/ReplicatorSetTest.java",
+            "replication-conf/src/main/properties/docker/Replic.properties",
+            "replication-conf/src/main/properties/docker/ReplicLogger.properties"
+          ],
+          "commitId" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "timestamp" : 1554999906000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+            "fullName" : "replic"
+          },
+          "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+          "comment" : "Use automatic update to determine if this replication server owns a\nspecific primary entry Add docker properties\n",
+          "date" : "2019-04-11 09:25:06 -0700",
+          "id" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "msg" : "Use automatic update to determine if this replication server owns a",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "replication-src/src/main/java/org/cdlib/mrt/replic/basic/service/RunReplication.java"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-src/src/main/java/org/cdlib/mrt/replic/basic/test/ReplicatorSetTest.java"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-conf/src/main/properties/docker/Replic.properties"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-conf/src/main/properties/docker/ReplicLogger.properties"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+        "fullName" : "replic"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "stage"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 39,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "branch" : [
+                {
+                  "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "branch" : [
+                {
+                  "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "branch" : [
+            {
+              "SHA1" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-replic"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#39",
+    "duration" : 35291,
+    "estimatedDuration" : 38635,
+    "executor" : null,
+    "fullDisplayName" : "mrt-build-replic #39",
+    "id" : "39",
+    "keepLog" : false,
+    "number" : 39,
+    "queueId" : 508,
+    "result" : "SUCCESS",
+    "timestamp" : 1555001203070,
+    "url" : "http://builds.cdlib.org/job/mrt-build-replic/39/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "replication-src/src/main/java/org/cdlib/mrt/replic/basic/service/RunReplication.java",
+            "replication-src/src/main/java/org/cdlib/mrt/replic/basic/test/ReplicatorSetTest.java",
+            "replication-conf/src/main/properties/docker/Replic.properties",
+            "replication-conf/src/main/properties/docker/ReplicLogger.properties"
+          ],
+          "commitId" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "timestamp" : 1554999906000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+            "fullName" : "replic"
+          },
+          "authorEmail" : "replic@uc3-mrtreplic2-dev.cdlib.org",
+          "comment" : "Use automatic update to determine if this replication server owns a\nspecific primary entry Add docker properties\n",
+          "date" : "2019-04-11 09:25:06 -0700",
+          "id" : "e3a17e4b63f1f35aa421e88159dfb488b383ff3f",
+          "msg" : "Use automatic update to determine if this replication server owns a",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "replication-src/src/main/java/org/cdlib/mrt/replic/basic/service/RunReplication.java"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-src/src/main/java/org/cdlib/mrt/replic/basic/test/ReplicatorSetTest.java"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-conf/src/main/properties/docker/Replic.properties"
+            },
+            {
+              "editType" : "add",
+              "file" : "replication-conf/src/main/properties/docker/ReplicLogger.properties"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/replic",
+        "fullName" : "replic"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 40,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "propertyDirName",
+            "value" : "dev"
+          },
+          "description" : "",
+          "name" : "propertyDirName",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "dev",
+            "stage",
+            "prod",
+            "test"
+          ]
+        }
+      ]
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-replic » UC3-mrtReplicationConf",
+      "fullName" : "mrt-build-replic/org.cdlib.mrt:mrt-replicationconf",
+      "name" : "org.cdlib.mrt:mrt-replicationconf",
+      "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/38/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 37,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/37/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 36,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/36/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 35,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/35/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 35,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/35/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/39/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/39/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/39/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/39/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 40,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtReplicationConf"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-replic » UC3-mrtReplicationSrc",
+      "fullName" : "mrt-build-replic/org.cdlib.mrt:mrt-replicationsrc",
+      "name" : "org.cdlib.mrt:mrt-replicationsrc",
+      "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/38/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 37,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/37/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 36,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/36/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 35,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/35/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 35,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/35/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/39/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/39/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/39/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/39/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 40,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtReplicationSrc"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-replic » UC3-mrtReplicationWar",
+      "fullName" : "mrt-build-replic/org.cdlib.mrt:mrt-replicationwar",
+      "name" : "org.cdlib.mrt:mrt-replicationwar",
+      "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/38/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 37,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/37/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 36,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/36/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 35,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/35/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 35,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/35/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/39/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/39/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/39/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/39/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 40,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtReplicationWar"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-replic » UC3-mrtReplicGit",
+      "fullName" : "mrt-build-replic/org.cdlib.mrt:mrt-replicgit",
+      "name" : "org.cdlib.mrt:mrt-replicgit",
+      "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/38/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 37,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/37/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 36,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/36/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 35,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/35/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 35,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/35/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/39/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/39/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/39/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/39/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 40,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtReplicGit"
+    }
+  ]
+}

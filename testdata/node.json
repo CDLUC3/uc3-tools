@@ -1,0 +1,4054 @@
+{
+  "_class" : "hudson.model.Hudson",
+  "assignedLabels" : [
+    {
+      "actions" : [
+        
+      ],
+      "busyExecutors" : 0,
+      "clouds" : [
+        
+      ],
+      "description" : null,
+      "idleExecutors" : 2,
+      "loadStatistics" : {
+        "_class" : "hudson.model.Label$1"
+      },
+      "name" : "master",
+      "nodes" : [
+        {
+          "_class" : "hudson.model.Hudson",
+          "nodeName" : ""
+        }
+      ],
+      "offline" : false,
+      "tiedJobs" : [
+        
+      ],
+      "totalExecutors" : 2,
+      "propertiesList" : [
+        
+      ]
+    }
+  ],
+  "mode" : "NORMAL",
+  "nodeDescription" : "the master Jenkins node",
+  "nodeName" : "",
+  "numExecutors" : 2,
+  "description" : null,
+  "jobs" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "",
+      "displayName" : "cdl-zk-queue",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "cdl-zk-queue",
+      "fullName" : "cdl-zk-queue",
+      "name" : "cdl-zk-queue",
+      "url" : "http://builds.cdlib.org/job/cdl-zk-queue/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 46,
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/46/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 45,
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/45/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 44,
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/44/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 43,
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/43/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 42,
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/42/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/cdl-zk-queue/42/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 46,
+        "url" : "http://builds.cdlib.org/job/cdl-zk-queue/46/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 46,
+        "url" : "http://builds.cdlib.org/job/cdl-zk-queue/46/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 46,
+        "url" : "http://builds.cdlib.org/job/cdl-zk-queue/46/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 46,
+        "url" : "http://builds.cdlib.org/job/cdl-zk-queue/46/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 47,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-ingest-dev",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+          "color" : "blue"
+        }
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "git-core2",
+          "url" : "http://builds.cdlib.org/job/git-core2/",
+          "color" : "blue"
+        }
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:cdl-zk-queue",
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/org.cdlib.mrt$cdl-zk-queue/",
+          "color" : "blue",
+          "displayName" : "cdl-zk-queue"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "This project builds the mrt-core.jar from the default branch of bitbucket; deploying it to the local Maven repository, mvn.cdlib.org/snapshots.",
+      "displayName" : "git-core2",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-core2",
+      "fullName" : "git-core2",
+      "name" : "git-core2",
+      "url" : "http://builds.cdlib.org/job/git-core2/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 16,
+          "url" : "http://builds.cdlib.org/job/git-core2/16/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 15,
+          "url" : "http://builds.cdlib.org/job/git-core2/15/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 14,
+          "url" : "http://builds.cdlib.org/job/git-core2/14/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 13,
+          "url" : "http://builds.cdlib.org/job/git-core2/13/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 12,
+          "url" : "http://builds.cdlib.org/job/git-core2/12/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 12,
+        "url" : "http://builds.cdlib.org/job/git-core2/12/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 122 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 16,
+        "url" : "http://builds.cdlib.org/job/git-core2/16/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 16,
+        "url" : "http://builds.cdlib.org/job/git-core2/16/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 16,
+        "url" : "http://builds.cdlib.org/job/git-core2/16/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 16,
+        "url" : "http://builds.cdlib.org/job/git-core2/16/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 17,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "cdl-zk-queue",
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-ingest-dev",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+          "color" : "blue"
+        }
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-core",
+          "url" : "http://builds.cdlib.org/job/git-core2/org.cdlib.mrt$mrt-core/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtcore"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-core-util",
+          "url" : "http://builds.cdlib.org/job/git-core2/org.cdlib.mrt$mrt-core-util/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtcore"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-core-utilinit",
+          "url" : "http://builds.cdlib.org/job/git-core2/org.cdlib.mrt$mrt-core-utilinit/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtCoreUtilInit"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-jena",
+          "url" : "http://builds.cdlib.org/job/git-core2/org.cdlib.mrt$mrt-jena/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtJena"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-json",
+          "url" : "http://builds.cdlib.org/job/git-core2/org.cdlib.mrt$mrt-json/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtJson"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "This project builds the mrt-dataonesrc.jar from the default branch of gihubt; deploying it to the local Maven repository, mvn.cdlib.org/snapshots.",
+      "displayName" : "git-dataONE",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-dataONE",
+      "fullName" : "git-dataONE",
+      "name" : "git-dataONE",
+      "url" : "http://builds.cdlib.org/job/git-dataONE/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 6 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 2,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-ingest-dev",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+          "color" : "blue"
+        }
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-dataonesrc",
+          "url" : "http://builds.cdlib.org/job/git-dataONE/org.cdlib.mrt$mrt-dataonesrc/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtDataONESrc"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "This project builds the mrt-xoai.jar from the default branch; deploying it to the local Maven repository, mvn.cdlib.org/snapshots.",
+      "displayName" : "git-mrt-xoai",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-mrt-xoai",
+      "fullName" : "git-mrt-xoai",
+      "name" : "git-mrt-xoai",
+      "url" : "http://builds.cdlib.org/job/git-mrt-xoai/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/6/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/5/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/5/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 86 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/8/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/8/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/8/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/8/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 10,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "com.lyncode:xoai",
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai/",
+          "color" : "blue",
+          "displayName" : "XOAI : OAI-PMH Java Toolkit"
+        },
+        {
+          "name" : "com.lyncode:xoai-common",
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-common/",
+          "color" : "blue",
+          "displayName" : "XOAI Commons"
+        },
+        {
+          "name" : "com.lyncode:xoai-data-provider",
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-data-provider/",
+          "color" : "blue",
+          "displayName" : "XOAI Data Provider"
+        },
+        {
+          "name" : "com.lyncode:xoai-service-provider",
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/com.lyncode$xoai-service-provider/",
+          "color" : "blue",
+          "displayName" : "XOAI Service Provider"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-zoopub-src",
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/org.cdlib.mrt$mrt-zoopub-src/",
+          "color" : "notbuilt",
+          "displayName" : "UC3-mrtZooPubSrc"
+        },
+        {
+          "name" : "org.cdlib.mrt:zoo-client",
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/org.cdlib.mrt$zoo-client/",
+          "color" : "notbuilt",
+          "displayName" : "UC3-mrtzoo"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "This project builds the mrt-zoo-pub.jar from the default branch; deploying it to the local Maven repository, mvn.cdlib.org/snapshots.",
+      "displayName" : "git-mrt-zoo",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-mrt-zoo",
+      "fullName" : "git-mrt-zoo",
+      "name" : "git-mrt-zoo",
+      "url" : "http://builds.cdlib.org/job/git-mrt-zoo/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 11,
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/11/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 10,
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/10/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 9,
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/9/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/7/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 7,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/7/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: 1 out of the last 5 builds failed.",
+          "iconClassName" : "icon-health-60to79",
+          "iconUrl" : "health-60to79.png",
+          "score" : 80
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 11,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/11/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 11,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/11/"
+      },
+      "lastFailedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 7,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/7/"
+      },
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 11,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/11/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 11,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/11/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 7,
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/7/"
+      },
+      "nextBuildNumber" : 12,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-zoopub-src",
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$mrt-zoopub-src/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtZooPubSrc"
+        },
+        {
+          "name" : "org.cdlib.mrt:zoo-client",
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/org.cdlib.mrt$zoo-client/",
+          "color" : "notbuilt",
+          "displayName" : "UC3-mrtzoo"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.model.FreeStyleProject",
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Merritt Stage Stack test\r\n\r\nApache -> UI -> Ingest -> Storage",
+      "displayName" : "Merritt Development Submission (Full Stack Test)",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "Merritt Development Submission (Full Stack Test)",
+      "fullName" : "Merritt Development Submission (Full Stack Test)",
+      "name" : "Merritt Development Submission (Full Stack Test)",
+      "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/5/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 4,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/4/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 3,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/3/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 2,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/2/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: 2 out of the last 5 builds failed.",
+          "iconClassName" : "icon-health-40to59",
+          "iconUrl" : "health-40to59.png",
+          "score" : 60
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/5/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/5/"
+      },
+      "lastFailedBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/3/"
+      },
+      "lastStableBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/5/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/5/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/3/"
+      },
+      "nextBuildNumber" : 6,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ]
+    },
+    {
+      "_class" : "hudson.model.FreeStyleProject",
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Merritt Production Stack test\r\n\r\nApache -> UI -> Ingest -> Storage",
+      "displayName" : "Merritt Production Submission (Full Stack Test)",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "Merritt Production Submission (Full Stack Test)",
+      "fullName" : "Merritt Production Submission (Full Stack Test)",
+      "name" : "Merritt Production Submission (Full Stack Test)",
+      "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/5/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 4,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/4/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 3,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/3/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 2,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/2/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: 2 out of the last 5 builds failed.",
+          "iconClassName" : "icon-health-40to59",
+          "iconUrl" : "health-40to59.png",
+          "score" : 60
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/5/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/5/"
+      },
+      "lastFailedBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/3/"
+      },
+      "lastStableBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/5/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/5/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/3/"
+      },
+      "nextBuildNumber" : 6,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ]
+    },
+    {
+      "_class" : "hudson.model.FreeStyleProject",
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Merritt Stage Stack test\r\n\r\nApache -> UI -> Ingest -> Storage",
+      "displayName" : "Merritt Stage Submission (Full Stack Test)",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "Merritt Stage Submission (Full Stack Test)",
+      "fullName" : "Merritt Stage Submission (Full Stack Test)",
+      "name" : "Merritt Stage Submission (Full Stack Test)",
+      "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/6/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/5/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 4,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/4/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 3,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/3/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 2,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/2/"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 6,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/6/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 6,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/6/"
+      },
+      "lastFailedBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/1/"
+      },
+      "lastStableBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 6,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/6/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 6,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/6/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : {
+        "_class" : "hudson.model.FreeStyleBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/1/"
+      },
+      "nextBuildNumber" : 7,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "dev"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build Merritt mrt-audit war using the default code branch on github.\r\n",
+      "displayName" : "mrt-build-audit",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-audit",
+      "fullName" : "mrt-build-audit",
+      "name" : "mrt-build-audit",
+      "url" : "http://builds.cdlib.org/job/mrt-build-audit/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 42,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/42/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 41,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/41/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 40,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/40/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/38/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 38,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/38/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 3 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/42/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/42/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/42/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/42/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 43,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        },
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "propertyDirName",
+                "value" : "dev"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-audit",
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-audit/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtAuditGit"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-auditconfpub",
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditconfpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtAuditConfPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-auditsrcpub",
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditsrcpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtAuditSrcPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-auditwarpub",
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/org.cdlib.mrt$mrt-auditwarpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtAuditWarPub"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "dev"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build Merritt mrt-inventory war using the default code branch.\r\n",
+      "displayName" : "mrt-build-inv",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-inv",
+      "fullName" : "mrt-build-inv",
+      "name" : "mrt-build-inv",
+      "url" : "http://builds.cdlib.org/job/mrt-build-inv/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 39,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/39/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/38/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 37,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/37/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 36,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/36/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 35,
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/35/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 35,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/35/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 2 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/39/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/39/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/39/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 39,
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/39/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 40,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        },
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "propertyDirName",
+                "value" : "dev"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-inventory",
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventory/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtInventory"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-inventoryconf",
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventoryconf/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtInventoryConf"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-inventorysrc",
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-inventorysrc/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtInventorySrc"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-invwar",
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/org.cdlib.mrt$mrt-invwar/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtInventoryWar"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "dev"
+              },
+              "description" : "dev - development private configuration\nstage - stage private configuration\nprod - production private configuration\ntest - testing private configuration",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build configuration jars for dev, stage, prod and test mysql",
+      "displayName" : "mrt-build-mysql",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-mysql",
+      "fullName" : "mrt-build-mysql",
+      "name" : "mrt-build-mysql",
+      "url" : "http://builds.cdlib.org/job/mrt-build-mysql/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/mrt-build-mysql/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/mrt-build-mysql/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/mrt-build-mysql/6/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/mrt-build-mysql/5/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 4,
+          "url" : "http://builds.cdlib.org/job/mrt-build-mysql/4/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/mrt-build-mysql/4/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/mrt-build-mysql/8/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/mrt-build-mysql/8/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/mrt-build-mysql/8/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 8,
+        "url" : "http://builds.cdlib.org/job/mrt-build-mysql/8/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 9,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        },
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "propertyDirName",
+                "value" : "dev"
+              },
+              "description" : "dev - development private configuration\nstage - stage private configuration\nprod - production private configuration\ntest - testing private configuration",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-confmysql",
+          "url" : "http://builds.cdlib.org/job/mrt-build-mysql/org.cdlib.mrt$mrt-confmysql/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtMysqlConfPrv"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "dev"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build Merritt mrt-oai war using the default code branch.\r\n",
+      "displayName" : "mrt-build-oai",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-oai",
+      "fullName" : "mrt-build-oai",
+      "name" : "mrt-build-oai",
+      "url" : "http://builds.cdlib.org/job/mrt-build-oai/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 19,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/19/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 18,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/18/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 17,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/17/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 16,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/16/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 15,
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/15/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 15,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/15/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 11 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/19/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/19/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/19/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/19/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 20,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        },
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "propertyDirName",
+                "value" : "dev"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-oaiconfpub",
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiconfpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtOAIConfPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-oaigit",
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaigit/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtOAIGit"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-oaisrcpub",
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaisrcpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtOAISrcPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-oaiwar",
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/org.cdlib.mrt$mrt-oaiwar/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtOAIWar"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "dev"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build Merritt mrt-replic war using the default code branch.\r\n",
+      "displayName" : "mrt-build-replic",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-replic",
+      "fullName" : "mrt-build-replic",
+      "name" : "mrt-build-replic",
+      "url" : "http://builds.cdlib.org/job/mrt-build-replic/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 38,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/38/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 37,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/37/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 36,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/36/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 35,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/35/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 34,
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/34/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 34,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/34/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 38,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/38/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 38,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/38/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 38,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/38/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 38,
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/38/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 39,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        },
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "propertyDirName",
+                "value" : "dev"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-replicationconf",
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationconf/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtReplicationConf"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-replicationsrc",
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationsrc/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtReplicationSrc"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-replicationwar",
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicationwar/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtReplicationWar"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-replicgit",
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/org.cdlib.mrt$mrt-replicgit/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtReplicGit"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build private configuration s3",
+      "displayName" : "mrt-build-s3",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-s3",
+      "fullName" : "mrt-build-s3",
+      "name" : "mrt-build-s3",
+      "url" : "http://builds.cdlib.org/job/mrt-build-s3/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 51,
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/51/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 50,
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/50/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 49,
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/49/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 48,
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/48/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 47,
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/47/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 47,
+        "url" : "http://builds.cdlib.org/job/mrt-build-s3/47/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 51,
+        "url" : "http://builds.cdlib.org/job/mrt-build-s3/51/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 51,
+        "url" : "http://builds.cdlib.org/job/mrt-build-s3/51/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 51,
+        "url" : "http://builds.cdlib.org/job/mrt-build-s3/51/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 51,
+        "url" : "http://builds.cdlib.org/job/mrt-build-s3/51/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 52,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-confs3",
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/org.cdlib.mrt$mrt-confs3/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtConfS3"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "dev"
+              },
+              "description" : "dev - development private configuration\nstage - stage private configuration\nprod - production private configuration\naudit - storage server on audit(4)\ntest - testing private configuration",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "audit",
+                "test"
+              ]
+            }
+          ]
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build private configuration store",
+      "displayName" : "mrt-build-store",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-store",
+      "fullName" : "mrt-build-store",
+      "name" : "mrt-build-store",
+      "url" : "http://builds.cdlib.org/job/mrt-build-store/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 85,
+          "url" : "http://builds.cdlib.org/job/mrt-build-store/85/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 84,
+          "url" : "http://builds.cdlib.org/job/mrt-build-store/84/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 83,
+          "url" : "http://builds.cdlib.org/job/mrt-build-store/83/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 82,
+          "url" : "http://builds.cdlib.org/job/mrt-build-store/82/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 81,
+          "url" : "http://builds.cdlib.org/job/mrt-build-store/81/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-build-store/81/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 85,
+        "url" : "http://builds.cdlib.org/job/mrt-build-store/85/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 85,
+        "url" : "http://builds.cdlib.org/job/mrt-build-store/85/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 85,
+        "url" : "http://builds.cdlib.org/job/mrt-build-store/85/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 85,
+        "url" : "http://builds.cdlib.org/job/mrt-build-store/85/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 86,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        },
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "propertyDirName",
+                "value" : "dev"
+              },
+              "description" : "dev - development private configuration\nstage - stage private configuration\nprod - production private configuration\naudit - storage server on audit(4)\ntest - testing private configuration",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "audit",
+                "test"
+              ]
+            }
+          ]
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-confstore",
+          "url" : "http://builds.cdlib.org/job/mrt-build-store/org.cdlib.mrt$mrt-confstore/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtStoreConfPrv"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-storeconfprv",
+          "url" : "http://builds.cdlib.org/job/mrt-build-store/org.cdlib.mrt$mrt-storeconfprv/",
+          "color" : "notbuilt",
+          "displayName" : "UC3-mrtStoreConfPrv"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "dev"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build Merritt mrt-sword war using the default code branch.\r\n",
+      "displayName" : "mrt-build-sword",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-build-sword",
+      "fullName" : "mrt-build-sword",
+      "name" : "mrt-build-sword",
+      "url" : "http://builds.cdlib.org/job/mrt-build-sword/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 10,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/10/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 9,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/9/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/6/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 6,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/6/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 2 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/10/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/10/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/10/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 10,
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/10/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 11,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        },
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "propertyDirName",
+                "value" : "dev"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "test"
+              ]
+            }
+          ]
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-swordconfpub",
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordconfpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtSwordConfPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-swordpub",
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtSwordPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-swordsrcpub",
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordsrcpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtSwordSrcPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-swordwarpub",
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/org.cdlib.mrt$mrt-swordwarpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtSwordWarPub"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "unm"
+              },
+              "description" : "home-UNM - remote DCXL node\nlocal-hokusai - test remote node",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "unm"
+              ]
+            }
+          ]
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build Merritt cloudhost war and jar",
+      "displayName" : "mrt-cloudhost-pub",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-cloudhost-pub",
+      "fullName" : "mrt-cloudhost-pub",
+      "name" : "mrt-cloudhost-pub",
+      "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 19,
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/19/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 18,
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/18/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 17,
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/17/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 16,
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/16/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 15,
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/15/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 15,
+        "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/15/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/19/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/19/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/19/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 19,
+        "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/19/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 20,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        },
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "propertyDirName",
+                "value" : "unm"
+              },
+              "description" : "home-UNM - remote DCXL node\nlocal-hokusai - test remote node",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "unm"
+              ]
+            }
+          ]
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-cloudhost",
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/org.cdlib.mrt$mrt-cloudhost/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtCloudhostPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-cloudhostconfpub",
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/org.cdlib.mrt$mrt-cloudhostconfpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtCloudhostConfPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-cloudhostemb",
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/org.cdlib.mrt$mrt-cloudhostemb/",
+          "color" : "notbuilt",
+          "displayName" : "UC3-CloudhostEmbPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-cloudhostjetty",
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/org.cdlib.mrt$mrt-cloudhostjetty/",
+          "color" : "blue",
+          "displayName" : "UC3-CloudhostJetty"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-cloudhostsrcpub",
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/org.cdlib.mrt$mrt-cloudhostsrcpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtCloudhostSrcPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-cloudhostwar",
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/org.cdlib.mrt$mrt-cloudhostwar/",
+          "color" : "blue",
+          "displayName" : "UC3-CloudhostWarPub"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Merritt ingest development build",
+      "displayName" : "mrt-ingest-dev",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-ingest-dev",
+      "fullName" : "mrt-ingest-dev",
+      "name" : "mrt-ingest-dev",
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 535,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 534,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/534/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 533,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/533/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 532,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/532/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 531,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/531/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 531,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/531/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 536,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "cdl-zk-queue",
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "git-core2",
+          "url" : "http://builds.cdlib.org/job/git-core2/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "git-dataONE",
+          "url" : "http://builds.cdlib.org/job/git-dataONE/",
+          "color" : "blue"
+        }
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-ingest",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngest"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestconf",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngestConf"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestinit",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngestInit"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestsrc",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngestSrc"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestwar",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtBatchWar"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Merritt ingest stage/production build",
+      "displayName" : "mrt-ingest-stage",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-ingest-stage",
+      "fullName" : "mrt-ingest-stage",
+      "name" : "mrt-ingest-stage",
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 163,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/163/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 163,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/163/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 163,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/163/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 163,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/163/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 163,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/163/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 163,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/163/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 164,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-ingest",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/org.cdlib.mrt$mrt-ingest/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngest"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestconf",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/org.cdlib.mrt$mrt-ingestconf/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngestConf"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestinit",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/org.cdlib.mrt$mrt-ingestinit/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngestInit"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestsrc",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/org.cdlib.mrt$mrt-ingestsrc/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtIngestSrc"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-ingestwar",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/org.cdlib.mrt$mrt-ingestwar/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtBatchWar"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "demo"
+              },
+              "description" : "demo branch\nmaster branch",
+              "name" : "jarBranch",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "demo",
+                "master"
+              ]
+            }
+          ]
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build Merritt cloudhost jar using demo-master branch",
+      "displayName" : "mrt-jetty-cloudhost",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-jetty-cloudhost",
+      "fullName" : "mrt-jetty-cloudhost",
+      "name" : "mrt-jetty-cloudhost",
+      "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 9,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/9/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/6/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/5/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/5/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/9/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/9/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/9/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/9/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 10,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        },
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "jarBranch",
+                "value" : "demo"
+              },
+              "description" : "demo branch\nmaster branch",
+              "name" : "jarBranch",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "demo",
+                "master"
+              ]
+            }
+          ]
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-cloudhost",
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtCloudhostPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-cloudhostjetty",
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/",
+          "color" : "blue",
+          "displayName" : "UC3-CloudhostJetty"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-cloudhostsrcpub",
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtCloudhostSrcPub"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "This project builds the mrt-s3jar from the default branch; \r\ndeploying it to the local Maven repository, mvn.cdlib.org/snapshots.",
+      "displayName" : "mrt-s3-pub",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-s3-pub",
+      "fullName" : "mrt-s3-pub",
+      "name" : "mrt-s3-pub",
+      "url" : "http://builds.cdlib.org/job/mrt-s3-pub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 81,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/81/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 80,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/80/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 79,
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/79/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 79,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/79/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 12 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/81/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/81/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/81/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 81,
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/81/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 82,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-nodetest",
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-nodetest/",
+          "color" : "blue",
+          "displayName" : "UC3-NodeTest"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-openstackpub",
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-openstackpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtOpenstackPub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-s3",
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtS3Pub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-s3srcpub",
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/org.cdlib.mrt$mrt-s3srcpub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtS3SrcPub"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "dev"
+              },
+              "description" : "home-dpr2 - have the /dpr2/mrtHomes/store architecture.\nhome-dpr2store - have the /dpr2store/mrtHomes/store architecture.",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "audit",
+                "test"
+              ]
+            }
+          ]
+        },
+        {
+          
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build Merritt store-store-pub war using the default code branch.\r\n",
+      "displayName" : "mrt-store-pub",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-store-pub",
+      "fullName" : "mrt-store-pub",
+      "name" : "mrt-store-pub",
+      "url" : "http://builds.cdlib.org/job/mrt-store-pub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 93,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 92,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/92/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 91,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/91/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 90,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/90/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 89,
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/89/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 89,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/89/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 3 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 93,
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/93/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 94,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        },
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "propertyDirName",
+                "value" : "dev"
+              },
+              "description" : "home-dpr2 - have the /dpr2/mrtHomes/store architecture.\nhome-dpr2store - have the /dpr2store/mrtHomes/store architecture.",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "dev",
+                "stage",
+                "prod",
+                "audit",
+                "test"
+              ]
+            }
+          ]
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-pubstore",
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-pubstore/",
+          "color" : "notbuilt",
+          "displayName" : "UC3-mrtPubStore"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-pubstoresrc",
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-pubstoresrc/",
+          "color" : "notbuilt",
+          "displayName" : "UC3-mrtPubStoreSrc"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-pubstorewar",
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-pubstorewar/",
+          "color" : "notbuilt",
+          "displayName" : "UC3-mrtPubStoreWar"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-storepub",
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtStorePub"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-storepub-src",
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storepub-src/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtStorePub-src"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-storewar",
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/org.cdlib.mrt$mrt-storewar/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtStorePub-war"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build private test repository to cover all mrt src",
+      "displayName" : "mrt-test",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-test",
+      "fullName" : "mrt-test",
+      "name" : "mrt-test",
+      "url" : "http://builds.cdlib.org/job/mrt-test/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 3,
+          "url" : "http://builds.cdlib.org/job/mrt-test/3/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 2,
+          "url" : "http://builds.cdlib.org/job/mrt-test/2/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/mrt-test/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/mrt-test/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/3/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/3/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/3/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 3,
+        "url" : "http://builds.cdlib.org/job/mrt-test/3/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 4,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-s3test",
+          "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-s3test/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtS3TestPrv"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-test",
+          "url" : "http://builds.cdlib.org/job/mrt-test/org.cdlib.mrt$mrt-test/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtTest"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "demo"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "demo",
+                "dev",
+                "stage",
+                "prod"
+              ]
+            },
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "value" : "test"
+              },
+              "description" : "test - branch\nmaster - branch",
+              "name" : "branch",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "test",
+                "master"
+              ]
+            }
+          ]
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "Build Merritt mrt-gittest - use for branch ... testing",
+      "displayName" : "test-gittest",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "test-gittest",
+      "fullName" : "test-gittest",
+      "name" : "test-gittest",
+      "url" : "http://builds.cdlib.org/job/test-gittest/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 4,
+          "url" : "http://builds.cdlib.org/job/test-gittest/4/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 3,
+          "url" : "http://builds.cdlib.org/job/test-gittest/3/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 2,
+          "url" : "http://builds.cdlib.org/job/test-gittest/2/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/test-gittest/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/test-gittest/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/4/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/4/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/4/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 4,
+        "url" : "http://builds.cdlib.org/job/test-gittest/4/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 5,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        },
+        {
+          "_class" : "hudson.model.ParametersDefinitionProperty",
+          "parameterDefinitions" : [
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "propertyDirName",
+                "value" : "demo"
+              },
+              "description" : "",
+              "name" : "propertyDirName",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "demo",
+                "dev",
+                "stage",
+                "prod"
+              ]
+            },
+            {
+              "_class" : "hudson.model.ChoiceParameterDefinition",
+              "defaultParameterValue" : {
+                "_class" : "hudson.model.StringParameterValue",
+                "name" : "branch",
+                "value" : "test"
+              },
+              "description" : "test - branch\nmaster - branch",
+              "name" : "branch",
+              "type" : "ChoiceParameterDefinition",
+              "choices" : [
+                "test",
+                "master"
+              ]
+            }
+          ]
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-gittest",
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittest/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtGitTest"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-gittestconf",
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestconf/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtGitTestConf"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-gittestemb",
+          "url" : "http://builds.cdlib.org/job/test-gittest/org.cdlib.mrt$mrt-gittestemb/",
+          "color" : "blue",
+          "displayName" : "UC3-GitTestEmb"
+        }
+      ]
+    }
+  ],
+  "overallLoad" : {
+    "availableExecutors" : {
+      
+    },
+    "busyExecutors" : {
+      
+    },
+    "connectingExecutors" : {
+      
+    },
+    "definedExecutors" : {
+      
+    },
+    "idleExecutors" : {
+      
+    },
+    "onlineExecutors" : {
+      
+    },
+    "queueLength" : {
+      
+    },
+    "totalExecutors" : {
+      
+    },
+    "totalQueueLength" : {
+      
+    }
+  },
+  "primaryView" : {
+    "_class" : "hudson.model.AllView",
+    "description" : null,
+    "jobs" : [
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "cdl-zk-queue",
+        "url" : "http://builds.cdlib.org/job/cdl-zk-queue/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "git-core2",
+        "url" : "http://builds.cdlib.org/job/git-core2/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "git-dataONE",
+        "url" : "http://builds.cdlib.org/job/git-dataONE/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "git-mrt-xoai",
+        "url" : "http://builds.cdlib.org/job/git-mrt-xoai/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "git-mrt-zoo",
+        "url" : "http://builds.cdlib.org/job/git-mrt-zoo/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.model.FreeStyleProject",
+        "name" : "Merritt Development Submission (Full Stack Test)",
+        "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.model.FreeStyleProject",
+        "name" : "Merritt Production Submission (Full Stack Test)",
+        "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.model.FreeStyleProject",
+        "name" : "Merritt Stage Submission (Full Stack Test)",
+        "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-build-audit",
+        "url" : "http://builds.cdlib.org/job/mrt-build-audit/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-build-inv",
+        "url" : "http://builds.cdlib.org/job/mrt-build-inv/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-build-mysql",
+        "url" : "http://builds.cdlib.org/job/mrt-build-mysql/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-build-oai",
+        "url" : "http://builds.cdlib.org/job/mrt-build-oai/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-build-replic",
+        "url" : "http://builds.cdlib.org/job/mrt-build-replic/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-build-s3",
+        "url" : "http://builds.cdlib.org/job/mrt-build-s3/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-build-store",
+        "url" : "http://builds.cdlib.org/job/mrt-build-store/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-build-sword",
+        "url" : "http://builds.cdlib.org/job/mrt-build-sword/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-cloudhost-pub",
+        "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-ingest-dev",
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-ingest-stage",
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-jetty-cloudhost",
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-s3-pub",
+        "url" : "http://builds.cdlib.org/job/mrt-s3-pub/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-store-pub",
+        "url" : "http://builds.cdlib.org/job/mrt-store-pub/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "mrt-test",
+        "url" : "http://builds.cdlib.org/job/mrt-test/",
+        "color" : "blue"
+      },
+      {
+        "_class" : "hudson.maven.MavenModuleSet",
+        "name" : "test-gittest",
+        "url" : "http://builds.cdlib.org/job/test-gittest/",
+        "color" : "blue"
+      }
+    ],
+    "name" : "all",
+    "property" : [
+      
+    ],
+    "url" : "http://builds.cdlib.org/"
+  },
+  "quietingDown" : false,
+  "slaveAgentPort" : 0,
+  "unlabeledLoad" : {
+    "_class" : "jenkins.model.UnlabeledLoadStatistics",
+    "availableExecutors" : {
+      
+    },
+    "busyExecutors" : {
+      
+    },
+    "connectingExecutors" : {
+      
+    },
+    "definedExecutors" : {
+      
+    },
+    "idleExecutors" : {
+      
+    },
+    "onlineExecutors" : {
+      
+    },
+    "queueLength" : {
+      
+    },
+    "totalExecutors" : {
+      
+    }
+  },
+  "useCrumbs" : false,
+  "useSecurity" : false,
+  "views" : [
+    {
+      "_class" : "hudson.model.ListView",
+      "description" : "Code repositories required for building Merritt",
+      "jobs" : [
+        
+      ],
+      "name" : "Merritt",
+      "property" : [
+        
+      ],
+      "url" : "http://builds.cdlib.org/view/Merritt/"
+    },
+    {
+      "_class" : "hudson.model.AllView",
+      "description" : null,
+      "jobs" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "cdl-zk-queue",
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "git-core2",
+          "url" : "http://builds.cdlib.org/job/git-core2/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "git-dataONE",
+          "url" : "http://builds.cdlib.org/job/git-dataONE/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "git-mrt-xoai",
+          "url" : "http://builds.cdlib.org/job/git-mrt-xoai/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "git-mrt-zoo",
+          "url" : "http://builds.cdlib.org/job/git-mrt-zoo/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleProject",
+          "name" : "Merritt Development Submission (Full Stack Test)",
+          "url" : "http://builds.cdlib.org/job/Merritt%20Development%20Submission%20(Full%20Stack%20Test)/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleProject",
+          "name" : "Merritt Production Submission (Full Stack Test)",
+          "url" : "http://builds.cdlib.org/job/Merritt%20Production%20Submission%20(Full%20Stack%20Test)/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.model.FreeStyleProject",
+          "name" : "Merritt Stage Submission (Full Stack Test)",
+          "url" : "http://builds.cdlib.org/job/Merritt%20Stage%20Submission%20(Full%20Stack%20Test)/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-build-audit",
+          "url" : "http://builds.cdlib.org/job/mrt-build-audit/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-build-inv",
+          "url" : "http://builds.cdlib.org/job/mrt-build-inv/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-build-mysql",
+          "url" : "http://builds.cdlib.org/job/mrt-build-mysql/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-build-oai",
+          "url" : "http://builds.cdlib.org/job/mrt-build-oai/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-build-replic",
+          "url" : "http://builds.cdlib.org/job/mrt-build-replic/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-build-s3",
+          "url" : "http://builds.cdlib.org/job/mrt-build-s3/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-build-store",
+          "url" : "http://builds.cdlib.org/job/mrt-build-store/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-build-sword",
+          "url" : "http://builds.cdlib.org/job/mrt-build-sword/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-cloudhost-pub",
+          "url" : "http://builds.cdlib.org/job/mrt-cloudhost-pub/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-ingest-dev",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-ingest-stage",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-stage/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-jetty-cloudhost",
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-s3-pub",
+          "url" : "http://builds.cdlib.org/job/mrt-s3-pub/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-store-pub",
+          "url" : "http://builds.cdlib.org/job/mrt-store-pub/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-test",
+          "url" : "http://builds.cdlib.org/job/mrt-test/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "test-gittest",
+          "url" : "http://builds.cdlib.org/job/test-gittest/",
+          "color" : "blue"
+        }
+      ],
+      "name" : "all",
+      "property" : [
+        
+      ],
+      "url" : "http://builds.cdlib.org/"
+    }
+  ]
+}

@@ -1,0 +1,2310 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Merritt ingest development build",
+  "displayName" : "mrt-ingest-dev",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-ingest-dev",
+  "fullName" : "mrt-ingest-dev",
+  "name" : "mrt-ingest-dev",
+  "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 535,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                "branch" : [
+                  {
+                    "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                "branch" : [
+                  {
+                    "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+            "branch" : [
+              {
+                "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-ingest"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        {
+          "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+          "fileName" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+          "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT-archive.zip"
+        },
+        {
+          "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+          "fileName" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+          "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT.war"
+        }
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#535",
+      "duration" : 43579,
+      "estimatedDuration" : 40738,
+      "executor" : null,
+      "fullDisplayName" : "mrt-ingest-dev #535",
+      "id" : "535",
+      "keepLog" : false,
+      "number" : 535,
+      "queueId" : 488,
+      "result" : "SUCCESS",
+      "timestamp" : 1552517520411,
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+            ],
+            "commitId" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+            "timestamp" : 1551737872000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+              "fullName" : "mreyes"
+            },
+            "authorEmail" : "mreyes@linux-mjr.ad.ucop.edu",
+            "comment" : "- Set Subject line of Notification that there was a failure - No stack\ntrace if we can not determine Format type\n",
+            "date" : "2019-03-04 14:17:52 -0800",
+            "id" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+            "msg" : "- Set Subject line of Notification that there was a failure - No stack",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+          "fullName" : "mreyes"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UpstreamCause",
+              "shortDescription" : "Started by upstream project \"cdl-zk-queue\" build number 46",
+              "upstreamBuild" : 46,
+              "upstreamProject" : "cdl-zk-queue",
+              "upstreamUrl" : "job/cdl-zk-queue/"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 534,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+                "branch" : [
+                  {
+                    "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+                "branch" : [
+                  {
+                    "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+            "branch" : [
+              {
+                "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-ingest"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        {
+          "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+          "fileName" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+          "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT-archive.zip"
+        },
+        {
+          "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+          "fileName" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+          "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT.war"
+        }
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#534",
+      "duration" : 28332,
+      "estimatedDuration" : 40738,
+      "executor" : null,
+      "fullDisplayName" : "mrt-ingest-dev #534",
+      "id" : "534",
+      "keepLog" : false,
+      "number" : 534,
+      "queueId" : 480,
+      "result" : "SUCCESS",
+      "timestamp" : 1551812666307,
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/534/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.triggers.SCMTrigger$SCMTriggerCause",
+              "shortDescription" : "Started by an SCM change"
+            }
+          ]
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 533,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+                "branch" : [
+                  {
+                    "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+                "branch" : [
+                  {
+                    "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+            "branch" : [
+              {
+                "SHA1" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-ingest"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        {
+          "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+          "fileName" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+          "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT-archive.zip"
+        },
+        {
+          "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+          "fileName" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+          "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT.war"
+        }
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#533",
+      "duration" : 50304,
+      "estimatedDuration" : 40738,
+      "executor" : null,
+      "fullDisplayName" : "mrt-ingest-dev #533",
+      "id" : "533",
+      "keepLog" : false,
+      "number" : 533,
+      "queueId" : 446,
+      "result" : "SUCCESS",
+      "timestamp" : 1548198007103,
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/533/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/HandlerAccept.java"
+            ],
+            "commitId" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+            "timestamp" : 1548197542000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+              "fullName" : "mreyes"
+            },
+            "authorEmail" : "mreyes@linux-mjr.ad.ucop.edu",
+            "comment" : "Perry noticed that while processing large container manifests we were\ncopying data to producer/ dir, not moving it. The following addresses\nthis oversight. Thanks Perry!\n",
+            "date" : "2019-01-22 14:52:22 -0800",
+            "id" : "3844cc73bb2b484a2d0bf2dbc61f33a32c855836",
+            "msg" : "Perry noticed that while processing large container manifests we were",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/HandlerAccept.java"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+          "fullName" : "mreyes"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 532,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                "branch" : [
+                  {
+                    "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                "branch" : [
+                  {
+                    "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+            "branch" : [
+              {
+                "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-ingest"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        {
+          "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+          "fileName" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+          "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT-archive.zip"
+        },
+        {
+          "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+          "fileName" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+          "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT.war"
+        }
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#532",
+      "duration" : 29382,
+      "estimatedDuration" : 40738,
+      "executor" : null,
+      "fullDisplayName" : "mrt-ingest-dev #532",
+      "id" : "532",
+      "keepLog" : false,
+      "number" : 532,
+      "queueId" : 309,
+      "result" : "SUCCESS",
+      "timestamp" : 1534535118563,
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/532/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UpstreamCause",
+              "shortDescription" : "Started by upstream project \"cdl-zk-queue\" build number 45",
+              "upstreamBuild" : 45,
+              "upstreamProject" : "cdl-zk-queue",
+              "upstreamUrl" : "job/cdl-zk-queue/"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 531,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                "branch" : [
+                  {
+                    "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                "branch" : [
+                  {
+                    "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+            "branch" : [
+              {
+                "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-ingest"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        {
+          "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+          "fileName" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+          "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT-archive.zip"
+        },
+        {
+          "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+          "fileName" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+          "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT.war"
+        }
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#531",
+      "duration" : 28472,
+      "estimatedDuration" : 40738,
+      "executor" : null,
+      "fullDisplayName" : "mrt-ingest-dev #531",
+      "id" : "531",
+      "keepLog" : false,
+      "number" : 531,
+      "queueId" : 296,
+      "result" : "SUCCESS",
+      "timestamp" : 1534439932223,
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/531/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "2.2.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UpstreamCause",
+            "shortDescription" : "Started by upstream project \"cdl-zk-queue\" build number 45",
+            "upstreamBuild" : 45,
+            "upstreamProject" : "cdl-zk-queue",
+            "upstreamUrl" : "job/cdl-zk-queue/"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 531,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+              "branch" : [
+                {
+                  "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+              "branch" : [
+                {
+                  "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+          "branch" : [
+            {
+              "SHA1" : "6e647734d1215ce0430469950e0c4c3cd618ea40",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-ingest"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      {
+        "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+        "fileName" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+        "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT-archive.zip"
+      },
+      {
+        "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+        "fileName" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+        "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT.war"
+      }
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#531",
+    "duration" : 28472,
+    "estimatedDuration" : 40738,
+    "executor" : null,
+    "fullDisplayName" : "mrt-ingest-dev #531",
+    "id" : "531",
+    "keepLog" : false,
+    "number" : 531,
+    "queueId" : 296,
+    "result" : "SUCCESS",
+    "timestamp" : 1534439932223,
+    "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/531/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 535,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "branch" : [
+                {
+                  "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "branch" : [
+                {
+                  "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+          "branch" : [
+            {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-ingest"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      {
+        "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+        "fileName" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+        "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT-archive.zip"
+      },
+      {
+        "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+        "fileName" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+        "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT.war"
+      }
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#535",
+    "duration" : 43579,
+    "estimatedDuration" : 40738,
+    "executor" : null,
+    "fullDisplayName" : "mrt-ingest-dev #535",
+    "id" : "535",
+    "keepLog" : false,
+    "number" : 535,
+    "queueId" : 488,
+    "result" : "SUCCESS",
+    "timestamp" : 1552517520411,
+    "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+          ],
+          "commitId" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+          "timestamp" : 1551737872000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+            "fullName" : "mreyes"
+          },
+          "authorEmail" : "mreyes@linux-mjr.ad.ucop.edu",
+          "comment" : "- Set Subject line of Notification that there was a failure - No stack\ntrace if we can not determine Format type\n",
+          "date" : "2019-03-04 14:17:52 -0800",
+          "id" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+          "msg" : "- Set Subject line of Notification that there was a failure - No stack",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+        "fullName" : "mreyes"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 535,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "branch" : [
+                {
+                  "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "branch" : [
+                {
+                  "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+          "branch" : [
+            {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-ingest"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      {
+        "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+        "fileName" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+        "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT-archive.zip"
+      },
+      {
+        "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+        "fileName" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+        "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT.war"
+      }
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#535",
+    "duration" : 43579,
+    "estimatedDuration" : 40738,
+    "executor" : null,
+    "fullDisplayName" : "mrt-ingest-dev #535",
+    "id" : "535",
+    "keepLog" : false,
+    "number" : 535,
+    "queueId" : 488,
+    "result" : "SUCCESS",
+    "timestamp" : 1552517520411,
+    "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+          ],
+          "commitId" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+          "timestamp" : 1551737872000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+            "fullName" : "mreyes"
+          },
+          "authorEmail" : "mreyes@linux-mjr.ad.ucop.edu",
+          "comment" : "- Set Subject line of Notification that there was a failure - No stack\ntrace if we can not determine Format type\n",
+          "date" : "2019-03-04 14:17:52 -0800",
+          "id" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+          "msg" : "- Set Subject line of Notification that there was a failure - No stack",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+        "fullName" : "mreyes"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 535,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "branch" : [
+                {
+                  "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "branch" : [
+                {
+                  "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+          "branch" : [
+            {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-ingest"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      {
+        "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+        "fileName" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+        "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT-archive.zip"
+      },
+      {
+        "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+        "fileName" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+        "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT.war"
+      }
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#535",
+    "duration" : 43579,
+    "estimatedDuration" : 40738,
+    "executor" : null,
+    "fullDisplayName" : "mrt-ingest-dev #535",
+    "id" : "535",
+    "keepLog" : false,
+    "number" : 535,
+    "queueId" : 488,
+    "result" : "SUCCESS",
+    "timestamp" : 1552517520411,
+    "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+          ],
+          "commitId" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+          "timestamp" : 1551737872000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+            "fullName" : "mreyes"
+          },
+          "authorEmail" : "mreyes@linux-mjr.ad.ucop.edu",
+          "comment" : "- Set Subject line of Notification that there was a failure - No stack\ntrace if we can not determine Format type\n",
+          "date" : "2019-03-04 14:17:52 -0800",
+          "id" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+          "msg" : "- Set Subject line of Notification that there was a failure - No stack",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+        "fullName" : "mreyes"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 535,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "branch" : [
+                {
+                  "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "branch" : [
+                {
+                  "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+          "branch" : [
+            {
+              "SHA1" : "a572b8c116ef56936ffd866749bd667d29a36fdd",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-ingest"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      {
+        "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+        "fileName" : "mrt-ingestwar-1.0-SNAPSHOT-archive.zip",
+        "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT-archive.zip"
+      },
+      {
+        "displayPath" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+        "fileName" : "mrt-ingestwar-1.0-SNAPSHOT.war",
+        "relativePath" : "batch-war/target/mrt-ingestwar-1.0-SNAPSHOT.war"
+      }
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#535",
+    "duration" : 43579,
+    "estimatedDuration" : 40738,
+    "executor" : null,
+    "fullDisplayName" : "mrt-ingest-dev #535",
+    "id" : "535",
+    "keepLog" : false,
+    "number" : 535,
+    "queueId" : 488,
+    "result" : "SUCCESS",
+    "timestamp" : 1552517520411,
+    "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/535/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+          ],
+          "commitId" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+          "timestamp" : 1551737872000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+            "fullName" : "mreyes"
+          },
+          "authorEmail" : "mreyes@linux-mjr.ad.ucop.edu",
+          "comment" : "- Set Subject line of Notification that there was a failure - No stack\ntrace if we can not determine Format type\n",
+          "date" : "2019-03-04 14:17:52 -0800",
+          "id" : "056313dbe1246871802d30b035fa214d6b2d57e6",
+          "msg" : "- Set Subject line of Notification that there was a failure - No stack",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "ingest-src/src/main/java/org/cdlib/mrt/ingest/handlers/queue/HandlerNotification.java"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/mreyes",
+        "fullName" : "mreyes"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "2.2.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 536,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "",
+      "displayName" : "cdl-zk-queue",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "cdl-zk-queue",
+      "fullName" : "cdl-zk-queue",
+      "name" : "cdl-zk-queue",
+      "url" : "http://builds.cdlib.org/job/cdl-zk-queue/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 46,
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/46/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 45,
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/45/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 44,
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/44/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 43,
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/43/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 42,
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/42/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 42,
+        "url" : "http://builds.cdlib.org/job/cdl-zk-queue/42/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 46,
+        "url" : "http://builds.cdlib.org/job/cdl-zk-queue/46/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 46,
+        "url" : "http://builds.cdlib.org/job/cdl-zk-queue/46/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 46,
+        "url" : "http://builds.cdlib.org/job/cdl-zk-queue/46/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 46,
+        "url" : "http://builds.cdlib.org/job/cdl-zk-queue/46/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 47,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-ingest-dev",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+          "color" : "blue"
+        }
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "git-core2",
+          "url" : "http://builds.cdlib.org/job/git-core2/",
+          "color" : "blue"
+        }
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:cdl-zk-queue",
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/org.cdlib.mrt$cdl-zk-queue/",
+          "color" : "blue",
+          "displayName" : "cdl-zk-queue"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "This project builds the mrt-core.jar from the default branch of bitbucket; deploying it to the local Maven repository, mvn.cdlib.org/snapshots.",
+      "displayName" : "git-core2",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-core2",
+      "fullName" : "git-core2",
+      "name" : "git-core2",
+      "url" : "http://builds.cdlib.org/job/git-core2/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 16,
+          "url" : "http://builds.cdlib.org/job/git-core2/16/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 15,
+          "url" : "http://builds.cdlib.org/job/git-core2/15/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 14,
+          "url" : "http://builds.cdlib.org/job/git-core2/14/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 13,
+          "url" : "http://builds.cdlib.org/job/git-core2/13/"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 12,
+          "url" : "http://builds.cdlib.org/job/git-core2/12/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 12,
+        "url" : "http://builds.cdlib.org/job/git-core2/12/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 122 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 16,
+        "url" : "http://builds.cdlib.org/job/git-core2/16/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 16,
+        "url" : "http://builds.cdlib.org/job/git-core2/16/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 16,
+        "url" : "http://builds.cdlib.org/job/git-core2/16/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 16,
+        "url" : "http://builds.cdlib.org/job/git-core2/16/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 17,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "cdl-zk-queue",
+          "url" : "http://builds.cdlib.org/job/cdl-zk-queue/",
+          "color" : "blue"
+        },
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-ingest-dev",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+          "color" : "blue"
+        }
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-core",
+          "url" : "http://builds.cdlib.org/job/git-core2/org.cdlib.mrt$mrt-core/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtcore"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-core-util",
+          "url" : "http://builds.cdlib.org/job/git-core2/org.cdlib.mrt$mrt-core-util/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtcore"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-core-utilinit",
+          "url" : "http://builds.cdlib.org/job/git-core2/org.cdlib.mrt$mrt-core-utilinit/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtCoreUtilInit"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-jena",
+          "url" : "http://builds.cdlib.org/job/git-core2/org.cdlib.mrt$mrt-jena/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtJena"
+        },
+        {
+          "name" : "org.cdlib.mrt:mrt-json",
+          "url" : "http://builds.cdlib.org/job/git-core2/org.cdlib.mrt$mrt-json/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtJson"
+        }
+      ]
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "actions" : [
+        {
+          
+        },
+        null,
+        {
+          
+        },
+        {
+          
+        },
+        {
+          
+        },
+        {
+          "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+        }
+      ],
+      "description" : "This project builds the mrt-dataonesrc.jar from the default branch of gihubt; deploying it to the local Maven repository, mvn.cdlib.org/snapshots.",
+      "displayName" : "git-dataONE",
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "git-dataONE",
+      "fullName" : "git-dataONE",
+      "name" : "git-dataONE",
+      "url" : "http://builds.cdlib.org/job/git-dataONE/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSetBuild",
+          "number" : 1,
+          "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Test Result: 0 tests failing out of a total of 6 tests.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        },
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenModuleSetBuild",
+        "number" : 1,
+        "url" : "http://builds.cdlib.org/job/git-dataONE/1/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 2,
+      "property" : [
+        {
+          "_class" : "jenkins.model.BuildDiscarderProperty"
+        }
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        {
+          "_class" : "hudson.maven.MavenModuleSet",
+          "name" : "mrt-ingest-dev",
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/",
+          "color" : "blue"
+        }
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.plugins.git.GitSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "modules" : [
+        {
+          "name" : "org.cdlib.mrt:mrt-dataonesrc",
+          "url" : "http://builds.cdlib.org/job/git-dataONE/org.cdlib.mrt$mrt-dataonesrc/",
+          "color" : "blue",
+          "displayName" : "UC3-mrtDataONESrc"
+        }
+      ]
+    }
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-ingest-dev » UC3-mrtIngest",
+      "fullName" : "mrt-ingest-dev/org.cdlib.mrt:mrt-ingest",
+      "name" : "org.cdlib.mrt:mrt-ingest",
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 535,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/535/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 534,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/534/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 533,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/533/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 532,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/532/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 531,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/531/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 410,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/410/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 410,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/410/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/535/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/535/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/535/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/535/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 410,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingest/410/"
+      },
+      "nextBuildNumber" : 536,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtIngest"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-ingest-dev » UC3-mrtIngestConf",
+      "fullName" : "mrt-ingest-dev/org.cdlib.mrt:mrt-ingestconf",
+      "name" : "org.cdlib.mrt:mrt-ingestconf",
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 535,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/535/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 534,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/534/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 533,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/533/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 532,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/532/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 531,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/531/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 410,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/410/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 410,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/410/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/535/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/535/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/535/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestconf/535/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 536,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtIngestConf"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-ingest-dev » UC3-mrtIngestInit",
+      "fullName" : "mrt-ingest-dev/org.cdlib.mrt:mrt-ingestinit",
+      "name" : "org.cdlib.mrt:mrt-ingestinit",
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 535,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/535/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 534,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/534/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 533,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/533/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 532,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/532/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 531,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/531/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 410,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/410/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 410,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/410/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/535/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/535/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/535/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestinit/535/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 536,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtIngestInit"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-ingest-dev » UC3-mrtIngestSrc",
+      "fullName" : "mrt-ingest-dev/org.cdlib.mrt:mrt-ingestsrc",
+      "name" : "org.cdlib.mrt:mrt-ingestsrc",
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 535,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/535/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 534,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/534/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 533,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/533/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 532,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/532/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 531,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/531/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 410,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/410/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 410,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/410/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/535/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/535/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/535/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/535/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 410,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestsrc/410/"
+      },
+      "nextBuildNumber" : 536,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtIngestSrc"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-ingest-dev » UC3-mrtBatchWar",
+      "fullName" : "mrt-ingest-dev/org.cdlib.mrt:mrt-ingestwar",
+      "name" : "org.cdlib.mrt:mrt-ingestwar",
+      "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 535,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/535/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 534,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/534/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 533,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/533/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 532,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/532/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 531,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/531/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 410,
+          "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/410/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 410,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/410/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/535/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/535/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/535/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 535,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/535/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 410,
+        "url" : "http://builds.cdlib.org/job/mrt-ingest-dev/org.cdlib.mrt$mrt-ingestwar/410/"
+      },
+      "nextBuildNumber" : 536,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtBatchWar"
+    }
+  ]
+}

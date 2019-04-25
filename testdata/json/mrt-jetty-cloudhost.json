@@ -1,0 +1,1971 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "jarBranch",
+            "value" : "demo"
+          },
+          "description" : "demo branch\nmaster branch",
+          "name" : "jarBranch",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "demo",
+            "master"
+          ]
+        }
+      ]
+    },
+    null,
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction",
+      "stores" : {
+        
+      }
+    }
+  ],
+  "description" : "Build Merritt cloudhost jar using demo-master branch",
+  "displayName" : "mrt-jetty-cloudhost",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "mrt-jetty-cloudhost",
+  "fullName" : "mrt-jetty-cloudhost",
+  "name" : "mrt-jetty-cloudhost",
+  "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "jarBranch",
+              "value" : "master"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/demo" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 6,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                "branch" : [
+                  {
+                    "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                    "name" : "refs/remotes/origin/demo"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                "branch" : [
+                  {
+                    "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                    "name" : "refs/remotes/origin/demo"
+                  }
+                ]
+              }
+            },
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 9,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                "branch" : [
+                  {
+                    "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                "branch" : [
+                  {
+                    "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+            "branch" : [
+              {
+                "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-cloudhost-pub.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#9",
+      "duration" : 20500,
+      "estimatedDuration" : 20858,
+      "executor" : null,
+      "fullDisplayName" : "mrt-jetty-cloudhost #9",
+      "id" : "9",
+      "keepLog" : false,
+      "number" : 9,
+      "queueId" : 354,
+      "result" : "SUCCESS",
+      "timestamp" : 1538684430476,
+      "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/9/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "jarBranch",
+              "value" : "master"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/demo" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 6,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                "branch" : [
+                  {
+                    "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                    "name" : "refs/remotes/origin/demo"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                "branch" : [
+                  {
+                    "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                    "name" : "refs/remotes/origin/demo"
+                  }
+                ]
+              }
+            },
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 8,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                "branch" : [
+                  {
+                    "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                "branch" : [
+                  {
+                    "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+            "branch" : [
+              {
+                "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-cloudhost-pub.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#8",
+      "duration" : 21066,
+      "estimatedDuration" : 20858,
+      "executor" : null,
+      "fullDisplayName" : "mrt-jetty-cloudhost #8",
+      "id" : "8",
+      "keepLog" : false,
+      "number" : 8,
+      "queueId" : 353,
+      "result" : "SUCCESS",
+      "timestamp" : 1538683460537,
+      "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/8/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "jarBranch",
+              "value" : "master"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/demo" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 6,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                "branch" : [
+                  {
+                    "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                    "name" : "refs/remotes/origin/demo"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                "branch" : [
+                  {
+                    "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                    "name" : "refs/remotes/origin/demo"
+                  }
+                ]
+              }
+            },
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 7,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                "branch" : [
+                  {
+                    "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                "branch" : [
+                  {
+                    "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+            "branch" : [
+              {
+                "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-cloudhost-pub.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#7",
+      "duration" : 21007,
+      "estimatedDuration" : 20858,
+      "executor" : null,
+      "fullDisplayName" : "mrt-jetty-cloudhost #7",
+      "id" : "7",
+      "keepLog" : false,
+      "number" : 7,
+      "queueId" : 352,
+      "result" : "SUCCESS",
+      "timestamp" : 1538681954266,
+      "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/7/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "cloudhost-src/src/main/java/org/cdlib/mrt/cloudhost/service/CloudhostServiceSave.java"
+            ],
+            "commitId" : "ec6a75018826f824f802929a1fcc188745c1e523",
+            "timestamp" : 1538673701000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "Delete non-copied routine\n",
+            "date" : "2018-10-04 10:21:41 -0700",
+            "id" : "ec6a75018826f824f802929a1fcc188745c1e523",
+            "msg" : "Delete non-copied routine",
+            "paths" : [
+              {
+                "editType" : "delete",
+                "file" : "cloudhost-src/src/main/java/org/cdlib/mrt/cloudhost/service/CloudhostServiceSave.java"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "cloudhost-jetty/src/main/resources/nodes/nodes-cs-emb.properties",
+              "cloudhost-jetty/src/main/resources/nodes/csh-docker.properties",
+              "cloudhost-jetty/src/main/resources/nodes/csh-old-docker.properties"
+            ],
+            "commitId" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+            "timestamp" : 1538674606000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "Merge\n",
+            "date" : "2018-10-04 10:36:46 -0700",
+            "id" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+            "msg" : "Merge",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "cloudhost-jetty/src/main/resources/nodes/csh-docker.properties"
+              },
+              {
+                "editType" : "add",
+                "file" : "cloudhost-jetty/src/main/resources/nodes/csh-old-docker.properties"
+              },
+              {
+                "editType" : "edit",
+                "file" : "cloudhost-jetty/src/main/resources/nodes/nodes-cs-emb.properties"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+          "fullName" : "dloy"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "jarBranch",
+              "value" : "demo"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/demo" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 6,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                "branch" : [
+                  {
+                    "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                    "name" : "refs/remotes/origin/demo"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                "branch" : [
+                  {
+                    "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                    "name" : "refs/remotes/origin/demo"
+                  }
+                ]
+              }
+            },
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 5,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+                "branch" : [
+                  {
+                    "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+                "branch" : [
+                  {
+                    "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+            "branch" : [
+              {
+                "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                "name" : "refs/remotes/origin/demo"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-cloudhost-pub.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#6",
+      "duration" : 30467,
+      "estimatedDuration" : 20858,
+      "executor" : null,
+      "fullDisplayName" : "mrt-jetty-cloudhost #6",
+      "id" : "6",
+      "keepLog" : false,
+      "number" : 6,
+      "queueId" : 350,
+      "result" : "SUCCESS",
+      "timestamp" : 1538674897554,
+      "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/6/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "cloudhost-src/src/main/java/org/cdlib/mrt/cloudhost/service/CloudhostServiceSave.java"
+            ],
+            "commitId" : "ec6a75018826f824f802929a1fcc188745c1e523",
+            "timestamp" : 1538673701000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "Delete non-copied routine\n",
+            "date" : "2018-10-04 10:21:41 -0700",
+            "id" : "ec6a75018826f824f802929a1fcc188745c1e523",
+            "msg" : "Delete non-copied routine",
+            "paths" : [
+              {
+                "editType" : "delete",
+                "file" : "cloudhost-src/src/main/java/org/cdlib/mrt/cloudhost/service/CloudhostServiceSave.java"
+              }
+            ]
+          },
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "cloudhost-jetty/src/main/resources/nodes/nodes-cs-emb.properties",
+              "cloudhost-jetty/src/main/resources/nodes/csh-docker.properties",
+              "cloudhost-jetty/src/main/resources/nodes/csh-old-docker.properties"
+            ],
+            "commitId" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+            "timestamp" : 1538674606000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "Merge\n",
+            "date" : "2018-10-04 10:36:46 -0700",
+            "id" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+            "msg" : "Merge",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "cloudhost-jetty/src/main/resources/nodes/csh-docker.properties"
+              },
+              {
+                "editType" : "edit",
+                "file" : "cloudhost-jetty/src/main/resources/nodes/nodes-cs-emb.properties"
+              },
+              {
+                "editType" : "add",
+                "file" : "cloudhost-jetty/src/main/resources/nodes/csh-old-docker.properties"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+          "fullName" : "dloy"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "actions" : [
+        {
+          "_class" : "hudson.model.ParametersAction",
+          "parameters" : [
+            {
+              "_class" : "hudson.model.StringParameterValue",
+              "name" : "jarBranch",
+              "value" : "master"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.model.CauseAction",
+          "causes" : [
+            {
+              "_class" : "hudson.model.Cause$UserIdCause",
+              "shortDescription" : "Started by user anonymous",
+              "userId" : null,
+              "userName" : "anonymous"
+            }
+          ]
+        },
+        {
+          "_class" : "hudson.plugins.git.util.BuildData",
+          "buildsByBranchName" : {
+            "refs/remotes/origin/demo" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 4,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+                "branch" : [
+                  {
+                    "SHA1" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+                    "name" : "refs/remotes/origin/demo"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+                "branch" : [
+                  {
+                    "SHA1" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+                    "name" : "refs/remotes/origin/demo"
+                  }
+                ]
+              }
+            },
+            "refs/remotes/origin/master" : {
+              "_class" : "hudson.plugins.git.util.Build",
+              "buildNumber" : 5,
+              "buildResult" : null,
+              "marked" : {
+                "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+                "branch" : [
+                  {
+                    "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              },
+              "revision" : {
+                "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+                "branch" : [
+                  {
+                    "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+                    "name" : "refs/remotes/origin/master"
+                  }
+                ]
+              }
+            }
+          },
+          "lastBuiltRevision" : {
+            "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+            "branch" : [
+              {
+                "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+                "name" : "refs/remotes/origin/master"
+              }
+            ]
+          },
+          "remoteUrls" : [
+            "https://github.com/CDLUC3/mrt-cloudhost-pub.git"
+          ],
+          "scmName" : ""
+        },
+        {
+          "_class" : "hudson.plugins.git.GitTagAction"
+        },
+        {
+          
+        },
+        {
+          "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+        },
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "artifacts" : [
+        
+      ],
+      "building" : false,
+      "description" : null,
+      "displayName" : "#5",
+      "duration" : 21199,
+      "estimatedDuration" : 20858,
+      "executor" : null,
+      "fullDisplayName" : "mrt-jetty-cloudhost #5",
+      "id" : "5",
+      "keepLog" : false,
+      "number" : 5,
+      "queueId" : 340,
+      "result" : "SUCCESS",
+      "timestamp" : 1536958805503,
+      "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/5/",
+      "builtOn" : "",
+      "changeSet" : {
+        "_class" : "hudson.plugins.git.GitChangeSetList",
+        "items" : [
+          {
+            "_class" : "hudson.plugins.git.GitChangeSet",
+            "affectedPaths" : [
+              "cloudhost-src/src/main/java/org/cdlib/mrt/cloudhost/service/CloudhostService.java",
+              "cloudhost-jetty/src/main/java/launch/AppDocker.java"
+            ],
+            "commitId" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+            "timestamp" : 1536955109000,
+            "author" : {
+              "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+              "fullName" : "dloy"
+            },
+            "authorEmail" : "dloy@ucop.edu",
+            "comment" : "Cleanup exceptions displays\n",
+            "date" : "2018-09-14 12:58:29 -0700",
+            "id" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+            "msg" : "Cleanup exceptions displays",
+            "paths" : [
+              {
+                "editType" : "edit",
+                "file" : "cloudhost-src/src/main/java/org/cdlib/mrt/cloudhost/service/CloudhostService.java"
+              },
+              {
+                "editType" : "edit",
+                "file" : "cloudhost-jetty/src/main/java/launch/AppDocker.java"
+              }
+            ]
+          }
+        ],
+        "kind" : "git"
+      },
+      "culprits" : [
+        {
+          "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+          "fullName" : "dloy"
+        }
+      ],
+      "mavenArtifacts" : {
+        
+      },
+      "mavenVersionUsed" : "3.1.1"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "jarBranch",
+            "value" : "master"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/demo" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 4,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+              "branch" : [
+                {
+                  "SHA1" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+                  "name" : "refs/remotes/origin/demo"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+              "branch" : [
+                {
+                  "SHA1" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+                  "name" : "refs/remotes/origin/demo"
+                }
+              ]
+            }
+          },
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 5,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+              "branch" : [
+                {
+                  "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+              "branch" : [
+                {
+                  "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+          "branch" : [
+            {
+              "SHA1" : "c80b17ce5417eb7094f4fcaa8bc51453bdf9f711",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-cloudhost-pub.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#5",
+    "duration" : 21199,
+    "estimatedDuration" : 20858,
+    "executor" : null,
+    "fullDisplayName" : "mrt-jetty-cloudhost #5",
+    "id" : "5",
+    "keepLog" : false,
+    "number" : 5,
+    "queueId" : 340,
+    "result" : "SUCCESS",
+    "timestamp" : 1536958805503,
+    "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/5/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        {
+          "_class" : "hudson.plugins.git.GitChangeSet",
+          "affectedPaths" : [
+            "cloudhost-src/src/main/java/org/cdlib/mrt/cloudhost/service/CloudhostService.java",
+            "cloudhost-jetty/src/main/java/launch/AppDocker.java"
+          ],
+          "commitId" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+          "timestamp" : 1536955109000,
+          "author" : {
+            "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+            "fullName" : "dloy"
+          },
+          "authorEmail" : "dloy@ucop.edu",
+          "comment" : "Cleanup exceptions displays\n",
+          "date" : "2018-09-14 12:58:29 -0700",
+          "id" : "c20957d343e972c89ff88d8a34fceb5c8085bbbc",
+          "msg" : "Cleanup exceptions displays",
+          "paths" : [
+            {
+              "editType" : "edit",
+              "file" : "cloudhost-src/src/main/java/org/cdlib/mrt/cloudhost/service/CloudhostService.java"
+            },
+            {
+              "editType" : "edit",
+              "file" : "cloudhost-jetty/src/main/java/launch/AppDocker.java"
+            }
+          ]
+        }
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      {
+        "absoluteUrl" : "http://builds.cdlib.org/user/dloy",
+        "fullName" : "dloy"
+      }
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "healthReport" : [
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "jarBranch",
+            "value" : "master"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/demo" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 6,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+              "branch" : [
+                {
+                  "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                  "name" : "refs/remotes/origin/demo"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+              "branch" : [
+                {
+                  "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                  "name" : "refs/remotes/origin/demo"
+                }
+              ]
+            }
+          },
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 9,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "branch" : [
+                {
+                  "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "branch" : [
+                {
+                  "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+          "branch" : [
+            {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-cloudhost-pub.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#9",
+    "duration" : 20500,
+    "estimatedDuration" : 20858,
+    "executor" : null,
+    "fullDisplayName" : "mrt-jetty-cloudhost #9",
+    "id" : "9",
+    "keepLog" : false,
+    "number" : 9,
+    "queueId" : 354,
+    "result" : "SUCCESS",
+    "timestamp" : 1538684430476,
+    "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/9/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "jarBranch",
+            "value" : "master"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/demo" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 6,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+              "branch" : [
+                {
+                  "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                  "name" : "refs/remotes/origin/demo"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+              "branch" : [
+                {
+                  "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                  "name" : "refs/remotes/origin/demo"
+                }
+              ]
+            }
+          },
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 9,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "branch" : [
+                {
+                  "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "branch" : [
+                {
+                  "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+          "branch" : [
+            {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-cloudhost-pub.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#9",
+    "duration" : 20500,
+    "estimatedDuration" : 20858,
+    "executor" : null,
+    "fullDisplayName" : "mrt-jetty-cloudhost #9",
+    "id" : "9",
+    "keepLog" : false,
+    "number" : 9,
+    "queueId" : 354,
+    "result" : "SUCCESS",
+    "timestamp" : 1538684430476,
+    "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/9/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "jarBranch",
+            "value" : "master"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/demo" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 6,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+              "branch" : [
+                {
+                  "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                  "name" : "refs/remotes/origin/demo"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+              "branch" : [
+                {
+                  "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                  "name" : "refs/remotes/origin/demo"
+                }
+              ]
+            }
+          },
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 9,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "branch" : [
+                {
+                  "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "branch" : [
+                {
+                  "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+          "branch" : [
+            {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-cloudhost-pub.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#9",
+    "duration" : 20500,
+    "estimatedDuration" : 20858,
+    "executor" : null,
+    "fullDisplayName" : "mrt-jetty-cloudhost #9",
+    "id" : "9",
+    "keepLog" : false,
+    "number" : 9,
+    "queueId" : 354,
+    "result" : "SUCCESS",
+    "timestamp" : 1538684430476,
+    "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/9/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "actions" : [
+      {
+        "_class" : "hudson.model.ParametersAction",
+        "parameters" : [
+          {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "jarBranch",
+            "value" : "master"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.model.CauseAction",
+        "causes" : [
+          {
+            "_class" : "hudson.model.Cause$UserIdCause",
+            "shortDescription" : "Started by user anonymous",
+            "userId" : null,
+            "userName" : "anonymous"
+          }
+        ]
+      },
+      {
+        "_class" : "hudson.plugins.git.util.BuildData",
+        "buildsByBranchName" : {
+          "refs/remotes/origin/demo" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 6,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+              "branch" : [
+                {
+                  "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                  "name" : "refs/remotes/origin/demo"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+              "branch" : [
+                {
+                  "SHA1" : "44503c752c1c962c6e5f7aa6c8e6004c51269317",
+                  "name" : "refs/remotes/origin/demo"
+                }
+              ]
+            }
+          },
+          "refs/remotes/origin/master" : {
+            "_class" : "hudson.plugins.git.util.Build",
+            "buildNumber" : 9,
+            "buildResult" : null,
+            "marked" : {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "branch" : [
+                {
+                  "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            },
+            "revision" : {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "branch" : [
+                {
+                  "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+                  "name" : "refs/remotes/origin/master"
+                }
+              ]
+            }
+          }
+        },
+        "lastBuiltRevision" : {
+          "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+          "branch" : [
+            {
+              "SHA1" : "ad697a2acfdd3af594fa359b278045e2d789f43d",
+              "name" : "refs/remotes/origin/master"
+            }
+          ]
+        },
+        "remoteUrls" : [
+          "https://github.com/CDLUC3/mrt-cloudhost-pub.git"
+        ],
+        "scmName" : ""
+      },
+      {
+        "_class" : "hudson.plugins.git.GitTagAction"
+      },
+      {
+        
+      },
+      {
+        "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+      },
+      {
+        
+      },
+      {
+        
+      }
+    ],
+    "artifacts" : [
+      
+    ],
+    "building" : false,
+    "description" : null,
+    "displayName" : "#9",
+    "duration" : 20500,
+    "estimatedDuration" : 20858,
+    "executor" : null,
+    "fullDisplayName" : "mrt-jetty-cloudhost #9",
+    "id" : "9",
+    "keepLog" : false,
+    "number" : 9,
+    "queueId" : 354,
+    "result" : "SUCCESS",
+    "timestamp" : 1538684430476,
+    "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/9/",
+    "builtOn" : "",
+    "changeSet" : {
+      "_class" : "hudson.plugins.git.GitChangeSetList",
+      "items" : [
+        
+      ],
+      "kind" : "git"
+    },
+    "culprits" : [
+      
+    ],
+    "mavenArtifacts" : {
+      
+    },
+    "mavenVersionUsed" : "3.1.1"
+  },
+  "lastUnstableBuild" : null,
+  "lastUnsuccessfulBuild" : null,
+  "nextBuildNumber" : 10,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class" : "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions" : [
+        {
+          "_class" : "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue" : {
+            "_class" : "hudson.model.StringParameterValue",
+            "name" : "jarBranch",
+            "value" : "demo"
+          },
+          "description" : "demo branch\nmaster branch",
+          "name" : "jarBranch",
+          "type" : "ChoiceParameterDefinition",
+          "choices" : [
+            "demo",
+            "master"
+          ]
+        }
+      ]
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    
+  ],
+  "labelExpression" : null,
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM",
+    "browser" : {
+      "_class" : "hudson.plugins.git.browser.GithubWeb"
+    },
+    "type" : "hudson.plugins.git.GitSCM",
+    "branches" : [
+      {
+        
+      }
+    ],
+    "mergeOptions" : {
+      "fastForwardMode" : "--ff",
+      "mergeStrategy" : "default",
+      "mergeTarget" : null,
+      "remoteBranchName" : null
+    },
+    "userRemoteConfigs" : [
+      {
+        
+      }
+    ]
+  },
+  "upstreamProjects" : [
+    
+  ],
+  "modules" : [
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-jetty-cloudhost » UC3-mrtCloudhostPub",
+      "fullName" : "mrt-jetty-cloudhost/org.cdlib.mrt:mrt-cloudhost",
+      "name" : "org.cdlib.mrt:mrt-cloudhost",
+      "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 9,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/9/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/6/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/5/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/5/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/9/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/9/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/9/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhost/9/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 10,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtCloudhostPub"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-jetty-cloudhost » UC3-CloudhostJetty",
+      "fullName" : "mrt-jetty-cloudhost/org.cdlib.mrt:mrt-cloudhostjetty",
+      "name" : "org.cdlib.mrt:mrt-cloudhostjetty",
+      "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 9,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/9/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/6/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/5/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/5/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/9/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/9/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/9/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostjetty/9/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 10,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-CloudhostJetty"
+    },
+    {
+      "actions" : [
+        {
+          
+        },
+        {
+          
+        }
+      ],
+      "description" : null,
+      "displayNameOrNull" : null,
+      "fullDisplayName" : "mrt-jetty-cloudhost » UC3-mrtCloudhostSrcPub",
+      "fullName" : "mrt-jetty-cloudhost/org.cdlib.mrt:mrt-cloudhostsrcpub",
+      "name" : "org.cdlib.mrt:mrt-cloudhostsrcpub",
+      "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/",
+      "buildable" : true,
+      "builds" : [
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 9,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/9/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 8,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/8/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 7,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/7/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 6,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/6/"
+        },
+        {
+          "_class" : "hudson.maven.MavenBuild",
+          "number" : 5,
+          "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/5/"
+        }
+      ],
+      "color" : "blue",
+      "firstBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 5,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/5/"
+      },
+      "healthReport" : [
+        {
+          "description" : "Build stability: No recent builds failed.",
+          "iconClassName" : "icon-health-80plus",
+          "iconUrl" : "health-80plus.png",
+          "score" : 100
+        }
+      ],
+      "inQueue" : false,
+      "keepDependencies" : false,
+      "lastBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/9/"
+      },
+      "lastCompletedBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/9/"
+      },
+      "lastFailedBuild" : null,
+      "lastStableBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/9/"
+      },
+      "lastSuccessfulBuild" : {
+        "_class" : "hudson.maven.MavenBuild",
+        "number" : 9,
+        "url" : "http://builds.cdlib.org/job/mrt-jetty-cloudhost/org.cdlib.mrt$mrt-cloudhostsrcpub/9/"
+      },
+      "lastUnstableBuild" : null,
+      "lastUnsuccessfulBuild" : null,
+      "nextBuildNumber" : 10,
+      "property" : [
+        
+      ],
+      "queueItem" : null,
+      "concurrentBuild" : false,
+      "downstreamProjects" : [
+        
+      ],
+      "labelExpression" : null,
+      "scm" : {
+        "_class" : "hudson.scm.NullSCM"
+      },
+      "upstreamProjects" : [
+        
+      ],
+      "displayName" : "UC3-mrtCloudhostSrcPub"
+    }
+  ]
+}

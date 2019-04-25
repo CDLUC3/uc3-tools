@@ -1,0 +1,1390 @@
+{
+  "sha": "af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+  "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/af174ac555758a1c639a7a3da39e022d9fdbf3a6",
+  "tree": [
+    {
+      "path": "pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc7fd47f1d159241f9469ab5711b91b1673373e7",
+      "size": 1349,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/cc7fd47f1d159241f9469ab5711b91b1673373e7"
+    },
+    {
+      "path": "store-src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "916519f9a3db971a8e13de5ca31ae12e848fc146",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/916519f9a3db971a8e13de5ca31ae12e848fc146"
+    },
+    {
+      "path": "store-src/pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3ae87b904091324ea42af37581d92ee67415143",
+      "size": 4775,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/d3ae87b904091324ea42af37581d92ee67415143"
+    },
+    {
+      "path": "store-src/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7fa63f3e71eb94ba0f90abf71756af011e11acb6",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/7fa63f3e71eb94ba0f90abf71756af011e11acb6"
+    },
+    {
+      "path": "store-src/src/main",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a210df53be03dbf33a73468f97cdc71dd947e0dc",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/a210df53be03dbf33a73468f97cdc71dd947e0dc"
+    },
+    {
+      "path": "store-src/src/main/java",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "420f271e20444de55fc95a26a2cb635d64a67b81",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/420f271e20444de55fc95a26a2cb635d64a67b81"
+    },
+    {
+      "path": "store-src/src/main/java/org",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d4372e07c80148c57f57dfc8dec12fee54b2f601",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/d4372e07c80148c57f57dfc8dec12fee54b2f601"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "296b34e7cc60ab8a5d7abb2cdd4cefa36db467a1",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/296b34e7cc60ab8a5d7abb2cdd4cefa36db467a1"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bf76945ccfa8e7b7004e8bc6026b043fb2204b6c",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/bf76945ccfa8e7b7004e8bc6026b043fb2204b6c"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6d0783cbce920470a2dc74acf8fff1c4402b9797",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/6d0783cbce920470a2dc74acf8fff1c4402b9797"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9a71aeb5e578d065860c1f02359f5e553a647d43",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/9a71aeb5e578d065860c1f02359f5e553a647d43"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/AddVersion.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5aefde92af13acd5f68c4223d5c3138a8ad48408",
+      "size": 14119,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/5aefde92af13acd5f68c4223d5c3138a8ad48408"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/AddVersionContentAbs.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd1bb16aab9d1d025677d61d78a96dad7c2d9707",
+      "size": 25344,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/cd1bb16aab9d1d025677d61d78a96dad7c2d9707"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/AddVersionThread.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26a75da5102beea6afc3266508fc2f6be2ef3885",
+      "size": 8577,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/26a75da5102beea6afc3266508fc2f6be2ef3885"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/CloudActionAbs.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ca20426ff3d4ea8c6afa2f448e83661729673eb",
+      "size": 19029,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/3ca20426ff3d4ea8c6afa2f448e83661729673eb"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/ComponentFile.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9fd6661cb36a3221c05ca6801894828c62a80c5",
+      "size": 5778,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/b9fd6661cb36a3221c05ca6801894828c62a80c5"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/ContentCloudManifest.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0322bf1e2180312ed2f5ab4ffd56608641322772",
+      "size": 5399,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/0322bf1e2180312ed2f5ab4ffd56608641322772"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/ContentCloudManifestStream.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e61c0870ca9dbf823530744e012f8f4e28e2e45b",
+      "size": 5381,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/e61c0870ca9dbf823530744e012f8f4e28e2e45b"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/ContentComponents.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4758f830679c23df07f077a83a3ac33acf3405a2",
+      "size": 6119,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/4758f830679c23df07f077a83a3ac33acf3405a2"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/ContentFile.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "396285fe7f6743a985a122ae2c863756df2d3af4",
+      "size": 9481,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/396285fe7f6743a985a122ae2c863756df2d3af4"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/ContentFileStream.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7fdbe99c7df7ea82101e5060197d03ec3b582d81",
+      "size": 9518,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/7fdbe99c7df7ea82101e5060197d03ec3b582d81"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/ContentObject.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31484bbe4eb5988d8bcba8f6cdeba6c1cd6d10e5",
+      "size": 6671,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/31484bbe4eb5988d8bcba8f6cdeba6c1cd6d10e5"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/ContentObjectLink.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c526f649ee29d97531ec53af087874f8f506175a",
+      "size": 5796,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/c526f649ee29d97531ec53af087874f8f506175a"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/ContentVersionArchive.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "214f4008955779133105272211ccee7094c22b4e",
+      "size": 6738,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/214f4008955779133105272211ccee7094c22b4e"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/ContentVersionComponents.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d7e51a4d1903a3a522c0cdcd38e5a7c6bd0f5c1",
+      "size": 5490,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/4d7e51a4d1903a3a522c0cdcd38e5a7c6bd0f5c1"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/ContentVersionLink.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a65a009a15fac1ab5491f26710f0dddded975634",
+      "size": 6214,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/a65a009a15fac1ab5491f26710f0dddded975634"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/CopyObject.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6bde0317aa17e25e969be95790649db53fc4d5b9",
+      "size": 7850,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/6bde0317aa17e25e969be95790649db53fc4d5b9"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/DeleteCurrentVersion.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5cd62fa97380040ce49d9967ee9a3dfb7ac89fa5",
+      "size": 5979,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/5cd62fa97380040ce49d9967ee9a3dfb7ac89fa5"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/DeleteObject.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae78e731e5844b7ad4cda30b8a480e6a8a4a8a56",
+      "size": 5502,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/ae78e731e5844b7ad4cda30b8a480e6a8a4a8a56"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/DflatForm.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f794d73a3c7c52940a62b96dd29fb27193ebf2d",
+      "size": 9657,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/8f794d73a3c7c52940a62b96dd29fb27193ebf2d"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/FixityFile.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a117a2b1f63f3ad844baeff0208192c8047c0766",
+      "size": 9340,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/a117a2b1f63f3ad844baeff0208192c8047c0766"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/FixityObject.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31d33a5d77d240df3c92ddfb1d219c2cf2d2d540",
+      "size": 10254,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/31d33a5d77d240df3c92ddfb1d219c2cf2d2d540"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/StateObject.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e5131fd5e6bfacb7fbabb5cebf45583aeba9adb",
+      "size": 5027,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/7e5131fd5e6bfacb7fbabb5cebf45583aeba9adb"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/StateVersion.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "137793991015104ab0a9530260906af7f411dd38",
+      "size": 5871,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/137793991015104ab0a9530260906af7f411dd38"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/StreamObject.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ea7b150540e59cf75b086cf39b808807ced6852",
+      "size": 6757,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/2ea7b150540e59cf75b086cf39b808807ced6852"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/StreamVersionArchive.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e171f6a180f23e9f335f83775f2c35a00b7fb9ea",
+      "size": 7138,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/e171f6a180f23e9f335f83775f2c35a00b7fb9ea"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/UpdateVersion.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "638db51eba2d2b98bb5fda4cd2d83b2477020e78",
+      "size": 11629,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/638db51eba2d2b98bb5fda4cd2d83b2477020e78"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/action/UpdateVersionThread.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35de960c8cc74ec634dc867bd3a7a97561101310",
+      "size": 8181,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/35de960c8cc74ec634dc867bd3a7a97561101310"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/test",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "85a406f1237f8df7763c7eeaa8544630a8877bcb",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/85a406f1237f8df7763c7eeaa8544630a8877bcb"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/test/TestAddVersionBigThread.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a950475cb15a3471c215a1c12f944eb2ba0ca556",
+      "size": 5510,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/a950475cb15a3471c215a1c12f944eb2ba0ca556"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/test/TestAddVersionThread.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db768b080dada58e603cf962a3a7fd7331990957",
+      "size": 7377,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/db768b080dada58e603cf962a3a7fd7331990957"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/test/TestProducerArchive.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f1c2988fc69a273b174704a09cc99313837131a",
+      "size": 6882,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/1f1c2988fc69a273b174704a09cc99313837131a"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/utility",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "510ab9bfec68a9fd26856b062c2289a958cc67d5",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/510ab9bfec68a9fd26856b062c2289a958cc67d5"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/utility/CloudUtil.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f458ffd3ba5912fadae8b0c240c960520416503",
+      "size": 10067,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/7f458ffd3ba5912fadae8b0c240c960520416503"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/utility/NormVersionMap.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2972ba8bbcdaacc9f064cf86648067741537a430",
+      "size": 10452,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/2972ba8bbcdaacc9f064cf86648067741537a430"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/utility/StateFormat.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1f9dfb2437abe872ba1174426a153b531656e71",
+      "size": 3198,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/f1f9dfb2437abe872ba1174426a153b531656e71"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/cloud/utility/StoreMapStates.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "175e1968b20a445a94c588b64dbb34827bc6d694",
+      "size": 5548,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/175e1968b20a445a94c588b64dbb34827bc6d694"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cc6a4b305497a237e03603059ce9c0e1e9b7aca1",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/cc6a4b305497a237e03603059ce9c0e1e9b7aca1"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/FileFixityState.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca27d79a81de75622dd9d5a771323cb69b1cb6f9",
+      "size": 6411,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/ca27d79a81de75622dd9d5a771323cb69b1cb6f9"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/FileFixityStateInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3fbaf5b539593b4907ad47d7b8084d5142cda023",
+      "size": 2427,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/3fbaf5b539593b4907ad47d7b8084d5142cda023"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/FileState.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01824fe26e54eecf121e382781998a1f9ad47cf7",
+      "size": 3308,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/01824fe26e54eecf121e382781998a1f9ad47cf7"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/FileStateInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e57f2c3864cd3b52eab7e507425de2406562c5f",
+      "size": 3503,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/2e57f2c3864cd3b52eab7e507425de2406562c5f"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/InfoText.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4956f9757c7335c4257368bd04eebfff6835f0d0",
+      "size": 4476,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/4956f9757c7335c4257368bd04eebfff6835f0d0"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/KeyFileInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a5aec539cfa814853d3b0ef3cb1e46458b7b46a",
+      "size": 436,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/0a5aec539cfa814853d3b0ef3cb1e46458b7b46a"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/LastActivity.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "656ce523de31e6178ff39e456616ca7bd43f3363",
+      "size": 4592,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/656ce523de31e6178ff39e456616ca7bd43f3363"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/NodeInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48e8a22593350602540b78838d56f7783af1c855",
+      "size": 16093,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/48e8a22593350602540b78838d56f7783af1c855"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/NodeState.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd82fb45cae508c84b63bf3a772d4c721df564bd",
+      "size": 28899,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/dd82fb45cae508c84b63bf3a772d4c721df564bd"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/NodeStateInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2902f76ed7052dd64e04e68a0c1008b306875dc",
+      "size": 7673,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/f2902f76ed7052dd64e04e68a0c1008b306875dc"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/ObjectFixityState.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75243e452ed0fdff8a798f65fd70ad92159dd9e5",
+      "size": 4395,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/75243e452ed0fdff8a798f65fd70ad92159dd9e5"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/ObjectLocationAbs.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf9cef2090bf5d6d0acdfcf45a2b6277383f2dc5",
+      "size": 4841,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/bf9cef2090bf5d6d0acdfcf45a2b6277383f2dc5"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/ObjectLocationInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea96c473204b0839a0b446ad880c2140813c045f",
+      "size": 3167,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/ea96c473204b0839a0b446ad880c2140813c045f"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/ObjectMap.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99449b6a33f54345e5f4dcd819dc17eb12bb013c",
+      "size": 13859,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/99449b6a33f54345e5f4dcd819dc17eb12bb013c"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/ObjectMapJena.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33db82198745c35f0d88cba939af3fe0c777e805",
+      "size": 14702,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/33db82198745c35f0d88cba939af3fe0c777e805"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/ObjectState.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3fa459d61f8fa35ba8878bc182fad0beb3843810",
+      "size": 8934,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/3fa459d61f8fa35ba8878bc182fad0beb3843810"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/ObjectStateInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0948609b685c9c161b2ce65de4c9dc2c3d9ba3d6",
+      "size": 4109,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/0948609b685c9c161b2ce65de4c9dc2c3d9ba3d6"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/ObjectStoreAbs.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bec932ac44061e8619cc0736076e7717a97027d9",
+      "size": 6222,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/bec932ac44061e8619cc0736076e7717a97027d9"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/ObjectStoreInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db7d782b5b99602f3b766da491da45699db24472",
+      "size": 16080,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/db7d782b5b99602f3b766da491da45699db24472"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/PrimaryIDStateInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a515fe56d40aca2fca8d072fc26f7b39782a51e0",
+      "size": 2276,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/a515fe56d40aca2fca8d072fc26f7b39782a51e0"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/RequestModeEnum.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a95df5e2d348ded2811becb10f40b22edeec2a48",
+      "size": 1870,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/a95df5e2d348ded2811becb10f40b22edeec2a48"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/SpecScheme.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39635d2982d5682cc773127a27dcafa64e61a3ae",
+      "size": 11322,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/39635d2982d5682cc773127a27dcafa64e61a3ae"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/StorageServiceState.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb6f5c0c54aa2d1979164f7ac47e7b491dc80c2f",
+      "size": 10805,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/fb6f5c0c54aa2d1979164f7ac47e7b491dc80c2f"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/StorageServiceStateInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3460c0ee19f9fd94bf7f245432e566ea0035760b",
+      "size": 4162,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/3460c0ee19f9fd94bf7f245432e566ea0035760b"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/StorageTypesEnum.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "914bef39bc9fe0ab86fe049d739a7cee4b0d0c8b",
+      "size": 3025,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/914bef39bc9fe0ab86fe049d739a7cee4b0d0c8b"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/StoreNode.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6730a30e3443898500dd55e063e43bc7df7c8920",
+      "size": 3108,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/6730a30e3443898500dd55e063e43bc7df7c8920"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/StoreNodeManager.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f60c9b7b7169ce0afd67e11b43678594231341ad",
+      "size": 25705,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/f60c9b7b7169ce0afd67e11b43678594231341ad"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/VersionContent.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8312ffe5fff2ad27220ed4efa4c82697e50530a6",
+      "size": 3163,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/8312ffe5fff2ad27220ed4efa4c82697e50530a6"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/VersionState.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3a65f9ee80d6e6596dc4f61ca2f585566000873",
+      "size": 8169,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/f3a65f9ee80d6e6596dc4f61ca2f585566000873"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/VersionStateInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73597d766713952acedadcd97af665be8d888182",
+      "size": 3857,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/73597d766713952acedadcd97af665be8d888182"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/action",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dd12256dd605753976e6005e13868cec6a0a01c3",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/dd12256dd605753976e6005e13868cec6a0a01c3"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/action/ActionAbs.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4da74dd152102dc8f81e2dc2f0026856a9ca541d",
+      "size": 5494,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/4da74dd152102dc8f81e2dc2f0026856a9ca541d"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/action/ArchiveComponent.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48d392ee7ddf51834c56c588a6ad14777ae1b726",
+      "size": 4380,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/48d392ee7ddf51834c56c588a6ad14777ae1b726"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/action/ArchiveComponentList.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f6b2844ee40ce6e8fb28f59e4f0e0b44207062f",
+      "size": 13311,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/3f6b2844ee40ce6e8fb28f59e4f0e0b44207062f"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/action/AsyncContainerObject.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bca28ff1e885621d5e91573da0a70c086c286794",
+      "size": 17167,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/bca28ff1e885621d5e91573da0a70c086c286794"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/action/CloudArchive.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d47601dfe451f35b753af9ed46074e257b448ba",
+      "size": 27670,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/0d47601dfe451f35b753af9ed46074e257b448ba"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/action/ComponentList.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "239d59ee0af1db61ca58307091ccebb5fb47e6b5",
+      "size": 5129,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/239d59ee0af1db61ca58307091ccebb5fb47e6b5"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/action/CopyNodeObject.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fbd91f0f3662a19d5413b3f92f5e1b192713ae68",
+      "size": 9450,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/fbd91f0f3662a19d5413b3f92f5e1b192713ae68"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/action/CopyVirtualObject.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d22b9d67a1fc8e3ab06cfdc5edd2585c5f96f57",
+      "size": 7203,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/7d22b9d67a1fc8e3ab06cfdc5edd2585c5f96f57"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/action/ProducerComponent.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33bc27833abcd800056b0cf7efcd3a879d79531f",
+      "size": 4260,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/33bc27833abcd800056b0cf7efcd3a879d79531f"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/action/ProducerComponentList.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "439ab43ac12c240650facac4495b12543e284ccc",
+      "size": 6403,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/439ab43ac12c240650facac4495b12543e284ccc"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/app",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d8af8e062f204feeced2d58ea62c19f5fe27406d",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/d8af8e062f204feeced2d58ea62c19f5fe27406d"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/app/StorageServiceInit.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe935caa3b8ee8e54d4c84cfe047de979cdb2ed8",
+      "size": 4788,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/fe935caa3b8ee8e54d4c84cfe047de979cdb2ed8"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/app/ValidateCmdParms.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f728f685fc1055fd7fc0ee91da489bae279273bb",
+      "size": 8195,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/f728f685fc1055fd7fc0ee91da489bae279273bb"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/app/jersey",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c6601f4bdde8499b36190c5f134a26135ba986e2",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/c6601f4bdde8499b36190c5f134a26135ba986e2"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/app/jersey/JerseyBase.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1cc37c375ddc7dc8247929a93d52fdc9c969977",
+      "size": 131220,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/e1cc37c375ddc7dc8247929a93d52fdc9c969977"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/app/jersey/JerseyCleanup.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d26db05f19f61805f161a716e4963d3c8e92193",
+      "size": 3293,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/9d26db05f19f61805f161a716e4963d3c8e92193"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/app/jersey/JerseyException.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b0ce98ac8e92b7e2f82b689adfabb63bdf5f56a",
+      "size": 3411,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/6b0ce98ac8e92b7e2f82b689adfabb63bdf5f56a"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/app/jersey/KeyNameHttpInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d05c007fa5c34976099a6185b18d55c1da9116a",
+      "size": 1804,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/5d05c007fa5c34976099a6185b18d55c1da9116a"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/app/jersey/store",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "28dd9c58991ec8c0b2db91d32fadf4767a79c360",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/28dd9c58991ec8c0b2db91d32fadf4767a79c360"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/app/jersey/store/JerseyStorage.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2580125c16cd38f58f5f75987dab6c96b61ca901",
+      "size": 36858,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/2580125c16cd38f58f5f75987dab6c96b61ca901"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/can",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5a16f30d3b39dd40e53f40e2c170795802aa1136",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/5a16f30d3b39dd40e53f40e2c170795802aa1136"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/can/CAN.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5e4a280f1c4d2e3e58d0fc3a2c581a234b930bc",
+      "size": 51383,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/f5e4a280f1c4d2e3e58d0fc3a2c581a234b930bc"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/can/CANAbs.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e9f004029279da1748843093d4609872ba8b7ac",
+      "size": 14906,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/6e9f004029279da1748843093d4609872ba8b7ac"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/can/CANStats.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3678e1c1e38fd1c04c9e45eecd76ab5b8324a66",
+      "size": 2939,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/b3678e1c1e38fd1c04c9e45eecd76ab5b8324a66"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/can/CANVirtual.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e5e1cddeb8b1e497746f9a57d50ed057ab7bd4d",
+      "size": 28616,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/4e5e1cddeb8b1e497746f9a57d50ed057ab7bd4d"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/can/NodeForm.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7c3abd8bcc535c87332c7b2a41d2522c9754b51",
+      "size": 5910,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/d7c3abd8bcc535c87332c7b2a41d2522c9754b51"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/cloud",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f3f0c5446939b0d0ed8a8c7fa2586e0c431bb777",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/f3f0c5446939b0d0ed8a8c7fa2586e0c431bb777"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/cloud/CloudObjectService.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ddfcb96b7f97c3913837a4f0cd50ed312f529d7",
+      "size": 25327,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/1ddfcb96b7f97c3913837a4f0cd50ed312f529d7"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/cloud/CloudObjectService.java.130906",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68bc2e8cb2ead75ba78df28d199a6f23fcaf9679",
+      "size": 22706,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/68bc2e8cb2ead75ba78df28d199a6f23fcaf9679"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/cloud/DummyCloudLocation.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92315c3469b06805e37e5e49388eebd3d9fee410",
+      "size": 3641,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/92315c3469b06805e37e5e49388eebd3d9fee410"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/dflat",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "09b53a71993d347e96b909673ab7c67afccacadc",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/09b53a71993d347e96b909673ab7c67afccacadc"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/dflat/DflatInfo.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a12b500474fcf342cc76a4f4d15e491f5e771eb3",
+      "size": 995,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/a12b500474fcf342cc76a4f4d15e491f5e771eb3"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/dflat/DflatManager.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "366e89942897c67df670a64c3ad40c68662fc173",
+      "size": 97083,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/366e89942897c67df670a64c3ad40c68662fc173"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/dflat/DflatStats.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "292ce69d22aae47731e64f4f0023d360572668b6",
+      "size": 2787,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/292ce69d22aae47731e64f4f0023d360572668b6"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/dflat/DflatUtil.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d5546270275324dc10b6e82bfcd28f34119291f0",
+      "size": 3350,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/d5546270275324dc10b6e82bfcd28f34119291f0"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/dflat/DflatVersionManagerAbs.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d57bb3f95dcc44804cba2648ad55d4cb91f3d14",
+      "size": 15843,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/5d57bb3f95dcc44804cba2648ad55d4cb91f3d14"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/dflat/DflatVersionReddManager.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2119c7ba81e6fee7f1f6792dab7f9c3a92d35a3",
+      "size": 32663,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/f2119c7ba81e6fee7f1f6792dab7f9c3a92d35a3"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/dflat/Dflat_1d0.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ecfeafd9257c4f084f2d063ee7d0ae0e9163ae18",
+      "size": 23542,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/ecfeafd9257c4f084f2d063ee7d0ae0e9163ae18"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/email",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b450e653a94b8a3656c7968d6431956cf8b21c86",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/b450e653a94b8a3656c7968d6431956cf8b21c86"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/email/StorageEmail.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c39378b7d03ddc38c567ca4946dd84fabc11d149",
+      "size": 9478,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/c39378b7d03ddc38c567ca4946dd84fabc11d149"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/pairtree",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ca572d6cd739b093f08513fb61d8acb3101e67f0",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/ca572d6cd739b093f08513fb61d8acb3101e67f0"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/pairtree/PairTree.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d76a8f8dd5c56726ad11c32f962dc461e8fcaad",
+      "size": 4369,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/3d76a8f8dd5c56726ad11c32f962dc461e8fcaad"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/storage",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dbe62626624dd8703af34fb08e5ffc1624b72635",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/dbe62626624dd8703af34fb08e5ffc1624b72635"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/storage/StorageInfo.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "944d684c514bd0b410aedbc8b3f71bf7a228e583",
+      "size": 748,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/944d684c514bd0b410aedbc8b3f71bf7a228e583"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/storage/StorageService.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05c817c893f4b86476e7852bb109fe9b411ed764",
+      "size": 23401,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/05c817c893f4b86476e7852bb109fe9b411ed764"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/storage/StorageServiceAbs.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f659e038657a307d072edef6a9a5e73d4d2f988d",
+      "size": 5629,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/f659e038657a307d072edef6a9a5e73d4d2f988d"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/storage/StorageServiceInf.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0dedc6c23c1d17c86fb1c4f6d89386dee0953105",
+      "size": 19791,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/0dedc6c23c1d17c86fb1c4f6d89386dee0953105"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "892e7fcccb9a177dc30a858981bfb2cc6b5c5918",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/892e7fcccb9a177dc30a858981bfb2cc6b5c5918"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/AddVersionQuery.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b23da4c5ea0ae5b38d018df3050318f70f94bcab",
+      "size": 2666,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/b23da4c5ea0ae5b38d018df3050318f70f94bcab"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/FormatBuilder.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bed6f91ef097e5bb62053fdd86cd18c37cd33668",
+      "size": 4008,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/bed6f91ef097e5bb62053fdd86cd18c37cd33668"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/StoreLoadTest.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95bca38c7b3b24dade994c4eae017f1cd6c2856a",
+      "size": 15161,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/95bca38c7b3b24dade994c4eae017f1cd6c2856a"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestAdd.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb741500e89d81e8ae33bf449af1c56f6684ca5d",
+      "size": 6263,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/eb741500e89d81e8ae33bf449af1c56f6684ca5d"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestCAN.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "616662cc237d750d9accc16c27be221fb28eb69a",
+      "size": 6431,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/616662cc237d750d9accc16c27be221fb28eb69a"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestCANState.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52eb2a549fee45084c2e787583a9e2a7948d7514",
+      "size": 9817,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/52eb2a549fee45084c2e787583a9e2a7948d7514"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestFormatter.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7328ff515cee35dbe4594a1d20dbb88353f0241b",
+      "size": 15456,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/7328ff515cee35dbe4594a1d20dbb88353f0241b"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestFormatterObject.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efa8695e862761f8f2964e183ad52af40984f144",
+      "size": 9433,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/efa8695e862761f8f2964e183ad52af40984f144"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestHttpClient.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e91ea04ea3afc33549d7e2c9644dd8cc9190478",
+      "size": 12812,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/4e91ea04ea3afc33549d7e2c9644dd8cc9190478"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestJena2.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7713fae269992f01167c00ec407ed49d73934c8d",
+      "size": 7391,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/7713fae269992f01167c00ec407ed49d73934c8d"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestJena3.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91fadc1400d6a1e9f17f8841d79fb38de5159205",
+      "size": 7433,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/91fadc1400d6a1e9f17f8841d79fb38de5159205"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestJena4.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8be45b09cbdfc18d7ade0a08278b4bcae563e90",
+      "size": 5129,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/a8be45b09cbdfc18d7ade0a08278b4bcae563e90"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestJenaObjectMap.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8628c8082396c27b536bc239e56169e19865d631",
+      "size": 5088,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/8628c8082396c27b536bc239e56169e19865d631"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestJenaObjectMap2.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78ae0d5d0b14a7e5d5004a3e38d089e33e1d97b2",
+      "size": 5551,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/78ae0d5d0b14a7e5d5004a3e38d089e33e1d97b2"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestPairtree.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30c492e2105cdec3f63d1b841b7cf3e95f3bcaa0",
+      "size": 2786,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/30c492e2105cdec3f63d1b841b7cf3e95f3bcaa0"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestRedd.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d04cd76b16fc77afd21e6f86f0adc565554cfa4e",
+      "size": 5375,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/d04cd76b16fc77afd21e6f86f0adc565554cfa4e"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestReddRebuild.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "930182c917152bf78866ba069598d1b33670d879",
+      "size": 3990,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/930182c917152bf78866ba069598d1b33670d879"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestSerializable.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a83231ce1fd9283b1902005c6600d9e9e023017",
+      "size": 13874,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/3a83231ce1fd9283b1902005c6600d9e9e023017"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/test/TestSerializable2.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0774bc72d289799f74fe7c3dda56aa6f3ff6a233",
+      "size": 18221,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/0774bc72d289799f74fe7c3dda56aa6f3ff6a233"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/tools",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "444575a99a4f57d63056c9e7e9d8bce92b99cfb1",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/444575a99a4f57d63056c9e7e9d8bce92b99cfb1"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/tools/ManifestConvert.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56135b0eb24646d4a16e79c2be88016e081fc053",
+      "size": 5360,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/56135b0eb24646d4a16e79c2be88016e081fc053"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/tools/ManifestConvertType.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ddd3261453c34a46e55d279e3ab686973f6f1ed",
+      "size": 5668,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/3ddd3261453c34a46e55d279e3ab686973f6f1ed"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/tools/StoreClient.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3876f2c3f9ab3b855ed16829ea5ecd11f3ae6c6",
+      "size": 15225,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/e3876f2c3f9ab3b855ed16829ea5ecd11f3ae6c6"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/tools/StoreLoader-works.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ff64faf3811e09cd56359fc75c6659aeddfdbf9",
+      "size": 17546,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/7ff64faf3811e09cd56359fc75c6659aeddfdbf9"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/tools/StoreLoader.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a6e9f9151af321e09da227888b3f2f0087e99b9",
+      "size": 22129,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/9a6e9f9151af321e09da227888b3f2f0087e99b9"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/tools/StoreLoaderJena.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2444660621784cc4c5e69c84847a979c8183fbc7",
+      "size": 18640,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/2444660621784cc4c5e69c84847a979c8183fbc7"
+    },
+    {
+      "path": "store-src/src/main/java/org/cdlib/mrt/store/tools/StoreUtil.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "928d4102194d5d56acef893435dcd0d2b6b2b21e",
+      "size": 3625,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/928d4102194d5d56acef893435dcd0d2b6b2b21e"
+    },
+    {
+      "path": "store-src/src/main/resources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fb81e5b91570b1205574a8f80db118e99182f46d",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/fb81e5b91570b1205574a8f80db118e99182f46d"
+    },
+    {
+      "path": "store-src/src/main/resources/testresources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1fe6b203d875524a5c92ea2d94c59a6a2382432a",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/1fe6b203d875524a5c92ea2d94c59a6a2382432a"
+    },
+    {
+      "path": "store-src/src/main/resources/testresources/SDSC-Openstack.properties",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e90178644be4a5811c647e855abdeceea456cb4",
+      "size": 258,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/2e90178644be4a5811c647e855abdeceea456cb4"
+    },
+    {
+      "path": "store-src/src/test",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b29eac4427f7301d590e3a91be5bf5443ada2159",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/b29eac4427f7301d590e3a91be5bf5443ada2159"
+    },
+    {
+      "path": "store-src/src/test/java",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7e537e107fd96b406fceb51bbfed491d4fd8924e",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/7e537e107fd96b406fceb51bbfed491d4fd8924e"
+    },
+    {
+      "path": "store-src/src/test/java/org",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "07724eebf7a7836c68ecbc358bb60486407ac147",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/07724eebf7a7836c68ecbc358bb60486407ac147"
+    },
+    {
+      "path": "store-src/src/test/java/org/cdlib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5fea178bd3d79bf6b7faab3ecf539cc68f23f5ed",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/5fea178bd3d79bf6b7faab3ecf539cc68f23f5ed"
+    },
+    {
+      "path": "store-src/src/test/java/org/cdlib/mrt",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d1f7b491bd71bc259080bc4624419ae3581e1474",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/d1f7b491bd71bc259080bc4624419ae3581e1474"
+    },
+    {
+      "path": "store-src/src/test/java/org/cdlib/mrt/store",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eb5bbcf0a1cd2586f90b6ca312697952bdcb9115",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/eb5bbcf0a1cd2586f90b6ca312697952bdcb9115"
+    },
+    {
+      "path": "store-src/src/test/java/org/cdlib/mrt/store/action",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5a6dd4aaa43ef45d9e1f8ec2692887a0b8e8e299",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/5a6dd4aaa43ef45d9e1f8ec2692887a0b8e8e299"
+    },
+    {
+      "path": "store-src/src/test/java/org/cdlib/mrt/store/action/AsyncContainerObjectTest.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ebf75e96908925df8ff53f18e0b3617d6c850a5",
+      "size": 4216,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/9ebf75e96908925df8ff53f18e0b3617d6c850a5"
+    },
+    {
+      "path": "store-src/src/test/java/org/cdlib/mrt/store/can",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c0b8fb0e2c3a6d42a652eb78a0dd43d1cba0d7c1",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/c0b8fb0e2c3a6d42a652eb78a0dd43d1cba0d7c1"
+    },
+    {
+      "path": "store-src/src/test/java/org/cdlib/mrt/store/can/CANTest.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e0847ee45c0ac3eefaf32e793cdd863095b8094",
+      "size": 3152,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/4e0847ee45c0ac3eefaf32e793cdd863095b8094"
+    },
+    {
+      "path": "store-src/src/test/resources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "413f0a0c4d1fef24a47c647612baa2cd1f717569",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/413f0a0c4d1fef24a47c647612baa2cd1f717569"
+    },
+    {
+      "path": "store-src/src/test/resources/testresources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0dc06c2d4aa1e1c03d18d3fa61d291a13b4fc227",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/0dc06c2d4aa1e1c03d18d3fa61d291a13b4fc227"
+    },
+    {
+      "path": "store-src/src/test/resources/testresources/idmapback.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebb013f59965c104b1b464259e765c476571dc0f",
+      "size": 32747,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/ebb013f59965c104b1b464259e765c476571dc0f"
+    },
+    {
+      "path": "store-src/src/test/resources/testresources/idmapshort.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af5bdfd16517d14f563b29c755dd7c81a39a8c18",
+      "size": 629,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/af5bdfd16517d14f563b29c755dd7c81a39a8c18"
+    },
+    {
+      "path": "store-war",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "53a475f3d1792275463996158608793ff0f2b16f",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/53a475f3d1792275463996158608793ff0f2b16f"
+    },
+    {
+      "path": "store-war/pom.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6bd2da1f8d03635d372fe3dc1ff8b3436ecfcecf",
+      "size": 4498,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/6bd2da1f8d03635d372fe3dc1ff8b3436ecfcecf"
+    },
+    {
+      "path": "store-war/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "65b38a3a35241d4e1b9662e07e663c126687dbda",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/65b38a3a35241d4e1b9662e07e663c126687dbda"
+    },
+    {
+      "path": "store-war/src/main",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "43b12dff050211c94520ce8977159b3018d2ea39",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/43b12dff050211c94520ce8977159b3018d2ea39"
+    },
+    {
+      "path": "store-war/src/main/webapp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9fc0b65ea16acc7691328517f875971331228a6c",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/9fc0b65ea16acc7691328517f875971331228a6c"
+    },
+    {
+      "path": "store-war/src/main/webapp/WEB-INF",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a2ba6ccb76de4aaacaea20a53ba5a9fbfd8bcb51",
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/trees/a2ba6ccb76de4aaacaea20a53ba5a9fbfd8bcb51"
+    },
+    {
+      "path": "store-war/src/main/webapp/WEB-INF/web.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e87af17a7c59fd5cadc16f88bc71871e9c27e8d6",
+      "size": 1687,
+      "url": "https://api.github.com/repos/CDLUC3/mrt-store/git/blobs/e87af17a7c59fd5cadc16f88bc71871e9c27e8d6"
+    }
+  ],
+  "truncated": false
+}
