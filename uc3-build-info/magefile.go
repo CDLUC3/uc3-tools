@@ -17,8 +17,8 @@ import (
 )
 
 const (
-	appName = "mrt-build-info"
-	cmdPkg = "github.com/CDLUC3/uc3-tools/mrt-build-info/cmd"
+	appName = "uc3-build-info"
+	cmdPkg = "github.com/CDLUC3/uc3-tools/uc3-build-info/cmd"
 )
 
 var gocmd = mg.GoCmd()
