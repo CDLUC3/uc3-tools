@@ -1,13 +1,13 @@
-# mrt-build-info
+# uc3-build-info
 
-Tools for gathering Merritt build information.
+Tools for gathering UC3 Jenkins/Maven build information.
 
 ## Invocation
 
 Invocation is for the form
 
 ```
-mrt-build-info <command> [flags] [URL]
+uc3-build-info <command> [flags] [URL]
 ```
 
 where `<command>` is one of:
@@ -42,7 +42,7 @@ List internal Maven dependencies
 #### Usage
 
 ```
-mrt-build-info deps [flags]
+uc3-build-info deps [flags]
 ```
 
 #### Flags
@@ -70,7 +70,7 @@ List Jenkins jobs
 #### Usage
 
 ```
-mrt-build-info jobs [flags]
+uc3-build-info jobs [flags]
 ```
 
 #### Flags
@@ -97,7 +97,7 @@ List Maven poms
 #### Usage
 
 ```
-mrt-build-info poms [flags]
+uc3-build-info poms [flags]
 ```
 
 #### Flags
