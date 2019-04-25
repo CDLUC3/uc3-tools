@@ -2,8 +2,8 @@ package maven
 
 import (
 	"github.com/beevik/etree"
-	"github.com/dmolesUC3/mrt-build-info/git"
-	"github.com/dmolesUC3/mrt-build-info/shared"
+	"github.com/CDLUC3/uc3-tools/mrt-build-info/git"
+	"github.com/CDLUC3/uc3-tools/mrt-build-info/shared"
 	. "gopkg.in/check.v1"
 )
 

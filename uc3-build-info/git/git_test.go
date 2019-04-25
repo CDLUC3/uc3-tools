@@ -2,7 +2,7 @@ package git
 
 import (
 	"fmt"
-	"github.com/dmolesUC3/mrt-build-info/shared"
+	"github.com/CDLUC3/uc3-tools/mrt-build-info/shared"
 	. "gopkg.in/check.v1"
 	"io/ioutil"
 	"net/http"

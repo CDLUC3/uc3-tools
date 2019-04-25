@@ -18,7 +18,7 @@ import (
 
 const (
 	appName = "uc3-system-info"
-	cmdPkg = "github.com/dmolesUC3/uc3-system-info/internal/cmd"
+	cmdPkg = "github.com/CDLUC3/uc3-tools/uc3-system-info/internal/cmd"
 )
 
 var gocmd = mg.GoCmd()

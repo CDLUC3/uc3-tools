@@ -1,8 +1,8 @@
 package dependencies
 
 import (
-	. "github.com/dmolesUC3/mrt-build-info/jenkins"
-	"github.com/dmolesUC3/mrt-build-info/shared"
+	. "github.com/CDLUC3/uc3-tools/mrt-build-info/jenkins"
+	"github.com/CDLUC3/uc3-tools/mrt-build-info/shared"
 )
 
 func JobsTable(g JobGraph) shared.Table {

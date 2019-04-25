@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/dmolesUC3/uc3-system-info/internal/output"
+	"github.com/CDLUC3/uc3-tools/uc3-system-info/internal/output"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"strings"

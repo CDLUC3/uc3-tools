@@ -2,7 +2,7 @@ package jenkins
 
 import (
 	"encoding/json"
-	"github.com/dmolesUC3/mrt-build-info/git"
+	"github.com/CDLUC3/uc3-tools/mrt-build-info/git"
 	. "gopkg.in/check.v1"
 	"io/ioutil"
 	"regexp"

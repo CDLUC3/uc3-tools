@@ -1,4 +1,4 @@
-module github.com/dmolesUC3/uc3-system-info
+module github.com/CDLUC3/uc3-tools/uc3-system-info
 
 require (
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect

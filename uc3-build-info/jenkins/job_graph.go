@@ -2,8 +2,8 @@ package jenkins
 
 import (
 	"fmt"
-	. "github.com/dmolesUC3/mrt-build-info/maven"
-	. "github.com/dmolesUC3/mrt-build-info/shared"
+	. "github.com/CDLUC3/uc3-tools/mrt-build-info/maven"
+	. "github.com/CDLUC3/uc3-tools/mrt-build-info/shared"
 	"os"
 	"sort"
 )
