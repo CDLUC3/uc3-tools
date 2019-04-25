@@ -1,0 +1,483 @@
+uc3,dev,mrt,uc3-mrtdat1-dev
+FQDN: uc3-mrtdat1-dev.cdlib.org
+
+uc3,dev,mrt,uc3-mrtistatus-dev
+FQDN: uc3-mrtistatus-dev.cdlib.org
+        istatus-aws-dev.cdlib.org.       CNAME    uc3-mrtistatus-dev.cdlib.org    cdlib.org.-Public
+        istatus-aws-dev.cdlib.org.       CNAME    uc3-mrtistatus-dev.cdlib.org    cdlib.org.-Private
+
+uc3,stg,dmp,uc3-roadmap-stg
+FQDN: uc3-roadmap-stg.cdlib.org
+            roadmap-stg.cdlib.org.       CNAME    uc3-roadmap-stg.cdlib.org    cdlib.org.-Public
+            roadmap-stg.cdlib.org.       CNAME    uc3-roadmap-stg.cdlib.org    cdlib.org.-Private
+
+uc3,stg,eotarchive,uc3-eotarchive-stg
+FQDN: uc3-eotarchive-stg.cdlib.org
+        eotarch-tmp-stg.cdlib.org.       CNAME    uc3-eotarchive-stg.cdlib.org    cdlib.org.-Public
+        eotarch-tmp-stg.cdlib.org.       CNAME    uc3-eotarchive-stg.cdlib.org    cdlib.org.-Private
+
+uc3,dev,dmp,uc3-dmp-dev
+FQDN: uc3-dmp-dev.cdlib.org
+            dmptool-dev.cdlib.org.       CNAME    uc3-dmp-dev.cdlib.org    cdlib.org.-Public
+            dmptool-dev.cdlib.org.       CNAME    uc3-dmp-dev.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtdocker2-stg
+FQDN: uc3-mrtdocker2-stg.cdlib.org
+
+uc3,prd,ldap,uc3-ldap-prd-2a
+FQDN: uc3-ldap-prd-2a.cdlib.org
+
+uc3,prd,mrt,uc3-mrtoai-prd
+FQDN: uc3-mrtoai-prd.cdlib.org
+                oai-aws.cdlib.org.       CNAME    uc3-mrtoai-prd.cdlib.org    cdlib.org.-Public
+                oai-aws.cdlib.org.       CNAME    uc3-mrtoai-prd.cdlib.org    cdlib.org.-Private
+
+uc3,dev,dryad,uc3-dryad-dev
+FQDN: uc3-dryad-dev.cdlib.org
+              dryad-dev.cdlib.org.       CNAME    uc3-dryad-dev.cdlib.org    cdlib.org.-Public
+              dryad-dev.cdlib.org.       CNAME    uc3-dryad-dev.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtoai-dev
+FQDN: uc3-mrtoai-dev.cdlib.org
+            oai-aws-dev.cdlib.org.       CNAME    uc3-mrtoai-dev.cdlib.org    cdlib.org.-Public
+            oai-aws-dev.cdlib.org.       CNAME    uc3-mrtoai-dev.cdlib.org    cdlib.org.-Private
+
+uc3,dev,ldap,uc3-ldapvm-dev
+FQDN: uc3-ldapvm-dev.cdlib.org
+           uc3-ldap-dev.cdlib.org.       CNAME    uc3-ldapvm-dev.cdlib.org    cdlib.org.-Public
+           uc3-ldap-dev.cdlib.org.       CNAME    uc3-ldapvm-dev.cdlib.org    cdlib.org.-Private
+
+uc3,stg,dash,uc3-dashdemo-stg
+FQDN: uc3-dashdemo-stg.cdlib.org
+               dashdemo.cdlib.org.       CNAME    uc3-dashdemo-stg.cdlib.org    cdlib.org.-Public
+               dashdemo.cdlib.org.       CNAME    uc3-dashdemo-stg.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtweb-prd
+FQDN: uc3-mrtweb-prd.cdlib.org
+                inv-aws.cdlib.org.       CNAME    uc3-mrtweb-prd.cdlib.org    cdlib.org.-Public
+            merritt-aws.cdlib.org.       CNAME    uc3-mrtweb-prd.cdlib.org    cdlib.org.-Public
+                merritt.cdlib.org.       CNAME    uc3-mrtweb-prd.cdlib.org    cdlib.org.-Public
+                inv-aws.cdlib.org.       CNAME    uc3-mrtweb-prd.cdlib.org    cdlib.org.-Private
+            merritt-aws.cdlib.org.       CNAME    uc3-mrtweb-prd.cdlib.org    cdlib.org.-Private
+                merritt.cdlib.org.       CNAME    uc3-mrtweb-prd.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtdataone-prd
+FQDN: uc3-mrtdataone-prd.cdlib.org
+            dataone-aws.cdlib.org.       CNAME    uc3-mrtdataone-prd.cdlib.org    cdlib.org.-Public
+            dataone-aws.cdlib.org.       CNAME    uc3-mrtdataone-prd.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtreplic1-dev
+FQDN: uc3-mrtreplic1-dev.cdlib.org
+       mrtcloudhost-dev.cdlib.org.       CNAME    uc3-mrtreplic1-dev.cdlib.org    cdlib.org.-Public
+       replic01-aws-dev.cdlib.org.       CNAME    uc3-mrtreplic1-dev.cdlib.org    cdlib.org.-Public
+       mrtcloudhost-dev.cdlib.org.       CNAME    uc3-mrtreplic1-dev.cdlib.org    cdlib.org.-Private
+       replic01-aws-dev.cdlib.org.       CNAME    uc3-mrtreplic1-dev.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtaudit-stg
+FQDN: uc3-mrtaudit-stg.cdlib.org
+          audit-aws-stg.cdlib.org.       CNAME    uc3-mrtaudit-stg.cdlib.org    cdlib.org.-Public
+          audit-aws-stg.cdlib.org.       CNAME    uc3-mrtaudit-stg.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtexpress-stg
+FQDN: uc3-mrtexpress-stg.cdlib.org
+     mrtexpress-aws-stg.cdlib.org.       CNAME    uc3-mrtexpress-stg.cdlib.org    cdlib.org.-Public
+     mrtexpress-aws-stg.cdlib.org.       CNAME    uc3-mrtexpress-stg.cdlib.org    cdlib.org.-Private
+
+uc3,stg,dryad,uc3-dryadsolr-stg
+FQDN: uc3-dryadsolr-stg.cdlib.org
+
+uc3,prd,mrt,uc3-mrtaudit1-prd
+FQDN: uc3-mrtaudit1-prd.cdlib.org
+            audit01-aws.cdlib.org.       CNAME    uc3-mrtaudit1-prd.cdlib.org    cdlib.org.-Public
+            audit01-aws.cdlib.org.       CNAME    uc3-mrtaudit1-prd.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtexpress-prd-2a
+FQDN: uc3-mrtexpress-prd-2a.cdlib.org
+       mrtexpress01-aws.cdlib.org.       CNAME    uc3-mrtexpress-prd-2a.cdlib.org    cdlib.org.-Public
+       mrtexpress01-aws.cdlib.org.       CNAME    uc3-mrtexpress-prd-2a.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtweb-stg
+FQDN: uc3-mrtweb-stg.cdlib.org
+       d1-merritt-stage.cdlib.org.       CNAME    uc3-mrtweb-stg.cdlib.org    cdlib.org.-Public
+        merritt-aws-stg.cdlib.org.       CNAME    uc3-mrtweb-stg.cdlib.org    cdlib.org.-Public
+          merritt-stage.cdlib.org.       CNAME    uc3-mrtweb-stg.cdlib.org    cdlib.org.-Public
+            merritt-stg.cdlib.org.       CNAME    uc3-mrtweb-stg.cdlib.org    cdlib.org.-Public
+       d1-merritt-stage.cdlib.org.       CNAME    uc3-mrtweb-stg.cdlib.org    cdlib.org.-Private
+        merritt-aws-stg.cdlib.org.       CNAME    uc3-mrtweb-stg.cdlib.org    cdlib.org.-Private
+          merritt-stage.cdlib.org.       CNAME    uc3-mrtweb-stg.cdlib.org    cdlib.org.-Private
+            merritt-stg.cdlib.org.       CNAME    uc3-mrtweb-stg.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtsword-stg
+FQDN: uc3-mrtsword-stg.cdlib.org
+          sword-aws-stg.cdlib.org.       CNAME    uc3-mrtsword-stg.cdlib.org    cdlib.org.-Public
+          sword-aws-stg.cdlib.org.       CNAME    uc3-mrtsword-stg.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtingest1-dev
+FQDN: uc3-mrtingest1-dev.cdlib.org
+       ingest01-aws-dev.cdlib.org.       CNAME    uc3-mrtingest1-dev.cdlib.org    cdlib.org.-Public
+       ingest01-aws-dev.cdlib.org.       CNAME    uc3-mrtingest1-dev.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtinv-dev
+FQDN: uc3-mrtinv-dev.cdlib.org
+            inv-aws-dev.cdlib.org.       CNAME    uc3-mrtinv-dev.cdlib.org    cdlib.org.-Public
+          inventory-dev.cdlib.org.       CNAME    uc3-mrtinv-dev.cdlib.org    cdlib.org.-Public
+            inv-aws-dev.cdlib.org.       CNAME    uc3-mrtinv-dev.cdlib.org    cdlib.org.-Private
+          inventory-dev.cdlib.org.       CNAME    uc3-mrtinv-dev.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtreplic2-prd
+FQDN: uc3-mrtreplic2-prd.cdlib.org
+           replic02-aws.cdlib.org.       CNAME    uc3-mrtreplic2-prd.cdlib.org    cdlib.org.-Public
+           replic02-aws.cdlib.org.       CNAME    uc3-mrtreplic2-prd.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtexpress-dev
+FQDN: uc3-mrtexpress-dev.cdlib.org
+         mrtexpress-dev.cdlib.org.       CNAME    uc3-mrtexpress-dev.cdlib.org    cdlib.org.-Public
+         mrtexpress-dev.cdlib.org.       CNAME    uc3-mrtexpress-dev.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtstore2-prd
+FQDN: uc3-mrtstore2-prd.cdlib.org
+            store02-aws.cdlib.org.       CNAME    uc3-mrtstore2-prd.cdlib.org    cdlib.org.-Public
+            store02-aws.cdlib.org.       CNAME    uc3-mrtstore2-prd.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtinv-prd
+FQDN: uc3-mrtinv-prd.cdlib.org
+              inv01-aws.cdlib.org.       CNAME    uc3-mrtinv-prd.cdlib.org    cdlib.org.-Public
+              inv01-aws.cdlib.org.       CNAME    uc3-mrtinv-prd.cdlib.org    cdlib.org.-Private
+
+uc3,dev,dryad,uc3-dryadsolr-dev
+FQDN: uc3-dryadsolr-dev.cdlib.org
+
+uc3,stg,ldap,uc3-ldapvm-stg
+FQDN: uc3-ldapvm-stg.cdlib.org
+
+uc3,dev,dash,uc3-dash2solr-dev
+FQDN: uc3-dash2solr-dev.cdlib.org
+          dash2solr-dev.cdlib.org.       CNAME    uc3-dash2solr-dev.cdlib.org    cdlib.org.-Public
+          dash2solr-dev.cdlib.org.       CNAME    uc3-dash2solr-dev.cdlib.org    cdlib.org.-Private
+
+uc3,prd,source,uc3-source-prd
+FQDN: uc3-source-prd.cdlib.org
+                 builds.cdlib.org.       CNAME    uc3-source-prd.cdlib.org    cdlib.org.-Public
+                     hg.cdlib.org.       CNAME    uc3-source-prd.cdlib.org    cdlib.org.-Public
+                    mvn.cdlib.org.       CNAME    uc3-source-prd.cdlib.org    cdlib.org.-Public
+             uc3-source.cdlib.org.       CNAME    uc3-source-prd.cdlib.org    cdlib.org.-Public
+                 builds.cdlib.org.       CNAME    uc3-source-prd.cdlib.org    cdlib.org.-Private
+                     hg.cdlib.org.       CNAME    uc3-source-prd.cdlib.org    cdlib.org.-Private
+                    mvn.cdlib.org.       CNAME    uc3-source-prd.cdlib.org    cdlib.org.-Private
+             uc3-source.cdlib.org.       CNAME    uc3-source-prd.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtreplic1-prd
+FQDN: uc3-mrtreplic1-prd.cdlib.org
+           replic01-aws.cdlib.org.       CNAME    uc3-mrtreplic1-prd.cdlib.org    cdlib.org.-Public
+           replic01-aws.cdlib.org.       CNAME    uc3-mrtreplic1-prd.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtstore2-stg
+FQDN: uc3-mrtstore2-stg.cdlib.org
+        store02-aws-stg.cdlib.org.       CNAME    uc3-mrtstore2-stg.cdlib.org    cdlib.org.-Public
+        store02-aws-stg.cdlib.org.       CNAME    uc3-mrtstore2-stg.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtaudit-dev
+FQDN: uc3-mrtaudit-dev.cdlib.org
+          audit-aws-dev.cdlib.org.       CNAME    uc3-mrtaudit-dev.cdlib.org    cdlib.org.-Public
+          audit-aws-dev.cdlib.org.       CNAME    uc3-mrtaudit-dev.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtaudit4-prd
+FQDN: uc3-mrtaudit4-prd.cdlib.org
+            audit04-aws.cdlib.org.       CNAME    uc3-mrtaudit4-prd.cdlib.org    cdlib.org.-Public
+            audit04-aws.cdlib.org.       CNAME    uc3-mrtaudit4-prd.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtexpress-prd-2c
+FQDN: uc3-mrtexpress-prd-2c.cdlib.org
+       mrtexpress02-aws.cdlib.org.       CNAME    uc3-mrtexpress-prd-2c.cdlib.org    cdlib.org.-Public
+       mrtexpress02-aws.cdlib.org.       CNAME    uc3-mrtexpress-prd-2c.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtstore1-prd
+FQDN: uc3-mrtstore1-prd.cdlib.org
+            store01-aws.cdlib.org.       CNAME    uc3-mrtstore1-prd.cdlib.org    cdlib.org.-Public
+            store01-aws.cdlib.org.       CNAME    uc3-mrtstore1-prd.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtui-dev
+FQDN: uc3-mrtui-dev.cdlib.org
+             ui-aws-dev.cdlib.org.       CNAME    uc3-mrtui-dev.cdlib.org    cdlib.org.-Public
+             ui-aws-dev.cdlib.org.       CNAME    uc3-mrtui-dev.cdlib.org    cdlib.org.-Private
+
+uc3,prd,dash,uc3-dash2-prd
+FQDN: uc3-dash2-prd.cdlib.org
+               dash-aws.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Public
+          dash-crossref.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Public
+          dash-test-prd.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Public
+              dash-test.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Public
+                   dash.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Public
+              dash2-aws.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Public
+         dash2-crossref.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Public
+              datashare.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Public
+               oneshare.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Public
+               dash-aws.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Private
+          dash-crossref.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Private
+          dash-test-prd.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Private
+              dash-test.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Private
+                   dash.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Private
+              dash2-aws.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Private
+         dash2-crossref.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Private
+              datashare.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Private
+               oneshare.cdlib.org.       CNAME    uc3-dash2-prd.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtoai-stg
+FQDN: uc3-mrtoai-stg.cdlib.org
+            oai-aws-stg.cdlib.org.       CNAME    uc3-mrtoai-stg.cdlib.org    cdlib.org.-Public
+            oai-aws-stg.cdlib.org.       CNAME    uc3-mrtoai-stg.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtsandbox2-stg
+FQDN: uc3-mrtsandbox2-stg.cdlib.org
+
+uc3,prd,mrt,uc3-mrtui02-prd
+FQDN: uc3-mrtui02-prd.cdlib.org
+               ui02-aws.cdlib.org.       CNAME    uc3-mrtui02-prd.cdlib.org    cdlib.org.-Public
+               ui02-aws.cdlib.org.       CNAME    uc3-mrtui02-prd.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtweb-dev
+FQDN: uc3-mrtweb-dev.cdlib.org
+            merritt-dev.cdlib.org.       CNAME    uc3-mrtweb-dev.cdlib.org    cdlib.org.-Public
+            merritt-dev.cdlib.org.       CNAME    uc3-mrtweb-dev.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtinv-stg
+FQDN: uc3-mrtinv-stg.cdlib.org
+          inv01-aws-stg.cdlib.org.       CNAME    uc3-mrtinv-stg.cdlib.org    cdlib.org.-Public
+          inv01-aws-stg.cdlib.org.       CNAME    uc3-mrtinv-stg.cdlib.org    cdlib.org.-Private
+
+uc3,stg,dryad,uc3-dryad-stg
+FQDN: uc3-dryad-stg.cdlib.org
+              dryad-stg.cdlib.org.       CNAME    uc3-dryad-stg.cdlib.org    cdlib.org.-Public
+              dryad-stg.cdlib.org.       CNAME    uc3-dryad-stg.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtistatus-prd
+FQDN: uc3-mrtistatus-prd.cdlib.org
+            istatus-aws.cdlib.org.       CNAME    uc3-mrtistatus-prd.cdlib.org    cdlib.org.-Public
+            istatus-aws.cdlib.org.       CNAME    uc3-mrtistatus-prd.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtui03-prd
+FQDN: uc3-mrtui03-prd.cdlib.org
+               ui03-aws.cdlib.org.       CNAME    uc3-mrtui03-prd.cdlib.org    cdlib.org.-Public
+               ui03-aws.cdlib.org.       CNAME    uc3-mrtui03-prd.cdlib.org    cdlib.org.-Private
+
+uc3,dev,dash,uc3-dash2-dev
+FQDN: uc3-dash2-dev.cdlib.org
+           dash-aws-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Public
+               dash-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Public
+          dash-ucla-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Public
+     dash2-crossref-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Public
+              dash2-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Public
+          datashare-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Public
+       oneshare-aws-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Public
+           oneshare-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Public
+          oneshare2-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Public
+      uc3-datashare-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Public
+           dash-aws-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Private
+               dash-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Private
+          dash-ucla-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Private
+     dash2-crossref-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Private
+              dash2-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Private
+          datashare-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Private
+       oneshare-aws-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Private
+           oneshare-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Private
+          oneshare2-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Private
+      uc3-datashare-dev.cdlib.org.       CNAME    uc3-dash2-dev.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtui02-stg
+FQDN: uc3-mrtui02-stg.cdlib.org
+           ui02-aws-stg.cdlib.org.       CNAME    uc3-mrtui02-stg.cdlib.org    cdlib.org.-Public
+           ui02-aws-stg.cdlib.org.       CNAME    uc3-mrtui02-stg.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtinv2-stg
+FQDN: uc3-mrtinv2-stg.cdlib.org
+          inv02-aws-stg.cdlib.org.       CNAME    uc3-mrtinv2-stg.cdlib.org    cdlib.org.-Public
+          inv02-aws-stg.cdlib.org.       CNAME    uc3-mrtinv2-stg.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtaudit2-prd
+FQDN: uc3-mrtaudit2-prd.cdlib.org
+            audit02-aws.cdlib.org.       CNAME    uc3-mrtaudit2-prd.cdlib.org    cdlib.org.-Public
+            audit02-aws.cdlib.org.       CNAME    uc3-mrtaudit2-prd.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtinv2-prd
+FQDN: uc3-mrtinv2-prd.cdlib.org
+              inv02-aws.cdlib.org.       CNAME    uc3-mrtinv2-prd.cdlib.org    cdlib.org.-Public
+              inv02-aws.cdlib.org.       CNAME    uc3-mrtinv2-prd.cdlib.org    cdlib.org.-Private
+
+uc3,stg,dryad,uc3-dryadui-stg-2c
+FQDN: uc3-dryadui-stg-2c.cdlib.org
+
+uc3,prd,mrt,uc3-mrtaudit3-prd
+FQDN: uc3-mrtaudit3-prd.cdlib.org
+            audit03-aws.cdlib.org.       CNAME    uc3-mrtaudit3-prd.cdlib.org    cdlib.org.-Public
+            audit03-aws.cdlib.org.       CNAME    uc3-mrtaudit3-prd.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtui01-stg
+FQDN: uc3-mrtui01-stg.cdlib.org
+           ui01-aws-stg.cdlib.org.       CNAME    uc3-mrtui01-stg.cdlib.org    cdlib.org.-Public
+           ui01-aws-stg.cdlib.org.       CNAME    uc3-mrtui01-stg.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtstore2-dev
+FQDN: uc3-mrtstore2-dev.cdlib.org
+          store-aws-dev.cdlib.org.       CNAME    uc3-mrtstore2-dev.cdlib.org    cdlib.org.-Public
+              store-dev.cdlib.org.       CNAME    uc3-mrtstore2-dev.cdlib.org    cdlib.org.-Public
+          store-aws-dev.cdlib.org.       CNAME    uc3-mrtstore2-dev.cdlib.org    cdlib.org.-Private
+              store-dev.cdlib.org.       CNAME    uc3-mrtstore2-dev.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-ingest03-prd
+FQDN: uc3-ingest03-prd.cdlib.org
+           ingest03-aws.cdlib.org.       CNAME    uc3-ingest03-prd.cdlib.org    cdlib.org.-Public
+               ingest03.cdlib.org.       CNAME    uc3-ingest03-prd.cdlib.org    cdlib.org.-Public
+           ingest03-aws.cdlib.org.       CNAME    uc3-ingest03-prd.cdlib.org    cdlib.org.-Private
+               ingest03.cdlib.org.       CNAME    uc3-ingest03-prd.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtui01-prd
+FQDN: uc3-mrtui01-prd.cdlib.org
+               ui01-aws.cdlib.org.       CNAME    uc3-mrtui01-prd.cdlib.org    cdlib.org.-Public
+               ui01-aws.cdlib.org.       CNAME    uc3-mrtui01-prd.cdlib.org    cdlib.org.-Private
+
+uc3,stg,dmp,uc3-dmp-stg
+FQDN: uc3-dmp-stg.cdlib.org
+            dmptool-stg.cdlib.org.       CNAME    uc3-dmp-stg.cdlib.org    cdlib.org.-Public
+            dmptool-stg.cdlib.org.       CNAME    uc3-dmp-stg.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtdataone-stg
+FQDN: uc3-mrtdataone-stg.cdlib.org
+        dataone-aws-stg.cdlib.org.       CNAME    uc3-mrtdataone-stg.cdlib.org    cdlib.org.-Public
+        dataone-aws-stg.cdlib.org.       CNAME    uc3-mrtdataone-stg.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtdataone-dev
+FQDN: uc3-mrtdataone-dev.cdlib.org
+        dataone-aws-dev.cdlib.org.       CNAME    uc3-mrtdataone-dev.cdlib.org    cdlib.org.-Public
+        dataone-aws-dev.cdlib.org.       CNAME    uc3-mrtdataone-dev.cdlib.org    cdlib.org.-Private
+
+uc3,prd,dmp,uc3-dmp-prd
+FQDN: uc3-dmp-prd.cdlib.org
+                  www.dmptool.org.       CNAME    uc3-dmp-prd.cdlib.org    dmptool.org.-Private
+                    dmp.cdlib.org.       CNAME    uc3-dmp-prd.cdlib.org    cdlib.org.-Public
+            dmptool-prd.cdlib.org.       CNAME    uc3-dmp-prd.cdlib.org    cdlib.org.-Public
+                    dmp.cdlib.org.       CNAME    uc3-dmp-prd.cdlib.org    cdlib.org.-Private
+            dmptool-prd.cdlib.org.       CNAME    uc3-dmp-prd.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtreplic2-stg
+FQDN: uc3-mrtreplic2-stg.cdlib.org
+         replic-aws-stg.cdlib.org.       CNAME    uc3-mrtreplic2-stg.cdlib.org    cdlib.org.-Public
+         replic-aws-stg.cdlib.org.       CNAME    uc3-mrtreplic2-stg.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-mrtsword-prd
+FQDN: uc3-mrtsword-prd.cdlib.org
+              sword-aws.cdlib.org.       CNAME    uc3-mrtsword-prd.cdlib.org    cdlib.org.-Public
+              sword-aws.cdlib.org.       CNAME    uc3-mrtsword-prd.cdlib.org    cdlib.org.-Private
+
+uc3,prd,wasredirect,uc3-wasredirect-prd
+FQDN: uc3-wasredirect-prd.cdlib.org
+                     www.udfr.org.       CNAME    uc3-wasredirect-prd.cdlib.org    udfr.org.-Private
+               was-test.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Public
+                    was.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Public
+             webarchive.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Public
+         www.webarchive.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Public
+            webarchives.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Public
+        www.webarchives.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Public
+               was-test.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Private
+                    was.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Private
+             webarchive.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Private
+         www.webarchive.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Private
+            webarchives.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Private
+        www.webarchives.cdlib.org.       CNAME    uc3-wasredirect-prd.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtsword-dev
+FQDN: uc3-mrtsword-dev.cdlib.org
+          sword-aws-dev.cdlib.org.       CNAME    uc3-mrtsword-dev.cdlib.org    cdlib.org.-Public
+          sword-aws-dev.cdlib.org.       CNAME    uc3-mrtsword-dev.cdlib.org    cdlib.org.-Private
+
+uc3,dev,mrt,uc3-mrtreplic2-dev
+FQDN: uc3-mrtreplic2-dev.cdlib.org
+       replic02-aws-dev.cdlib.org.       CNAME    uc3-mrtreplic2-dev.cdlib.org    cdlib.org.-Public
+    uc3-mrt-replic2-dev.cdlib.org.       CNAME    uc3-mrtreplic2-dev.cdlib.org    cdlib.org.-Public
+       replic02-aws-dev.cdlib.org.       CNAME    uc3-mrtreplic2-dev.cdlib.org    cdlib.org.-Private
+    uc3-mrt-replic2-dev.cdlib.org.       CNAME    uc3-mrtreplic2-dev.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-ingest01-prd
+FQDN: uc3-ingest01-prd.cdlib.org
+           ingest01-aws.cdlib.org.       CNAME    uc3-ingest01-prd.cdlib.org    cdlib.org.-Public
+               ingest01.cdlib.org.       CNAME    uc3-ingest01-prd.cdlib.org    cdlib.org.-Public
+           ingest01-aws.cdlib.org.       CNAME    uc3-ingest01-prd.cdlib.org    cdlib.org.-Private
+               ingest01.cdlib.org.       CNAME    uc3-ingest01-prd.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-ingest02-stg
+FQDN: uc3-ingest02-stg.cdlib.org
+       ingest02-aws-stg.cdlib.org.       CNAME    uc3-ingest02-stg.cdlib.org    cdlib.org.-Public
+           ingest02-stg.cdlib.org.       CNAME    uc3-ingest02-stg.cdlib.org    cdlib.org.-Public
+       ingest02-aws-stg.cdlib.org.       CNAME    uc3-ingest02-stg.cdlib.org    cdlib.org.-Private
+           ingest02-stg.cdlib.org.       CNAME    uc3-ingest02-stg.cdlib.org    cdlib.org.-Private
+
+uc3,prd,eotarchive,uc3-eotarchive-prd
+FQDN: uc3-eotarchive-prd.cdlib.org
+         eotarchive-prd.cdlib.org.       CNAME    uc3-eotarchive-prd.cdlib.org    cdlib.org.-Public
+             eotarchive.cdlib.org.       CNAME    uc3-eotarchive-prd.cdlib.org    cdlib.org.-Public
+         eotarchive-prd.cdlib.org.       CNAME    uc3-eotarchive-prd.cdlib.org    cdlib.org.-Private
+             eotarchive.cdlib.org.       CNAME    uc3-eotarchive-prd.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-ingest01-stg
+FQDN: uc3-ingest01-stg.cdlib.org
+       ingest01-aws-stg.cdlib.org.       CNAME    uc3-ingest01-stg.cdlib.org    cdlib.org.-Public
+           ingest01-stg.cdlib.org.       CNAME    uc3-ingest01-stg.cdlib.org    cdlib.org.-Public
+       ingest01-aws-stg.cdlib.org.       CNAME    uc3-ingest01-stg.cdlib.org    cdlib.org.-Private
+           ingest01-stg.cdlib.org.       CNAME    uc3-ingest01-stg.cdlib.org    cdlib.org.-Private
+
+uc3,stg,dash,uc3-dash2solr-stg
+FQDN: uc3-dash2solr-stg.cdlib.org
+          dash2solr-stg.cdlib.org.       CNAME    uc3-dash2solr-stg.cdlib.org    cdlib.org.-Public
+          dash2solr-stg.cdlib.org.       CNAME    uc3-dash2solr-stg.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtistatus-stg
+FQDN: uc3-mrtistatus-stg.cdlib.org
+        istatus-aws-stg.cdlib.org.       CNAME    uc3-mrtistatus-stg.cdlib.org    cdlib.org.-Public
+        istatus-aws-stg.cdlib.org.       CNAME    uc3-mrtistatus-stg.cdlib.org    cdlib.org.-Private
+
+uc3,prd,ldap,uc3-ldap-prd-2c
+FQDN: uc3-ldap-prd-2c.cdlib.org
+
+uc3,stg,dash,uc3-dash2-stg
+FQDN: uc3-dash2-stg.cdlib.org
+               dash-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Public
+          dash-ucla-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Public
+          dash2-aws-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Public
+     dash2-crossref-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Public
+              dash2-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Public
+          datashare-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Public
+           oneshare-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Public
+          oneshare2-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Public
+      uc3-datashare-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Public
+               dash-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Private
+          dash-ucla-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Private
+          dash2-aws-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Private
+     dash2-crossref-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Private
+              dash2-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Private
+          datashare-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Private
+           oneshare-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Private
+          oneshare2-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Private
+      uc3-datashare-stg.cdlib.org.       CNAME    uc3-dash2-stg.cdlib.org    cdlib.org.-Private
+
+uc3,dev,fedora,uc3-fedora-dev
+FQDN: uc3-fedora-dev.cdlib.org
+         fedora-aws-dev.cdlib.org.       CNAME    uc3-fedora-dev.cdlib.org    cdlib.org.-Public
+         fedora-aws-dev.cdlib.org.       CNAME    uc3-fedora-dev.cdlib.org    cdlib.org.-Private
+
+uc3,stg,mrt,uc3-mrtstore-stg
+FQDN: uc3-mrtstore-stg.cdlib.org
+        store01-aws-stg.cdlib.org.       CNAME    uc3-mrtstore-stg.cdlib.org    cdlib.org.-Public
+        store01-aws-stg.cdlib.org.       CNAME    uc3-mrtstore-stg.cdlib.org    cdlib.org.-Private
+
+uc3,prd,dash,uc3-dash2solr-prd
+FQDN: uc3-dash2solr-prd.cdlib.org
+              dash2solr.cdlib.org.       CNAME    uc3-dash2solr-prd.cdlib.org    cdlib.org.-Public
+              dash2solr.cdlib.org.       CNAME    uc3-dash2solr-prd.cdlib.org    cdlib.org.-Private
+
+uc3,prd,mrt,uc3-ingest02-prd
+FQDN: uc3-ingest02-prd.cdlib.org
+           ingest02-aws.cdlib.org.       CNAME    uc3-ingest02-prd.cdlib.org    cdlib.org.-Public
+               ingest02.cdlib.org.       CNAME    uc3-ingest02-prd.cdlib.org    cdlib.org.-Public
+           ingest02-aws.cdlib.org.       CNAME    uc3-ingest02-prd.cdlib.org    cdlib.org.-Private
+               ingest02.cdlib.org.       CNAME    uc3-ingest02-prd.cdlib.org    cdlib.org.-Private
+
+
