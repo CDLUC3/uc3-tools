@@ -17,6 +17,9 @@ func (s errorsByMsg) Copy(j, i int)      { s[j] = s[i] }
 
 //noinspection GoUnhandledErrorResult
 func PrintErrors(errors []error) {
+	if !Flags.Verbose {
+		return
+	}
 	Deduplicate(errorsByMsg(errors), func(len int) {
 		errors = errors[:len]
 	})
