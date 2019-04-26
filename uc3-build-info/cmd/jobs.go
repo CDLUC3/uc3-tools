@@ -33,6 +33,7 @@ func init() {
 	cmd.Flags().BoolVar(&jobs.apiUrl, "api-url", false, "show Jenkins API URLs")
 	cmd.Flags().BoolVar(&jobs.configXML, "config-xml", false, "show Jenkins config.xml URLs")
 	cmd.Flags().BoolVar(&jobs.poms, "poms", false, "show POMs")
+	cmd.Flags().BoolVar(&jobs.goals, "goals", false, "show Maven goals")
 	cmd.Flags().StringVarP(&Flags.Job, "job", "j", "", "show info only for specified job")
 
 	AddCommand(cmd)
@@ -43,6 +44,7 @@ type jobs struct {
 	artifacts  bool
 	build      bool
 	configXML  bool
+	goals      bool
 	parameters bool
 	poms       bool
 	repo       bool
@@ -71,10 +73,11 @@ func (j *jobs) List(server jenkins.JenkinsServer) error {
 }
 
 func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
+	rows := len(jobs)
 	cols := []TableColumn{columns.Job(jobs)}
 	if j.apiUrl {
 		cols = append(cols, NewTableColumn(
-			"API Url", len(jobs), func(row int) string {
+			"API Url", rows, func(row int) string {
 				apiUrl := jobs[row].APIUrl()
 				if apiUrl == nil {
 					return columns.ValueUnknown
@@ -84,7 +87,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 	}
 	if j.configXML {
 		cols = append(cols, NewTableColumn(
-			"config.xml", len(jobs), func(row int) string {
+			"config.xml", rows, func(row int) string {
 				configUrl := jobs[row].ConfigUrl()
 				if configUrl == nil {
 					return columns.ValueUnknown
@@ -94,7 +97,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 	}
 	if j.parameters {
 		cols = append(cols, NewTableColumn(
-			"Parameters", len(jobs), func(row int) string {
+			"Parameters", rows, func(row int) string {
 				var allParamInfo []string
 				for _, p := range jobs[row].Parameters() {
 					paramInfo := fmt.Sprintf("%v (%v)", p.Name(), strings.Join(p.Choices(), ", "))
@@ -105,7 +108,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 	}
 	if j.repo {
 		cols = append(cols, NewTableColumn(
-			"Repository", len(jobs), func(row int) string {
+			"Repository", rows, func(row int) string {
 				scmUrl, err := jobs[row].SCMUrl()
 				if err != nil {
 					j.errors = append(j.errors, err)
@@ -116,7 +119,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 	}
 	if j.poms {
 		cols = append(cols, NewTableColumn(
-			"POMs", len(jobs), func(row int) string {
+			"POMs", rows, func(row int) string {
 				poms, errs := jobs[row].POMs()
 				if len(errs) > 0 {
 					j.errors = append(j.errors, errs...)
@@ -131,9 +134,20 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 				return strings.Join(allPomInfo, ", ")
 			}))
 	}
+	if j.goals {
+		cols = append(cols, NewTableColumn(
+			"Goals", rows, func(row int) string {
+				config, err := jobs[row].Config()
+				if err != nil {
+					j.errors = append(j.errors, err)
+					return columns.ValueUnknown
+				}
+				return config.Goals()
+			}))
+	}
 	if j.build {
 		cols = append(cols, NewTableColumn(
-			"Last Success", len(jobs), func(row int) string {
+			"Last Success", rows, func(row int) string {
 				b, err := jobs[row].LastSuccess()
 				if err != nil {
 					j.errors = append(j.errors, err)
@@ -142,7 +156,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 				return fmt.Sprintf("%d", b.BuildNumber())
 			}))
 		cols = append(cols, NewTableColumn(
-			"SHA Hash", len(jobs), func(row int) string {
+			"SHA Hash", rows, func(row int) string {
 				b, err := jobs[row].LastSuccess()
 				if err != nil {
 					j.errors = append(j.errors, err)
@@ -158,7 +172,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 	}
 	if j.artifacts {
 		cols = append(cols, NewTableColumn(
-			"Last Artifacts", len(jobs), func(row int) string {
+			"Last Artifacts", rows, func(row int) string {
 				b, err := jobs[row].LastSuccess()
 				if err != nil {
 					j.errors = append(j.errors, err)
@@ -173,4 +187,3 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 	}
 	return cols
 }
-
