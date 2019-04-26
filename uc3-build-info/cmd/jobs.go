@@ -57,6 +57,13 @@ func (j *jobs) List(server jenkins.JenkinsServer) error {
 	if err != nil {
 		return err
 	}
+	if Flags.Job != "" {
+		job := jobs.Named(Flags.Job)
+		if job == nil {
+			return fmt.Errorf("no job named %#v found", Flags.Job)
+		}
+		jobs = jenkins.JobsByName{job}
+	}
 
 	cols := j.MakeTableColumns(jobs)
 	if len(cols) == 1 {

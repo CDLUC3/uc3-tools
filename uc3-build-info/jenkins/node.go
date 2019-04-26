@@ -4,7 +4,7 @@ package jenkins
 // Node
 
 type Node interface {
-	Jobs() []Job
+	Jobs() JobsByName
 }
 
 // ------------------------------------------------------------
@@ -16,7 +16,7 @@ type node struct {
 	jobs []Job
 }
 
-func (n *node) Jobs() []Job {
+func (n *node) Jobs() JobsByName {
 	if len(n.jobs) != len(n.AllJobs) {
 		jobs := make([]Job, len(n.AllJobs))
 			for i, j := range n.AllJobs {
@@ -25,5 +25,5 @@ func (n *node) Jobs() []Job {
 		}
 		n.jobs = jobs
 	}
-	return n.jobs
+	return JobsByName(n.jobs)
 }

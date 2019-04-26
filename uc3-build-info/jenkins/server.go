@@ -9,7 +9,7 @@ import (
 
 // JenkinsServer represents a Jenkins server
 type JenkinsServer interface {
-	Jobs() ([]Job, error)
+	Jobs() (JobsByName, error)
 }
 
 func DefaultServer() JenkinsServer {
@@ -44,7 +44,7 @@ type jenkinsServer struct {
 }
 
 //noinspection GoUnhandledErrorResult
-func (s *jenkinsServer) Jobs() ([]Job, error) {
+func (s *jenkinsServer) Jobs() (JobsByName, error) {
 	if s.node == nil {
 		if shared.Flags.Verbose {
 			fmt.Fprintf(os.Stderr, "Retrieving jobs from %v...\n", s.apiRoot)

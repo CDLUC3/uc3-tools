@@ -40,6 +40,15 @@ func (s JobsByName) String() string {
 	return strings.Join(info, ", ")
 }
 
+func (s JobsByName) Named(name string) Job {
+	for _, j := range s {
+		if j.Name() == name {
+			return j
+		}
+	}
+	return nil
+}
+
 // ------------------------------------------------------------
 // Unexported symbols
 

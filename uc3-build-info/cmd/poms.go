@@ -45,16 +45,20 @@ func (p *poms) List(server jenkins.JenkinsServer) error {
 	if err != nil {
 		return err
 	}
+	if Flags.Job != "" {
+		job := jobs.Named(Flags.Job)
+		if job == nil {
+			return fmt.Errorf("no job named %#v found", Flags.Job)
+		}
+		jobs = jenkins.JobsByName{job}
+	}
+
 	jgraph := jenkins.NewJobGraph(jobs)
 	jgraph.PomGraph()
-
 
 	var pomJobs []jenkins.Job
 	var poms []maven.Pom
 	for _, j := range jobs {
-		if Flags.Job != "" && j.Name() != Flags.Job {
-			continue
-		}
 		jobPoms, errs := j.POMs()
 		if len(errs) > 0 {
 			p.errors = append(p.errors, errs...)
