@@ -90,7 +90,7 @@ func (p *poms) MakeTableColumns(jobs []jenkins.Job, poms []maven.Pom) []TableCol
 		cols = append(cols, NewTableColumn("POM Blob URL", len(poms), func(row int) string {
 			url := poms[row].BlobURL()
 			if url == nil {
-				return columns.ValueUnknown
+				return ValueUnknown
 			}
 			return url.String()
 		}))

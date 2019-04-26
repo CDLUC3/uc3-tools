@@ -27,7 +27,7 @@ func (m *jobsTableModel) ItemType() string {
 }
 
 func (m *jobsTableModel) ItemAt(row int) string {
-	return m.jobAt(row).Name()
+	return m.JobName(row)
 }
 
 func (m *jobsTableModel) DependenciesOf(row int) string {
@@ -60,6 +60,14 @@ func (m *jobsTableModel) CountDependenciesOn(row int) int {
 
 func (m *jobsTableModel) ShowCounts() bool {
 	return m.showCounts
+}
+
+func (m *jobsTableModel) ShowJobs() bool {
+	return false
+}
+
+func (m *jobsTableModel) JobName(row int) string {
+	return m.jobAt(row).Name()
 }
 
 // ------------------------------------------------------------

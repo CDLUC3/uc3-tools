@@ -45,7 +45,13 @@ func GetArtifact(groupId string, artifactId string, packaging string, version st
 
 func ArtifactToString(a Artifact) string {
 	if Flags.Verbose {
+		if Flags.Short {
+			return fmt.Sprintf("%v (%v)", a.ArtifactId(), a.Packaging())
+		}
 		return fmt.Sprintf("%v:%v:%v (%v)", a.GroupId(), a.ArtifactId(), a.Version(), a.Packaging())
+	}
+	if Flags.Short {
+		return a.ArtifactId()
 	}
 	return fmt.Sprintf("%v:%v:%v", a.GroupId(), a.ArtifactId(), a.Version())
 }

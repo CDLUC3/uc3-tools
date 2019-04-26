@@ -87,7 +87,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 			"API Url", rows, func(row int) string {
 				apiUrl := jobs[row].APIUrl()
 				if apiUrl == nil {
-					return columns.ValueUnknown
+					return ValueUnknown
 				}
 				return apiUrl.String()
 			}))
@@ -97,7 +97,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 			"config.xml", rows, func(row int) string {
 				configUrl := jobs[row].ConfigUrl()
 				if configUrl == nil {
-					return columns.ValueUnknown
+					return ValueUnknown
 				}
 				return configUrl.String()
 			}))
@@ -119,7 +119,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 				scmUrl, err := jobs[row].SCMUrl()
 				if err != nil {
 					j.errors = append(j.errors, err)
-					return columns.ValueUnknown
+					return ValueUnknown
 				}
 				return scmUrl
 			}))
@@ -132,7 +132,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 					j.errors = append(j.errors, errs...)
 				}
 				if len(poms) == 0 {
-					return columns.ValueUnknown
+					return ValueUnknown
 				}
 				var allPomInfo []string
 				for _, p := range poms {
@@ -147,7 +147,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 				config, err := jobs[row].Config()
 				if err != nil {
 					j.errors = append(j.errors, err)
-					return columns.ValueUnknown
+					return ValueUnknown
 				}
 				return config.Goals()
 			}))
@@ -158,7 +158,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 				b, err := jobs[row].LastSuccess()
 				if err != nil {
 					j.errors = append(j.errors, err)
-					return columns.ValueUnknown
+					return ValueUnknown
 				}
 				return fmt.Sprintf("%d", b.BuildNumber())
 			}))
@@ -167,12 +167,12 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 				b, err := jobs[row].LastSuccess()
 				if err != nil {
 					j.errors = append(j.errors, err)
-					return columns.ValueUnknown
+					return ValueUnknown
 				}
 				sha1, err := b.SHA1()
 				if err != nil {
 					j.errors = append(j.errors, err)
-					return columns.ValueUnknown
+					return ValueUnknown
 				}
 				return sha1.String()
 			}))
@@ -183,7 +183,7 @@ func (j *jobs) MakeTableColumns(jobs []jenkins.Job) []TableColumn {
 				b, err := jobs[row].LastSuccess()
 				if err != nil {
 					j.errors = append(j.errors, err)
-					return columns.ValueUnknown
+					return ValueUnknown
 				}
 				artifacts, err := b.Artifacts()
 				if len(artifacts) == 0 {

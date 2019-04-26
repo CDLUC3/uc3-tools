@@ -30,6 +30,7 @@ func AddCommand(cmd *cobra.Command) {
 	cmd.Flags().BoolVarP(&Flags.Verbose, "verbose", "v", false, "verbose output")
 	cmd.Flags().BoolVarP(&git.FullSHA, "full-sha", "f", false, "don't abbreviate SHA hashes in URLs")
 	cmd.Flags().StringVarP(&git.Token, "token", "t", "", "GitHub API token (https://github.com/settings/tokens)")
+	cmd.Flags().BoolVar(&Flags.Short, "short", false, "use short form for artifacts (no group or version)")
 	cmd.Flags().BoolVar(&Flags.TSV, "tsv", false, "tab-separated output (default is fixed-width)")
 
 	rootCmd.AddCommand(cmd)

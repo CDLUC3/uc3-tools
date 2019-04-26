@@ -6,7 +6,7 @@ import (
 	"github.com/CDLUC3/uc3-tools/uc3-build-info/shared"
 )
 
-func ArtifactsTable(g JobGraph, showCounts bool) (shared.Table, []error) {
+func ArtifactsTable(g JobGraph, showCounts bool, showJobs bool) (shared.Table, []error) {
 	agraph, errs := g.ArtifactGraph()
 	if agraph == nil {
 		return nil, errs
@@ -15,6 +15,7 @@ func ArtifactsTable(g JobGraph, showCounts bool) (shared.Table, []error) {
 		jobGraph:   g,
 		agraph:     agraph,
 		showCounts: showCounts,
+		showJobs: showJobs,
 	}
 	return newTable(model), errs
 }
@@ -23,6 +24,7 @@ type artifactsTableModel struct {
 	jobGraph   JobGraph
 	agraph     ArtifactGraph
 	showCounts bool
+	showJobs bool
 }
 
 func (m *artifactsTableModel) Rows() int {
@@ -65,6 +67,21 @@ func (m *artifactsTableModel) ShowCounts() bool {
 	return m.showCounts
 }
 
+func (m *artifactsTableModel) ShowJobs() bool {
+	return m.showJobs
+}
+
+func (m *artifactsTableModel) JobName(row int) string {
+	artifact := m.artifactAt(row)
+	pom := m.agraph.PomForArtifact(artifact)
+	job, _ := m.jobGraph.JobFor(pom)
+	// TODO: log errors
+	if job == nil {
+		return shared.ValueUnknown
+	}
+	return job.Name()
+}
+
 // ------------------------------------------------------------
 // Unexported symbols
 
@@ -74,11 +91,4 @@ func (m *artifactsTableModel) artifacts() []Artifact {
 
 func (m *artifactsTableModel) artifactAt(row int) Artifact {
 	return m.artifacts()[row]
-}
-
-func (m *artifactsTableModel) infoFor(artifact Artifact) ArtifactInfo {
-	pom := m.agraph.PomForArtifact(artifact)
-	job, _ := m.jobGraph.JobFor(pom)
-	// TODO: log errors
-	return InfoFor(job, pom, artifact)
 }

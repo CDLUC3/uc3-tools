@@ -30,7 +30,8 @@ func init() {
 	cmd.Flags().BoolVarP(&deps.artifacts, "artifacts", "a", false, "list Maven artifact dependencies")
 	cmd.Flags().BoolVarP(&deps.jobs, "jobs", "j", false, "list Jenkins job dependencies")
 	cmd.Flags().BoolVarP(&deps.poms, "poms", "p", false, "list Maven pom dependencies")
-	cmd.Flags().BoolVarP(&deps.showCounts, "counts", "c", false, "show dependency showCounts")
+	cmd.Flags().BoolVarP(&deps.showCounts, "counts", "c", false, "show dependency counts")
+	cmd.Flags().BoolVar(&deps.showJobs, "show-jobs", false, "show corresponding job for artifacts and poms")
 
 	AddCommand(cmd)
 }
@@ -42,6 +43,7 @@ type deps struct {
 	jobs       bool
 	poms       bool
 	showCounts bool
+	showJobs bool
 	errors     []error
 }
 
@@ -76,7 +78,7 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 	if d.poms {
 		titles = append(titles, "Maven pom dependencies")
 		ftables = append(ftables, func() Table {
-			table, errs := PomsTable(jgraph, d.showCounts)
+			table, errs := PomsTable(jgraph, d.showCounts, d.showJobs)
 			if len(errs) > 0 {
 				d.errors = append(d.errors, errs...)
 			}
@@ -86,7 +88,7 @@ func (d *deps) List(server jenkins.JenkinsServer) error {
 	if d.artifacts {
 		titles = append(titles, "Maven artifact dependencies")
 		ftables = append(ftables, func() Table {
-			table, errs := ArtifactsTable(jgraph, d.showCounts)
+			table, errs := ArtifactsTable(jgraph, d.showCounts, d.showJobs)
 			if len(errs) > 0 {
 				d.errors = append(d.errors, errs...)
 			}

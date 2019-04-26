@@ -13,25 +13,25 @@ type tableModel interface {
 	CountDependenciesOf(row int) int
 	CountDependenciesOn(row int) int
 	ShowCounts() bool
+	ShowJobs() bool
+	JobName(row int) string
 }
 
 func newTable(m tableModel) Table {
 	rows := m.Rows()
 
-	itemCol := NewTableColumn(m.ItemType(), rows, m.ItemAt)
-	reqsCol := NewTableColumn("Requires", rows, m.DependenciesOf)
-	reqdByCol := NewTableColumn("Required By", rows, m.DependenciesOn)
-
-	cols := []TableColumn{ itemCol }
+	cols := []TableColumn{NewTableColumn(m.ItemType(), rows, m.ItemAt)}
+	if m.ShowJobs() {
+		cols = append(cols, NewTableColumn("Job", rows, m.JobName))
+	}
 	if m.ShowCounts() {
 		cols = append(cols, NewIntTableColumn("# Req'd By", rows, m.CountDependenciesOn))
 	}
-	cols = append(cols, reqdByCol)
+	cols = append(cols, NewTableColumn("Required By", rows, m.DependenciesOn))
 	if m.ShowCounts() {
 		cols = append(cols, NewIntTableColumn("# Reqs", rows, m.CountDependenciesOf))
 	}
-	cols = append(cols, reqsCol)
+	cols = append(cols, NewTableColumn("Requires", rows, m.DependenciesOf))
 
 	return TableFrom(cols...)
 }
-

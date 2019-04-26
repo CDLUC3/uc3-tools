@@ -6,8 +6,6 @@ import (
 	. "github.com/CDLUC3/uc3-tools/uc3-build-info/shared"
 )
 
-const ValueUnknown = "(unknown)"
-
 func Job(jobs []jenkins.Job) TableColumn {
 	return Jobs(func(row int) jenkins.Job { return jobs[row] }, len(jobs))
 }
