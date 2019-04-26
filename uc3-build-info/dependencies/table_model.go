@@ -24,13 +24,13 @@ func newTable(m tableModel) Table {
 
 	cols := []TableColumn{ itemCol }
 	if m.ShowCounts() {
-		cols = append(cols, NewIntTableColumn("# Reqs", rows, m.CountDependenciesOf))
-	}
-	cols = append(cols, reqsCol)
-	if m.ShowCounts() {
 		cols = append(cols, NewIntTableColumn("# Req'd By", rows, m.CountDependenciesOn))
 	}
 	cols = append(cols, reqdByCol)
+	if m.ShowCounts() {
+		cols = append(cols, NewIntTableColumn("# Reqs", rows, m.CountDependenciesOf))
+	}
+	cols = append(cols, reqsCol)
 
 	return TableFrom(cols...)
 }
