@@ -2,6 +2,7 @@ package shared
 
 import (
 	"fmt"
+	"strconv"
 )
 
 type TableColumn interface {
@@ -12,6 +13,13 @@ type TableColumn interface {
 
 func NewTableColumn(header string, rows int, valueAt func(row int) string) TableColumn {
 	return &tableColumn{header: header, rows: rows, valueAt: valueAt}
+}
+
+func NewIntTableColumn(header string, rows int, valueAt func(row int) int) TableColumn {
+	stringValueAt := func(row int) string {
+		return strconv.Itoa(valueAt(row))
+	}
+	return NewTableColumn(header, rows, stringValueAt)
 }
 
 // ------------------------------------------------------------

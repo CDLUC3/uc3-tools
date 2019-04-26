@@ -5,13 +5,17 @@ import (
 	"github.com/CDLUC3/uc3-tools/uc3-build-info/shared"
 )
 
-func JobsTable(g JobGraph) shared.Table {
-	model := &jobsTableModel{graph: g}
+func JobsTable(g JobGraph, showCounts bool) shared.Table {
+	model := &jobsTableModel{
+		graph:      g,
+		showCounts: showCounts,
+	}
 	return newTable(model)
 }
 
 type jobsTableModel struct {
-	graph JobGraph
+	graph      JobGraph
+	showCounts bool
 }
 
 func (m *jobsTableModel) Rows() int {
@@ -40,11 +44,27 @@ func (m *jobsTableModel) DependenciesOn(row int) string {
 	return JobsByName(deps).String()
 }
 
+func (m *jobsTableModel) CountDependenciesOf(row int) int {
+	job := m.jobAt(row)
+	deps, _ := m.graph.DependenciesOf(job)
+	// TODO: log errors
+	return len(deps)
+}
+
+func (m *jobsTableModel) CountDependenciesOn(row int) int {
+	job := m.jobAt(row)
+	deps, _ := m.graph.DependenciesOn(job)
+	// TODO: log errors
+	return len(deps)
+}
+
+func (m *jobsTableModel) ShowCounts() bool {
+	return m.showCounts
+}
+
 // ------------------------------------------------------------
 // Unexported symbols
 
 func (m *jobsTableModel) jobAt(row int) Job {
 	return m.graph.Jobs()[row]
 }
-
-

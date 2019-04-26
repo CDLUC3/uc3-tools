@@ -10,14 +10,28 @@ type tableModel interface {
 	ItemAt(row int) string
 	DependenciesOf(row int) string
 	DependenciesOn(row int) string
+	CountDependenciesOf(row int) int
+	CountDependenciesOn(row int) int
+	ShowCounts() bool
 }
 
 func newTable(m tableModel) Table {
 	rows := m.Rows()
-	return TableFrom(
-		NewTableColumn(m.ItemType(), rows, m.ItemAt),
-		NewTableColumn("Requires", rows, m.DependenciesOf),
-		NewTableColumn("Required by", rows, m.DependenciesOn),
-	)
+
+	itemCol := NewTableColumn(m.ItemType(), rows, m.ItemAt)
+	reqsCol := NewTableColumn("Requires", rows, m.DependenciesOf)
+	reqdByCol := NewTableColumn("Required By", rows, m.DependenciesOn)
+
+	cols := []TableColumn{ itemCol }
+	if m.ShowCounts() {
+		cols = append(cols, NewIntTableColumn("# Reqs", rows, m.CountDependenciesOf))
+	}
+	cols = append(cols, reqsCol)
+	if m.ShowCounts() {
+		cols = append(cols, NewIntTableColumn("# Req'd By", rows, m.CountDependenciesOn))
+	}
+	cols = append(cols, reqdByCol)
+
+	return TableFrom(cols...)
 }
 

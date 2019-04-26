@@ -6,17 +6,21 @@ import (
 	"github.com/CDLUC3/uc3-tools/uc3-build-info/shared"
 )
 
-func PomsTable(g JobGraph) (shared.Table, []error) {
+func PomsTable(g JobGraph, showCounts bool) (shared.Table, []error) {
 	pgraph, errs := g.PomGraph()
 	if pgraph == nil {
 		return nil, errs
 	}
-	model := &pomsTableModel{graph: pgraph}
+	model := &pomsTableModel{
+		graph:      pgraph,
+		showCounts: showCounts,
+	}
 	return newTable(model), errs
 }
 
 type pomsTableModel struct {
-	graph PomGraph
+	graph      PomGraph
+	showCounts bool
 }
 
 func (m *pomsTableModel) Rows() int {
@@ -43,11 +47,25 @@ func (m *pomsTableModel) DependenciesOn(row int) string {
 	return PomsByLocation(deps).String()
 }
 
+func (m *pomsTableModel) CountDependenciesOf(row int) int {
+	pom := m.pomAt(row)
+	deps := m.graph.DependenciesOf(pom)
+	return len(deps)
+}
+
+func (m *pomsTableModel) CountDependenciesOn(row int) int {
+	pom := m.pomAt(row)
+	deps := m.graph.DependenciesOn(pom)
+	return len(deps)
+}
+
+func (m *pomsTableModel) ShowCounts() bool {
+	return m.showCounts
+}
+
 // ------------------------------------------------------------
 // Unexported symbols
 
 func (m *pomsTableModel) pomAt(row int) Pom {
 	return m.graph.Poms()[row]
 }
-
-

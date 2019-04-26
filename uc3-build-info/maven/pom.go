@@ -40,9 +40,6 @@ func (s PomsByLocation) String() string {
 	return strings.Join(info, ", ")
 }
 
-
-
-
 func PomFromEntry(entry git.Entry) (Pom, error) {
 	if !isPom(entry) {
 		return nil, fmt.Errorf("entry %#v does not appear to be a Maven POM", entry.Path())
