@@ -3,7 +3,7 @@ package maven
 import (
 	"fmt"
 	"github.com/beevik/etree"
-	"github.com/CDLUC3/uc3-tools/mrt-build-info/git"
+	"github.com/CDLUC3/uc3-tools/uc3-build-info/git"
 	"net/url"
 	"sort"
 	"strings"

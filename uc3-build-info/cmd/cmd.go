@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/CDLUC3/uc3-tools/mrt-build-info/git"
-	"github.com/CDLUC3/uc3-tools/mrt-build-info/jenkins"
-	. "github.com/CDLUC3/uc3-tools/mrt-build-info/shared"
+	"github.com/CDLUC3/uc3-tools/uc3-build-info/git"
+	"github.com/CDLUC3/uc3-tools/uc3-build-info/jenkins"
+	. "github.com/CDLUC3/uc3-tools/uc3-build-info/shared"
 	"github.com/spf13/cobra"
 	"os"
 )
@@ -12,7 +12,7 @@ import (
 // TODO: 'find' command (by job, artifactId, ...?)
 
 var rootCmd = &cobra.Command{
-	Use:   "mrt-build-info",
+	Use:   "uc3-build-info",
 	Short: "Merritt build info",
 	Long:  "Tools for gathering Merritt build information",
 }

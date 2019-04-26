@@ -2,7 +2,7 @@ package dependencies
 
 import (
 	"fmt"
-	. "github.com/CDLUC3/uc3-tools/mrt-build-info/jenkins"
+	. "github.com/CDLUC3/uc3-tools/uc3-build-info/jenkins"
 )
 
 func findJob(name string, jobs []Job) (Job, error) {

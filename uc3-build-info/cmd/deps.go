@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"fmt"
-	. "github.com/CDLUC3/uc3-tools/mrt-build-info/dependencies"
-	"github.com/CDLUC3/uc3-tools/mrt-build-info/jenkins"
-	. "github.com/CDLUC3/uc3-tools/mrt-build-info/shared"
+	. "github.com/CDLUC3/uc3-tools/uc3-build-info/dependencies"
+	"github.com/CDLUC3/uc3-tools/uc3-build-info/jenkins"
+	. "github.com/CDLUC3/uc3-tools/uc3-build-info/shared"
 	"github.com/spf13/cobra"
 	"os"
 )

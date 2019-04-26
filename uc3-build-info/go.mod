@@ -1,4 +1,4 @@
-module github.com/CDLUC3/uc3-tools/mrt-build-info
+module github.com/CDLUC3/uc3-tools/uc3-build-info
 
 go 1.12
 

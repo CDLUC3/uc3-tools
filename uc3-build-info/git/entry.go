@@ -2,7 +2,7 @@ package git
 
 import (
 	"fmt"
-	"github.com/CDLUC3/uc3-tools/mrt-build-info/shared"
+	"github.com/CDLUC3/uc3-tools/uc3-build-info/shared"
 	"io/ioutil"
 	"net/http"
 	"net/url"

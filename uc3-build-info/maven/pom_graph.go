@@ -2,7 +2,7 @@ package maven
 
 import (
 	"fmt"
-	. "github.com/CDLUC3/uc3-tools/mrt-build-info/shared"
+	. "github.com/CDLUC3/uc3-tools/uc3-build-info/shared"
 	"os"
 )
 
