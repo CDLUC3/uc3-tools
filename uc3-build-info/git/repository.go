@@ -8,6 +8,7 @@ import (
 	"golang.org/x/oauth2"
 	"net/http"
 	"net/url"
+	"os"
 	"regexp"
 	"strings"
 )
@@ -172,11 +173,13 @@ func (r *repository) Context() context.Context {
 
 func (r *repository) HttpClient() *http.Client {
 	if r.httpClient == nil {
-		if Token == "" {
-			r.httpClient = http.DefaultClient
+		token := strings.TrimSpace(Token)
+		if token == "" {
+			_, _ = fmt.Fprintln(os.Stderr, tokenNotProvided)
+			os.Exit(-1)
 		} else {
-			token := oauth2.Token{AccessToken: Token}
-			tokenSource := oauth2.StaticTokenSource(&token)
+			oauth2Token := oauth2.Token{AccessToken: token}
+			tokenSource := oauth2.StaticTokenSource(&oauth2Token)
 			r.httpClient = oauth2.NewClient(r.Context(), tokenSource)
 		}
 	}
