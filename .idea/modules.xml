@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/uc3-build-info/uc3-build-info.iml" filepath="$PROJECT_DIR$/uc3-build-info/uc3-build-info.iml" />
       <module fileurl="file://$PROJECT_DIR$/uc3-system-info/uc3-system-info.iml" filepath="$PROJECT_DIR$/uc3-system-info/uc3-system-info.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uc3-tools.iml" filepath="$PROJECT_DIR$/uc3-tools.iml" />
     </modules>
   </component>
 </project>
