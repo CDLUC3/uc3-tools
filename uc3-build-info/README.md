@@ -49,7 +49,7 @@ uc3-build-info deps [flags]
 
 | Short form | Flag           | Description                                           |
 | :---       | :---           | :---                                                  |
-|            | --all          | list all depdendencies                                |
+|            | --all          | list all dependencies                                |
 | -a,        | --artifacts    | list Maven artifact dependencies                      |
 |            | --expand       | expand tables to rows                                 |
 | -f,        | --full-sha     | don't abbreviate SHA hashes in URLs                   |

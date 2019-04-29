@@ -25,7 +25,7 @@ func init() {
 		},
 	}
 
-	cmd.Flags().BoolVar(&deps.all, "all", false, "list all depdendencies")
+	cmd.Flags().BoolVar(&deps.all, "all", false, "list all dependencies")
 	cmd.Flags().BoolVar(&deps.expand, "expand", false, "expand tables to rows")
 	cmd.Flags().BoolVarP(&deps.artifacts, "artifacts", "a", false, "list Maven artifact dependencies")
 	cmd.Flags().BoolVarP(&deps.jobs, "jobs", "j", false, "list Jenkins job dependencies")
