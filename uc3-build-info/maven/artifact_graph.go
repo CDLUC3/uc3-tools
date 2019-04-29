@@ -151,6 +151,9 @@ func dependencies(poms []Pom, pomsByArtifact map[Artifact]Pom) (depsByFrom map[A
 		errors = append(errors, depErrs...)
 
 		for _, toArtifact := range pomDeps {
+			if fromArtifact == toArtifact {
+				continue
+			}
 			var ok bool
 			if _, ok = pomsByArtifact[toArtifact]; !ok {
 				// third-party artifactDep

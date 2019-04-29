@@ -176,6 +176,10 @@ func (g *jobGraph) deps() (allDeps []jobDep, depsByFrom map[Job][]jobDep, depsBy
 			fromJob := jobsByPom[fromPom]
 			for _, toPom := range pgraph.DependenciesOf(fromPom) {
 				toJob := jobsByPom[toPom]
+				if fromJob == toJob {
+					// Can happen, even w/o POM self-deps, for jobs that build multiple related POMs
+					continue
+				}
 
 				var ok bool
 				var fromDeps []jobDep

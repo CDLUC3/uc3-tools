@@ -76,7 +76,15 @@ func (g *pomGraph) deps() (allDeps []pomDep, depsByFrom map[Pom][]pomDep, depsBy
 			fromArtifact := a
 			fromPom := agraph.PomForArtifact(fromArtifact)
 			for _, toArtifact := range agraph.DependenciesOf(fromArtifact) {
+				if fromArtifact == toArtifact {
+					// Shouldn't happen
+					continue
+				}
 				toPom := agraph.PomForArtifact(toArtifact)
+				if fromPom == toPom {
+					// Can happen, even w/o artifact self-deps (related POMs in same project)
+					continue
+				}
 
 				var ok bool
 				var fromDeps []pomDep

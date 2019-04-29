@@ -72,6 +72,10 @@ func (j *job) Name() string {
 	return j.JobName
 }
 
+func (j *job) String() string {
+	return j.Name()
+}
+
 func (j *job) LastSuccess() (Build, error) {
 	if j.LastSuccessfulBuild == nil {
 		if err := j.load(); err != nil {
